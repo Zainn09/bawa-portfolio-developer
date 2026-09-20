@@ -1,0 +1,215 @@
+/* Readable editorial pairing: DM Sans headings/UI, Source Sans 3 descriptions.
+   Compact store mockups retain their own brand typography and miniature scale. */
+p,
+.heading-aside,
+.project-dialog-copy li,
+.empty-cart {
+  font-family: var(--font-description);
+  font-weight: 400;
+}
+.store-browser p {
+  font-family: var(--font);
+}
+p.small-note {
+  font-family: var(--mono);
+}
+.hero-description {
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: -0.15px;
+}
+.hero-support {
+  font-size: 13px;
+  line-height: 1.75;
+}
+.intro-section > div > p,
+.heading-aside,
+.heading-aside p,
+.ecosystem-intro,
+.ecosystem-details p,
+.ecosystem-explanation-copy p,
+.expertise-intro > p,
+.capability-content > p,
+.optimization-detail p,
+.management-layout > div > p,
+.responsive-heading > p,
+.about-copy > p,
+.contact-callout > div > p,
+.contact-intro p,
+.project-dialog-copy > p:not(.small-note),
+.project-detail-grid p,
+.project-outcome > p {
+  font-size: var(--text-description);
+  line-height: 1.7;
+}
+.architecture > p,
+.project-meta p,
+.raw-data p,
+.trust-badge p,
+.footer-directory > p > span,
+.demo-notice p {
+  font-size: var(--text-secondary);
+  line-height: 1.65;
+}
+.trust-badge p {
+  font-size: 10px;
+}
+.trust-badge strong {
+  font-size: 12px;
+}
+.footer-directory > p {
+  font-size: 18px;
+}
+.footer-directory nav > a {
+  font-size: 12px;
+}
+.process-pin .process-stage-copy p {
+  font-family: var(--font-description);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.project-dialog-copy ul {
+  font-size: 14px;
+}
+.desktop-nav a {
+  font-size: 12px;
+}
+.button,
+.text-link,
+.arrow-link {
+  font-size: 13px;
+}
+.hero-actions .text-link,
+.nav-cta {
+  font-size: 12px;
+}
+.section-label {
+  font-size: 11px;
+}
+.contact-form label {
+  font-size: 11px;
+}
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  font-family: var(--font-description);
+  font-size: 13px;
+}
+.form-bottom > p {
+  font-size: 10px;
+}
+@media (min-width: 1600px) {
+  .hero-description {
+    font-size: 23px;
+  }
+  .hero-support {
+    font-size: 14px;
+  }
+}
+@media (min-width: 2200px) {
+  .hero-description {
+    font-size: 26px;
+  }
+  .hero-support {
+    font-size: 15px;
+  }
+}
+@media (max-width: 1200px) {
+  :root {
+    --text-description: 13px;
+    --text-secondary: 11px;
+  }
+  .hero-description {
+    font-size: 19px;
+  }
+  .hero-support {
+    font-size: 12px;
+  }
+  .desktop-nav a {
+    font-size: 11px;
+  }
+  .hero-actions .button,
+  .hero-actions .text-link {
+    font-size: 11px;
+  }
+  .process-pin .process-stage-copy p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1023px) {
+  .hero-description {
+    font-size: 18px;
+  }
+  .nav-cta {
+    font-size: 11px;
+  }
+  .hero-actions .button,
+  .hero-actions .text-link {
+    font-size: 10px;
+  }
+  .trust-badge strong {
+    font-size: 11px;
+  }
+}
+@media (max-width: 767px) {
+  .hero-description {
+    font-size: 18px;
+  }
+  .hero-support {
+    font-size: 12px;
+  }
+  .hero-actions .button,
+  .hero-actions .text-link,
+  .hero-actions .button-outline {
+    font-size: 10px;
+  }
+  .section-label {
+    font-size: 9px;
+  }
+  .button,
+  .text-link,
+  .arrow-link {
+    font-size: 12px;
+  }
+  .about-copy .text-link,
+  .management-layout .text-link {
+    font-size: 12px;
+  }
+  .trust-badge strong {
+    font-size: 10px;
+  }
+  .trust-badge p {
+    font-size: 9px;
+    line-height: 1.5;
+  }
+  .process-pin .process-stage-copy p {
+    font-size: 11px;
+    line-height: 1.55;
+  }
+  .project-meta p {
+    font-size: 11px;
+  }
+  .contact-form label {
+    font-size: 10px;
+  }
+  /* Prevent focus zoom on iOS while improving form readability. */
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 16px;
+  }
+  .form-bottom > p {
+    font-size: 9px;
+  }
+  .footer-directory > p {
+    font-size: 18px;
+  }
+  .footer-directory > p > span {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) and (max-height: 760px) {
+  .process-pin .process-stage-copy p {
+    font-size: 10px;
+  }
+}
