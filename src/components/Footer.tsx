@@ -50,12 +50,14 @@ export default function Footer() {
           </p>
           <nav aria-label="Footer navigation">
             <span className="footer-column-label">EXPLORE</span>
-            {["Work", "Expertise", "Shopify", "Process"].map((link) => (
-              <a key={link} href={`#${link.toLowerCase()}`}>
-                {link}
-                <ArrowUpRight size={12} />
-              </a>
-            ))}
+            {["Work", "Expertise", "Shopify", "Process", "Blogs"].map(
+              (link) => (
+                <a key={link} href={`#${link.toLowerCase()}`}>
+                  {link}
+                  <ArrowUpRight size={12} />
+                </a>
+              ),
+            )}
           </nav>
           <nav aria-label="Personal navigation">
             <span className="footer-column-label">THE HUMAN SIDE</span>

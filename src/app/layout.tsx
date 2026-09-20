@@ -10,6 +10,7 @@ import "@/styles/typography.css";
 import "@/styles/atelier.css";
 import "@/styles/showroom.css";
 import "@/styles/mobile.css";
+import "@/styles/blog.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata: Metadata = {
   ...(siteUrl

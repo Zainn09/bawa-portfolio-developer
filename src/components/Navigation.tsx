@@ -4,8 +4,8 @@ import { ArrowUpRight, Sun, Moon, Menu, X } from "lucide-react";
 import BrandMark from "./BrandMark";
 import { profile } from "@/data/portfolio";
 import { track } from "@/lib/analytics";
-const links = ["Work", "Expertise", "Shopify", "Process", "About"];
-export default function Navigation() {
+const links = ["Work", "Expertise", "Shopify", "Process", "About", "Blogs"];
+export default function Navigation({ homeBase = "" }: { homeBase?: string }) {
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const [dark, setDark] = useState(false);
@@ -59,7 +59,11 @@ export default function Navigation() {
       className={`header ${scrolled ? "is-scrolled" : ""}`}
     >
       <div className="nav-container">
-        <a className="brand" href="#home" aria-label={`${profile.name} — home`}>
+        <a
+          className="brand"
+          href={`${homeBase}#home`}
+          aria-label={`${profile.name} — home`}
+        >
           <BrandMark className="brand-mark" />
           <span>
             {profile.name}
@@ -70,7 +74,7 @@ export default function Navigation() {
           {links.map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`${homeBase}#${link.toLowerCase()}`}
               onClick={() => track("navigation", { section: link })}
             >
               {link}
@@ -78,7 +82,7 @@ export default function Navigation() {
           ))}
         </nav>
         <div className="nav-actions">
-          <a className="nav-cta" href="#contact">
+          <a className="nav-cta" href={`${homeBase}#contact`}>
             Let’s build <ArrowUpRight size={16} />
           </a>
           <button
@@ -109,7 +113,7 @@ export default function Navigation() {
           {[...links, "Contact"].map((link) => (
             <a
               key={link}
-              href={`#${link.toLowerCase()}`}
+              href={`${homeBase}#${link.toLowerCase()}`}
               onClick={() => setMenu(false)}
             >
               {link}
