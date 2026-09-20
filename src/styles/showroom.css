@@ -72,7 +72,7 @@
   inset: 3% -3% 7% 3%;
   border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
   border-radius: 50%;
-  transform: rotate(-24deg);
+  transform: none;
   z-index: -1;
   pointer-events: none;
 }
@@ -86,7 +86,7 @@
   width: 106px;
   height: 106px;
   right: -16px;
-  bottom: 95px;
+  bottom: 170px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -215,7 +215,7 @@
   .commerce-seal {
     width: 118px;
     height: 118px;
-    bottom: 105px;
+    bottom: 180px;
   }
 }
 @media (max-width: 1200px) {
@@ -240,7 +240,7 @@
     width: 86px;
     height: 86px;
     right: -6px;
-    bottom: 95px;
+    bottom: 170px;
   }
   .commerce-seal > .brand-monogram {
     width: 29px;
@@ -261,7 +261,7 @@
   .commerce-seal {
     width: 77px;
     height: 77px;
-    bottom: 87px;
+    bottom: 145px;
   }
   .commerce-seal > .brand-monogram {
     width: 25px;

@@ -6,7 +6,6 @@ import {
   Code2,
   Check,
   Asterisk,
-  MousePointer2,
   ShoppingBag,
 } from "lucide-react";
 import Storefront from "./Storefront";

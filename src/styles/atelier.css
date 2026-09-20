@@ -946,3 +946,7 @@
     transition: none !important;
   }
 }
+
+.direction-options > button.selected small {
+  color: var(--ink);
+}
