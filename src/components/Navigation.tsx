@@ -1,11 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
-import { ArrowUpRight, Sun, Moon, Menu, X, Asterisk } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, Sun, Moon, Menu, X } from "lucide-react";
 import BrandMark from "./BrandMark";
 import { profile } from "@/data/portfolio";
 import { track } from "@/lib/analytics";
 const links = ["Work", "Expertise", "Shopify", "Process", "About"];
 export default function Navigation() {
+  const headerRef = useRef<HTMLElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
   const [dark, setDark] = useState(false);
   const [menu, setMenu] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -16,6 +18,32 @@ export default function Navigation() {
     window.addEventListener("scroll", scroll, { passive: true });
     return () => window.removeEventListener("scroll", scroll);
   }, []);
+  useEffect(() => {
+    if (!menu) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMenu(false);
+        menuButtonRef.current?.focus();
+      }
+    };
+    const closeOutside = (event: Event) => {
+      if (!headerRef.current?.contains(event.target as Node)) setMenu(false);
+    };
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) setMenu(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    document.addEventListener("pointerdown", closeOutside);
+    document.addEventListener("focusin", closeOutside);
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => {
+      document.removeEventListener("keydown", closeOnEscape);
+      document.removeEventListener("pointerdown", closeOutside);
+      document.removeEventListener("focusin", closeOutside);
+      desktop.removeEventListener("change", closeOnDesktop);
+    };
+  }, [menu]);
   function toggle() {
     const next = !dark;
     setDark(next);
@@ -26,7 +54,10 @@ export default function Navigation() {
     track("theme_toggle", { theme: next ? "dark" : "light" });
   }
   return (
-    <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
+    <header
+      ref={headerRef}
+      className={`header ${scrolled ? "is-scrolled" : ""}`}
+    >
       <div className="nav-container">
         <a className="brand" href="#home" aria-label={`${profile.name} — home`}>
           <BrandMark className="brand-mark" />
@@ -58,6 +89,7 @@ export default function Navigation() {
             {dark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
+            ref={menuButtonRef}
             className="mobile-toggle icon-button"
             onClick={() => setMenu(!menu)}
             aria-label={menu ? "Close navigation" : "Open navigation"}

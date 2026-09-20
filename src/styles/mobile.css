@@ -1,0 +1,189 @@
+/* Touch-first finishing layer. Desktop compositions stay intact. */
+.hero-authorship > a {
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  .header .icon-button {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    justify-content: center;
+  }
+  .nav-actions {
+    gap: 2px;
+  }
+  .mobile-nav {
+    max-height: calc(100dvh - 75px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding-bottom: max(25px, env(safe-area-inset-bottom));
+  }
+  .mobile-nav a {
+    min-height: 48px;
+  }
+  .hero h1 {
+    font-size: clamp(40px, 12.8vw, 64px);
+  }
+  .hero .hero-art {
+    height: auto;
+    margin-top: 10px;
+    padding-bottom: 88px;
+  }
+  .hero .hero-store-wrap {
+    position: relative;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin-top: 55px;
+    transform: none;
+    width: 100%;
+  }
+  .hero .phone-preview,
+  .hero .responsive-note {
+    display: none;
+  }
+  .hero .hero-art-footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .hero .floating-theme {
+    top: 23px;
+    right: 0;
+    transform: none;
+  }
+  .hero .art-coordinate {
+    right: 0;
+  }
+  .hero .phase-tabs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .hero .phase-tabs > button {
+    min-height: 44px;
+    justify-content: center;
+    gap: 4px;
+    font-size: 9px;
+    padding: 6px 2px;
+    border-bottom: var(--border);
+  }
+  .hero .phase-tabs > button.active {
+    border-color: var(--accent);
+  }
+  .hero .phase-tabs > button > svg {
+    display: none;
+  }
+  .hero .store-campaign-copy > button {
+    min-height: 36px;
+    font-size: 9px;
+  }
+  .hero .store-product-buy button {
+    min-height: 36px;
+    padding: 8px 12px;
+    font-size: 9px;
+  }
+  .hero .store-bag {
+    min-width: 36px;
+    min-height: 36px;
+  }
+  .hero .store-nav nav button {
+    min-height: 32px;
+  }
+  .hero .store-nav {
+    padding-block: 12px;
+  }
+  .hero .store-campaign {
+    height: 235px;
+  }
+  .hero .store-campaign-copy {
+    top: 14%;
+  }
+  .hero .store-campaign-copy p {
+    max-width: 150px;
+    font-size: 9px;
+  }
+  .atelier-preview-toolbar button {
+    width: 44px;
+    height: 44px;
+  }
+  .atelier-layout-control button,
+  .atelier-reset > button {
+    min-height: 44px;
+  }
+  .atelier-preview .store-mobile-menu,
+  .atelier-preview .store-bag {
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .atelier-preview .store-nav-right {
+    gap: 3px;
+  }
+  .atelier-preview .store-campaign-copy > button,
+  .atelier-preview .store-product-buy > button {
+    min-height: 40px;
+  }
+  .atelier-preview .demo-mobile-nav > button {
+    min-height: 40px;
+  }
+  .direction-options small {
+    font-size: 9px;
+  }
+  .direction-options strong {
+    font-size: 13px;
+  }
+  .atelier-bottom .text-link {
+    min-height: 44px;
+  }
+  .atelier-preview-caption {
+    flex-wrap: wrap;
+    row-gap: 9px;
+  }
+}
+@media (max-width: 360px) {
+  .hero-authorship > span > span {
+    max-width: 165px;
+    line-height: 1.5;
+  }
+  .hero-authorship > a > span {
+    display: none;
+  }
+  .hero-authorship {
+    gap: 9px;
+  }
+  .hero .store-campaign h3 {
+    font-size: 27px;
+  }
+  .hero-actions {
+    gap: 9px;
+  }
+  .hero-actions > a {
+    padding-inline: 11px;
+    font-size: 10px;
+  }
+  .atelier-layout-control {
+    flex-wrap: wrap;
+  }
+  .atelier-layout-control > .atelier-control-label {
+    max-width: none;
+  }
+  .atelier-layout-control > div {
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .atelier-preview .store-logo {
+    font-size: 16px;
+  }
+  .atelier-preview .store-nav {
+    padding-inline: 12px;
+  }
+  .direction-options strong {
+    font-size: 11px;
+    overflow-wrap: anywhere;
+  }
+  .direction-options small {
+    font-size: 8px;
+  }
+}
