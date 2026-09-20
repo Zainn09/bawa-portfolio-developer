@@ -1,0 +1,470 @@
+{
+  "prime-baby-gear": {
+    "desktop-home-hero": {
+      "src": "/images/blog/prime-baby-gear/desktop-home-hero.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: desktop homepage hero",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-home-hero-720.webp",
+      "smallWidth": 720,
+      "avifSrc": "/images/blog/prime-baby-gear/desktop-home-hero.avif",
+      "caption": "Desktop homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_desktop_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-collection-listing": {
+      "src": "/images/blog/prime-baby-gear/desktop-collection-listing.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: desktop listing / catalogue",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-collection-listing-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop listing",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_desktop_collection_listing_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-travel-system-detail": {
+      "src": "/images/blog/prime-baby-gear/desktop-travel-system-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: desktop detail page",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-travel-system-detail-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_desktop_travel_system_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "project-highlight-mercedes-signature-travel-system-collection": {
+      "src": "/images/blog/prime-baby-gear/project-highlight-mercedes-signature-travel-system-collection.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: project highlight: mercedes signature travel-system collection",
+      "smallSrc": "/images/blog/prime-baby-gear/project-highlight-mercedes-signature-travel-system-collection-720.webp",
+      "smallWidth": 720,
+      "caption": "Project highlight: Mercedes signature travel-system collection",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_project_highlight_mercedes_signature_travel_system_collection_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-secondary-experience": {
+      "src": "/images/blog/prime-baby-gear/desktop-secondary-experience.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: secondary project-specific experience",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-secondary-experience-720.webp",
+      "smallWidth": 720,
+      "caption": "Secondary project-specific experience",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_desktop_secondary_experience_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-babymore-brand-range": {
+      "src": "/images/blog/prime-baby-gear/desktop-babymore-brand-range.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: babymore brand range",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-babymore-brand-range-720.webp",
+      "smallWidth": 720,
+      "caption": "Babymore brand range",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_desktop_babymore_brand_range_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-baby-jogger-range": {
+      "src": "/images/blog/prime-baby-gear/desktop-baby-jogger-range.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear: baby jogger brand range",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-baby-jogger-range-720.webp",
+      "smallWidth": 720,
+      "caption": "Baby Jogger brand range",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_desktop_baby_jogger_range_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-home-hero": {
+      "src": "/images/blog/prime-baby-gear/mobile-home-hero.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Prime Baby Gear: mobile homepage hero",
+      "caption": "Mobile homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_mobile_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "interaction-mobile-navigation": {
+      "src": "/images/blog/prime-baby-gear/interaction-mobile-navigation.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Prime Baby Gear: mobile navigation state",
+      "caption": "Mobile navigation state",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_interaction_mobile_navigation_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-travel-system-detail": {
+      "src": "/images/blog/prime-baby-gear/mobile-travel-system-detail.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Prime Baby Gear: mobile detail page",
+      "caption": "Mobile detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_mobile_travel_system_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-project-specific-section": {
+      "src": "/images/blog/prime-baby-gear/mobile-project-specific-section.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Prime Baby Gear: mobile project-specific section",
+      "caption": "Mobile project-specific section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/95-prime-baby-gear/images/95_prime_baby_gear_mobile_project_specific_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    }
+  },
+  "ollie-burwell": {
+    "desktop-home-hero": {
+      "src": "/images/blog/ollie-burwell/desktop-home-hero.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: desktop homepage hero",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-home-hero-720.webp",
+      "smallWidth": 720,
+      "avifSrc": "/images/blog/ollie-burwell/desktop-home-hero.avif",
+      "caption": "Desktop homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-signature-section": {
+      "src": "/images/blog/ollie-burwell/desktop-signature-section.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: desktop hand-batik by artisans section",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-signature-section-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop Hand-Batik by Artisans section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_signature_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-collection-listing": {
+      "src": "/images/blog/ollie-burwell/desktop-collection-listing.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: desktop listing / catalogue",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-collection-listing-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop listing",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_collection_listing_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-silk-sarong-detail": {
+      "src": "/images/blog/ollie-burwell/desktop-silk-sarong-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: desktop detail page",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-silk-sarong-detail-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_silk_sarong_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "project-highlight-how-to-wear-styling-guide": {
+      "src": "/images/blog/ollie-burwell/project-highlight-how-to-wear-styling-guide.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: project highlight: how-to-wear styling guide",
+      "smallSrc": "/images/blog/ollie-burwell/project-highlight-how-to-wear-styling-guide-720.webp",
+      "smallWidth": 720,
+      "caption": "Project highlight: how-to-wear styling guide",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_project_highlight_how_to_wear_styling_guide_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-secondary-experience": {
+      "src": "/images/blog/ollie-burwell/desktop-secondary-experience.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: secondary project-specific experience",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-secondary-experience-720.webp",
+      "smallWidth": 720,
+      "caption": "Secondary project-specific experience",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_secondary_experience_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-new-arrivals-edit": {
+      "src": "/images/blog/ollie-burwell/desktop-new-arrivals-edit.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: new arrivals edit",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-new-arrivals-edit-720.webp",
+      "smallWidth": 720,
+      "caption": "New arrivals edit",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_new_arrivals_edit_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-kaftan-range": {
+      "src": "/images/blog/ollie-burwell/desktop-kaftan-range.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell: kaftan resort range",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-kaftan-range-720.webp",
+      "smallWidth": 720,
+      "caption": "Kaftan resort range",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_desktop_kaftan_range_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-home-hero": {
+      "src": "/images/blog/ollie-burwell/mobile-home-hero.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Ollie Burwell: mobile homepage hero",
+      "caption": "Mobile homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_mobile_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "interaction-mobile-navigation": {
+      "src": "/images/blog/ollie-burwell/interaction-mobile-navigation.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Ollie Burwell: mobile navigation state",
+      "caption": "Mobile navigation state",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_interaction_mobile_navigation_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-silk-sarong-detail": {
+      "src": "/images/blog/ollie-burwell/mobile-silk-sarong-detail.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Ollie Burwell: mobile detail page",
+      "caption": "Mobile detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_mobile_silk_sarong_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-project-specific-section": {
+      "src": "/images/blog/ollie-burwell/mobile-project-specific-section.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Ollie Burwell: mobile project-specific section",
+      "caption": "Mobile project-specific section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/96-ollie-burwell/images/96_ollie_burwell_mobile_project_specific_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    }
+  },
+  "nokoluxe": {
+    "desktop-home-hero": {
+      "src": "/images/blog/nokoluxe/desktop-home-hero.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: desktop homepage hero",
+      "smallSrc": "/images/blog/nokoluxe/desktop-home-hero-720.webp",
+      "smallWidth": 720,
+      "avifSrc": "/images/blog/nokoluxe/desktop-home-hero.avif",
+      "caption": "Desktop homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_desktop_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-signature-section": {
+      "src": "/images/blog/nokoluxe/desktop-signature-section.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: desktop everything for life outdoors section",
+      "smallSrc": "/images/blog/nokoluxe/desktop-signature-section-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop Everything For Life Outdoors section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_desktop_signature_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-collection-listing": {
+      "src": "/images/blog/nokoluxe/desktop-collection-listing.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: desktop listing / catalogue",
+      "smallSrc": "/images/blog/nokoluxe/desktop-collection-listing-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop listing",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_desktop_collection_listing_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-adirondack-chair-detail": {
+      "src": "/images/blog/nokoluxe/desktop-adirondack-chair-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: desktop detail page",
+      "smallSrc": "/images/blog/nokoluxe/desktop-adirondack-chair-detail-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_desktop_adirondack_chair_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "project-highlight-fire-pit-table-collection": {
+      "src": "/images/blog/nokoluxe/project-highlight-fire-pit-table-collection.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: project highlight: fire pit table collection",
+      "smallSrc": "/images/blog/nokoluxe/project-highlight-fire-pit-table-collection-720.webp",
+      "smallWidth": 720,
+      "caption": "Project highlight: fire pit table collection",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_project_highlight_fire_pit_table_collection_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-spa-wellness-collection": {
+      "src": "/images/blog/nokoluxe/desktop-spa-wellness-collection.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: spa and wellness collection",
+      "smallSrc": "/images/blog/nokoluxe/desktop-spa-wellness-collection-720.webp",
+      "smallWidth": 720,
+      "caption": "Spa and wellness collection",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_desktop_spa_wellness_collection_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-luxcraft-range": {
+      "src": "/images/blog/nokoluxe/desktop-luxcraft-range.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living: luxcraft furniture range",
+      "smallSrc": "/images/blog/nokoluxe/desktop-luxcraft-range-720.webp",
+      "smallWidth": 720,
+      "caption": "LuxCraft furniture range",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_desktop_luxcraft_range_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-home-hero": {
+      "src": "/images/blog/nokoluxe/mobile-home-hero.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Nokoluxe Living: mobile homepage hero",
+      "caption": "Mobile homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_mobile_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-adirondack-chair-detail": {
+      "src": "/images/blog/nokoluxe/mobile-adirondack-chair-detail.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Nokoluxe Living: mobile detail page",
+      "caption": "Mobile detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_mobile_adirondack_chair_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-project-specific-section": {
+      "src": "/images/blog/nokoluxe/mobile-project-specific-section.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Nokoluxe Living: mobile project-specific section",
+      "caption": "Mobile project-specific section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/97-nokoluxe/images/97_nokoluxe_mobile_project_specific_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    }
+  },
+  "paw-by-four": {
+    "desktop-home-hero": {
+      "src": "/images/blog/paw-by-four/desktop-home-hero.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: desktop homepage hero",
+      "smallSrc": "/images/blog/paw-by-four/desktop-home-hero-720.webp",
+      "smallWidth": 720,
+      "avifSrc": "/images/blog/paw-by-four/desktop-home-hero.avif",
+      "caption": "Desktop homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-signature-section": {
+      "src": "/images/blog/paw-by-four/desktop-signature-section.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: desktop from anxiety to action to calm section",
+      "smallSrc": "/images/blog/paw-by-four/desktop-signature-section-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop From Anxiety to Action to Calm section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_signature_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-collection-listing": {
+      "src": "/images/blog/paw-by-four/desktop-collection-listing.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: desktop listing / catalogue",
+      "smallSrc": "/images/blog/paw-by-four/desktop-collection-listing-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop listing",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_collection_listing_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-lick-mat-detail": {
+      "src": "/images/blog/paw-by-four/desktop-lick-mat-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: desktop detail page",
+      "smallSrc": "/images/blog/paw-by-four/desktop-lick-mat-detail-720.webp",
+      "smallWidth": 720,
+      "caption": "Desktop detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_lick_mat_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "project-highlight-dog-anxiety-education-hub": {
+      "src": "/images/blog/paw-by-four/project-highlight-dog-anxiety-education-hub.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: project highlight: dog anxiety education hub",
+      "smallSrc": "/images/blog/paw-by-four/project-highlight-dog-anxiety-education-hub-720.webp",
+      "smallWidth": 720,
+      "caption": "Project highlight: dog anxiety education hub",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_project_highlight_dog_anxiety_education_hub_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-secondary-experience": {
+      "src": "/images/blog/paw-by-four/desktop-secondary-experience.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: secondary project-specific experience",
+      "smallSrc": "/images/blog/paw-by-four/desktop-secondary-experience-720.webp",
+      "smallWidth": 720,
+      "caption": "Secondary project-specific experience",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_secondary_experience_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-resource-library": {
+      "src": "/images/blog/paw-by-four/desktop-resource-library.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: learning resource library",
+      "smallSrc": "/images/blog/paw-by-four/desktop-resource-library-720.webp",
+      "smallWidth": 720,
+      "caption": "Learning resource library",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_resource_library_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "desktop-brand-story": {
+      "src": "/images/blog/paw-by-four/desktop-brand-story.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Paw by Four: brand story and guiding principles",
+      "smallSrc": "/images/blog/paw-by-four/desktop-brand-story-720.webp",
+      "smallWidth": 720,
+      "caption": "Brand story and guiding principles",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_desktop_brand_story_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-home-hero": {
+      "src": "/images/blog/paw-by-four/mobile-home-hero.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Paw by Four: mobile homepage hero",
+      "caption": "Mobile homepage hero",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_mobile_home_hero_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-lick-mat-detail": {
+      "src": "/images/blog/paw-by-four/mobile-lick-mat-detail.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Paw by Four: mobile detail page",
+      "caption": "Mobile detail page",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_mobile_lick_mat_detail_001.jpg",
+      "capturedAt": "2026-09-20"
+    },
+    "mobile-project-specific-section": {
+      "src": "/images/blog/paw-by-four/mobile-project-specific-section.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Paw by Four: mobile project-specific section",
+      "caption": "Mobile project-specific section",
+      "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_mobile_project_specific_section_001.jpg",
+      "capturedAt": "2026-09-20"
+    }
+  }
+}
