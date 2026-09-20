@@ -159,7 +159,7 @@ export default function Contact() {
             </div>
             <div className="form-row">
               <label htmlFor="contact-company">
-                Company <span className="optional">optional</span>
+                Company
                 <input
                   {...fieldProps("company")}
                   placeholder="Your brand or business"
@@ -169,7 +169,7 @@ export default function Contact() {
                 {error("company")}
               </label>
               <label htmlFor="contact-storeUrl">
-                Store URL <span className="optional">optional</span>
+                Store URL
                 <input
                   {...fieldProps("storeUrl")}
                   type="url"
@@ -211,7 +211,7 @@ export default function Contact() {
               </label>
             </div>
             <label htmlFor="contact-budget">
-              Budget range <span className="optional">optional · USD</span>
+              Budget range (USD)
               <select {...fieldProps("budget")} defaultValue="">
                 <option value="">Let’s discuss it</option>
                 <option>Under $2,500</option>

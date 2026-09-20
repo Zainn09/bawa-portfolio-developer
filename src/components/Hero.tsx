@@ -77,7 +77,6 @@ export default function Hero() {
           </div>
         </div>
         <div className="hero-art">
-          <div className="art-coordinate">FIG. 01 — COMMERCE, CRAFTED.</div>
           <div className="hero-store-wrap">
             <Storefront
               highlight={

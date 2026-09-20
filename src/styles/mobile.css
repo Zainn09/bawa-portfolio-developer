@@ -216,3 +216,23 @@
   height: auto;
   min-height: 300px;
 }
+/* Keep the hero's artwork and stage selector in normal flow, including after font loading. */
+@media (max-width: 767px) {
+  .hero .hero-art {
+    padding-bottom: 4px;
+  }
+  .hero .hero-art-footer {
+    position: relative;
+    inset: auto;
+    margin-top: 26px;
+  }
+  .hero .hero-store-wrap {
+    margin-top: 42px;
+  }
+  .hero .floating-theme {
+    top: 10px;
+  }
+  .hero .hero-store-wrap:hover {
+    transform: none;
+  }
+}

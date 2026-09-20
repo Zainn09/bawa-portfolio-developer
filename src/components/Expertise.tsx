@@ -303,10 +303,6 @@ export function Optimization() {
           highlight={layers[active].label}
           device={active === 4 ? "Mobile" : "Desktop"}
         />
-        <div className="image-caption">
-          <span>ONE STOREFRONT. EVERY LAYER CONSIDERED.</span>
-          <Search size={14} />
-        </div>
       </div>
     </section>
   );
