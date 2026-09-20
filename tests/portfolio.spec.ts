@@ -72,18 +72,20 @@ test("demo shop supports browsing, a working cart, quantity changes, and keyboar
     store.getByRole("button", { name: "Open demo cart, 0 items" }),
   ).toBeVisible();
 });
-test("project details are clearly labeled concepts and modal focus returns", async ({
+test("latest project details link to the supplied website and modal focus returns", async ({
   page,
 }) => {
   await page.goto("/");
   const project = page.getByRole("button", {
-    name: "Explore Form & Field concept",
+    name: "Explore Prime Baby Gear project",
   });
   await project.click();
   const dialog = page.getByRole("dialog", {
-    name: "Form & Field concept details",
+    name: "Prime Baby Gear project details",
   });
-  await expect(dialog).toContainText("NOT CLIENT WORK");
+  await expect(
+    dialog.getByRole("link", { name: "Visit website" }),
+  ).toHaveAttribute("href", "https://www.primebabygear.com");
   await page.keyboard.press("Escape");
   await expect(project).toBeFocused();
 });
