@@ -167,3 +167,9 @@ Images are used only to present the projects supplied by the portfolio owner, no
 Retain client permission for portfolio usage and replace these with approved project screenshots if preferred. Vintage Art Garage’s current public homepage is a temporary closure/password page; no attempt was made to bypass it.
 
 **Latest validation:** 54/54 Playwright tests passed on the production build, including twelve responsive widths from 320–2560px, all new project/rotation checks, the pinned process, and light/dark accessibility audits. TypeScript, production build, and dependency audit passed (zero vulnerabilities). These are local automated checks, not claims about live contact delivery, Vercel field metrics, or every physical device.
+
+## Commerce Journal / Blogs
+
+The blog-only expansion adds `/blogs`, 35 statically rendered `/blogs/[slug]` articles (seven per supplied store), and a homepage journal preview. It includes store/topic filtering, search, reading times, sources, related notes, genuine supplied screenshots, and responsive mobile-image pairs. Vintage Art Garage has clearly labeled placeholders and planning notes because its supplied archive has no accepted storefront captures. Existing portfolio sections and interactions are unchanged apart from the necessary Blogs navigation entry points.
+
+Edit the articles in `src/data/blog/*.json`. See [the editing guide](docs/BLOG-EDITING.md) for content fields, image replacement, publication status, SEO, and validation, and [asset provenance](docs/BLOG-ASSETS.md) for the supplied GitHub archive details.
