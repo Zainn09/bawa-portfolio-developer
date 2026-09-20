@@ -16,6 +16,7 @@ import { SectionLabel } from "./shared";
 
 export default function CommerceAtelier() {
   const [direction, setDirection] = useState(0);
+  const [resetVersion, setResetVersion] = useState(0);
   const [device, setDevice] = useState("Desktop");
   const [layout, setLayout] = useState("Editorial");
   const concept = storeConcepts[direction];
@@ -118,6 +119,7 @@ export default function CommerceAtelier() {
               <button
                 onClick={() => {
                   setDirection(0);
+                  setResetVersion((version) => version + 1);
                   setDevice("Desktop");
                   setLayout("Editorial");
                 }}
@@ -154,7 +156,7 @@ export default function CommerceAtelier() {
             <div className="atelier-preview-stage">
               <div className="atelier-store-shell">
                 <Storefront
-                  key={concept.id}
+                  key={`${concept.id}-${resetVersion}`}
                   compact
                   concept={concept}
                   device={device}

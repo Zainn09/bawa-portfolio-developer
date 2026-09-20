@@ -187,3 +187,32 @@
     font-size: 8px;
   }
 }
+
+/* Narrow phones retain the complete commerce strip without clipping content. */
+@media (max-width: 360px) {
+  .craft-strip > .container {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .craft-strip > .container > div {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 8px;
+    row-gap: 3px;
+  }
+}
+@media (max-width: 767px) {
+  .hero .store-campaign-copy {
+    max-width: 80%;
+  }
+  .hero .phase-arrow {
+    display: none;
+  }
+  .composition-product .store-campaign {
+    height: auto;
+    min-height: 310px;
+  }
+}
+.composition-product .mobile-store .store-campaign {
+  height: auto;
+  min-height: 300px;
+}
