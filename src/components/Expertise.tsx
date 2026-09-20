@@ -8,11 +8,12 @@ import {
   Code2,
   Layers3,
   Database,
-  Search,
   ChartNoAxesCombined,
 } from "lucide-react";
 import { capabilities } from "@/data/portfolio";
 import { SectionLabel } from "./shared";
+import { useAutoCycle } from "@/hooks/useAutoCycle";
+import CycleControl from "./CycleControl";
 import Storefront from "./Storefront";
 export function Expertise() {
   const [active, setActive] = useState(0);
@@ -105,8 +106,10 @@ const themeParts = [
   },
 ];
 export function CustomTheme() {
-  const [part, setPart] = useState(0);
-  const [layer, setLayer] = useState(0);
+  const themeCycle = useAutoCycle(themeParts.length, true);
+  const architectureCycle = useAutoCycle(5);
+  const { active: part, setActive: setPart } = themeCycle;
+  const { active: layer, setActive: setLayer } = architectureCycle;
   const layers = [
     {
       name: "Storefront",
@@ -152,14 +155,21 @@ export function CustomTheme() {
             The storefront should be built around it.
           </p>
         </div>
-        <div className="theme-workbench">
+        <div
+          className="theme-workbench"
+          ref={themeCycle.ref}
+          {...themeCycle.interaction}
+        >
           <div className="theme-editor">
             <div className="editor-top">
               <Code2 size={16} />
               <span>THE BUILDING BLOCKS</span>
               <span className="editor-status">CUSTOM BY DESIGN</span>
+              <div className="theme-cycle-control">
+                <CycleControl label="theme tab" {...themeCycle} />
+              </div>
             </div>
-            <div className="editor-tabs">
+            <div className="editor-tabs" data-cycle-tabs>
               {themeParts.map((p, i) => (
                 <button
                   key={p.name}
@@ -199,7 +209,11 @@ export function CustomTheme() {
             <Storefront compact highlight={themeParts[part].label} />
           </div>
         </div>
-        <div className="under-surface">
+        <div
+          className="under-surface"
+          ref={architectureCycle.ref}
+          {...architectureCycle.interaction}
+        >
           <div>
             <SectionLabel>THE STORE UNDER THE SURFACE</SectionLabel>
             <h3>
@@ -209,7 +223,7 @@ export function CustomTheme() {
             </h3>
           </div>
           <div className="architecture">
-            <div className="architecture-tabs">
+            <div className="architecture-tabs" data-cycle-tabs>
               {layers.map((l, i) => (
                 <button
                   key={l.name}
@@ -225,7 +239,12 @@ export function CustomTheme() {
                 </button>
               ))}
             </div>
-            <p aria-live="polite">{layers[layer].text}</p>
+            <div className="architecture-description">
+              <p aria-live={architectureCycle.running ? "off" : "polite"}>
+                {layers[layer].text}
+              </p>
+              <CycleControl label="architecture icon" {...architectureCycle} />
+            </div>
           </div>
         </div>
       </div>

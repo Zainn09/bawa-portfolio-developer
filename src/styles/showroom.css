@@ -407,3 +407,100 @@
     gap: 12px;
   }
 }
+/* Quiet rotation controls belong to the visualization, not a separate status block. */
+.orbit-scene .orbit-rotation {
+  position: absolute;
+  right: 12px;
+  bottom: 48px;
+  z-index: 5;
+  gap: 0;
+  width: 44px;
+  height: 44px;
+}
+.orbit-rotation .rotation-progress {
+  position: absolute;
+  inset: 6px;
+  width: 32px;
+  height: 32px;
+  pointer-events: none;
+}
+.orbit-rotation .icon-button {
+  border: 0;
+  width: 44px;
+  height: 44px;
+}
+.cycle-control {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: inline-grid;
+  place-items: center;
+  color: var(--accent);
+  padding: 0;
+  border-radius: 50%;
+}
+.cycle-ring {
+  position: absolute;
+  inset: 7px;
+  border: 1px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.cycle-control.is-running .cycle-ring {
+  animation: rotation-turn 2s linear infinite;
+}
+.cycle-control:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.theme-cycle-control {
+  display: none;
+}
+.architecture-description {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 75px;
+}
+.architecture-description > p {
+  flex: 1;
+  font-family: var(--font-description);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+@media (max-width: 767px) {
+  .theme-cycle-control {
+    display: block;
+    margin-left: auto;
+  }
+  .theme-editor .editor-top {
+    min-height: 58px;
+    padding-block: 4px;
+    gap: 9px;
+  }
+  .theme-editor .editor-status {
+    display: none;
+  }
+  .architecture-description {
+    min-height: 106px;
+    gap: 8px;
+  }
+  .architecture-description > p {
+    font-size: 13px;
+  }
+  .orbit-scene .orbit-rotation {
+    right: 3px;
+    bottom: 34px;
+  }
+  .architecture-tabs {
+    scrollbar-width: thin;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cycle-control.is-running .cycle-ring {
+    animation: none;
+  }
+}

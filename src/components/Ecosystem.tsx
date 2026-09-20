@@ -158,16 +158,20 @@ export default function Ecosystem() {
         ? "PAUSED ON HOVER"
         : focused
           ? "PAUSED WHILE EXPLORING"
-          : "AUTO EXPLORE · EVERY 2 SECONDS";
+          : "AUTOMATIC ROTATION";
 
   return (
     <section
       className="ecosystem-section"
       id="shopify"
       ref={sectionRef}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
+      onPointerEnter={(event) => {
+        if (event.pointerType === "mouse") setHovered(true);
+      }}
+      onPointerLeave={() => setHovered(false)}
+      onFocusCapture={(event) => {
+        if (event.target.matches(":focus-visible")) setFocused(true);
+      }}
       onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget as Node | null))
           setFocused(false);
@@ -205,27 +209,6 @@ export default function Ecosystem() {
               onClick={() => changeView("ecosystem")}
             >
               02 / Shopify ecosystem
-            </button>
-          </div>
-          <div className="rotation-controls">
-            <span
-              className={`rotation-progress ${running ? "running" : ""}`}
-              key={`${view}-${selected}-${running}`}
-              aria-hidden="true"
-            />
-            <span>{stateText}</span>
-            <button
-              className="icon-button"
-              disabled={reducedMotion}
-              aria-label={
-                paused
-                  ? "Resume automatic platform rotation"
-                  : "Pause automatic platform rotation"
-              }
-              aria-pressed={paused}
-              onClick={() => setPaused((p) => !p)}
-            >
-              {paused ? <Play size={13} /> : <Pause size={13} />}
             </button>
           </div>
         </div>
@@ -362,6 +345,28 @@ export default function Ecosystem() {
                 <Plus size={11} />
               </button>
             ))}
+            <div className="rotation-controls orbit-rotation">
+              <span
+                className={`rotation-progress ${running ? "running" : ""}`}
+                key={`${view}-${selected}-${running}`}
+                aria-hidden="true"
+              />
+              <span className="sr-only">{stateText}</span>
+              <button
+                className="icon-button"
+                title={paused ? "Resume rotation" : "Pause rotation"}
+                disabled={reducedMotion}
+                aria-label={
+                  paused
+                    ? "Resume automatic platform rotation"
+                    : "Pause automatic platform rotation"
+                }
+                aria-pressed={paused}
+                onClick={() => setPaused((p) => !p)}
+              >
+                {paused ? <Play size={13} /> : <Pause size={13} />}
+              </button>
+            </div>
             <div className="orbit-caption">
               <span className="status-dot" /> EVERY CONNECTION. ONE COMMERCE
               EXPERIENCE.
