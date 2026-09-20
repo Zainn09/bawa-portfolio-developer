@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-const widths = [375, 390, 414, 768, 820, 1024, 1280, 1440, 1920, 2560];
+const widths = [
+  320, 360, 375, 390, 414, 768, 820, 1024, 1280, 1440, 1920, 2560,
+];
 for (const width of widths) {
   test(`responsive layout, images, and navigation at ${width}px`, async ({
     page,
