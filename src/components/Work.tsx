@@ -13,7 +13,7 @@ export default function Work() {
       <div className="section-heading">
         <div>
           <SectionLabel>
-            {allConcepts ? "SELECTED EXPLORATIONS / 01" : "SELECTED WORK / 01"}
+            {allConcepts ? "SELECTED EXPLORATIONS / 01" : "LATEST PROJECTS"}
           </SectionLabel>
           <h2>
             Good stores.
@@ -43,7 +43,10 @@ export default function Work() {
         }
       >
         {featuredProjects.map((project, i) => (
-          <article className={`project project-${i}`} key={project.slug}>
+          <article
+            className={`project project-${i} ${project.concept ? "" : "client-project"} project-${project.slug}`}
+            key={project.slug}
+          >
             <button
               className="project-visual"
               onClick={() => {
@@ -54,14 +57,18 @@ export default function Work() {
             >
               <div className="project-topline">
                 <span>
-                  {String(i + 1).padStart(2, "0")} /{" "}
-                  {project.concept ? "CONCEPT STOREFRONT" : "SELECTED PROJECT"}
+                  {project.concept
+                    ? "CONCEPT STOREFRONT"
+                    : project.industry.toUpperCase()}
                 </span>
                 <ArrowUpRight size={19} />
               </div>
               <SafeImage
                 src={project.thumbnail}
-                alt={`${project.title}: ${project.industry.toLowerCase()} ${project.concept ? "concept" : "storefront"}`}
+                alt={
+                  project.imageAlt ||
+                  `${project.title}: ${project.industry.toLowerCase()} concept`
+                }
               />
               {project.presentation && (
                 <div className="project-brand">
@@ -85,11 +92,30 @@ export default function Work() {
             <div className="project-meta">
               <div>
                 <h3>{project.title}</h3>
-                <p>{project.services.join(" / ")}</p>
+                <p>
+                  {project.services.length
+                    ? project.services.join(" / ")
+                    : project.industry}
+                </p>
               </div>
-              <span>
-                {project.platform.toUpperCase()} <ArrowUpRight size={13} />
-              </span>
+              {project.externalUrl ? (
+                <a
+                  className="project-site-link"
+                  href={project.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${project.title} website (opens in a new tab)`}
+                  onClick={() =>
+                    track("external_store", { project: project.slug })
+                  }
+                >
+                  Visit website <ArrowUpRight size={13} />
+                </a>
+              ) : (
+                <span>
+                  {project.platform.toUpperCase()} <ArrowUpRight size={13} />
+                </span>
+              )}
             </div>
           </article>
         ))}
@@ -101,7 +127,7 @@ export default function Work() {
         <span>
           {allConcepts
             ? "These self-initiated concepts explore what a considered storefront can be."
-            : "Explore the thinking, details, and development behind each storefront."}
+            : "A selection of my latest projects. Explore each brand and visit its website."}
         </span>
         <a href="#contact">
           Let’s create something that’s yours <ArrowUpRight size={16} />
@@ -115,7 +141,7 @@ export default function Work() {
           <div className="project-dialog">
             <SafeImage
               src={selected.heroImage}
-              alt={`${selected.title} ${selected.concept ? "concept visual" : "storefront"}`}
+              alt={selected.imageAlt || `${selected.title} concept visual`}
             />
             <div className="project-dialog-copy">
               <SectionLabel>
@@ -125,26 +151,37 @@ export default function Work() {
               </SectionLabel>
               <h2>{selected.title}</h2>
               <p>{selected.description}</p>
-              <div className="project-detail-grid">
-                <div>
+              {selected.siteNote && (
+                <p className="project-site-note">{selected.siteNote}</p>
+              )}
+              {(selected.challenge || selected.solution) && (
+                <div className="project-detail-grid">
+                  <div>
+                    <h3>
+                      {selected.concept ? "The exploration" : "The challenge"}
+                    </h3>
+                    <p>{selected.challenge}</p>
+                  </div>
+                  <div>
+                    <h3>The approach</h3>
+                    <p>{selected.solution}</p>
+                  </div>
+                </div>
+              )}
+              {selected.features.length > 0 && (
+                <>
                   <h3>
-                    {selected.concept ? "The exploration" : "The challenge"}
+                    {selected.concept
+                      ? "Inside the concept"
+                      : "Inside the store"}
                   </h3>
-                  <p>{selected.challenge}</p>
-                </div>
-                <div>
-                  <h3>The approach</h3>
-                  <p>{selected.solution}</p>
-                </div>
-              </div>
-              <h3>
-                {selected.concept ? "Inside the concept" : "Inside the store"}
-              </h3>
-              <ul>
-                {selected.features.map((feature) => (
-                  <li key={feature}>{feature}</li>
-                ))}
-              </ul>
+                  <ul>
+                    {selected.features.map((feature) => (
+                      <li key={feature}>{feature}</li>
+                    ))}
+                  </ul>
+                </>
+              )}
               {selected.concept && (
                 <p className="small-note">
                   Illustrative work only. No client relationship or measured
@@ -173,6 +210,7 @@ export default function Work() {
               </a>
               {selected.externalUrl && (
                 <a
+                  className="project-external-link"
                   href={selected.externalUrl}
                   onClick={() =>
                     track("external_store", { project: selected.slug })
@@ -180,7 +218,7 @@ export default function Work() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit store ↗
+                  Visit website ↗
                 </a>
               )}
             </div>

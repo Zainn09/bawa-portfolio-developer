@@ -322,3 +322,88 @@
     transform: rotate(-2deg);
   }
 }
+/* Actual latest work uses each brand's own imagery, not fictional storefront mockups. */
+.client-project .project-visual {
+  background: #eeeae2;
+  border: var(--border);
+}
+.client-project .project-visual > img {
+  padding: 0;
+  background: transparent;
+  object-position: center;
+}
+.client-project .project-topline {
+  color: #252720;
+}
+.client-project .project-topline > span {
+  background: #fffdf5;
+  padding: 7px 10px;
+  border-radius: 2px;
+}
+.client-project .project-topline > svg {
+  background: #fffdf5;
+  padding: 5px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.project-prime-baby-gear .project-visual > img {
+  object-fit: contain;
+  background: #fff;
+  padding: 65px 14px 50px;
+}
+.project-ollie-burwell .project-visual > img {
+  object-position: 50% 43%;
+}
+.project-paw-by-four .project-visual > img {
+  object-position: 76%;
+}
+.project-site-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  font-size: 10px;
+  min-height: 44px;
+}
+.project-site-link:hover,
+.project-external-link:hover {
+  color: var(--accent);
+}
+.project-external-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 12px 0 0 18px;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.project-site-note {
+  padding: 12px 15px;
+  background: var(--surface);
+  border-left: 2px solid var(--accent);
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .project-site-link {
+    font-size: 10px;
+  }
+  .client-project .project-topline {
+    left: 16px;
+    right: 16px;
+  }
+  .client-project .project-topline > span {
+    font-size: 6px;
+  }
+  .project-prime-baby-gear .project-visual {
+    height: clamp(310px, 95vw, 460px);
+  }
+  .project-external-link {
+    margin-left: 0;
+    display: flex;
+  }
+  .project-meta {
+    gap: 12px;
+  }
+}

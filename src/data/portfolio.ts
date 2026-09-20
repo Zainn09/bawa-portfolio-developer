@@ -13,6 +13,8 @@ export const images = {
   heroSmall: "/images/hero-store-small.webp",
 };
 export interface Project {
+  imageAlt?: string;
+  siteNote?: string;
   presentation?: { titleLines: string[]; tagline: string };
   title: string;
   slug: string;
@@ -52,7 +54,7 @@ const base = {
   croWork: ["Clear product discovery", "Accessible shopping interactions"],
   developmentWork: ["Custom sections", "Responsive templates"],
 };
-export const projects: Project[] = [
+export const conceptProjects: Project[] = [
   {
     ...base,
     title: "Form & Field",
@@ -131,6 +133,81 @@ export const projects: Project[] = [
     ],
   },
 ];
+/** Latest projects supplied by Ahmad. Descriptions describe the brands, not unprovided scope/results. */
+const latestProjects = [
+  {
+    title: "Prime Baby Gear",
+    slug: "prime-baby-gear",
+    industry: "Baby gear & family",
+    domain: "primebabygear.com",
+    description:
+      "A baby gear storefront bringing together pushchairs, travel systems, car seats, and essentials for growing families.",
+    imageAlt:
+      "Prime Baby Gear travel system with pushchair, carrycot and coordinating accessories",
+  },
+  {
+    title: "Ollie Burwell",
+    slug: "ollie-burwell",
+    industry: "Fashion & resort wear",
+    domain: "ollieburwell.com",
+    description:
+      "Luxury sarongs, scarves, and resort wear, with collection-led shopping and guides to styling each piece.",
+    imageAlt:
+      "Ollie Burwell resort wear styled with a pale pink sarong beside tropical palms",
+  },
+  {
+    title: "Nokoluxe",
+    slug: "nokoluxe",
+    industry: "Outdoor living",
+    domain: "nokoluxe.com",
+    description:
+      "An outdoor living store spanning furniture, poolside pieces, fire tables, outdoor cooking, and spa collections.",
+    imageAlt: "Outdoor lounge furniture from Nokoluxe beside a swimming pool",
+  },
+  {
+    title: "Vintage Art Garage",
+    slug: "vintage-art-garage",
+    industry: "Vintage automotive art",
+    domain: "vintageartgarage.com",
+    description:
+      "A specialist store for vintage automotive advertising and framed prints, built around the character of classic car culture.",
+    imageAlt:
+      "Vintage Art Garage classic automotive print with black and white display frames",
+    siteNote:
+      "The public store is temporarily closed. Its website currently displays a reopening notice.",
+  },
+  {
+    title: "Paw by Four",
+    slug: "paw-by-four",
+    industry: "Pet care & education",
+    domain: "pawbyfour.com",
+    description:
+      "A canine care store combining educational resources, digital guides, and enrichment products for owners of anxious dogs.",
+    imageAlt: "Woman kissing a dachshund in Paw by Four’s homepage photography",
+  },
+];
+export const projects: Project[] = latestProjects.map((project) => ({
+  ...project,
+  platform: "Shopify",
+  platformVersion: "",
+  projectType: "Latest project",
+  thumbnail: `/images/projects/latest/${project.slug}.webp`,
+  heroImage: `/images/projects/latest/${project.slug}.webp`,
+  gallery: [],
+  services: [],
+  technologies: [],
+  challenge: "",
+  solution: "",
+  features: [],
+  seoWork: [],
+  croWork: [],
+  developmentWork: [],
+  outcome: "",
+  externalUrl: `https://www.${project.domain}`,
+  featured: true,
+  concept: false,
+}));
+
 export const capabilities = [
   {
     title: "Store development",
@@ -357,3 +434,8 @@ export const imageVariants: Record<string, string> = {
   "/images/projects/project-02-placeholder.webp":
     "/images/projects/project-02-small.webp",
 };
+
+for (const project of projects) {
+  imageVariants[project.thumbnail] =
+    `/images/projects/latest/${project.slug}-small.webp`;
+}

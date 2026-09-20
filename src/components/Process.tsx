@@ -11,7 +11,7 @@ import {
   Database,
   ArrowDown,
 } from "lucide-react";
-import { process, projects, images } from "@/data/portfolio";
+import { process, conceptProjects, images } from "@/data/portfolio";
 import { SectionLabel } from "./shared";
 import Storefront from "./Storefront";
 export function Process() {
@@ -210,7 +210,7 @@ export function Process() {
 }
 export function Transformation() {
   const [position, setPosition] = useState(48);
-  const project = projects[0];
+  const project = conceptProjects[0];
   if (!project?.beforeImage || !project.afterImage) return null;
   return (
     <section className="transformation-section section-pad container">
