@@ -7,6 +7,7 @@ import "@/styles/sections.css";
 import "@/styles/responsive.css";
 import "@/styles/refinements.css";
 import "@/styles/typography.css";
+import "@/styles/atelier.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata: Metadata = {
   ...(siteUrl

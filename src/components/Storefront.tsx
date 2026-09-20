@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -11,6 +11,7 @@ import {
   LockKeyhole,
   Menu,
 } from "lucide-react";
+import type { StoreConcept } from "@/data/atelier";
 import { images } from "@/data/portfolio";
 import { Modal } from "./shared";
 export default function Storefront({
@@ -18,19 +19,37 @@ export default function Storefront({
   stage = 3,
   highlight = "",
   device = "Desktop",
+  concept,
 }: {
   compact?: boolean;
   stage?: number;
   highlight?: string;
   device?: string;
+  concept?: StoreConcept;
 }) {
   const [quantity, setQuantity] = useState(0);
   const [cart, setCart] = useState(false);
-  const [page, setPage] = useState("Living");
+  const [page, setPage] = useState(concept ? "Collection" : "Living");
   const [mobileNav, setMobileNav] = useState(false);
+  const categories = concept
+    ? ["Collection", "Details", "Our story"]
+    : ["Living", "Objects", "Our story"];
+  const visual = concept?.image || images.hero;
+  const thumbnail = concept?.smallImage || images.heroSmall;
+  const productName = concept?.product || "The Sunday lounge chair";
+  const material = concept?.material || "Natural oak / Ivory bouclé";
+  const price = concept?.price ?? 420;
+  const money = (amount: number) => `£${amount.toFixed(2)}`;
+  const headline =
+    concept &&
+    (page === "Details"
+      ? concept.detailHeadline
+      : page === "Our story"
+        ? concept.storyHeadline
+        : concept.headline);
   return (
     <div
-      className={`store-browser ${compact ? "compact" : ""} ${device === "Mobile" ? "mobile-store" : ""} stage-${stage}`}
+      className={`store-browser ${compact ? "compact" : ""} ${device === "Mobile" ? "mobile-store" : ""} stage-${stage} ${concept ? `concept-${concept.id}` : ""}`}
     >
       <div className="browser-chrome">
         <div className="browser-dots">
@@ -39,20 +58,26 @@ export default function Storefront({
           <i />
         </div>
         <span>
-          <LockKeyhole size={8} /> formandfield.demo
+          <LockKeyhole size={8} /> {concept?.domain || "formandfield.demo"}
         </span>
         <ArrowUpRight size={10} />
       </div>
       <div className="store-screen">
         <div className="store-announcement">
-          Considered objects. Everyday living.
+          {concept?.announcement || "Considered objects. Everyday living."}
         </div>
         <div className="store-nav" inert={stage < 2}>
           <span className="store-logo">
-            form<span>&</span>field<span className="logo-period">.</span>
+            {concept ? (
+              concept.name
+            ) : (
+              <>
+                form<span>&</span>field<span className="logo-period">.</span>
+              </>
+            )}
           </span>
           <nav aria-label="Demo storefront collections">
-            {["Living", "Objects", "Our story"].map((p) => (
+            {categories.map((p) => (
               <button
                 key={p}
                 className={page === p ? "active" : ""}
@@ -83,7 +108,7 @@ export default function Storefront({
         </div>
         {mobileNav && (
           <div className="demo-mobile-nav">
-            {["Living", "Objects", "Our story"].map((p) => (
+            {categories.map((p) => (
               <button
                 key={p}
                 onClick={() => {
@@ -101,10 +126,13 @@ export default function Storefront({
           inert={stage < 2}
         >
           <img
-            src={images.hero}
-            srcSet={`${images.heroSmall} 720w, ${images.hero} 1400w`}
+            src={visual}
+            srcSet={`${thumbnail} 720w, ${visual} 1400w`}
             sizes="(max-width: 600px) 90vw, 650px"
-            alt="Oak and ivory lounge chair in a sunlit, warm plaster interior"
+            alt={
+              concept?.imageAlt ||
+              "Oak and ivory lounge chair in a sunlit, warm plaster interior"
+            }
             width="1400"
             height="933"
             fetchPriority={compact ? "auto" : "high"}
@@ -112,14 +140,23 @@ export default function Storefront({
           />
           <div className="store-campaign-copy">
             <span className="store-eyebrow">
-              {page === "Objects"
-                ? "THOUGHTFULLY MADE"
-                : page === "Our story"
-                  ? "LESS, BUT BETTER"
-                  : "THE ART OF SLOW LIVING"}
+              {concept
+                ? concept.eyebrow
+                : page === "Objects"
+                  ? "THOUGHTFULLY MADE"
+                  : page === "Our story"
+                    ? "LESS, BUT BETTER"
+                    : "THE ART OF SLOW LIVING"}
             </span>
             <h3>
-              {page === "Objects" ? (
+              {headline ? (
+                headline.map((line, index) => (
+                  <Fragment key={line}>
+                    {index > 0 && <br />}
+                    {line}
+                  </Fragment>
+                ))
+              ) : page === "Objects" ? (
                 <>
                   Objects with
                   <br />a little soul.
@@ -138,12 +175,18 @@ export default function Storefront({
               )}
             </h3>
             <p>
-              {page === "Our story"
-                ? "Natural materials. An intentional approach."
-                : "Thoughtful pieces for the spaces we call home."}
+              {concept
+                ? page === "Our story"
+                  ? concept.story
+                  : concept.supporting
+                : page === "Our story"
+                  ? "Natural materials. An intentional approach."
+                  : "Thoughtful pieces for the spaces we call home."}
             </p>
             <button
-              onClick={() => setPage(page === "Living" ? "Objects" : "Living")}
+              onClick={() =>
+                setPage(page === categories[0] ? categories[1] : categories[0])
+              }
             >
               Explore the collection <ArrowRight size={12} />
             </button>
@@ -162,12 +205,12 @@ export default function Storefront({
                 ? "EVERYDAY OBJECTS"
                 : "THE EVERYDAY COLLECTION"}
             </span>
-            <h4>The Sunday lounge chair</h4>
-            <span className="store-material">Natural oak / Ivory bouclé</span>
+            <h4>{productName}</h4>
+            <span className="store-material">{material}</span>
           </div>
           <div className="store-product-buy">
             <span>
-              £420.00 <small>Demo product</small>
+              {money(price)} <small>Demo product</small>
             </span>
             <button
               onClick={() => {
@@ -219,26 +262,32 @@ export default function Storefront({
               <>
                 <div className="cart-item">
                   <img
-                    src={images.heroSmall}
+                    src={thumbnail}
                     width="160"
                     height="160"
-                    alt="Sunday lounge chair"
+                    alt={productName}
                   />
                   <div>
-                    <h3>The Sunday lounge chair</h3>
-                    <p>Natural oak / Ivory bouclé</p>
-                    <strong>£420.00</strong>
+                    <h3>{productName}</h3>
+                    <p>{material}</p>
+                    <strong>{money(price)}</strong>
                     <div className="quantity">
                       <button
                         onClick={() => setQuantity((q) => Math.max(0, q - 1))}
-                        aria-label="Remove one chair"
+                        aria-label={
+                          concept
+                            ? "Remove one demo product"
+                            : "Remove one chair"
+                        }
                       >
                         <Minus size={14} />
                       </button>
                       <span aria-live="polite">{quantity}</span>
                       <button
                         onClick={() => setQuantity((q) => q + 1)}
-                        aria-label="Add one chair"
+                        aria-label={
+                          concept ? "Add one demo product" : "Add one chair"
+                        }
                       >
                         <Plus size={14} />
                       </button>
@@ -247,7 +296,7 @@ export default function Storefront({
                 </div>
                 <div className="cart-total">
                   <span>Subtotal</span>
-                  <strong>£{(quantity * 420).toFixed(2)}</strong>
+                  <strong>{money(quantity * price)}</strong>
                 </div>
                 <div className="demo-notice">
                   <LockKeyhole size={16} />

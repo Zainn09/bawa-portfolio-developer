@@ -1,6 +1,7 @@
 import MotionEnhancements from "@/components/MotionEnhancements";
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import CommerceAtelier from "@/components/CommerceAtelier";
 import Work from "@/components/Work";
 import Ecosystem from "@/components/Ecosystem";
 import { Expertise, CustomTheme, Optimization } from "@/components/Expertise";
@@ -93,6 +94,7 @@ export default function Home() {
         </section>
         <TrustBadges />
         <Work />
+        <CommerceAtelier />
         <Ecosystem />
         <Expertise />
         <CustomTheme />
