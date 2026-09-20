@@ -9,7 +9,7 @@ export default function MotionEnhancements() {
       cleanup();
       if (media.matches) return;
       const selector =
-        ".section-heading,.intro-section>div,.trust-badge,.expertise-intro,.capability-list,.theme-workbench,.under-surface,.optimization-copy,.optimization-store,.management-layout>div,.responsive-heading,.about-figure,.about-copy,.contact-callout,.contact-layout,.signature-footer-top,.footer-invitation";
+        ".section-heading,.intro-section>div,.trust-badge,.expertise-intro,.capability-list,.theme-workbench,.under-surface,.optimization-copy,.optimization-store,.management-layout>div,.responsive-heading,.about-figure,.about-copy,.contact-callout,.contact-layout,.signature-footer-top,.footer-invitation,.atelier-heading,.atelier-controls";
       const elements = Array.from(
         document.querySelectorAll<HTMLElement>(selector),
       ).filter((el) => !el.closest("#process"));

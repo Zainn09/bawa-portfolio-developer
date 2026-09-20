@@ -10,7 +10,8 @@ import {
   ShoppingBag,
 } from "lucide-react";
 import Storefront from "./Storefront";
-import { images } from "@/data/portfolio";
+import BrandMark from "./BrandMark";
+import { images, profile } from "@/data/portfolio";
 import { track } from "@/lib/analytics";
 const phases = ["Design", "Develop", "Optimize", "Launch"];
 export default function Hero() {
@@ -20,7 +21,7 @@ export default function Hero() {
       <section className="hero container" id="home">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span className="status-dot" /> INDEPENDENT DEVELOPER. COMPLETE
+            <span className="status-dot" /> INDEPENDENT THINKING. COMPLETE
             COMMERCE.
           </div>
           <h1>
@@ -63,6 +64,17 @@ export default function Hero() {
             <span>SHOPIFY PLUS</span>
             <i />
             <span>CUSTOM THEMES</span>
+          </div>
+          <div className="hero-authorship">
+            <BrandMark size={30} />
+            <span>
+              <strong>{profile.name}</strong>
+              <span>Design-minded developer. Commerce-minded partner.</span>
+            </span>
+            <a href="#atelier" aria-label="Try the Commerce Atelier">
+              <span>EXPLORE THE ATELIER</span>
+              <ArrowUpRight size={15} />
+            </a>
           </div>
         </div>
         <div className="hero-art">
@@ -131,9 +143,22 @@ export default function Hero() {
             <br />
             Every little detail.
           </div>
-          <div className="demo-cursor">
-            <MousePointer2 size={19} fill="currentColor" />
-            <span>Go on, try the store</span>
+          <div className="commerce-seal" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs>
+                <path
+                  id="commerce-seal-path"
+                  d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"
+                />
+              </defs>
+              <circle cx="60" cy="60" r="57" />
+              <text>
+                <textPath href="#commerce-seal-path" textLength="268">
+                  DESIGN WITH INTENT · BUILD WITH CARE ·{" "}
+                </textPath>
+              </text>
+            </svg>
+            <BrandMark size={35} />
           </div>
           <div className="hero-art-footer">
             <div className="phase-tabs" aria-label="Commerce stages">

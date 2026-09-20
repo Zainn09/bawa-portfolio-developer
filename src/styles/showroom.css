@@ -1,0 +1,324 @@
+/* Personal commerce showroom: restrained texture, bold composition, human detail. */
+.hero {
+  position: relative;
+  padding-top: 58px;
+  padding-bottom: 65px;
+}
+.hero-copy {
+  position: relative;
+}
+.hero h1 {
+  letter-spacing: -0.065em;
+}
+.hero h1 > span:not(.heading-star) {
+  position: relative;
+  display: inline-block;
+}
+.hero h1 > span:not(.heading-star):after {
+  content: "";
+  position: absolute;
+  left: 1%;
+  right: 3%;
+  bottom: -7px;
+  height: 7px;
+  border-top: 1px solid var(--accent);
+  border-radius: 50%;
+  opacity: 0.6;
+  transform: rotate(-1.2deg);
+}
+.hero-authorship {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: var(--border);
+  max-width: 460px;
+}
+.hero-authorship > span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero-authorship strong {
+  font-size: 11px;
+  font-weight: 500;
+}
+.hero-authorship > span > span {
+  font-family: var(--font-description);
+  color: var(--muted);
+  font-size: 10px;
+}
+.hero-authorship > a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: auto;
+  color: var(--accent);
+}
+.hero-authorship > a > span {
+  font: 6px/1.7 var(--mono);
+  letter-spacing: 0.3px;
+  max-width: 59px;
+}
+.hero-art:before {
+  inset: 5% -5% -4%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, #c3916527, transparent 67%);
+}
+.hero-art:after {
+  content: "";
+  position: absolute;
+  inset: 3% -3% 7% 3%;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  border-radius: 50%;
+  transform: rotate(-24deg);
+  z-index: -1;
+  pointer-events: none;
+}
+.hero-store-wrap {
+  transition:
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.7s;
+}
+.commerce-seal {
+  position: absolute;
+  width: 106px;
+  height: 106px;
+  right: -16px;
+  bottom: 95px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 5px 20px #3b251e18;
+  transform: rotate(14deg);
+  pointer-events: none;
+}
+.commerce-seal > svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 0.45;
+}
+.commerce-seal text {
+  fill: currentColor;
+  stroke: none;
+  font-family: var(--mono);
+  font-size: 8.2px;
+  letter-spacing: 1px;
+}
+.commerce-seal > .brand-monogram {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  color: var(--bg);
+  stroke: none;
+}
+.hero-art .floating-theme {
+  border-radius: 3px;
+  box-shadow: 0 12px 30px #30291f0c;
+  border-color: color-mix(in srgb, var(--accent) 25%, var(--line));
+}
+.project-visual {
+  isolation: isolate;
+}
+.project-edition {
+  position: absolute;
+  z-index: 1;
+  bottom: 18px;
+  right: 22px;
+  color: #f6f2e6;
+  opacity: 0.6;
+  font-size: 68px;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -5px;
+  pointer-events: none;
+}
+.project-0 .project-edition {
+  font-size: 100px;
+  right: 28px;
+  bottom: 20px;
+  opacity: 0.55;
+}
+.intro-section {
+  border-top: 0;
+}
+.trust-icon {
+  background: var(--paper);
+}
+.trust-principles {
+  padding-bottom: 2px;
+}
+.section-heading .section-label:before,
+.atelier-heading .section-label:before {
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.section-heading .section-label > span:empty,
+.atelier-heading .section-label > span:empty {
+  display: none;
+}
+.capability > button {
+  transition: color 0.25s;
+}
+.capability > button:hover h3 {
+  color: var(--accent);
+}
+.contact-callout > h2 > span {
+  position: relative;
+}
+.contact-callout > h2 > span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  right: 0;
+  height: 8px;
+  border-top: 1px solid currentColor;
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  opacity: 0.7;
+}
+@media (hover: hover) and (pointer: fine) {
+  .hero-store-wrap:hover {
+    transform: perspective(1600px) rotateY(-1deg) rotateZ(-1deg);
+    box-shadow: 0 35px 65px -20px #39342538;
+  }
+  .commerce-seal {
+    transition: transform 0.6s;
+  }
+  .hero-art:hover .commerce-seal {
+    transform: rotate(-4deg);
+  }
+}
+@media (min-width: 1600px) {
+  .hero-authorship {
+    max-width: 510px;
+    margin-top: 28px;
+  }
+  .hero-authorship strong {
+    font-size: 12px;
+  }
+  .hero-authorship > span > span {
+    font-size: 11px;
+  }
+  .commerce-seal {
+    width: 118px;
+    height: 118px;
+    bottom: 105px;
+  }
+}
+@media (max-width: 1200px) {
+  .hero {
+    padding-block: 48px 54px;
+  }
+  .hero-authorship {
+    max-width: 95%;
+    gap: 9px;
+    margin-top: 20px;
+  }
+  .hero-authorship strong {
+    font-size: 10px;
+  }
+  .hero-authorship > span > span {
+    font-size: 9px;
+  }
+  .hero-authorship > a > span {
+    font-size: 5px;
+  }
+  .commerce-seal {
+    width: 86px;
+    height: 86px;
+    right: -6px;
+    bottom: 95px;
+  }
+  .commerce-seal > .brand-monogram {
+    width: 29px;
+    height: 29px;
+  }
+}
+@media (max-width: 1023px) {
+  .hero-authorship > a > span {
+    display: none;
+  }
+  .hero-authorship > .brand-monogram {
+    width: 25px;
+    height: 25px;
+  }
+  .hero-authorship > span > span {
+    font-size: 8px;
+  }
+  .commerce-seal {
+    width: 77px;
+    height: 77px;
+    bottom: 87px;
+  }
+  .commerce-seal > .brand-monogram {
+    width: 25px;
+    height: 25px;
+  }
+  .hero-authorship {
+    max-width: 92%;
+  }
+}
+@media (max-width: 767px) {
+  .hero {
+    padding-block: 35px 32px;
+  }
+  .hero-authorship {
+    max-width: none;
+    padding-top: 17px;
+    margin-top: 22px;
+    gap: 10px;
+  }
+  .hero-authorship strong {
+    font-size: 11px;
+  }
+  .hero-authorship > span > span {
+    font-size: 10px;
+  }
+  .hero-authorship > a > span {
+    display: block;
+    font-size: 5px;
+    max-width: 48px;
+  }
+  .hero-authorship > .brand-monogram {
+    width: 28px;
+    height: 28px;
+  }
+  .hero h1 > span:not(.heading-star):after {
+    bottom: -6px;
+    height: 5px;
+  }
+  .hero-art:after {
+    inset: 0 5% 0;
+  }
+  .commerce-seal {
+    display: none;
+  }
+  .project-edition {
+    font-size: 65px;
+  }
+  .project-0 .project-edition {
+    font-size: 82px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-store-wrap,
+  .commerce-seal {
+    transition: none !important;
+  }
+  .hero-store-wrap:hover {
+    transform: rotate(-2deg);
+  }
+}
