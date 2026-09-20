@@ -1,5 +1,5 @@
 "use client";
-import { useState, type CSSProperties } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { Image as ImageIcon } from "lucide-react";
 import type { BlogMedia } from "@/data/blog";
 
@@ -20,6 +20,12 @@ export default function BlogImage({
   sizes?: string;
 }) {
   const [failed, setFailed] = useState(false);
+  const imageRef = useRef<HTMLImageElement>(null);
+  useEffect(() => {
+    // An eager image may fail before React hydrates and attaches onError.
+    const image = imageRef.current;
+    if (image?.complete && image.naturalWidth === 0) setFailed(true);
+  }, [media.src]);
   const present = !!media.src && !failed;
   const picture = present ? (
     <picture>
@@ -33,6 +39,7 @@ export default function BlogImage({
       )}
       {media.avifSrc && <source type="image/avif" srcSet={media.avifSrc} />}
       <img
+        ref={imageRef}
         src={media.src}
         srcSet={
           media.smallSrc
@@ -53,10 +60,13 @@ export default function BlogImage({
   ) : (
     <div className="journal-placeholder" role="img" aria-label={media.alt}>
       <ImageIcon size={26} strokeWidth={1} />
-      <span>PROJECT IMAGE PLACEHOLDER</span>
-      <strong>Room for the real thing.</strong>
+      <span>{failed ? "IMAGE UNAVAILABLE" : "PROJECT IMAGE PLACEHOLDER"}</span>
+      <strong>
+        {failed ? "The capture couldn’t load." : "Room for the real thing."}
+      </strong>
       <small>
-        {media.width} × {media.height} · Approved imagery pending
+        {media.width} × {media.height} ·{" "}
+        {failed ? "Try reloading this page" : "Approved imagery pending"}
       </small>
     </div>
   );
@@ -92,7 +102,9 @@ export default function BlogImage({
           <span>
             {present
               ? media.caption || media.alt
-              : "Approved project imagery pending. No screenshot is implied."}
+              : failed
+                ? "The source capture could not be loaded."
+                : "Approved project imagery pending. No screenshot is implied."}
           </span>
           {present && media.capturedAt && (
             <span>

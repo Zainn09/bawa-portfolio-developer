@@ -1361,3 +1361,9 @@
     transform: none;
   }
 }
+@media (max-width: 360px) {
+  .journal-masthead h1 {
+    font-size: 54px;
+    letter-spacing: -0.075em;
+  }
+}
