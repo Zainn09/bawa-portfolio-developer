@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "ollie-burwell-styling-guide",
+    "title": "When the styling guide becomes part of the product",
+    "project": "ollie-burwell",
+    "category": "E-commerce Design",
+    "tags": ["E-commerce Design", "Shopify", "Ollie Burwell"],
+    "excerpt": "Ollie Burwell connects sarongs with ways to wear them. That makes product education part of the shopping experience, not an afterthought.",
+    "featuredImage": "project-highlight-how-to-wear-styling-guide",
+    "intro": "A sarong is a simple object with several possible uses. That flexibility is part of its appeal, but it asks the shopper to imagine something the flat product name cannot fully explain.",
+    "sections": [
+      {
+        "heading": "A visible connection",
+        "paragraphs": [
+          "Ollie Burwell’s homepage and supplied archive connect the collection to a how-to-wear styling guide. The archive includes a dedicated guide capture alongside sarong detail pages. This is a visible editorial relationship; it does not tell us who built the guide or how it is managed behind the scenes."
+        ]
+      },
+      {
+        "heading": "Put instruction near uncertainty",
+        "paragraphs": [
+          "I would connect relevant styling guidance to the product decision rather than rely on a visitor finding it independently in a menu. The guide should answer a practical question: what does this piece look like when worn in a particular way?",
+          "The return route matters too. A useful guide gives the reader a clear path back to the relevant collection or product. It should not become a beautiful dead end that requires starting the shopping journey again."
+        ]
+      },
+      {
+        "heading": "Make the guidance usable",
+        "paragraphs": [
+          "For a Shopify build, short steps, descriptive images, and meaningful link labels are more dependable than instructions available only inside an autoplay video. Keep key information in text and check the sequence on a phone.",
+          "A guide can support confidence without promising a measurable sales effect. Its first test is simpler: can someone understand the styling method, identify the relevant piece, and return to shopping without losing their place? That is the experience worth validating."
+        ]
+      }
+    ],
+    "takeaway": "Editorial content works hardest when it answers a product question and offers a way back to the product.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "When the styling guide becomes part of the product",
+    "seoDescription": "Ollie Burwell connects sarongs with ways to wear them. That makes product education part of the shopping experience, not an afterthought."
+  },
+  {
+    "slug": "ollie-burwell-collection-architecture",
+    "title": "Material, occasion, or garment? Choose a clear route",
+    "project": "ollie-burwell",
+    "category": "Shopify UX",
+    "tags": ["Shopify UX", "Shopify", "Ollie Burwell"],
+    "excerpt": "Silk, voile, kaftans, and seasonal edits do not describe the same kind of choice. A collection system needs to make those differences legible.",
+    "featuredImage": "desktop-collection-listing",
+    "intro": "Fashion navigation often mixes several classification systems. A material describes how something feels. A garment type describes what it is. A seasonal edit describes why it is being shown now. All can be useful, but they are not interchangeable.",
+    "sections": [
+      {
+        "heading": "The storefront context",
+        "paragraphs": [
+          "Ollie Burwell’s supplied captures include silk sarongs, collection browsing, a kaftan range, and a new-arrivals edit. Those references provide several legitimate entry points into the brand. They do not establish a particular filtering system or catalogue data model."
+        ]
+      },
+      {
+        "heading": "Give each route a purpose",
+        "paragraphs": [
+          "I would make the primary navigation answer stable questions first, then use editorial edits to offer an additional point of view. A shopper who knows they want a kaftan should not have to guess which seasonal campaign currently contains it.",
+          "Material information can then support comparison within the product or collection. If a collection name uses a fabric term, explain that term accurately using approved product information. Do not make a broad natural-fibre or sustainability claim from a category name alone."
+        ]
+      },
+      {
+        "heading": "Avoid maintaining parallel catalogues",
+        "paragraphs": [
+          "In Shopify, editorial collections can group existing products without creating duplicate product records. The important maintenance question is whether titles, images, availability, and descriptions remain consistent when the same item appears in several contexts.",
+          "Review a sample product through each route and check that the customer reaches the same current information. This is a proposed collection-management practice, not a claim about Ollie Burwell’s internal configuration."
+        ]
+      }
+    ],
+    "takeaway": "Stable categories help people find. Editorial edits help people discover.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Material, occasion, or garment? Choose a clear route",
+    "seoDescription": "Silk, voile, kaftans, and seasonal edits do not describe the same kind of choice. A collection system needs to make those differences legible."
+  },
+  {
+    "slug": "ollie-burwell-mobile-image-direction",
+    "title": "A fashion photograph needs a mobile composition",
+    "project": "ollie-burwell",
+    "category": "Responsive Design",
+    "tags": ["Responsive Design", "Shopify", "Ollie Burwell"],
+    "excerpt": "The same resort-wear image can tell a different story after cropping. Responsive art direction should protect the garment, not just fill the frame.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "A fashion hero can survive a smaller file size and still fail on a smaller screen. If the crop removes the garment’s shape or places text over the detail that matters, the asset is technically responsive but editorially weaker.",
+    "sections": [
+      {
+        "heading": "Read the supplied views",
+        "paragraphs": [
+          "Ollie Burwell’s archive includes desktop and mobile homepage captures and separate mobile product imagery. They provide useful reference compositions. They do not prove the exact source-selection rules used by the live theme."
+        ]
+      },
+      {
+        "heading": "Decide what must remain visible",
+        "paragraphs": [
+          "For a sarong-led composition, I would identify the essential visual information before choosing a crop: the drape, the styling method, or the relationship between the garment and the body. That decision should guide object positioning and any mobile-specific source.",
+          "Text needs its own space. Moving a headline into a clearer part of the frame can be more effective than adding a heavier shadow or dark overlay. On a narrow screen, separating the copy from the photograph may preserve both legibility and the image."
+        ]
+      },
+      {
+        "heading": "Keep delivery intentional",
+        "paragraphs": [
+          "Use an appropriate source size for each layout, reserve the image’s ratio, and avoid downloading several hidden hero images immediately. If a separate mobile crop is used, its alternative text should still describe the actual selected image.",
+          "Evaluate the result at more than one phone width and with longer text. The goal is not to make every screen look identical. It is to preserve the same product meaning while letting the composition adapt. No field-performance or conversion outcome is implied by these observations."
+        ]
+      }
+    ],
+    "takeaway": "Responsive imagery should preserve meaning, not merely occupy the available rectangle.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A fashion photograph needs a mobile composition",
+    "seoDescription": "The same resort-wear image can tell a different story after cropping. Responsive art direction should protect the garment, not just fill the frame."
+  },
+  {
+    "slug": "ollie-burwell-hand-batik-content",
+    "title": "Describe the craft without losing the product",
+    "project": "ollie-burwell",
+    "category": "E-commerce Content",
+    "tags": ["E-commerce Content", "Shopify", "Ollie Burwell"],
+    "excerpt": "Hand-batik storytelling can be specific and useful when it stays connected to the item a customer is considering.",
+    "featuredImage": "desktop-signature-section",
+    "intro": "Craft is a compelling part of a fashion brand, but a craft statement alone cannot answer every product question. A customer still needs to know what the piece is, how to care for it, and which details vary between items.",
+    "sections": [
+      {
+        "heading": "The visible brand language",
+        "paragraphs": [
+          "The Ollie Burwell source material presents hand-batik and fabric-related brand messages, and the repository describes sarongs, scarves, kaftans, and resort wear. These are the brand’s own positioning and catalogue context. They are not an independent certification of materials, production, or sustainability."
+        ]
+      },
+      {
+        "heading": "Separate the shared story from item facts",
+        "paragraphs": [
+          "I would keep the general craft story reusable, then maintain product-specific details alongside the individual item. That avoids a common content problem: a shared paragraph gradually becomes a promise that every product has exactly the same composition or process.",
+          "Where a handmade process produces variation, explain it only with approved information. Distinguish an expected variation from the selected colour or pattern. The shopper should not need to infer whether the photograph represents an exact item or an example."
+        ]
+      },
+      {
+        "heading": "Write for decisions, not just atmosphere",
+        "paragraphs": [
+          "Pair the editorial story with clear care instructions, material information, and dimensions where verified. Put those facts in a repeatable order so that reading a second product does not require learning a new page structure.",
+          "This is a proposed content approach for the visible brand context. It does not claim that specific metafields, custom sections, or content improvements were implemented on Ollie Burwell. The principle is to let the story add meaning while the product information remains precise."
+        ]
+      }
+    ],
+    "takeaway": "The craft story creates context. Product-specific facts make that context useful.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Describe the craft without losing the product",
+    "seoDescription": "Hand-batik storytelling can be specific and useful when it stays connected to the item a customer is considering."
+  },
+  {
+    "slug": "ollie-burwell-seasonal-merchandising",
+    "title": "A seasonal edit should not become an expired aisle",
+    "project": "ollie-burwell",
+    "category": "Store Management",
+    "tags": ["Store Management", "Shopify", "Ollie Burwell"],
+    "excerpt": "New arrivals and resort-wear edits need a maintenance plan that outlasts the campaign banner.",
+    "featuredImage": "desktop-new-arrivals-edit",
+    "intro": "A seasonal edit is a promise of relevance. Once the season changes, the same page can become confusing if its imagery, product selection, and introductory copy move at different speeds.",
+    "sections": [
+      {
+        "heading": "What the archive contains",
+        "paragraphs": [
+          "The supplied Ollie Burwell assets include a new-arrivals edit, a kaftan range, and other collection views. They establish that the shopping experience includes both recurring categories and more editorial selections. They do not reveal the publishing workflow or the rules used to choose products."
+        ]
+      },
+      {
+        "heading": "Prepare the end before the launch",
+        "paragraphs": [
+          "For this kind of store, I would give each edit an owner, a review date, and a clear decision about what happens next. Some pages should become lasting collections. Others may need to be retired or redirected after their purpose ends. Neither choice should be automatic without reviewing the page’s role.",
+          "Use a checklist that covers the banner, introductory copy, product membership, internal links, and availability. A homepage promotion and its destination should be updated together rather than as unrelated tasks."
+        ]
+      },
+      {
+        "heading": "Keep stable routes dependable",
+        "paragraphs": [
+          "Seasonal storytelling should sit alongside durable product categories. A customer returning for a silk sarong should still have a clear route even if the latest campaign has changed.",
+          "On Shopify, test the edit with sold-out items, a smaller-than-expected collection, and longer product names. Empty and uneven states are part of normal merchandising. Planning for them is more useful than designing only the ideal launch-day grid. This is a maintenance recommendation, not a description of the store’s internal process."
+        ]
+      }
+    ],
+    "takeaway": "Every campaign page needs both a publishing plan and a retirement plan.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A seasonal edit should not become an expired aisle",
+    "seoDescription": "New arrivals and resort-wear edits need a maintenance plan that outlasts the campaign banner."
+  },
+  {
+    "slug": "ollie-burwell-product-template",
+    "title": "Let the product template do the quiet work",
+    "project": "ollie-burwell",
+    "category": "Theme Development",
+    "tags": ["Theme Development", "Shopify", "Ollie Burwell"],
+    "excerpt": "A repeatable fashion detail page should support drape, styling, materials, and buying choices without letting every product become a one-off layout.",
+    "featuredImage": "desktop-silk-sarong-detail",
+    "intro": "Custom theme work is not always about a new visual effect. Sometimes the most valuable decision is agreeing which information belongs in the same place on every product.",
+    "sections": [
+      {
+        "heading": "A product-specific starting point",
+        "paragraphs": [
+          "Ollie Burwell’s source archive includes a silk-sarong detail view on desktop and mobile. That offers a real visual reference for discussing product presentation. It does not expose the Liquid source, selected theme, app stack, or ownership of particular development work."
+        ]
+      },
+      {
+        "heading": "Design the information contract",
+        "paragraphs": [
+          "For a reusable template in this category, I would define a core sequence: identify the piece, show it clearly, explain relevant material and care information, then support the buying decision. Styling guidance can extend that sequence without replacing basic product facts.",
+          "Not every field belongs on every product. A template should handle missing optional information gracefully instead of displaying an empty heading or borrowed copy from a different item. This is where thoughtful content modelling matters as much as spacing and typography."
+        ]
+      },
+      {
+        "heading": "Test variation instead of a single ideal product",
+        "paragraphs": [
+          "Preview the layout with a long name, several images, one image, available choices, and an unavailable state. Where Shopify variants are used, verify the relationship between the selected option, current price, availability, and imagery.",
+          "Those checks are implementation recommendations, not findings about defects in Ollie Burwell. A strong product template is a dependable structure for varied content, not a claim that every product must tell exactly the same story."
+        ]
+      }
+    ],
+    "takeaway": "A reusable section is only as good as the less-than-perfect content it can accommodate.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Let the product template do the quiet work",
+    "seoDescription": "A repeatable fashion detail page should support drape, styling, materials, and buying choices without letting every product become a one-off layout."
+  },
+  {
+    "slug": "ollie-burwell-editorial-seo",
+    "title": "Give the styling story a searchable structure",
+    "project": "ollie-burwell",
+    "category": "SEO",
+    "tags": ["SEO", "Shopify", "Ollie Burwell"],
+    "excerpt": "A how-to-wear guide and a collection page answer different questions. Connect them without making them compete for the same job.",
+    "featuredImage": "project-highlight-how-to-wear-styling-guide",
+    "intro": "A styling guide is useful because it explains a task. A collection is useful because it presents a choice. Search-friendly architecture starts by keeping those purposes clear.",
+    "sections": [
+      {
+        "heading": "A relationship visible in the source",
+        "paragraphs": [
+          "Ollie Burwell’s public content links to a how-to-wear guide, and the supplied archive includes both guide and collection imagery. This is enough to discuss the relationship between editorial content and commerce. It is not evidence of current rankings or of a completed technical SEO implementation."
+        ]
+      },
+      {
+        "heading": "Use the language of the task",
+        "paragraphs": [
+          "I would give a guide a descriptive title and a sequence of headings that reflect the styling methods it actually explains. Collection content should instead help the reader understand the available pieces. Repeating the same sales paragraph across both pages weakens that distinction.",
+          "Internal links should explain the destination. A link to relevant sarongs is clearer than an isolated “click here”, while a product-to-guide link should say what the customer will learn. Keep important instructions as HTML text rather than embedding all meaning in an image."
+        ]
+      },
+      {
+        "heading": "Check the implementation separately",
+        "paragraphs": [
+          "Review titles, descriptions, canonical URLs, crawlability, and image alternatives in the deployed page. Structured data should describe the content that is genuinely present, not add unsupported ratings or outcomes.",
+          "Measure search performance using real data rather than assuming that a guide automatically brings traffic. The editorial opportunity is more modest and more concrete: help a reader learn something useful, then make the next relevant shopping step easy to find."
+        ]
+      }
+    ],
+    "takeaway": "Let the guide answer “how?” and the collection answer “which one?”",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Give the styling story a searchable structure",
+    "seoDescription": "A how-to-wear guide and a collection page answer different questions. Connect them without making them compete for the same job."
+  }
+]

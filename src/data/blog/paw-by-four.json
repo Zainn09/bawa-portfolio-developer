@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "paw-by-four-education-and-commerce",
+    "title": "Sometimes the next step is not “add to cart”",
+    "project": "paw-by-four",
+    "category": "Shopify UX",
+    "tags": ["Shopify UX", "Shopify", "Paw By Four"],
+    "excerpt": "Paw by Four puts education beside products. That changes what a useful shopping journey can look like.",
+    "featuredImage": "desktop-signature-section",
+    "intro": "A customer arriving with a worried dog may need an explanation before they need a product. A storefront that only offers shopping actions can miss the question the visitor is actually asking.",
+    "sections": [
+      {
+        "heading": "The visible routes",
+        "paragraphs": [
+          "Paw by Four’s supplied material includes product browsing, an anxiety-education hub, a resource library, and a brand-story page. Its homepage also offers routes to solutions and further information. These observations describe the visible content architecture, not an assessment of the health claims made by the retailer."
+        ]
+      },
+      {
+        "heading": "Let different intentions remain different",
+        "paragraphs": [
+          "I would preserve a clear learning route alongside the shop. A visitor trying to understand a problem should not need to interpret a product grid as an educational resource. Conversely, someone returning for a known item should not have to repeat a long introductory journey.",
+          "Connect the two routes where the relationship is useful. An educational page can explain relevant options without turning every paragraph into a sales prompt. A product page can link to context without requiring that detour to understand the item."
+        ]
+      },
+      {
+        "heading": "Review the handoff",
+        "paragraphs": [
+          "Ask where a reader should go after finishing a resource. Is the next step another explanation, a product category, or professional advice? The answer depends on the content, not on a rule that every page must push toward checkout.",
+          "This is a UX recommendation drawn from the visible mix of education and commerce. It does not claim a conversion improvement or medical effectiveness. A useful journey can help someone make an informed decision even when that decision is not an immediate purchase."
+        ]
+      }
+    ],
+    "takeaway": "A good next step answers the visitor’s current question, not just the store’s preferred outcome.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Sometimes the next step is not “add to cart”",
+    "seoDescription": "Paw by Four puts education beside products. That changes what a useful shopping journey can look like."
+  },
+  {
+    "slug": "paw-by-four-digital-and-physical-products",
+    "title": "One store, two fulfilment expectations",
+    "project": "paw-by-four",
+    "category": "E-commerce Development",
+    "tags": ["E-commerce Development", "Shopify", "Paw By Four"],
+    "excerpt": "Digital guides and physical enrichment products need clear distinctions before the customer reaches the buying decision.",
+    "featuredImage": "desktop-collection-listing",
+    "intro": "A guide and a lick mat can share a storefront without sharing a fulfilment process. Customers should not have to reach checkout to discover which kind of purchase they are making.",
+    "sections": [
+      {
+        "heading": "The catalogue context",
+        "paragraphs": [
+          "Paw by Four’s public content and source archive include digital educational resources and physical enrichment products. The distinction is visible at the catalogue level. The supplied screenshots do not establish which delivery app, download system, or fulfilment integration the business uses."
+        ]
+      },
+      {
+        "heading": "Describe what arrives and how",
+        "paragraphs": [
+          "For digital items, I would make the format, access expectations, and any supported usage requirements explicit using merchant-approved information. For physical items, the customer needs accurate delivery and product information. Avoid borrowing one generic delivery paragraph across both types.",
+          "The product title, description, and cart line should remain consistent about the item being purchased. A digital guide should not be visually presented in a way that silently promises a printed book or a physical device."
+        ]
+      },
+      {
+        "heading": "Test the combined journey",
+        "paragraphs": [
+          "If a store permits mixed baskets, review how digital and physical items are explained together. Check confirmation content and support routes without assuming that one fulfilment message can cover everything. Test real integrations in a suitable test environment rather than inferring their behaviour from screenshots.",
+          "This is an implementation checklist for a mixed-format catalogue, not a claim that a specific system was built for Paw by Four. The core requirement is straightforward: the customer should know what they are buying and what to expect after payment."
+        ]
+      }
+    ],
+    "takeaway": "The format of the product is part of the product information—not a detail to reveal after purchase.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "One store, two fulfilment expectations",
+    "seoDescription": "Digital guides and physical enrichment products need clear distinctions before the customer reaches the buying decision."
+  },
+  {
+    "slug": "paw-by-four-responsible-product-language",
+    "title": "Write calmly when the customer is worried",
+    "project": "paw-by-four",
+    "category": "E-commerce Content",
+    "tags": ["E-commerce Content", "Shopify", "Paw By Four"],
+    "excerpt": "A canine-anxiety storefront needs precise product language and clear boundaries around what its content can promise.",
+    "featuredImage": "desktop-brand-story",
+    "intro": "Content about an anxious pet reaches people in an emotionally charged situation. Strong copy should help them understand their options without turning that concern into an unsupported promise.",
+    "sections": [
+      {
+        "heading": "What the brand presents",
+        "paragraphs": [
+          "Paw by Four’s visible material emphasizes education, research, empathy, and support for owners of anxious dogs. Those are the retailer’s stated themes. This portfolio does not independently validate treatment claims, product effectiveness, or the evidence behind individual statements."
+        ]
+      },
+      {
+        "heading": "Make the boundary explicit",
+        "paragraphs": [
+          "For content in this category, I would distinguish product description, general educational information, and advice that needs a qualified professional. A developer should not invent claims to make a layout feel more convincing. The responsible content owner needs to approve the wording and sources.",
+          "Specific language is more useful than an absolute promise. Explain the item, its intended use as approved by the merchant, and the limitations of the information provided. Avoid making every customer situation sound identical."
+        ]
+      },
+      {
+        "heading": "Treat copy as part of quality review",
+        "paragraphs": [
+          "A review should look for inconsistent statements across the homepage, product pages, and resource content. Check whether linked sources still exist and whether updates in one location have left older claims elsewhere.",
+          "This is a content-governance recommendation, not veterinary guidance or a diagnosis of this store. The commercial objective should not override clarity about what is known. A calm, accurate interface can support trust without pretending that every uncertainty has been resolved."
+        ]
+      }
+    ],
+    "takeaway": "Empathy belongs in the tone. Evidence and limits belong in the claims.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Write calmly when the customer is worried",
+    "seoDescription": "A canine-anxiety storefront needs precise product language and clear boundaries around what its content can promise."
+  },
+  {
+    "slug": "paw-by-four-lick-mat-product-page",
+    "title": "Explain the object before the benefit",
+    "project": "paw-by-four",
+    "category": "Product Experience",
+    "tags": ["Product Experience", "Shopify", "Paw By Four"],
+    "excerpt": "A lick-mat product page still needs the practical information that helps a customer understand the physical item.",
+    "featuredImage": "desktop-lick-mat-detail",
+    "intro": "When a product is associated with a broader wellbeing story, practical details can disappear behind the intended benefit. The customer still needs to understand the object itself.",
+    "sections": [
+      {
+        "heading": "A focused product reference",
+        "paragraphs": [
+          "The Paw by Four archive includes desktop and mobile lick-mat detail captures. These support a discussion of product presentation. They do not establish the material, care instructions, suitability, or effectiveness of every item in the live range."
+        ]
+      },
+      {
+        "heading": "Keep product facts easy to find",
+        "paragraphs": [
+          "For a page like this, I would review whether approved dimensions, material information, care guidance, and clear photography are presented in a consistent order. Any use instructions or suitability statements should come from the responsible merchant or manufacturer, not be improvised during theme development.",
+          "Photography should help explain shape and scale as well as appearance. If several products are visually similar, their names and distinguishing information need to remain clear in collection listings, on the product page, and in the cart."
+        ]
+      },
+      {
+        "heading": "Use the mobile view as a content test",
+        "paragraphs": [
+          "A narrow screen makes hierarchy visible: which facts appear first, which require a long scroll, and whether the purchase controls separate the customer from information they still need. Test with actual content rather than a shortened demonstration title.",
+          "The useful outcome is a product page that answers concrete questions. This article does not report a redesign, a measured sales effect, or a finding that the current product page is defective. It sets out a review approach grounded in the supplied product context."
+        ]
+      }
+    ],
+    "takeaway": "A product story is stronger when the customer can also understand the product as a physical thing.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Explain the object before the benefit",
+    "seoDescription": "A lick-mat product page still needs the practical information that helps a customer understand the physical item."
+  },
+  {
+    "slug": "paw-by-four-resource-linking",
+    "title": "Build a resource library, not a pile of articles",
+    "project": "paw-by-four",
+    "category": "SEO",
+    "tags": ["SEO", "Shopify", "Paw By Four"],
+    "excerpt": "Educational pages become more useful when their relationships are clear and their links reflect the reader’s next question.",
+    "featuredImage": "desktop-resource-library",
+    "intro": "An educational library grows one article at a time. Without deliberate structure, the oldest useful explanations can become harder to find even as the total amount of content increases.",
+    "sections": [
+      {
+        "heading": "The visible editorial context",
+        "paragraphs": [
+          "Paw by Four’s supplied archive includes a resource library and an anxiety-education hub. The live source material also distinguishes learning resources from products. These establish a content-led storefront context, not a claim about search rankings or the current technical SEO setup."
+        ]
+      },
+      {
+        "heading": "Organize around questions",
+        "paragraphs": [
+          "I would group resources by the questions they answer rather than only by publication order. A foundational explanation, a practical guide, and a product-related article have different roles. The library should help readers understand where to start.",
+          "Links inside an article should say why the destination is relevant. A short, descriptive link can make the relationship between two resources clear without interrupting the reading experience. Related content should be selected for relevance, not merely because it was published recently."
+        ]
+      },
+      {
+        "heading": "Keep the structure maintainable",
+        "paragraphs": [
+          "Review orphaned pages, broken references, outdated instructions, and inconsistent terminology. Important information should remain available in readable HTML rather than only in an image or download. Inspect titles, canonical URLs, and indexing rules in the actual implementation before making technical claims.",
+          "No traffic increase is reported here. The first measure of a resource library is whether someone can find an appropriate starting point and continue learning without becoming lost in a collection of disconnected pages."
+        ]
+      }
+    ],
+    "takeaway": "An article library needs a reading path, not just a publication timeline.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Build a resource library, not a pile of articles",
+    "seoDescription": "Educational pages become more useful when their relationships are clear and their links reflect the reader’s next question."
+  },
+  {
+    "slug": "paw-by-four-mobile-choice",
+    "title": "Two homepage actions, two kinds of readiness",
+    "project": "paw-by-four",
+    "category": "Responsive Design",
+    "tags": ["Responsive Design", "Shopify", "Paw By Four"],
+    "excerpt": "A route to products and a route to understanding can coexist on mobile without competing for every pixel.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "A visitor who wants to browse solutions is not necessarily at the same point as a visitor who wants to understand the problem. On a small screen, both intentions deserve clear labels and enough space to act.",
+    "sections": [
+      {
+        "heading": "What the homepage shows",
+        "paragraphs": [
+          "Paw by Four’s captured homepage presents a product-oriented action and a learning-oriented action. The archive also provides a mobile homepage view. These are visible interface choices; screenshots cannot prove tap behaviour, focus handling, or the performance of the underlying controls."
+        ]
+      },
+      {
+        "heading": "Give each action a distinct destination",
+        "paragraphs": [
+          "For a mobile implementation, I would keep the labels specific and make the destinations match the promise. A learning link should lead to an explanation, not an unexpected sales interruption. A shopping link should move the visitor toward a useful product context.",
+          "The two controls do not need equal visual weight, but both need sufficient contrast, a comfortable touch target, and an obvious focus state. Avoid squeezing them onto one line if the resulting labels become cramped or truncated."
+        ]
+      },
+      {
+        "heading": "Check meaning as the layout changes",
+        "paragraphs": [
+          "Review the pair at narrow widths and with larger text. Confirm that the order remains sensible, that imagery does not obscure either control, and that the content still explains why there are two choices.",
+          "This is a responsive-design reading of the supplied homepage, not a report of a completed experiment. A useful mobile design preserves the difference between “help me understand” and “help me find a product” rather than treating both as interchangeable calls to action."
+        ]
+      }
+    ],
+    "takeaway": "A secondary action can be a different kind of help, not simply a weaker sales button.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Two homepage actions, two kinds of readiness",
+    "seoDescription": "A route to products and a route to understanding can coexist on mobile without competing for every pixel."
+  },
+  {
+    "slug": "paw-by-four-content-maintenance",
+    "title": "The resource needs an owner after it is published",
+    "project": "paw-by-four",
+    "category": "Store Management",
+    "tags": ["Store Management", "Shopify", "Paw By Four"],
+    "excerpt": "Product information and educational content change on different schedules. A mixed store needs a review process for both.",
+    "featuredImage": "project-highlight-dog-anxiety-education-hub",
+    "intro": "A product update might take minutes. Reviewing an educational resource can require specialist input. A store that contains both needs more than a single undifferentiated content checklist.",
+    "sections": [
+      {
+        "heading": "Two kinds of maintained content",
+        "paragraphs": [
+          "Paw by Four’s supplied material includes products, a resource library, and educational pages. That visible combination is the basis for this article. It does not reveal who currently maintains the content or which internal approval process the business uses."
+        ]
+      },
+      {
+        "heading": "Define ownership and review triggers",
+        "paragraphs": [
+          "I would assign a responsible owner to each content type and identify the events that should trigger a review. Product changes may affect descriptions and linked resources. An updated source or revised guide may require changes to several educational pages.",
+          "Keep the publication date distinct from the date of a substantive review. Do not make an old article appear newly checked merely because a small formatting change was made. Record meaningful changes where that helps readers understand the material."
+        ]
+      },
+      {
+        "heading": "Review relationships, not only individual pages",
+        "paragraphs": [
+          "Check links between products, guides, and resource pages. Confirm that renamed products do not leave misleading references, that downloads match their descriptions, and that outdated content has a deliberate next state rather than simply disappearing.",
+          "These recommendations concern content operations, not medical advice or a claimed implementation. A dependable store is maintained as a connected set of records and pages. Updating one item should include a quick look at the places that rely on it."
+        ]
+      }
+    ],
+    "takeaway": "Publishing is a moment. Content ownership is an ongoing responsibility.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "The resource needs an owner after it is published",
+    "seoDescription": "Product information and educational content change on different schedules. A mixed store needs a review process for both."
+  }
+]

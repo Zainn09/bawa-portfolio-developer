@@ -1,0 +1,273 @@
+[
+  {
+    "slug": "vintage-art-garage-temporary-closure",
+    "title": "A temporary closure is still a customer experience",
+    "project": "vintage-art-garage",
+    "category": "Store Management",
+    "tags": ["Store Management", "Shopify", "Vintage Art Garage"],
+    "excerpt": "Vintage Art Garage’s public closure notice offers a narrow but useful starting point for thinking about a store’s unavailable state.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "The supplied asset archive documents Vintage Art Garage as temporarily closed and password-protected. It records a public notice explaining that the owners were travelling and expected to reopen in late October. There are no accepted storefront screenshots in the archive.",
+    "sections": [
+      {
+        "heading": "Say only what can be supported",
+        "paragraphs": [
+          "That limited evidence matters. It would be misleading to turn a closure page into a detailed case study about browsing, cart behaviour, or a redesign. This article instead considers what an unavailable state needs to communicate. The recorded reopening expectation is a statement from the source capture, not a guarantee that the current schedule is unchanged."
+        ]
+      },
+      {
+        "heading": "Make the next step understandable",
+        "paragraphs": [
+          "For a temporary pause, I would keep the explanation direct and distinguish it from a technical failure. If an expected return date is available, use wording the business can maintain. If it is not known, do not create a countdown simply to fill the design.",
+          "Any contact or notification option should work and should accurately explain what the visitor is signing up for. Do not imply that orders can still be placed or fulfilled if the store is not accepting them."
+        ]
+      },
+      {
+        "heading": "Plan the return as well as the pause",
+        "paragraphs": [
+          "Keep a reopening checklist for navigation, current product information, policies, and customer-facing messages. Remove obsolete closure copy wherever it was published, not only from the homepage.",
+          "The implementation and commercial effect of Vintage Art Garage’s closure experience are not assessed here. The broader lesson is that a paused store still communicates with customers, and that communication deserves the same accuracy as the live shopping experience."
+        ]
+      }
+    ],
+    "takeaway": "An unavailable state should explain the situation without pretending the normal storefront is accessible.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A temporary closure is still a customer experience",
+    "seoDescription": "Vintage Art Garage’s public closure notice offers a narrow but useful starting point for thinking about a store’s unavailable state."
+  },
+  {
+    "slug": "vintage-art-garage-archival-product-data",
+    "title": "The product data a vintage print deserves",
+    "project": "vintage-art-garage",
+    "category": "E-commerce Content",
+    "tags": ["E-commerce Content", "Shopify", "Vintage Art Garage"],
+    "excerpt": "For automotive art, the subject, the original advertisement, and the item being sold are different pieces of information.",
+    "featuredImage": "desktop-collection-listing",
+    "intro": "The repository describes Vintage Art Garage as a store for framed vintage automotive advertisements and retro wall art. Its unavailable storefront prevents a review of current product pages. What can still be discussed is the information a catalogue in this category would need.",
+    "sections": [
+      {
+        "heading": "Separate the subject from the item",
+        "paragraphs": [
+          "A car’s model year is not necessarily the publication date of an advertisement, and neither automatically describes when a print was produced. I would keep those concepts separate in a product record. Any uncertain date or attribution should remain explicitly uncertain rather than being guessed from the visual style.",
+          "The item offered for sale also needs its own verified description: format, dimensions, condition where relevant, and what is included. A title should not leave the customer guessing whether they are considering an original advertisement, a reproduction, or a framed product."
+        ]
+      },
+      {
+        "heading": "Give archival details a consistent home",
+        "paragraphs": [
+          "For a Shopify catalogue, structured fields could support subject, manufacturer, model, era, source attribution, and physical format where that information is available. The exact field model should follow the merchant’s records, not an assumed template.",
+          "Separate searchable identifiers from descriptive storytelling. A readable introduction can explain the appeal of a piece, while consistent facts make comparison and catalogue maintenance easier."
+        ]
+      },
+      {
+        "heading": "Preserve the unknowns",
+        "paragraphs": [
+          "These are proposed data-design principles, not a description of Vintage Art Garage’s current schema. No source code, product records, or accessible live catalogue was supplied.",
+          "A good archival record does not become more credible by appearing complete. It becomes credible by distinguishing documented facts from missing information and by making later corrections possible."
+        ]
+      }
+    ],
+    "takeaway": "The vehicle, the historical advertisement, and the product for sale should never be silently treated as the same record.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "The product data a vintage print deserves",
+    "seoDescription": "For automotive art, the subject, the original advertisement, and the item being sold are different pieces of information."
+  },
+  {
+    "slug": "vintage-art-garage-authentic-capture-plan",
+    "title": "A screenshot is evidence, not decoration",
+    "project": "vintage-art-garage",
+    "category": "E-commerce Design",
+    "tags": ["E-commerce Design", "Shopify", "Vintage Art Garage"],
+    "excerpt": "Why Vintage Art Garage’s article visuals remain placeholders—and how an honest future capture set should be prepared.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "An empty image slot is less impressive than a polished mockup. It is also more useful when the mockup would imply access to a storefront that was not available.",
+    "sections": [
+      {
+        "heading": "Respect the source boundary",
+        "paragraphs": [
+          "The supplied Vintage Art Garage README explicitly reports zero accepted images. Public storefront routes redirected to a password page during the recorded check. The archive excludes closed-state screenshots, cached former pages, and fabricated visuals from accepted project coverage. The article placeholders preserve that boundary."
+        ]
+      },
+      {
+        "heading": "Capture a connected story when access returns",
+        "paragraphs": [
+          "A useful future set would include a homepage, a representative collection, a product detail view, and corresponding mobile states. Each image should have a source URL, capture date, viewport, and a description of what is actually visible.",
+          "Choose states that answer different questions rather than exporting many near-identical frames. A desktop and mobile pair should show the same part of the journey where possible, so the comparison is meaningful. Do not label unrelated views as a before-and-after transformation."
+        ]
+      },
+      {
+        "heading": "Keep portfolio claims separate",
+        "paragraphs": [
+          "A capture proves that a particular interface was visible at a particular time. It does not prove who built it, which theme or apps it uses, or whether a development change improved sales. Those claims need their own supporting information.",
+          "When approved imagery becomes available, the placeholder can be replaced without changing the article’s layout. Until then, showing the gap clearly is preferable to filling it with another client’s website or a generated storefront."
+        ]
+      }
+    ],
+    "takeaway": "Use an image to support a claim—not to make an unsupported claim look convincing.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A screenshot is evidence, not decoration",
+    "seoDescription": "Why Vintage Art Garage’s article visuals remain placeholders—and how an honest future capture set should be prepared."
+  },
+  {
+    "slug": "vintage-art-garage-frame-option-model",
+    "title": "Frame choices need a product model",
+    "project": "vintage-art-garage",
+    "category": "Theme Development",
+    "tags": ["Theme Development", "Shopify", "Vintage Art Garage"],
+    "excerpt": "A planning note for framed automotive art: make the relationship between the print, frame, and selected offer explicit.",
+    "featuredImage": "desktop-product-detail",
+    "intro": "A framed print contains several potential choices. The artwork, size, frame, and presentation can all affect what the customer expects to receive. A product interface should make those relationships explicit rather than rely on a room photograph.",
+    "sections": [
+      {
+        "heading": "Start with the offer, not the selector",
+        "paragraphs": [
+          "The asset repository identifies framed vintage automotive art as Vintage Art Garage’s category, but the store was not accessible for product inspection. The following is a planning approach, not a claim that the live store currently offers particular sizes, frame colours, or configurable combinations.",
+          "Before choosing a Shopify variant structure, I would ask the merchant which combinations genuinely exist, which have their own inventory or price, and which are simply descriptive attributes. An attractive selector should not create combinations the business does not sell."
+        ]
+      },
+      {
+        "heading": "Keep included items unambiguous",
+        "paragraphs": [
+          "The page should explain whether the displayed frame is included and whether any room props are merely styling. Product names, selected values, imagery, and cart descriptions should reinforce the same offer.",
+          "If a choice changes dimensions, show which measurement is being described: the image area, the print, or the overall framed item. That distinction is especially important when the customer is measuring a wall."
+        ]
+      },
+      {
+        "heading": "Test the combinations that matter",
+        "paragraphs": [
+          "Once real product information is available, review unavailable combinations, default selections, image changes, and the cart line produced by each representative choice. Test keyboard and mobile interaction as well as pointer clicks.",
+          "None of those behaviours can be verified from the current Vintage Art Garage source material. The value of this note is a concrete set of questions to resolve before implementing a product template."
+        ]
+      }
+    ],
+    "takeaway": "Model the actual sellable offer first. Design the option controls around that model.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Frame choices need a product model",
+    "seoDescription": "A planning note for framed automotive art: make the relationship between the print, frame, and selected offer explicit."
+  },
+  {
+    "slug": "vintage-art-garage-art-photography",
+    "title": "Show the artwork and the object",
+    "project": "vintage-art-garage",
+    "category": "E-commerce Design",
+    "tags": ["E-commerce Design", "Shopify", "Vintage Art Garage"],
+    "excerpt": "A proposed image brief for vintage automotive prints: separate visual appeal from the practical evidence a buyer needs.",
+    "featuredImage": "desktop-product-detail",
+    "intro": "A styled room can help someone imagine a print on their wall. It cannot, by itself, explain the detail of the artwork or the physical finish of the item.",
+    "sections": [
+      {
+        "heading": "Two different visual jobs",
+        "paragraphs": [
+          "For the framed automotive-art category described in the repository, I would plan two complementary image roles: a clear view of the artwork and a view of the physical presentation. The first supports appreciation of the image; the second helps explain the object being sold.",
+          "Vintage Art Garage’s current accepted asset set is empty. These are recommendations for a future merchant-approved shoot or capture brief, not descriptions of existing product photography or evidence of a completed redesign."
+        ]
+      },
+      {
+        "heading": "Avoid creating false expectations",
+        "paragraphs": [
+          "Keep the artwork’s proportions intact. Do not stretch a print to fill a design slot or use a room composition that silently implies a particular frame is included. If contextual styling is shown, the product information should still identify the actual offer.",
+          "Detail views can help where texture, print condition, or frame finish matters, but their captions must describe verified features. Alt text should explain the visible image rather than repeat a list of search terms."
+        ]
+      },
+      {
+        "heading": "Prepare for delivery across screens",
+        "paragraphs": [
+          "Use consistent aspect-ratio rules, accurate dimensions, and appropriately sized sources. Let visitors open a larger image when close inspection is useful. On mobile, a legible single image may serve better than several tiny thumbnails squeezed together.",
+          "The goal is not to replace product information with photography. It is to make the two agree so that the customer can understand both the visual subject and the item they would receive."
+        ]
+      }
+    ],
+    "takeaway": "A room view sells the possibility. A faithful product view explains the purchase.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Show the artwork and the object",
+    "seoDescription": "A proposed image brief for vintage automotive prints: separate visual appeal from the practical evidence a buyer needs."
+  },
+  {
+    "slug": "vintage-art-garage-searchable-archive",
+    "title": "Searchable does not mean stuffed with keywords",
+    "project": "vintage-art-garage",
+    "category": "SEO",
+    "tags": ["SEO", "Shopify", "Vintage Art Garage"],
+    "excerpt": "Vintage automotive art offers specific search language—but model names, dates, and historical descriptions still need evidence.",
+    "featuredImage": "desktop-collection-listing",
+    "intro": "A vintage automotive catalogue can contain unusually precise terms: manufacturers, models, eras, and formats. Their usefulness depends on accuracy, not on fitting as many of them as possible into a title.",
+    "sections": [
+      {
+        "heading": "Use documented identifiers",
+        "paragraphs": [
+          "The repository describes the store’s category, but it provides no accessible product catalogue for this project. I would not invent model names, dates, condition statements, or collection titles to make an article appear more specific. This is an SEO planning note for the category rather than an audit of the unavailable site.",
+          "When records become available, build titles and page descriptions around the item’s verified identity. Keep uncertain attributions qualified. A search snippet should not promise an original artifact when the product record describes a reproduction."
+        ]
+      },
+      {
+        "heading": "Give collections a useful boundary",
+        "paragraphs": [
+          "Collections might eventually group products by documented subject, era, or format, if the real inventory supports those groupings. Their introductions should explain that boundary in ordinary language. Avoid creating near-empty pages simply because a keyword combination exists.",
+          "Internal links can connect related material without turning every paragraph into a navigation list. Use descriptive labels and retain a clear path between a product and its broader context."
+        ]
+      },
+      {
+        "heading": "Verify technical behaviour when the site is available",
+        "paragraphs": [
+          "Titles, canonical URLs, crawlability, structured data, and unavailable-product handling require a review of the actual implementation. No ranking, traffic, or indexing conclusion is justified by the current asset set.",
+          "The strongest starting point is a dependable catalogue record. Search optimization should make that information easier to discover, not make the historical claims more ambitious."
+        ]
+      }
+    ],
+    "takeaway": "Historical specificity is valuable only when the underlying record supports it.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Searchable does not mean stuffed with keywords",
+    "seoDescription": "Vintage automotive art offers specific search language—but model names, dates, and historical descriptions still need evidence."
+  },
+  {
+    "slug": "vintage-art-garage-reopening-review",
+    "title": "Before the storefront opens again",
+    "project": "vintage-art-garage",
+    "category": "Store Management",
+    "tags": ["Store Management", "Shopify", "Vintage Art Garage"],
+    "excerpt": "A practical reopening review for a temporarily unavailable store, without pretending that an inaccessible checkout has been tested.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "Removing a password is a small technical action. Reopening a store is a broader operational moment: the information, links, and customer expectations all need to agree that the store is ready.",
+    "sections": [
+      {
+        "heading": "Begin with current information",
+        "paragraphs": [
+          "The supplied Vintage Art Garage source documents a temporary public closure. It does not provide an authenticated preview or accepted live storefront captures. The checklist here is prospective and should be used when the owner can review the actual store.",
+          "Start by confirming the current catalogue, availability, prices, and customer-facing policies. Old campaign copy or stale delivery information can survive a period of inactivity even when the page itself still looks polished."
+        ]
+      },
+      {
+        "heading": "Follow representative journeys",
+        "paragraphs": [
+          "Check the homepage, a collection, a product, the cart, and the contact route. Include mobile navigation and keyboard use. Where an order flow needs verification, use an appropriate test environment or authorized test procedure rather than placing an unplanned real purchase.",
+          "Review links in closure notices, email messages, and saved promotional material. A returning customer may arrive through an older URL rather than the homepage. Decide deliberately how retired pages should respond."
+        ]
+      },
+      {
+        "heading": "Collect evidence before making claims",
+        "paragraphs": [
+          "Record the actual date and states reviewed, and capture approved desktop and mobile imagery after access returns. Recheck robots and indexing settings so temporary restrictions are not left behind unintentionally.",
+          "Completing a checklist does not guarantee software will never contain an error. It provides a documented baseline and a way to identify what still needs attention. No reopening test or live delivery result is claimed for Vintage Art Garage here."
+        ]
+      }
+    ],
+    "takeaway": "Reopening is a content, operational, and development review—not just a change to one access setting.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Before the storefront opens again",
+    "seoDescription": "A practical reopening review for a temporarily unavailable store, without pretending that an inaccessible checkout has been tested."
+  }
+]

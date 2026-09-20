@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "prime-baby-gear-navigation",
+    "title": "Two ways into a baby-gear catalogue",
+    "project": "prime-baby-gear",
+    "category": "Shopify UX",
+    "tags": ["Shopify UX", "Shopify", "Prime Baby Gear"],
+    "excerpt": "Brand-led and product-led shopping serve different questions. Prime Baby Gear offers a useful starting point for thinking about both.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "One parent arrives knowing the manufacturer. Another only knows they need a pushchair. A navigation system that assumes both people start with a brand name makes one of them work unnecessarily hard.",
+    "sections": [
+      {
+        "heading": "What the storefront shows",
+        "paragraphs": [
+          "The supplied Prime Baby Gear homepage capture places product groups such as Prams & Pushchairs, Car Seats, and Baby & Kids Room in the main navigation. Brands is a separate entry. The archive also contains dedicated Babymore and Baby Jogger range captures. These are visible shopping routes, not evidence of the theme’s internal implementation."
+        ]
+      },
+      {
+        "heading": "Keep the two routes connected",
+        "paragraphs": [
+          "I would treat a brand page and a product-type collection as complementary views of the same catalogue. A shopper should be able to find a travel system through either route without encountering contradictory names or product information. That does not require duplicating product records.",
+          "For a Shopify implementation, the first task is to agree the vocabulary: product type, manufacturer, range, and bundle are different fields. The navigation can then reflect those distinctions rather than turn every label into a competing top-level menu item."
+        ]
+      },
+      {
+        "heading": "Test the question, not just the link",
+        "paragraphs": [
+          "A useful review starts with two tasks: find a car seat without knowing a brand, then find a specific manufacturer’s travel systems. Record where each route becomes uncertain. On mobile, also check whether closing the menu returns focus to the trigger and whether a long brand list remains scrollable.",
+          "Successful routing is not a conversion result by itself. It is a concrete piece of the shopping experience that can be inspected before any commercial measurement is available."
+        ]
+      }
+    ],
+    "takeaway": "Product type answers “what do I need?” Brand answers “whose version do I want?” Give both questions a clear route.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Two ways into a baby-gear catalogue",
+    "seoDescription": "Brand-led and product-led shopping serve different questions. Prime Baby Gear offers a useful starting point for thinking about both."
+  },
+  {
+    "slug": "prime-baby-gear-travel-system-details",
+    "title": "A travel system is not a single item",
+    "project": "prime-baby-gear",
+    "category": "Product Experience",
+    "tags": ["Product Experience", "Shopify", "Prime Baby Gear"],
+    "excerpt": "A useful travel-system page explains the bundle before asking a customer to compare colours, prices, or accessories.",
+    "featuredImage": "desktop-travel-system-detail",
+    "intro": "Travel systems are easy to photograph as one coordinated set. That same photograph can make it difficult to tell which parts are actually included. A polished product page has to resolve that ambiguity, not rely on the picture to do it.",
+    "sections": [
+      {
+        "heading": "The visible context",
+        "paragraphs": [
+          "Prime Baby Gear’s supplied assets include desktop and mobile travel-system detail captures, plus a Mercedes signature travel-system collection. That establishes a bundle-led shopping context. It does not establish compatibility, safety specifications, or the contents of every current offer. Those details must come from the merchant and manufacturer."
+        ]
+      },
+      {
+        "heading": "Separate included, compatible, and optional",
+        "paragraphs": [
+          "For this kind of product, I would make three distinctions explicit: what arrives in the box, what can be used with the system, and what costs extra. A carrycot shown in lifestyle photography should not silently become a promise that it is included.",
+          "Store those facts in structured content where practical. A bundle list should be maintained once and reused consistently, while manufacturer compatibility information needs its own source and review process. A reusable Shopify section is only useful if the underlying information is dependable."
+        ]
+      },
+      {
+        "heading": "Bring the answer close to the decision",
+        "paragraphs": [
+          "The buying area is a sensible place for a short included-items summary, with fuller detail nearby. On a phone, the reader should not have to repeatedly scroll between a variant selector and the answer to a basic bundle question.",
+          "Before release, compare every selected option with its images and contents description. This is an implementation checklist for this product category, not a claim that a particular configuration or conversion improvement was delivered."
+        ]
+      }
+    ],
+    "takeaway": "An attractive bundle image can start the conversation. An accurate included-items list finishes the explanation.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A travel system is not a single item",
+    "seoDescription": "A useful travel-system page explains the bundle before asking a customer to compare colours, prices, or accessories."
+  },
+  {
+    "slug": "prime-baby-gear-mobile-navigation",
+    "title": "The mobile menu has a job to finish",
+    "project": "prime-baby-gear",
+    "category": "Responsive Design",
+    "tags": ["Responsive Design", "Shopify", "Prime Baby Gear"],
+    "excerpt": "Reading Prime Baby Gear’s mobile captures as a sequence: open navigation, choose a direction, and return to the store without losing context.",
+    "featuredImage": "desktop-collection-listing",
+    "intro": "A mobile menu is not just a smaller set of desktop links. It temporarily replaces the shopper’s view of the store. Its job is to offer a direction, then get out of the way cleanly.",
+    "sections": [
+      {
+        "heading": "A sequence worth reviewing",
+        "paragraphs": [
+          "The supplied Prime Baby Gear archive includes a mobile homepage, an open mobile navigation state, and a mobile travel-system detail page. They are useful reference points for a navigation review, but still images cannot prove keyboard handling, animation quality, or how a drawer behaves after a resize."
+        ]
+      },
+      {
+        "heading": "Keep orientation visible",
+        "paragraphs": [
+          "On a multi-category baby store, I would keep the current level unmistakable. A submenu needs a meaningful back label, not just an arrow whose destination is unclear. Product groups and brand choices should remain distinct even when they occupy the same narrow panel.",
+          "Long menus also need their own scrolling area. A fixed-height drawer that looks fine on one phone can hide its last links when the browser toolbar or an accessibility text-size setting reduces the available height."
+        ]
+      },
+      {
+        "heading": "Check the exit as carefully as the entrance",
+        "paragraphs": [
+          "Test opening and closing by touch and keyboard, following a deep link, and using browser back. Verify that focus returns somewhere useful, background content is not accidentally interactive under a modal drawer, and the page does not jump after dismissal.",
+          "Screenshots help identify the states to check. A real browser session is still needed to validate transitions between them. None of these checks establishes a defect in Prime Baby Gear; they describe the review I would apply to the visible navigation pattern."
+        ]
+      }
+    ],
+    "takeaway": "A navigation drawer is complete when both entering and leaving it feel predictable.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "The mobile menu has a job to finish",
+    "seoDescription": "Reading Prime Baby Gear’s mobile captures as a sequence: open navigation, choose a direction, and return to the store without losing context."
+  },
+  {
+    "slug": "prime-baby-gear-product-data",
+    "title": "The product record behind the pushchair",
+    "project": "prime-baby-gear",
+    "category": "Store Management",
+    "tags": ["Store Management", "Shopify", "Prime Baby Gear"],
+    "excerpt": "A baby-gear catalogue needs consistent product information long before it needs a more elaborate product template.",
+    "featuredImage": "desktop-babymore-brand-range",
+    "intro": "The most expensive content mistake is often a small inconsistency repeated across a large catalogue. A different range name, an unclear bundle label, or an outdated image can make two versions of the same product look unrelated.",
+    "sections": [
+      {
+        "heading": "What the range captures establish",
+        "paragraphs": [
+          "Prime Baby Gear’s archive contains brand-range pages as well as travel-system detail imagery. That mix suggests a useful editorial question: can the shopper understand how manufacturer, range, and individual product relate? It does not reveal the merchant’s actual import process or data model."
+        ]
+      },
+      {
+        "heading": "Define the fields before importing",
+        "paragraphs": [
+          "For a catalogue like this, I would agree a small data dictionary before changing templates: manufacturer, range, product type, variant, bundle contents, and source of technical information. Each field needs a definition and a person responsible for checking it.",
+          "Descriptions should not become a storage area for every attribute. Structured fields make recurring information easier to display consistently, while prose can explain the product in context. Shopify metafields may be appropriate, but choosing them is an implementation decision rather than something a public screenshot can verify."
+        ]
+      },
+      {
+        "heading": "Make updates reversible",
+        "paragraphs": [
+          "A sensible update routine starts with a small sample, checks the storefront presentation, and only then expands to the remaining records. Keep an export or other recoverable version before bulk changes. Review variant-image associations, collection membership, and empty fields after the update.",
+          "The aim is not to claim an error-free catalogue. It is to make mistakes easier to detect and easier to reverse. That discipline supports the storefront regardless of the theme used to render it."
+        ]
+      }
+    ],
+    "takeaway": "Agree what each field means before deciding how the theme should display it.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "The product record behind the pushchair",
+    "seoDescription": "A baby-gear catalogue needs consistent product information long before it needs a more elaborate product template."
+  },
+  {
+    "slug": "prime-baby-gear-collection-seo",
+    "title": "Collection SEO starts with the collection",
+    "project": "prime-baby-gear",
+    "category": "SEO",
+    "tags": ["SEO", "Shopify", "Prime Baby Gear"],
+    "excerpt": "Product groups and brand ranges should answer different search intentions without repeating the same page under new headings.",
+    "featuredImage": "desktop-baby-jogger-range",
+    "intro": "A collection page should earn its place in the store before it earns a search-engine title. If it does not help a shopper choose, another paragraph of keywords is unlikely to make it more useful.",
+    "sections": [
+      {
+        "heading": "Two different intentions",
+        "paragraphs": [
+          "Prime Baby Gear visibly separates product categories and brands, and its source archive includes a Baby Jogger range capture. Someone exploring pushchairs and someone looking specifically for that brand are expressing different levels of certainty. Useful collection content should respect the difference."
+        ]
+      },
+      {
+        "heading": "Explain the boundary of the page",
+        "paragraphs": [
+          "For a product-type collection, I would explain the choice being made and which kinds of products are included. For a brand range, the content should help orient the reader within that manufacturer’s offer. Neither introduction needs to repeat a long product catalogue in prose.",
+          "A sensible Shopify review would then check the heading, title, description, internal links, and how filtered views are handled. Canonical and indexing behaviour must be inspected in the actual implementation; it cannot be inferred from these screenshots."
+        ]
+      },
+      {
+        "heading": "Maintain usefulness over time",
+        "paragraphs": [
+          "When a range changes, update the introduction and links as well as the product membership. An empty collection with an old promotional promise is a content-maintenance issue, not just an SEO issue.",
+          "Measure search visibility only with real search data and an appropriate comparison period. This article identifies a structure for useful collection content. It does not report rankings, traffic gains, or SEO work performed on Prime Baby Gear."
+        ]
+      }
+    ],
+    "takeaway": "A collection introduction should tell the reader why these products belong together.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Collection SEO starts with the collection",
+    "seoDescription": "Product groups and brand ranges should answer different search intentions without repeating the same page under new headings."
+  },
+  {
+    "slug": "prime-baby-gear-image-performance",
+    "title": "Keep the hero useful, not heavy",
+    "project": "prime-baby-gear",
+    "category": "Performance",
+    "tags": ["Performance", "Shopify", "Prime Baby Gear"],
+    "excerpt": "The Prime Baby Gear hero illustrates an image-led first impression. Here is how I would set its loading priorities without inventing a performance score.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "The first image on a store has two responsibilities: establish the product context and arrive without holding the rest of the page hostage. Neither responsibility is satisfied by simply exporting the largest file available.",
+    "sections": [
+      {
+        "heading": "Read the composition first",
+        "paragraphs": [
+          "The supplied Prime Baby Gear desktop capture places a baby-gear message beside lifestyle photography. The mobile capture uses a narrower presentation. These images show composition; they do not reveal network transfer sizes, loading priorities, or real-user Core Web Vitals."
+        ]
+      },
+      {
+        "heading": "Give assets different priorities",
+        "paragraphs": [
+          "For an implementation with this structure, I would identify the likely largest contentful element before changing loading attributes. An immediately visible hero may deserve early loading, while lower-page product imagery can usually wait. Applying lazy loading to every image is not an optimization strategy.",
+          "Responsive sources should match the space the image actually occupies. Reserve its dimensions so text and controls do not move when it arrives. A separate mobile crop is worthwhile when it preserves the important subject rather than merely supplying a smaller file."
+        ]
+      },
+      {
+        "heading": "Measure a real page",
+        "paragraphs": [
+          "Compare the page under a throttled connection and on a representative phone. Check whether the headline remains readable before photography loads, whether the main action shifts, and whether later image requests crowd out critical resources.",
+          "Use that evidence to choose compression, sizing, and priority changes. A screenshot cannot support a Lighthouse score or a claim of faster loading. The useful result here is a repeatable method for deciding what to measure."
+        ]
+      }
+    ],
+    "takeaway": "Loading priority should follow the customer’s first task, not the file’s position in an export folder.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Keep the hero useful, not heavy",
+    "seoDescription": "The Prime Baby Gear hero illustrates an image-led first impression. Here is how I would set its loading priorities without inventing a performance score."
+  },
+  {
+    "slug": "prime-baby-gear-reassurance-content",
+    "title": "Reassurance needs an explanation",
+    "project": "prime-baby-gear",
+    "category": "E-commerce Content",
+    "tags": ["E-commerce Content", "Shopify", "Prime Baby Gear"],
+    "excerpt": "Warranty, delivery, and support messages are most useful when customers can find the details behind them.",
+    "featuredImage": "desktop-secondary-experience",
+    "intro": "A compact reassurance strip can make a storefront feel more approachable. It can also introduce questions: which products are covered, when does a delivery promise apply, and how can the customer actually reach support?",
+    "sections": [
+      {
+        "heading": "What is visible, and what is not",
+        "paragraphs": [
+          "The Prime Baby Gear homepage capture shows warranty, checkout, support, and parent-oriented reassurance messages. These are the retailer’s statements as captured, not independent verification by this portfolio. The screenshot does not establish their policy terms or operational availability."
+        ]
+      },
+      {
+        "heading": "Connect the short message to the full answer",
+        "paragraphs": [
+          "In a content review, I would map each short statement to a maintained explanation. A delivery message should not conflict with product-specific restrictions. Warranty information should identify the relevant policy and avoid implying identical coverage across every manufacturer.",
+          "Keep the compact label readable and let the supporting page handle the nuance. If a claim needs several qualifications, it may not belong in an unqualified badge at all. This is particularly important for purchases where customers are already comparing detailed product specifications."
+        ]
+      },
+      {
+        "heading": "Treat reassurance as maintained content",
+        "paragraphs": [
+          "Assign ownership to policy-linked content. Review it when suppliers, fulfilment arrangements, or support hours change. Include these messages in regression checks rather than treating them as decoration outside the development scope.",
+          "There is no conversion uplift claimed here. The practical goal is consistency: the product page, the footer policy, and the short reassurance message should tell the same story."
+        ]
+      }
+    ],
+    "takeaway": "A reassurance label is the beginning of an explanation, not a substitute for one.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Reassurance needs an explanation",
+    "seoDescription": "Warranty, delivery, and support messages are most useful when customers can find the details behind them."
+  }
+]

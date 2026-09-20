@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "nokoluxe-outdoor-living-navigation",
+    "title": "One outdoor store, several very different decisions",
+    "project": "nokoluxe",
+    "category": "Shopify UX",
+    "tags": ["Shopify UX", "Shopify", "Nokoluxe"],
+    "excerpt": "Furniture, poolside pieces, fire tables, cooking, and wellness need more than a single undifferentiated product grid.",
+    "featuredImage": "desktop-signature-section",
+    "intro": "Choosing a lounge chair is not the same task as choosing a sauna. Both may belong to outdoor living, but the information needed to make each decision is different.",
+    "sections": [
+      {
+        "heading": "The visible catalogue",
+        "paragraphs": [
+          "Nokoluxe’s captured navigation and collection imagery span outdoor furniture, Aqua Luxe, fire pits and tables, outdoor cooking, and spa or wellness products. These categories establish the breadth of the store. They do not establish the exact filtering logic or the data behind each collection."
+        ]
+      },
+      {
+        "heading": "Organize around the customer’s project",
+        "paragraphs": [
+          "I would make the main category routes legible before adding more detailed refinements. A shopper should be able to enter the right area without already knowing a manufacturer or a technical term. Within that area, the next questions can become more specific.",
+          "A furniture collection may need different attributes from a fire-table collection. Reusing the same filter vocabulary everywhere can be less useful than a smaller, category-aware set. The available product data should guide what can be offered reliably."
+        ]
+      },
+      {
+        "heading": "Keep the overview and detail connected",
+        "paragraphs": [
+          "A category landing page can explain the range of choices, then lead into focused collections. Product pages should offer an intelligible way back to those contexts. Test that journey using an actual shopping task rather than merely confirming that every menu item opens.",
+          "This is an information-architecture reading of the supplied storefront material, not a claim about work performed or conversion results. The key question is whether each category gives customers the right next question to answer."
+        ]
+      }
+    ],
+    "takeaway": "A broad catalogue becomes manageable when each route narrows the decision in a meaningful way.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "One outdoor store, several very different decisions",
+    "seoDescription": "Furniture, poolside pieces, fire tables, cooking, and wellness need more than a single undifferentiated product grid."
+  },
+  {
+    "slug": "nokoluxe-chair-variant-information",
+    "title": "A colour name is part of the product interface",
+    "project": "nokoluxe",
+    "category": "Product Experience",
+    "tags": ["Product Experience", "Shopify", "Nokoluxe"],
+    "excerpt": "Outdoor-chair choices can become difficult to compare when colour, finish, and material information are treated as decoration.",
+    "featuredImage": "desktop-adirondack-chair-detail",
+    "intro": "A product option is a small interface with a large responsibility. It tells the customer which version they are considering. If the selected name, image, and availability disagree, a visually polished selector still fails its main task.",
+    "sections": [
+      {
+        "heading": "A concrete product context",
+        "paragraphs": [
+          "The Nokoluxe archive includes an Adirondack-chair detail capture and a LuxCraft range. The public collection material also presents multiple named colour combinations. Those observations justify a discussion of option clarity, but they do not prove how the live theme synchronizes variants."
+        ]
+      },
+      {
+        "heading": "Make a selection understandable without colour alone",
+        "paragraphs": [
+          "For an implementation like this, I would retain a visible text name alongside swatches. Similar tones, two-colour combinations, and accessibility preferences make a purely visual selector unreliable. A clear selected state should survive both monochrome viewing and keyboard use.",
+          "The selected value should remain near the buying controls. When there are many options, a customer should not have to remember a label from a separate panel in order to confirm the item being added."
+        ]
+      },
+      {
+        "heading": "Review the full relationship",
+        "paragraphs": [
+          "Test whether selection updates the correct image, price, availability, and eventual cart line where those values vary. Verify unavailable combinations and changes made after returning from the cart. These are browser-level checks; a screenshot alone cannot establish that they pass or fail.",
+          "The data matters as much as the control. Agree consistent option names with the merchant before customizing the interface. A more elaborate selector cannot repair contradictory source records."
+        ]
+      }
+    ],
+    "takeaway": "An option is not selected clearly until its name, state, and product information agree.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A colour name is part of the product interface",
+    "seoDescription": "Outdoor-chair choices can become difficult to compare when colour, finish, and material information are treated as decoration."
+  },
+  {
+    "slug": "nokoluxe-large-item-purchase-information",
+    "title": "The questions beside a large purchase",
+    "project": "nokoluxe",
+    "category": "CRO",
+    "tags": ["CRO", "Shopify", "Nokoluxe"],
+    "excerpt": "For outdoor furniture, delivery and dimensions are part of the buying decision—not just footer information.",
+    "featuredImage": "desktop-luxcraft-range",
+    "intro": "An outdoor furniture purchase extends beyond the photograph. The customer needs to imagine the item in a real space and understand how it will reach that space.",
+    "sections": [
+      {
+        "heading": "The visible setting",
+        "paragraphs": [
+          "Nokoluxe’s supplied material shows outdoor furniture and other substantial outdoor-living products. That is the context for this article. The captures do not verify delivery charges, assembly arrangements, return terms, or installation services for any particular item."
+        ]
+      },
+      {
+        "heading": "Bring the constraints into view",
+        "paragraphs": [
+          "For a large-item product page, I would review dimensions, package information where relevant, delivery explanations, and any verified assembly requirements. These should be easy to locate near the buying decision, with fuller detail available without losing the product context.",
+          "Avoid turning unknown information into reassuring copy. “Easy delivery” is less useful than an accurate explanation of the actual delivery process. If arrangements vary by product or destination, the page should say so and provide the correct route to an answer."
+        ]
+      },
+      {
+        "heading": "Test with realistic questions",
+        "paragraphs": [
+          "Ask a reviewer to determine whether an item fits a chosen space and what they need to know before ordering. Observe where they look, which terms are ambiguous, and whether mobile presentation hides essential content.",
+          "That exercise can inform a CRO hypothesis, but it is not a conversion-rate result. Any commercial claim would need a defined change, reliable measurement, and a suitable comparison. The immediate goal is to remove avoidable uncertainty using information the business can genuinely support."
+        ]
+      }
+    ],
+    "takeaway": "For a considered purchase, accurate constraints can be more useful than another persuasive sentence.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "The questions beside a large purchase",
+    "seoDescription": "For outdoor furniture, delivery and dimensions are part of the buying decision—not just footer information."
+  },
+  {
+    "slug": "nokoluxe-responsive-outdoor-imagery",
+    "title": "Show the room without losing the furniture",
+    "project": "nokoluxe",
+    "category": "Responsive Design",
+    "tags": ["Responsive Design", "Shopify", "Nokoluxe"],
+    "excerpt": "Nokoluxe’s outdoor compositions illustrate the tension between selling an atmosphere and showing the item clearly on a phone.",
+    "featuredImage": "desktop-home-hero",
+    "intro": "A broad outdoor scene can communicate scale, mood, and the way several pieces work together. On a phone, the same frame may reduce the actual product to a small detail.",
+    "sections": [
+      {
+        "heading": "Start with the role of the image",
+        "paragraphs": [
+          "The supplied Nokoluxe homepage uses a wide outdoor-living composition. The archive also includes narrower mobile views and focused product captures. These are distinct editorial roles: a scene establishes context, while a product image explains an object."
+        ]
+      },
+      {
+        "heading": "Use different frames for different questions",
+        "paragraphs": [
+          "I would preserve the wider scene when it helps explain the setting, then provide closer imagery for the product decision. Trying to make one crop do both jobs often compromises each. A mobile hero may need a different focal point, but it should not hide the very category the headline introduces.",
+          "For responsive implementation, source selection, object positioning, and text placement should be considered together. A technically sharp image is not useful if the overlay makes the headline unreadable or the crop removes important context."
+        ]
+      },
+      {
+        "heading": "Review the page with content present",
+        "paragraphs": [
+          "Test the composition with the real heading and controls, not only an empty image container. Check several phone widths, taller text, and the moment before the image finishes loading. Reserve the aspect ratio so surrounding content stays stable.",
+          "The source screenshots support this visual discussion, not a claim about Nokoluxe’s current image-loading strategy or performance. Those implementation details need direct inspection and measurement."
+        ]
+      }
+    ],
+    "takeaway": "Atmosphere introduces the collection. A closer view explains what the customer is buying.",
+    "mobileGallery": true,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Show the room without losing the furniture",
+    "seoDescription": "Nokoluxe’s outdoor compositions illustrate the tension between selling an atmosphere and showing the item clearly on a phone."
+  },
+  {
+    "slug": "nokoluxe-fire-table-content",
+    "title": "A fire-table collection needs its own information model",
+    "project": "nokoluxe",
+    "category": "E-commerce Content",
+    "tags": ["E-commerce Content", "Shopify", "Nokoluxe"],
+    "excerpt": "Category-specific questions deserve category-specific content. Fire tables should not inherit a furniture template without a review.",
+    "featuredImage": "project-highlight-fire-pit-table-collection",
+    "intro": "A common storefront template can create visual consistency across a large catalogue. It should not imply that every category needs the same product information.",
+    "sections": [
+      {
+        "heading": "The reference in the archive",
+        "paragraphs": [
+          "Nokoluxe’s supplied assets include a fire-pit and fire-table collection alongside outdoor furniture and wellness categories. That establishes a distinct product context. It does not establish specifications, approved uses, installation requirements, or safety instructions for individual products."
+        ]
+      },
+      {
+        "heading": "Identify the facts that cannot be guessed",
+        "paragraphs": [
+          "For a fire-table content model, I would first ask the merchant which manufacturer-approved specifications and instructions must accompany each item. The point is not to write generic safety advice; it is to make verified product-specific information consistently available.",
+          "Separate descriptive content from technical facts and supporting documents. A lifestyle paragraph should not become the only place a customer can find a material specification or a relevant installation document. Optional fields must disappear cleanly when they are not applicable."
+        ]
+      },
+      {
+        "heading": "Keep the template honest",
+        "paragraphs": [
+          "A Shopify section can present a consistent structure while allowing category-specific information. That flexibility should be deliberate rather than a collection of exceptions hidden inside long descriptions.",
+          "Review the output with the merchant and against the approved source material. Do not infer compatibility or suitability from a photograph, and do not manufacture an answer simply to fill a design slot. This is a recommended content-design process, not an account of Nokoluxe’s existing implementation."
+        ]
+      }
+    ],
+    "takeaway": "Reuse the visual system. Verify the information model for each product category.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A fire-table collection needs its own information model",
+    "seoDescription": "Category-specific questions deserve category-specific content. Fire tables should not inherit a furniture template without a review."
+  },
+  {
+    "slug": "nokoluxe-brand-and-category-seo",
+    "title": "Brand ranges and categories should not say the same thing",
+    "project": "nokoluxe",
+    "category": "SEO",
+    "tags": ["SEO", "Shopify", "Nokoluxe"],
+    "excerpt": "A LuxCraft range and an outdoor-furniture category can serve different intentions while sharing products.",
+    "featuredImage": "desktop-luxcraft-range",
+    "intro": "An e-commerce catalogue often has several legitimate ways to group the same product. The challenge is to make those pages useful rather than fill them with interchangeable introductions.",
+    "sections": [
+      {
+        "heading": "A visible pair of routes",
+        "paragraphs": [
+          "The Nokoluxe archive includes a LuxCraft range and broader collection pages. That gives a concrete example of a brand-led route alongside a category-led route. It does not tell us which pages are currently indexed or how canonical URLs are configured."
+        ]
+      },
+      {
+        "heading": "Write for the reason someone arrived",
+        "paragraphs": [
+          "For a brand-range page, I would focus on orientation within the available range. For a broader outdoor-furniture collection, I would help the reader understand the kinds of choices available. The distinction should be visible in the heading, introduction, and useful next links.",
+          "Keep product facts consistent across both routes. Search-oriented content should not introduce unsupported material, warranty, or performance claims simply because a page needs more text."
+        ]
+      },
+      {
+        "heading": "Inspect the technical layer separately",
+        "paragraphs": [
+          "Review metadata, internal linking, filtered URLs, canonical behaviour, and empty-collection handling in the actual Shopify implementation. A collection screenshot cannot verify any of those systems.",
+          "If a range is removed or reorganized, review old links and decide how existing URLs should behave. That is an ongoing catalogue task, not a one-time keyword exercise. No ranking or traffic change is reported here; the aim is a clear division of purpose between pages that share inventory."
+        ]
+      }
+    ],
+    "takeaway": "Two pages can share products without sharing the same reason to exist.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "Brand ranges and categories should not say the same thing",
+    "seoDescription": "A LuxCraft range and an outdoor-furniture category can serve different intentions while sharing products."
+  },
+  {
+    "slug": "nokoluxe-catalogue-performance",
+    "title": "A large catalogue needs a loading budget",
+    "project": "nokoluxe",
+    "category": "Performance",
+    "tags": ["Performance", "Shopify", "Nokoluxe"],
+    "excerpt": "Outdoor-living imagery is valuable, but a collection page should not ask every image and integration to arrive at once.",
+    "featuredImage": "desktop-collection-listing",
+    "intro": "A collection page can become heavy one reasonable decision at a time: larger photography, another quick-view feature, an extra recommendation panel. The total cost matters more than whether each addition seems small.",
+    "sections": [
+      {
+        "heading": "What the captures can tell us",
+        "paragraphs": [
+          "Nokoluxe’s supplied collection and product captures show an image-led catalogue across several outdoor-living categories. They cannot reveal transfer sizes, JavaScript execution time, third-party request costs, or field performance. Any optimization plan needs those measurements separately."
+        ]
+      },
+      {
+        "heading": "Budget for the initial task",
+        "paragraphs": [
+          "I would define what the customer needs to start browsing: the page heading, navigation, meaningful first products, and usable controls. Give those assets appropriate priority. Lower-page images and optional enhancements should not compete indiscriminately with the first useful screen.",
+          "Responsive image sources should reflect the actual grid width. Reserve image space, avoid unnecessary duplicate downloads, and review scripts added by theme features and apps. Removing a feature without understanding its business role is not automatically an improvement."
+        ]
+      },
+      {
+        "heading": "Measure representative paths",
+        "paragraphs": [
+          "Use a collection with realistic inventory, not only a small demonstration set. Test filtering or sorting where present, a transition to a product, and browser back. Include a constrained connection and a representative mobile device.",
+          "The outcome should be a prioritized list backed by evidence. This article does not provide a Lighthouse score, diagnose a specific Nokoluxe bottleneck, or claim that performance work has already been completed."
+        ]
+      }
+    ],
+    "takeaway": "Optimize the first useful shopping task, then account for the cost of everything that follows.",
+    "mobileGallery": false,
+    "publishedAt": "2026-09-21",
+    "status": "published",
+    "seoTitle": "A large catalogue needs a loading budget",
+    "seoDescription": "Outdoor-living imagery is valuable, but a collection page should not ask every image and integration to arrive at once."
+  }
+]
