@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import SiteMetrics from "@/components/SiteMetrics";
 import { profile } from "@/data/portfolio";
 import "@/styles/variables.css";
 import "@/styles/globals.css";
@@ -77,6 +78,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        {process.env.VERCEL === "1" && <SiteMetrics />}
       </body>
     </html>
   );
