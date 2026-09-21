@@ -98,3 +98,11 @@ npm run test:cms
 `test:cms` runs the actual Next editor/API against a disposable, local **in-memory HTTP double**, plus an intercepted inline-upload response. It covers application authorization, editing/formatting, inline-image placement, preview, saves/reopening, publish/archive visibility, import retries, concurrency handling, accessible controls, and layouts from 320 to 2560px. The fixture is never imported by production code and no demo credentials work against the deployed app. These tests do **not** prove Supabase Auth correctness, RLS enforcement, Storage persistence, or deployed delivery. The real-project checks above remain outstanding until configuration is supplied.
 
 This version is intended for a small personal journal. Administrative/public collections currently read up to 500 records; add server-side pagination before growing beyond that. There is no scheduling, permanent deletion, media-library browser, image cropping, raw HTML mode, or autosave. The original JSON files remain version-controlled as the baseline, not a second live editor after database cutover.
+
+### Recorded development verification — 22 September 2026
+
+- Production `npm run build`: passed; TypeScript checks passed.
+- `npm test`: **121/121 passed** against the production build, including public blog/homepage regressions, typography, accessibility, responsive layouts, unconfigured admin protection, and model/import validation.
+- `npm run test:cms`: **5/5 passed** against the isolated HTTP double. Includes real server-side image decoding/optimization with mocked object storage and an intercepted insertion response, not live Supabase upload verification.
+- Editor tested at 320, 375, 390, 414, 768, 820, 1024, 1280, 1440, 1920, and 2560 pixels. Automated accessibility checks passed for the editor and image dialog; desktop/mobile captures were visually inspected.
+- **Not verified:** actual Supabase project migration/RLS/Auth/Storage, deployment environment, real account recovery, physical devices, or field performance. No credentials were supplied and no live database was changed.
