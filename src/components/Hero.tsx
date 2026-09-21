@@ -108,7 +108,7 @@ export default function Hero() {
             </div>
             <Check size={14} />
           </div>
-          <div className="phone-preview">
+          <div className="phone-preview" aria-hidden="true">
             <div className="phone-notch" />
             <div className="phone-nav">
               form&field. <ShoppingBag size={9} />

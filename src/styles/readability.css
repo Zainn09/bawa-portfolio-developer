@@ -1,0 +1,282 @@
+/* Reflow for the shared 12px small-text floor. Never shrink copy to fit a box. */
+.brand small {
+  letter-spacing: 0.8px;
+}
+.hero-copy,
+.process-stage > *,
+.management-layout > *,
+.data-card,
+.atelier-controls > *,
+.footer-directory > * {
+  min-width: 0;
+}
+.hero-authorship > a > span {
+  max-width: none;
+}
+.hero-authorship > a {
+  flex-shrink: 0;
+  max-width: 100px;
+}
+.eyebrow,
+.hero-specialties,
+.craft-strip > .container > span,
+.craft-strip > .container > div,
+.data-card-header,
+.data-flow,
+.atelier-reset,
+.signature-footer-bottom {
+  flex-wrap: wrap;
+}
+.craft-strip > .container > span {
+  white-space: normal;
+}
+.atelier-reset > span {
+  max-width: none;
+}
+.atelier-reset {
+  gap: 12px;
+}
+.data-flow {
+  justify-content: flex-start;
+  row-gap: 10px;
+}
+.structured-data dl > div {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.5fr);
+}
+.structured-data dd {
+  overflow-wrap: anywhere;
+}
+.orbit-scene .orbit-rotation {
+  width: auto;
+  min-width: 44px;
+}
+.phase-tabs {
+  flex-wrap: wrap;
+}
+.phase-tabs > button {
+  min-height: 44px;
+}
+
+/* Keep artwork and its captions in flow when larger text makes the demo taller. */
+.hero .hero-art {
+  height: auto;
+  padding-top: 50px;
+  padding-bottom: 0;
+}
+.hero .hero-store-wrap {
+  position: relative;
+  inset: auto;
+  margin-top: 0;
+}
+.hero .hero-art-footer {
+  position: relative;
+  inset: auto;
+  margin-top: 74px;
+}
+.hero .phone-preview {
+  bottom: 130px;
+}
+.hero .responsive-note {
+  bottom: 154px;
+}
+
+/* Interactive demos use readable text too. Size by content, not fixed screenshots. */
+.store-screen {
+  container-type: inline-size;
+}
+.store-browser .store-campaign {
+  height: auto;
+}
+.store-browser:not(.composition-product .store-browser) .store-campaign {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 240px;
+}
+.store-browser:not(.composition-product .store-browser) .store-campaign > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.store-browser:not(.composition-product .store-browser) .store-campaign-copy {
+  position: relative;
+  inset: auto;
+  align-self: center;
+  margin: 24px 6%;
+}
+.store-browser .store-highlight {
+  position: relative;
+  inset: auto;
+  margin: 0 14px 14px;
+  max-width: none;
+  width: fit-content;
+}
+.store-browser .store-product {
+  flex-wrap: wrap;
+}
+.store-product > div {
+  min-width: 0;
+}
+.store-browser .store-product-buy {
+  flex-wrap: wrap;
+}
+.store-browser .store-benefits {
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.store-browser .store-benefits > span {
+  max-width: 140px;
+}
+.composition-product .store-campaign {
+  min-height: 300px;
+}
+.device-stage {
+  height: auto;
+  min-height: 530px;
+}
+@container (max-width: 380px) {
+  .store-browser .store-nav nav {
+    display: none;
+  }
+  .store-browser .store-mobile-menu {
+    display: inline-flex;
+    align-items: center;
+  }
+  .store-browser .store-product-buy {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .store-browser .store-nav {
+    padding-inline: 14px;
+  }
+  .store-browser .store-campaign-copy {
+    max-width: 80%;
+  }
+}
+@media (max-width: 767px) {
+  .brand small {
+    letter-spacing: 0.5px;
+  }
+  .nav-container {
+    gap: 10px;
+  }
+  .hero-actions {
+    flex-wrap: wrap;
+  }
+  .hero-actions > a {
+    flex: 1 1 auto;
+    justify-content: space-between;
+  }
+  .hero .hero-art {
+    padding-top: 42px;
+  }
+  .hero .hero-art-footer {
+    margin-top: 26px;
+  }
+  .hero .phase-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .atelier-reset > span {
+    text-align: left;
+    flex: 1 1 140px;
+    line-height: 1.6;
+  }
+  .process-pin .process-store .store-campaign {
+    min-height: 112px;
+  }
+  .process-pin .process-store .store-campaign-copy {
+    margin: 10px 6%;
+  }
+  .process-pin .process-store .store-highlight {
+    margin: 0 10px 10px;
+  }
+  .device-frame:after {
+    left: 0;
+    width: 100%;
+  }
+  .responsive-bottom {
+    flex-wrap: wrap;
+    gap: 12px 22px;
+  }
+  .footer-project-orbit > span {
+    max-width: 90px;
+    text-align: center;
+  }
+  .signature-footer-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .signature-footer-bottom > span {
+    grid-column: 1;
+  }
+}
+
+/* The pinned chapter is a compact preview; its full explanation sits beside it. */
+.process-pin .process-store .store-browser .store-campaign {
+  min-height: 175px;
+}
+.process-pin .process-store .store-campaign-copy > p,
+.process-pin .process-store .store-campaign-copy > button,
+.process-pin .process-store .store-benefits {
+  display: none;
+}
+.process-pin .process-store .store-browser .store-campaign-copy {
+  margin: 14px 6%;
+  max-width: 50%;
+}
+.process-pin .process-store .store-highlight {
+  position: absolute;
+  left: auto;
+  right: 8px;
+  bottom: 8px;
+  margin: 0;
+  max-width: 43%;
+}
+.signature-footer-top {
+  flex-wrap: wrap;
+}
+.footer-project-orbit > span {
+  max-width: 95px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .process-pin .process-store .store-browser .store-campaign {
+    min-height: 112px;
+  }
+  .process-pin .process-store .store-announcement,
+  .process-pin .process-store .store-product-category,
+  .process-pin .process-store .store-material {
+    display: none;
+  }
+  .process-pin .process-store .store-product {
+    gap: 6px;
+  }
+  .process-pin .process-store .store-browser .store-campaign-copy {
+    margin-block: 8px;
+  }
+}
+@media (max-width: 767px) and (max-height: 760px) {
+  .process-pin .process-store .store-browser .store-campaign {
+    min-height: 80px;
+  }
+  .process-pin .process-store .store-browser .store-campaign-copy {
+    margin-block: 6px;
+  }
+}
+@media (max-width: 767px) and (max-height: 760px) {
+  .process-pin .process-store .store-product {
+    flex-wrap: nowrap;
+  }
+  .process-pin .process-store .store-product > div:first-child {
+    flex: 1;
+  }
+  .process-pin .process-store .store-product-buy {
+    width: auto;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .process-pin .process-store .store-product-buy button {
+    gap: 5px;
+    padding-inline: 7px;
+  }
+}

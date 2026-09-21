@@ -28,6 +28,8 @@
     ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --text-description: 16px;
   --text-secondary: 14px;
+  /* Minimum live text size; decorative phone artwork and SVG seal are not reading content. */
+  --text-small: 12px;
   --max: 1320px;
   --gutter: clamp(22px, 5vw, 84px);
   --section: 116px;

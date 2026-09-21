@@ -23,7 +23,7 @@
   height: auto;
 }
 .about-signature > span {
-  font: 6px var(--mono);
+  font: var(--text-small) var(--mono);
   color: var(--muted);
   letter-spacing: 0.8px;
   text-align: center;
@@ -104,12 +104,12 @@ h3 {
 }
 .trust-badge strong {
   display: block;
-  font-size: 11px;
+  font-size: var(--text-small);
   font-weight: 500;
 }
 .trust-badge p {
   color: var(--muted);
-  font-size: 8px;
+  font-size: var(--text-small);
   margin-top: 3px;
 }
 @media (max-width: 1100px) {
@@ -131,7 +131,7 @@ h3 {
   }
   .hero-actions .button-outline {
     padding: 12px 11px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .trust-principles {
     gap: 20px 12px;
@@ -148,10 +148,10 @@ h3 {
     width: 16px;
   }
   .trust-badge strong {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .trust-badge p {
-    font-size: 7px;
+    font-size: var(--text-small);
     line-height: 1.5;
   }
   .contact-section .section-label {
@@ -218,7 +218,7 @@ h3 {
   border-radius: 3px;
   padding: 10px 15px;
   color: #bbc4ad;
-  font: 9px var(--mono);
+  font: var(--text-small) var(--mono);
   transition:
     background 0.25s,
     border-color 0.25s,
@@ -234,7 +234,7 @@ h3 {
   align-items: center;
   gap: 10px;
   color: #bbc4ad;
-  font: 7px var(--mono);
+  font: var(--text-small) var(--mono);
   letter-spacing: 0.6px;
 }
 .rotation-controls .icon-button {
@@ -257,7 +257,7 @@ h3 {
 }
 .ecosystem-story > .mono {
   color: #e7a382;
-  font-size: 8px;
+  font-size: var(--text-small);
   letter-spacing: 1px;
 }
 .ecosystem-story h3 {
@@ -280,7 +280,7 @@ h3 {
   border-block: 1px solid #ffffff1c;
   padding: 16px 0;
   text-align: left;
-  font-size: 11px;
+  font-size: var(--text-small);
   color: #e3e8d8;
 }
 .ecosystem-accordion-trigger svg {
@@ -390,7 +390,7 @@ h3 {
     min-height: 480px;
   }
   .rotation-controls {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
 }
 @media (max-width: 1023px) {
@@ -403,17 +403,17 @@ h3 {
   }
   .ecosystem-view-tabs > button {
     padding: 9px 11px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .rotation-controls {
-    font-size: 5px;
+    font-size: var(--text-small);
     gap: 7px;
   }
   .ecosystem-story h3 {
     font-size: 29px;
   }
   .ecosystem-explanation-copy p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
 }
 @media (max-width: 767px) {
@@ -427,11 +427,11 @@ h3 {
   }
   .ecosystem-view-tabs > button {
     flex: 1;
-    font-size: 8px;
+    font-size: var(--text-small);
     padding: 11px;
   }
   .rotation-controls {
-    font-size: 6px;
+    font-size: var(--text-small);
     width: 100%;
   }
   .rotation-controls .icon-button {
@@ -459,7 +459,7 @@ h3 {
     font-size: 33px;
   }
   .ecosystem-story > .mono {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .ecosystem-explanation-copy p {
     min-height: 84px;
@@ -541,7 +541,7 @@ h3 {
   padding: 11px 14px;
   min-height: 40px;
   margin-top: 20px;
-  font-size: 10px;
+  font-size: var(--text-small);
   border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
 }
 .process-pin .process-store .store-campaign {
@@ -568,7 +568,7 @@ h3 {
     font-size: 24px;
   }
   .process-pin .process-stage-copy p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .process-pin .process-store .store-campaign {
     height: 175px;
@@ -586,7 +586,7 @@ h3 {
     line-height: 1.06;
   }
   .process-pin .section-label {
-    font-size: 7px;
+    font-size: var(--text-small);
     margin-bottom: 12px;
   }
   .process-pin .heading-aside {
@@ -598,14 +598,14 @@ h3 {
     padding-bottom: 8px;
   }
   .process-pin .process-timeline > button {
-    font-size: 8px;
+    font-size: var(--text-small);
     gap: 7px;
     min-width: 47px;
   }
   .process-pin .process-timeline > button > span {
     width: 27px;
     height: 27px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .process-pin .process-timeline:before {
     top: 13px;
@@ -635,17 +635,17 @@ h3 {
     margin: 7px 0 10px;
   }
   .process-pin .process-stage-copy p {
-    font-size: 10px;
+    font-size: var(--text-small);
     line-height: 1.55;
   }
   .process-pin .process-stage-copy .mono {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .process-pin .process-stage-copy .button-outline {
     margin-top: 12px;
     padding: 8px 11px;
     min-height: 34px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .process-pin .process-store .store-campaign {
     height: 112px;
@@ -671,7 +671,7 @@ h3 {
     left: auto;
     right: 8px;
     max-width: 51%;
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 6px;
     gap: 5px;
   }
@@ -688,7 +688,7 @@ h3 {
   }
   .process-pin .process-store .build-overlay p {
     margin-top: 7px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .manual-process .process-pin {
     padding-block: 55px;
@@ -737,12 +737,12 @@ h3 {
 }
 .footer-brand small {
   color: #b9c1aa;
-  font-size: 7px;
+  font-size: var(--text-small);
   letter-spacing: 1.4px;
   margin-top: 5px;
 }
 .footer-edition {
-  font: 8px/1.9 var(--mono);
+  font: var(--text-small)/1.9 var(--mono);
   color: #b9c1aa;
   letter-spacing: 1.2px;
 }
@@ -755,7 +755,7 @@ h3 {
 }
 .footer-invitation .section-label {
   color: #e6a27a;
-  font-size: 8px;
+  font-size: var(--text-small);
   margin-bottom: 22px;
 }
 .footer-invitation h2 {
@@ -786,7 +786,7 @@ h3 {
   flex-shrink: 0;
 }
 .footer-project-orbit > span {
-  font: 7px var(--mono);
+  font: var(--text-small) var(--mono);
   letter-spacing: 0.7px;
 }
 .footer-project-orbit:hover {
@@ -810,7 +810,7 @@ h3 {
 }
 .footer-directory > p > span {
   display: block;
-  font-size: 10px;
+  font-size: var(--text-small);
   line-height: 1.8;
   color: #b5bea6;
   margin-top: 16px;
@@ -824,7 +824,7 @@ h3 {
 }
 .footer-column-label {
   color: #e6a27a;
-  font: 7px var(--mono);
+  font: var(--text-small) var(--mono);
   letter-spacing: 1.1px;
   margin: 0 0 9px;
 }
@@ -834,7 +834,7 @@ h3 {
   justify-content: space-between;
   gap: 30px;
   min-width: 90px;
-  font-size: 11px;
+  font-size: var(--text-small);
   color: #d4dcc7;
   transition:
     color 0.2s,
@@ -853,7 +853,7 @@ h3 {
   color: #c7d0b7;
 }
 .footer-back > span {
-  font: 7px/1.6 var(--mono);
+  font: var(--text-small)/1.6 var(--mono);
   letter-spacing: 0.7px;
 }
 .footer-wordmark {
@@ -878,12 +878,12 @@ h3 {
   justify-content: space-between;
   gap: 25px;
   color: #b2bea1;
-  font-size: 8px;
+  font-size: var(--text-small);
   border-top: 1px solid #ffffff22;
   padding-top: 22px;
 }
 .signature-footer-bottom > span:not(:first-child) {
-  font: 6px var(--mono);
+  font: var(--text-small) var(--mono);
   letter-spacing: 0.8px;
 }
 @media (min-width: 1800px) {
@@ -907,10 +907,10 @@ h3 {
     height: 110px;
   }
   .signature-footer-bottom > span {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .signature-footer-bottom > span:not(:first-child) {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
 }
 @media (max-width: 767px) {
@@ -921,11 +921,11 @@ h3 {
     font-size: 14px;
   }
   .footer-brand small {
-    font-size: 5px;
+    font-size: var(--text-small);
     letter-spacing: 1px;
   }
   .footer-edition {
-    font-size: 5px;
+    font-size: var(--text-small);
     letter-spacing: 0.5px;
   }
   .footer-invitation {
@@ -934,7 +934,7 @@ h3 {
     align-items: flex-end;
   }
   .footer-invitation .section-label {
-    font-size: 6px;
+    font-size: var(--text-small);
     letter-spacing: 0.6px;
     margin-bottom: 17px;
   }
@@ -953,7 +953,7 @@ h3 {
     height: 25px;
   }
   .footer-project-orbit > span {
-    font-size: 4px;
+    font-size: var(--text-small);
     letter-spacing: 0.3px;
   }
   .footer-directory {
@@ -966,16 +966,16 @@ h3 {
     font-size: 17px;
   }
   .footer-directory > p > span {
-    font-size: 10px;
+    font-size: var(--text-small);
     margin-top: 10px;
   }
   .footer-directory nav > a {
-    font-size: 11px;
+    font-size: var(--text-small);
     min-width: 103px;
     gap: 20px;
   }
   .footer-column-label {
-    font-size: 6px;
+    font-size: var(--text-small);
     margin-bottom: 6px;
   }
   .footer-back {
@@ -987,7 +987,7 @@ h3 {
     bottom: 164px;
   }
   .footer-back > span {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .footer-back > svg {
     width: 18px;
@@ -1004,16 +1004,16 @@ h3 {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 13px;
-    font-size: 7px;
+    font-size: var(--text-small);
     padding-top: 20px;
   }
   .signature-footer-bottom > span:nth-child(2) {
     grid-column: 1/-1;
     grid-row: 2;
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .signature-footer-bottom > span:last-child {
-    font-size: 4px;
+    font-size: var(--text-small);
     letter-spacing: 0.4px;
   }
   .footer-directory nav:last-of-type {
@@ -1158,7 +1158,7 @@ h3 {
   }
   .process-pin .section-label {
     margin-bottom: 8px;
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .process-pin .section-heading {
     margin-bottom: 10px;
@@ -1188,7 +1188,7 @@ h3 {
     margin-block: 6px 8px;
   }
   .process-pin .process-stage-copy p {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .process-pin .process-stage-copy .button-outline {
     margin-top: 9px;
@@ -1221,7 +1221,7 @@ h3 {
     margin-top: 9px;
   }
   .process-pin .process-store .build-overlay p {
-    font-size: 8px;
+    font-size: var(--text-small);
     margin-top: 5px;
   }
 }

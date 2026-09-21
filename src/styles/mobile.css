@@ -66,7 +66,7 @@
     min-height: 44px;
     justify-content: center;
     gap: 4px;
-    font-size: 9px;
+    font-size: var(--text-small);
     padding: 6px 2px;
     border-bottom: var(--border);
   }
@@ -78,12 +78,12 @@
   }
   .hero .store-campaign-copy > button {
     min-height: 36px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .hero .store-product-buy button {
     min-height: 36px;
     padding: 8px 12px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .hero .store-bag {
     min-width: 36px;
@@ -103,7 +103,7 @@
   }
   .hero .store-campaign-copy p {
     max-width: 150px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .atelier-preview-toolbar button {
     width: 44px;
@@ -129,7 +129,7 @@
     min-height: 40px;
   }
   .direction-options small {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .direction-options strong {
     font-size: 13px;
@@ -161,7 +161,7 @@
   }
   .hero-actions > a {
     padding-inline: 11px;
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .atelier-layout-control {
     flex-wrap: wrap;
@@ -180,11 +180,11 @@
     padding-inline: 12px;
   }
   .direction-options strong {
-    font-size: 11px;
+    font-size: var(--text-small);
     overflow-wrap: anywhere;
   }
   .direction-options small {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
 }
 

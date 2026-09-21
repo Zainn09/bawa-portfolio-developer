@@ -41,13 +41,13 @@
   gap: 4px;
 }
 .hero-authorship strong {
-  font-size: 11px;
+  font-size: var(--text-small);
   font-weight: 500;
 }
 .hero-authorship > span > span {
   font-family: var(--font-description);
   color: var(--muted);
-  font-size: 10px;
+  font-size: var(--text-small);
 }
 .hero-authorship > a {
   display: flex;
@@ -57,7 +57,7 @@
   color: var(--accent);
 }
 .hero-authorship > a > span {
-  font: 6px/1.7 var(--mono);
+  font: var(--text-small)/1.7 var(--mono);
   letter-spacing: 0.3px;
   max-width: 59px;
 }
@@ -210,7 +210,7 @@
     font-size: 12px;
   }
   .hero-authorship > span > span {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .commerce-seal {
     width: 118px;
@@ -228,13 +228,13 @@
     margin-top: 20px;
   }
   .hero-authorship strong {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .hero-authorship > span > span {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .hero-authorship > a > span {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .commerce-seal {
     width: 86px;
@@ -256,7 +256,7 @@
     height: 25px;
   }
   .hero-authorship > span > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .commerce-seal {
     width: 77px;
@@ -282,14 +282,14 @@
     gap: 10px;
   }
   .hero-authorship strong {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .hero-authorship > span > span {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .hero-authorship > a > span {
     display: block;
-    font-size: 5px;
+    font-size: var(--text-small);
     max-width: 48px;
   }
   .hero-authorship > .brand-monogram {
@@ -363,7 +363,7 @@
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
-  font-size: 10px;
+  font-size: var(--text-small);
   min-height: 44px;
 }
 .project-site-link:hover,
@@ -387,14 +387,14 @@
 }
 @media (max-width: 767px) {
   .project-site-link {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .client-project .project-topline {
     left: 16px;
     right: 16px;
   }
   .client-project .project-topline > span {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .project-prime-baby-gear .project-visual {
     height: clamp(310px, 95vw, 460px);
@@ -423,7 +423,7 @@
   min-height: 44px;
   flex-shrink: 0;
   padding: 8px 4px;
-  font: 10px/1.4 var(--font);
+  font: var(--text-small)/1.4 var(--font);
   text-decoration: underline;
   text-underline-offset: 4px;
   border: 0;

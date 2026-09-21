@@ -55,7 +55,7 @@
     bottom: 103px;
   }
   .hero .eyebrow {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .floating-theme {
     top: 43px;
@@ -149,7 +149,7 @@
     letter-spacing: -3.6px;
   }
   .eyebrow {
-    font-size: 7px;
+    font-size: var(--text-small);
     letter-spacing: 0.4px;
   }
   .hero-art {
@@ -159,7 +159,7 @@
     font-size: 17px;
   }
   .hero-support {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .hero-actions {
     gap: 16px;
@@ -167,10 +167,10 @@
   .hero-actions .button {
     padding: 14px 17px;
     gap: 18px;
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .hero-actions .text-link {
-    font-size: 10px;
+    font-size: var(--text-small);
     gap: 9px;
   }
   .hero-store-wrap {
@@ -193,13 +193,13 @@
     font-size: 30px;
   }
   .hero-store-wrap .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product {
     padding: 16px;
   }
   .hero-store-wrap .store-product h4 {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product-buy {
     gap: 10px;
@@ -210,7 +210,7 @@
   .floating-theme {
     right: -12px;
     padding: 10px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .phone-preview {
     width: 115px;
@@ -227,14 +227,14 @@
   .responsive-note {
     left: 123px;
     bottom: 62px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .demo-cursor {
     right: -12px;
     bottom: 87px;
   }
   .demo-cursor > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .craft-strip > .container > div {
     gap: 21px;
@@ -277,7 +277,7 @@
     height: 160px;
   }
   .platform-node {
-    font-size: 8px;
+    font-size: var(--text-small);
     padding: 9px;
     gap: 7px;
   }
@@ -321,7 +321,7 @@
     padding: 20px;
   }
   .theme-editor pre {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .theme-render .store-nav {
     padding: 13px;
@@ -339,7 +339,7 @@
     gap: 10px;
   }
   .architecture-tabs > button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .architecture-tabs > button > .architecture-arrow {
     right: -15px;
@@ -351,7 +351,7 @@
     gap: 16px;
   }
   .optimization-tabs > button {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .optimization-store {
     padding: 25px 20px 18px;
@@ -409,14 +409,14 @@
     gap: 18px;
   }
   .desktop-nav a {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .nav-actions {
     gap: 11px;
   }
   .nav-cta {
     gap: 20px;
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -429,13 +429,13 @@
     letter-spacing: -3.2px;
   }
   .hero .eyebrow {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .hero-description {
     font-size: 16px;
   }
   .hero-support {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .hero-actions {
     gap: 14px;
@@ -446,7 +446,7 @@
     min-height: 45px;
   }
   .hero-specialties {
-    font-size: 6px;
+    font-size: var(--text-small);
     gap: 10px;
     margin-top: 24px;
   }
@@ -471,7 +471,7 @@
     font-size: 16px;
   }
   .hero-store-wrap .store-nav nav button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-campaign h3 {
     font-size: 27px;
@@ -481,40 +481,40 @@
     margin-top: 8px;
   }
   .hero-store-wrap .store-campaign-copy > button {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 8px;
     margin-top: 10px;
   }
   .hero-store-wrap .store-eyebrow {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product {
     padding: 14px;
   }
   .hero-store-wrap .store-product h4 {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product-buy {
     gap: 9px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product-buy button {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 6px;
     gap: 6px;
   }
   .hero-store-wrap .store-benefits {
-    font-size: 4px;
+    font-size: var(--text-small);
   }
   .floating-theme {
     top: 42px;
     right: -6px;
-    font-size: 8px;
+    font-size: var(--text-small);
     padding: 8px;
     gap: 7px;
   }
   .floating-theme small {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .floating-theme > span {
     width: 25px;
@@ -551,20 +551,20 @@
   .responsive-note {
     left: 108px;
     bottom: 55px;
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .demo-cursor {
     bottom: 76px;
   }
   .demo-cursor > span {
-    font-size: 7px;
+    font-size: var(--text-small);
     padding: 6px 9px;
   }
   .hero-art-footer {
     bottom: -11px;
   }
   .phase-tabs > button {
-    font-size: 7px;
+    font-size: var(--text-small);
     padding-inline: 4px;
   }
   .phase-arrow {
@@ -575,7 +575,7 @@
     font-size: 14px;
   }
   .craft-strip > .container > span {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .craft-strip > .container > div svg {
     width: 13px;
@@ -587,16 +587,16 @@
     gap: 45px;
   }
   .intro-section .section-label {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .intro-section h2 {
     font-size: 23px;
   }
   .intro-section > div > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .intro-tags span {
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 4px 6px;
   }
   .section-heading {
@@ -606,7 +606,7 @@
     font-size: 41px;
   }
   .heading-aside {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .project-grid {
     gap: 35px 24px;
@@ -629,10 +629,10 @@
     top: 16px;
   }
   .project-topline > span {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .project-open {
-    font-size: 8px;
+    font-size: var(--text-small);
     left: 16px;
     bottom: 16px;
   }
@@ -640,16 +640,16 @@
     font-size: 16px;
   }
   .project-meta p {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .work-footnote {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .ecosystem-section h2 {
     font-size: 38px;
   }
   .ecosystem-intro {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .ecosystem-layout {
     grid-template-columns: 1.5fr 1fr;
@@ -670,15 +670,15 @@
     width: 34px;
   }
   .shopify-core > span {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .platform-node {
-    font-size: 7px;
+    font-size: var(--text-small);
     gap: 6px;
     padding: 8px;
   }
   .node-symbol {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .platform-node > svg {
     width: 9px;
@@ -709,20 +709,20 @@
     font-size: 30px;
   }
   .ecosystem-details p {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .ecosystem-details > .mono {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .ecosystem-tags > div {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .dark-text-link {
-    font-size: 8px;
+    font-size: var(--text-small);
     gap: 15px;
   }
   .ecosystem-bottom {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .expertise-section {
     gap: 45px;
@@ -732,7 +732,7 @@
     font-size: 43px;
   }
   .expertise-intro > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .expertise-symbol {
     gap: 14px;
@@ -741,7 +741,7 @@
     width: 94px;
   }
   .expertise-symbol > span {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .capability > button {
     gap: 16px;
@@ -755,7 +755,7 @@
     padding-right: 5px;
   }
   .capability-content > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .capability-tags {
     grid-template-columns: 1fr;
@@ -763,7 +763,7 @@
     margin-top: 19px;
   }
   .capability-tags > span {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .theme-workbench {
     grid-template-columns: 1fr 1fr;
@@ -772,28 +772,28 @@
     padding: 17px;
   }
   .editor-top {
-    font-size: 6px;
+    font-size: var(--text-small);
     gap: 7px;
   }
   .editor-status {
     display: none;
   }
   .editor-tabs > button {
-    font-size: 7px;
+    font-size: var(--text-small);
     padding: 10px 7px;
     gap: 3px;
   }
   .code-file {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .theme-editor pre {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .theme-editor code > span > i {
     width: 19px;
   }
   .code-note {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .theme-render {
     padding: 16px;
@@ -802,7 +802,7 @@
     font-size: 15px;
   }
   .theme-render .store-nav nav button {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .theme-render .store-nav nav {
     gap: 6px;
@@ -814,12 +814,12 @@
     font-size: 24px;
   }
   .theme-render .store-campaign-copy > button {
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 7px;
     gap: 5px;
   }
   .theme-render .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .theme-render .store-product {
     padding: 12px;
@@ -830,14 +830,14 @@
     justify-content: space-between;
   }
   .theme-render .store-benefits {
-    font-size: 4px;
+    font-size: var(--text-small);
   }
   .render-label {
-    font-size: 5px;
+    font-size: var(--text-small);
     gap: 6px;
   }
   .theme-render .store-highlight {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 7px;
     left: 10px;
     bottom: 10px;
@@ -858,7 +858,7 @@
     justify-content: space-around;
   }
   .architecture-tabs > button {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .architecture-tabs > button > .architecture-arrow {
     right: -45px;
@@ -874,13 +874,13 @@
     gap: 11px;
   }
   .optimization-tabs > button {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .optimization-detail h3 {
     font-size: 15px;
   }
   .optimization-detail p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .optimization-store {
     padding: 20px 15px 15px;
@@ -892,10 +892,10 @@
     font-size: 25px;
   }
   .optimization-store .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .optimization-store .store-campaign-copy > button {
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 8px;
   }
   .optimization-store .store-product {
@@ -907,7 +907,7 @@
     justify-content: space-between;
   }
   .image-caption {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .process-stage {
     gap: 35px;
@@ -924,7 +924,7 @@
   }
   .process-stage-copy p {
     min-height: 0;
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .process-store .store-nav nav {
     display: none;
@@ -941,14 +941,14 @@
     font-size: 25px;
   }
   .process-store .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .process-store .store-campaign-copy > button {
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 8px;
   }
   .process-store .store-highlight {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 8px;
     left: 10px;
     bottom: 10px;
@@ -960,29 +960,29 @@
     font-size: 33px;
   }
   .management-layout > div > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .data-card {
     padding: 17px;
   }
   .data-card-header {
-    font-size: 6px;
+    font-size: var(--text-small);
     gap: 8px;
   }
   .demo-badge {
-    font-size: 4px;
+    font-size: var(--text-small);
   }
   .data-tabs {
     gap: 8px;
   }
   .data-tabs > button {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .data-product h3 {
     font-size: 12px;
   }
   .data-product .small-note {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .data-product img {
     width: 53px;
@@ -990,10 +990,10 @@
   }
   .structured-data dl > div {
     grid-template-columns: 70px 1fr;
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .data-flow {
-    font-size: 4px;
+    font-size: var(--text-small);
     gap: 4px;
   }
   .about-section {
@@ -1003,19 +1003,19 @@
     font-size: 32px;
   }
   .about-copy > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .about-copy .section-label {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .care-tags {
     gap: 9px;
   }
   .care-tags > span {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .about-copy .text-link {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .contact-callout h2 {
     font-size: 60px;
@@ -1040,7 +1040,7 @@
     font-size: 33px;
   }
   .contact-intro > .mono {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .form-row {
     gap: 13px;
@@ -1056,7 +1056,7 @@
   }
   .footer-top nav {
     gap: 11px 25px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
 }
 @media (max-width: 767px) {
@@ -1080,7 +1080,7 @@
     font-size: 14px;
   }
   .brand small {
-    font-size: 6px;
+    font-size: var(--text-small);
     letter-spacing: 1.7px;
   }
   .brand-mark {
@@ -1095,7 +1095,7 @@
   .nav-cta {
     gap: 12px;
     padding: 9px 11px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .theme-toggle {
     padding: 0;
@@ -1139,7 +1139,7 @@
     min-height: 0;
   }
   .hero .eyebrow {
-    font-size: 7px;
+    font-size: var(--text-small);
     letter-spacing: 0.4px;
     margin-bottom: 24px;
   }
@@ -1167,7 +1167,7 @@
     max-width: 360px;
   }
   .hero-support {
-    font-size: 10px;
+    font-size: var(--text-small);
     margin-top: 10px;
   }
   .hero-actions {
@@ -1176,17 +1176,17 @@
     margin-top: 24px;
   }
   .hero-actions .button {
-    font-size: 10px;
+    font-size: var(--text-small);
     gap: 18px;
     padding: 14px 17px;
   }
   .hero-actions .text-link {
-    font-size: 10px;
+    font-size: var(--text-small);
     gap: 8px;
   }
   .hero-specialties {
     margin-top: 24px;
-    font-size: 7px;
+    font-size: var(--text-small);
     gap: 12px;
   }
   .hero-art {
@@ -1200,7 +1200,7 @@
     inset: 0 -3% 0;
   }
   .art-coordinate {
-    font-size: 7px;
+    font-size: var(--text-small);
     top: 0;
     right: 10px;
   }
@@ -1223,21 +1223,21 @@
     gap: 13px;
   }
   .hero-store-wrap .store-nav nav button {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-campaign h3 {
     font-size: 32px;
   }
   .hero-store-wrap .store-eyebrow {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-campaign-copy p {
-    font-size: 7px;
+    font-size: var(--text-small);
     margin-top: 10px;
     max-width: 150px;
   }
   .hero-store-wrap .store-campaign-copy > button {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 9px;
     gap: 12px;
     margin-top: 12px;
@@ -1246,7 +1246,7 @@
     padding: 16px 19px;
   }
   .hero-store-wrap .store-product h4 {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product-buy button {
     padding: 7px;
@@ -1255,12 +1255,12 @@
   .floating-theme {
     top: 28px;
     right: -1px;
-    font-size: 9px;
+    font-size: var(--text-small);
     padding: 10px;
     gap: 9px;
   }
   .floating-theme small {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .floating-theme > span {
     width: 26px;
@@ -1289,27 +1289,27 @@
   .responsive-note {
     left: 126px;
     bottom: 45px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .demo-cursor {
     right: -1px;
     bottom: 61px;
   }
   .demo-cursor > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .hero-art-footer {
     bottom: -21px;
   }
   .phase-tabs > button {
-    font-size: 8px;
+    font-size: var(--text-small);
     gap: 7px;
   }
   .phase-tabs {
     gap: 7px;
   }
   .concept-note {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .craft-strip > .container {
     min-height: 110px;
@@ -1319,7 +1319,7 @@
     padding-block: 19px;
   }
   .craft-strip > .container > span {
-    font-size: 6px;
+    font-size: var(--text-small);
     display: flex;
     gap: 5px;
     align-items: center;
@@ -1352,7 +1352,7 @@
     padding-block: 49px;
   }
   .intro-section .section-label {
-    font-size: 6px;
+    font-size: var(--text-small);
     letter-spacing: 1px;
     margin-bottom: 18px;
   }
@@ -1370,7 +1370,7 @@
     gap: 6px;
   }
   .intro-tags span {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 5px 7px;
   }
   .section-heading {
@@ -1378,7 +1378,7 @@
     margin-bottom: 30px;
   }
   .section-label {
-    font-size: 8px;
+    font-size: var(--text-small);
     letter-spacing: 1px;
     margin-bottom: 22px;
   }
@@ -1390,10 +1390,10 @@
   }
   .heading-aside {
     margin-top: 20px;
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .heading-aside .small-note {
-    font-size: 7px;
+    font-size: var(--text-small);
     margin-top: 13px;
   }
   .section-heading .heading-aside p {
@@ -1431,13 +1431,13 @@
     top: 19px;
   }
   .project-topline > span {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .project-brand > span:first-child {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .project-brand > span:last-child {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .project-meta {
     padding-top: 15px;
@@ -1446,20 +1446,20 @@
     font-size: 17px;
   }
   .project-meta p {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .project-meta > span {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .work-footnote {
     display: block;
-    font-size: 9px;
+    font-size: var(--text-small);
     margin-top: 27px;
     line-height: 1.8;
   }
   .work-footnote a {
     margin-top: 15px;
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .ecosystem-section {
     padding-top: 58px;
@@ -1473,7 +1473,7 @@
     letter-spacing: -1.6px;
   }
   .ecosystem-intro {
-    font-size: 11px;
+    font-size: var(--text-small);
     margin-top: 20px;
   }
   .ecosystem-layout {
@@ -1491,13 +1491,13 @@
     transform: translate(-50%, -50%) rotate(-5deg);
   }
   .shopify-core > span {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .shopify-core strong {
     font-size: 26px;
   }
   .platform-node {
-    font-size: 8px;
+    font-size: var(--text-small);
     padding: 9px;
     gap: 7px;
   }
@@ -1539,11 +1539,11 @@
   .node-8 {
     top: -1%;
     left: 38%;
-    font-size: 7px;
+    font-size: var(--text-small);
     padding: 7px;
   }
   .orbit-caption {
-    font-size: 6px;
+    font-size: var(--text-small);
     bottom: 8px;
   }
   .orbit-one {
@@ -1563,7 +1563,7 @@
     border-top: 1px solid #ffffff15;
   }
   .ecosystem-details > .mono {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .ecosystem-details h3 {
     font-size: 32px;
@@ -1580,15 +1580,15 @@
     margin-block: 24px;
   }
   .ecosystem-tags > div {
-    font-size: 9px;
+    font-size: var(--text-small);
     gap: 7px;
   }
   .dark-text-link {
-    font-size: 10px;
+    font-size: var(--text-small);
     gap: 25px;
   }
   .ecosystem-bottom {
-    font-size: 5px;
+    font-size: var(--text-small);
     line-height: 1.7;
     gap: 25px;
     margin-top: 15px;
@@ -1615,7 +1615,7 @@
     margin: 21px 0;
   }
   .expertise-intro .text-link {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .expertise-symbol {
     display: none;
@@ -1639,7 +1639,7 @@
     gap: 11px;
   }
   .capability-tags > span {
-    font-size: 8px;
+    font-size: var(--text-small);
     gap: 6px;
   }
   .theme-workbench {
@@ -1649,27 +1649,27 @@
     padding: 22px;
   }
   .editor-top {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .editor-status {
     display: block;
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .editor-tabs > button {
-    font-size: 9px;
+    font-size: var(--text-small);
     padding: 12px 10px;
   }
   .code-file {
-    font-size: 8px;
+    font-size: var(--text-small);
     margin-top: 26px;
   }
   .theme-editor pre {
-    font-size: 9px;
+    font-size: var(--text-small);
     min-height: 118px;
     line-height: 2.3;
   }
   .code-note {
-    font-size: 5px;
+    font-size: var(--text-small);
     margin-top: 21px;
     padding-top: 19px;
   }
@@ -1677,7 +1677,7 @@
     padding: 22px;
   }
   .render-label {
-    font-size: 6px;
+    font-size: var(--text-small);
     margin-bottom: 19px;
   }
   .theme-render .store-nav {
@@ -1690,7 +1690,7 @@
     gap: 12px;
   }
   .theme-render .store-nav nav button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .theme-render .store-campaign {
     height: 228px;
@@ -1699,12 +1699,12 @@
     font-size: 29px;
   }
   .theme-render .store-campaign-copy > button {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 9px;
     gap: 10px;
   }
   .theme-render .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .theme-render .store-product {
     padding: 15px;
@@ -1714,7 +1714,7 @@
     gap: 9px;
   }
   .theme-render .store-product h4 {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .under-surface {
     margin-top: 39px;
@@ -1724,7 +1724,7 @@
     display: block;
   }
   .under-surface .section-label {
-    font-size: 6px;
+    font-size: var(--text-small);
     margin-bottom: 17px;
   }
   .under-surface h3 {
@@ -1741,14 +1741,14 @@
   .architecture-tabs > button {
     min-width: 100px;
     padding: 12px 10px;
-    font-size: 7px;
+    font-size: var(--text-small);
     scroll-snap-align: start;
   }
   .architecture-tabs > button > .architecture-arrow {
     right: -5px;
   }
   .architecture > p {
-    font-size: 10px;
+    font-size: var(--text-small);
     margin-top: 11px;
   }
   .optimization-section {
@@ -1764,7 +1764,7 @@
     margin-top: 25px;
   }
   .optimization-tabs > button {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .optimization-detail {
     min-height: 143px;
@@ -1777,7 +1777,7 @@
     font-size: 12px;
   }
   .optimization-copy > .small-note {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .optimization-store {
     padding: 24px 21px 16px;
@@ -1787,7 +1787,7 @@
     gap: 13px;
   }
   .optimization-store .store-nav nav button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .optimization-store .store-logo {
     font-size: 18px;
@@ -1799,7 +1799,7 @@
     font-size: 29px;
   }
   .optimization-store .store-campaign-copy > button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .optimization-store .store-product {
     flex-wrap: nowrap;
@@ -1808,13 +1808,13 @@
     width: auto;
   }
   .optimization-store .store-highlight {
-    font-size: 6px;
+    font-size: var(--text-small);
     left: 10px;
     bottom: 9px;
     padding: 8px;
   }
   .image-caption {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .process-timeline {
     overflow-x: auto;
@@ -1829,7 +1829,7 @@
     right: auto;
   }
   .process-timeline > button {
-    font-size: 9px;
+    font-size: var(--text-small);
     min-width: 50px;
     scroll-snap-align: start;
   }
@@ -1851,7 +1851,7 @@
     margin-top: 10px;
   }
   .process-stage-copy p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .process-stage-copy .text-link {
     margin-top: 17px;
@@ -1861,7 +1861,7 @@
     gap: 16px;
   }
   .process-store .store-nav nav button {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .process-store .store-campaign {
     height: 238px;
@@ -1870,10 +1870,10 @@
     font-size: 31px;
   }
   .process-store .store-campaign-copy p {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .process-store .store-campaign-copy > button {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 9px;
   }
   .process-store .store-product {
@@ -1892,7 +1892,7 @@
   }
   .compare-label {
     top: 13px;
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 6px 7px;
   }
   .before-label {
@@ -1907,7 +1907,7 @@
     font-size: 18px;
   }
   .comparison-caption {
-    font-size: 5px;
+    font-size: var(--text-small);
     letter-spacing: 0.3px;
     gap: 16px;
   }
@@ -1930,25 +1930,25 @@
     margin-block: 23px 27px;
   }
   .management-tags > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .management-tags > span > svg {
     width: 11px;
   }
   .management-layout .text-link {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .data-card {
     padding: 21px;
   }
   .data-card-header {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .demo-badge {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .data-tabs > button {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .data-tabs {
     justify-content: space-between;
@@ -1961,15 +1961,15 @@
     font-size: 14px;
   }
   .data-product .small-note {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .structured-data dl > div {
-    font-size: 8px;
+    font-size: var(--text-small);
     grid-template-columns: 79px 1fr;
     padding: 9px 0;
   }
   .data-flow {
-    font-size: 4px;
+    font-size: var(--text-small);
   }
   .responsive-heading h2 {
     font-size: 37px;
@@ -1979,14 +1979,14 @@
     margin-top: 3px;
   }
   .responsive-heading > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .device-select {
     gap: 4px;
     margin-top: 25px;
   }
   .device-select > button {
-    font-size: 8px;
+    font-size: var(--text-small);
     padding: 9px 10px;
     gap: 7px;
     flex-direction: column;
@@ -2011,7 +2011,7 @@
     gap: 12px;
   }
   .device-frame .store-nav nav button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .device-frame .store-campaign {
     height: 246px;
@@ -2020,11 +2020,11 @@
     font-size: 29px;
   }
   .device-frame .store-campaign-copy > button {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 8px;
   }
   .device-frame .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .device-frame .store-product {
     padding: 13px;
@@ -2034,7 +2034,7 @@
   }
   .device-frame .store-product-buy > button {
     gap: 7px;
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .device-frame.device-laptop {
     max-width: 95%;
@@ -2060,7 +2060,7 @@
   }
   .responsive-bottom {
     gap: 20px;
-    font-size: 5px;
+    font-size: var(--text-small);
     line-height: 1.8;
     text-align: center;
   }
@@ -2081,7 +2081,7 @@
     object-position: 50% 48%;
   }
   .portrait-label {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .about-copy h2 {
     font-size: 38px;
@@ -2095,7 +2095,7 @@
     font-size: 17px;
   }
   .about-name > span {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .about-copy > p {
     font-size: 12px;
@@ -2106,10 +2106,10 @@
     margin-block: 23px;
   }
   .care-tags > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .about-copy .text-link {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .contact-section {
     padding: 60px 0;
@@ -2135,18 +2135,18 @@
     gap: 20px;
   }
   .contact-callout > div > p {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .contact-callout > div > p > br {
     display: none;
   }
   .contact-callout .button {
-    font-size: 11px;
+    font-size: var(--text-small);
     padding: 14px 19px;
     gap: 24px;
   }
   .contact-callout .text-link {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .contact-layout {
     grid-template-columns: 1fr;
@@ -2169,10 +2169,10 @@
     margin-top: 24px;
   }
   .contact-intro > .mono {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .contact-person > div > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .form-row {
     gap: 15px;
@@ -2181,7 +2181,7 @@
     gap: 19px;
   }
   .contact-form label {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .contact-form input,
   .contact-form select,
@@ -2191,16 +2191,16 @@
     min-height: 45px;
   }
   .contact-form label > .optional {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .contact-form select {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .form-bottom > p {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .form-bottom .button {
-    font-size: 11px;
+    font-size: var(--text-small);
     gap: 25px;
     padding: 14px 20px;
   }
@@ -2223,7 +2223,7 @@
   }
   .footer-top nav {
     gap: 10px 19px;
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .footer-top nav > a {
     gap: 8px;
@@ -2234,11 +2234,11 @@
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 17px 12px;
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .footer-bottom > span:nth-child(2) {
     grid-row: 2;
-    font-size: 5px;
+    font-size: var(--text-small);
     letter-spacing: 0.4px;
   }
   .footer-bottom > div {
@@ -2249,7 +2249,7 @@
     padding: 42px 23px 25px;
   }
   .cart-content .section-label {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .cart-content h2 {
     font-size: 31px;
@@ -2266,7 +2266,7 @@
     font-size: 14px;
   }
   .cart-item p {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .project-dialog > img {
     height: 210px;
@@ -2275,7 +2275,7 @@
     padding: 27px 23px;
   }
   .project-dialog-copy .section-label {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .project-dialog-copy h2 {
     font-size: 34px;
@@ -2288,13 +2288,13 @@
     font-size: 12px;
   }
   .project-dialog-copy .small-note {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .modal {
     max-height: 90svh;
   }
   .project-dialog-copy .button {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .statistics,
   .client-logos {
@@ -2322,11 +2322,11 @@
     font-size: 28px;
   }
   .hero .eyebrow {
-    font-size: 6px;
+    font-size: var(--text-small);
     letter-spacing: 0.4px;
   }
   .hero-support {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .hero-description {
     font-size: 16px;
@@ -2336,12 +2336,12 @@
     gap: 17px;
   }
   .hero-actions .button {
-    font-size: 9px;
+    font-size: var(--text-small);
     padding: 13px 15px;
     gap: 13px;
   }
   .hero-actions .text-link {
-    font-size: 9px;
+    font-size: var(--text-small);
     gap: 6px;
   }
   .hero-art {
@@ -2362,7 +2362,7 @@
     gap: 9px;
   }
   .hero-store-wrap .store-nav nav button {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-campaign {
     height: 209px;
@@ -2371,34 +2371,34 @@
     font-size: 28px;
   }
   .hero-store-wrap .store-campaign-copy p {
-    font-size: 6px;
+    font-size: var(--text-small);
     max-width: 119px;
   }
   .hero-store-wrap .store-campaign-copy > button {
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 8px;
     gap: 8px;
   }
   .hero-store-wrap .store-eyebrow {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product {
     padding: 15px 13px;
   }
   .hero-store-wrap .store-product h4 {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap .store-product-buy {
-    font-size: 7px;
+    font-size: var(--text-small);
     gap: 7px;
   }
   .hero-store-wrap .store-product-buy button {
-    font-size: 5px;
+    font-size: var(--text-small);
     padding: 6px;
     gap: 5px;
   }
   .floating-theme {
-    font-size: 8px;
+    font-size: var(--text-small);
     padding: 8px;
     right: 0;
   }
@@ -2420,14 +2420,14 @@
   .responsive-note {
     left: 116px;
     bottom: 49px;
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .demo-cursor {
     bottom: 72px;
     right: -1px;
   }
   .demo-cursor > span {
-    font-size: 6px;
+    font-size: var(--text-small);
     padding: 6px 8px;
   }
   .hero-art-footer {
@@ -2437,14 +2437,14 @@
     gap: 4px;
   }
   .phase-tabs > button {
-    font-size: 7px;
+    font-size: var(--text-small);
     gap: 5px;
   }
   .phase-arrow {
     padding-left: 8px;
   }
   .craft-strip > .container > div {
-    font-size: 11px;
+    font-size: var(--text-small);
     gap: 6px;
   }
   .craft-strip > .container > div svg {
@@ -2469,12 +2469,12 @@
     font-size: 34px;
   }
   .platform-node {
-    font-size: 7px;
+    font-size: var(--text-small);
     padding: 8px;
     gap: 5px;
   }
   .node-symbol {
-    font-size: 10px;
+    font-size: var(--text-small);
   }
   .shopify-core {
     width: 115px;
@@ -2484,7 +2484,7 @@
     height: 375px;
   }
   .ecosystem-tags > div {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .expertise-intro h2 {
     font-size: 37px;
@@ -2493,13 +2493,13 @@
     font-size: 18px;
   }
   .capability-tags > span {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .theme-editor {
     padding: 19px;
   }
   .theme-editor pre {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .theme-render {
     padding: 18px;
@@ -2508,7 +2508,7 @@
     gap: 8px;
   }
   .theme-render .store-nav nav button {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .theme-render .store-campaign {
     height: 206px;
@@ -2518,10 +2518,10 @@
   }
   .theme-render .store-product-buy {
     gap: 7px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .theme-render .store-product-buy button {
-    font-size: 5px;
+    font-size: var(--text-small);
     gap: 5px;
     padding: 7px;
   }
@@ -2529,7 +2529,7 @@
     padding: 13px 10px;
   }
   .theme-render .store-product h4 {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .optimization-copy h2 {
     font-size: 39px;
@@ -2550,16 +2550,16 @@
     font-size: 26px;
   }
   .optimization-store .store-product-buy {
-    font-size: 8px;
+    font-size: var(--text-small);
     gap: 8px;
   }
   .optimization-store .store-product-buy button {
-    font-size: 5px;
+    font-size: var(--text-small);
     gap: 5px;
     padding: 7px;
   }
   .optimization-store .store-product h4 {
-    font-size: 9px;
+    font-size: var(--text-small);
   }
   .process-big-number {
     font-size: 69px;
@@ -2582,17 +2582,17 @@
     padding: 17px;
   }
   .data-card-header {
-    font-size: 6px;
+    font-size: var(--text-small);
   }
   .data-product h3 {
     font-size: 13px;
   }
   .data-flow {
-    font-size: 4px;
+    font-size: var(--text-small);
     gap: 3px;
   }
   .management-tags > span {
-    font-size: 7px;
+    font-size: var(--text-small);
   }
   .about-copy h2 {
     font-size: 34px;
@@ -2601,17 +2601,17 @@
     font-size: 40px;
   }
   .contact-form input {
-    font-size: 11px;
+    font-size: var(--text-small);
   }
   .contact-form label > .optional {
-    font-size: 5px;
+    font-size: var(--text-small);
   }
   .footer-top > p {
     font-size: 21px;
   }
   .footer-top nav {
     gap: 11px 15px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -2658,7 +2658,7 @@
   .hero .responsive-note {
     bottom: 4px;
     left: 130px;
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .hero-art-footer {
     bottom: -27px;
@@ -2669,7 +2669,7 @@
     right: 4px;
   }
   .hero .demo-cursor > span {
-    font-size: 8px;
+    font-size: var(--text-small);
   }
   .hero-store-wrap {
     top: 44px;

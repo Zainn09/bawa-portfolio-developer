@@ -108,7 +108,7 @@ summary:focus-visible {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 10px;
+  font-size: var(--text-small);
   letter-spacing: 1.25px;
   margin-bottom: 25px;
 }
@@ -123,7 +123,7 @@ summary:focus-visible {
   color: #d4d9c9;
 }
 .small-note {
-  font-size: 9px;
+  font-size: var(--text-small);
   letter-spacing: 0.6px;
 }
 .button {
@@ -265,7 +265,7 @@ summary:focus-visible {
   white-space: nowrap;
 }
 .brand small {
-  font-size: 8px;
+  font-size: var(--text-small);
   letter-spacing: 1.9px;
   display: block;
   font-weight: 400;
@@ -279,7 +279,7 @@ summary:focus-visible {
   margin-left: 50px;
 }
 .desktop-nav a {
-  font-size: 11px;
+  font-size: var(--text-small);
   color: var(--muted);
   position: relative;
 }
@@ -310,7 +310,7 @@ summary:focus-visible {
   gap: 29px;
   background: var(--ink);
   color: var(--bg);
-  font-size: 11px;
+  font-size: var(--text-small);
   font-weight: 600;
   padding: 11px 17px;
   border-radius: 3px;
@@ -339,7 +339,7 @@ summary:focus-visible {
   z-index: 2;
 }
 .eyebrow {
-  font-size: 9px;
+  font-size: var(--text-small);
   letter-spacing: 0.8px;
   display: flex;
   align-items: center;
@@ -374,7 +374,7 @@ summary:focus-visible {
   margin-top: 27px;
 }
 .hero-support {
-  font-size: 11px;
+  font-size: var(--text-small);
   color: var(--muted);
   margin-top: 13px;
   line-height: 1.9;
@@ -386,7 +386,7 @@ summary:focus-visible {
   margin-top: 27px;
 }
 .hero-actions .text-link {
-  font-size: 11px;
+  font-size: var(--text-small);
   gap: 12px;
 }
 .hero-specialties {
@@ -396,7 +396,7 @@ summary:focus-visible {
   margin-top: 31px;
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: var(--text-small);
   letter-spacing: 0.4px;
 }
 .hero-specialties i {
@@ -422,7 +422,7 @@ summary:focus-visible {
 }
 .art-coordinate {
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: var(--text-small);
   letter-spacing: 1px;
   position: absolute;
   right: 10px;
@@ -460,7 +460,7 @@ summary:focus-visible {
 }
 .browser-chrome > span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: var(--text-small);
   display: flex;
   gap: 5px;
   align-items: center;
@@ -487,7 +487,7 @@ summary:focus-visible {
   text-align: center;
   background: #343b2b;
   color: #f5f4e9;
-  font-size: 6px;
+  font-size: var(--text-small);
   letter-spacing: 0.4px;
   padding: 5px;
 }
@@ -516,7 +516,7 @@ summary:focus-visible {
   align-items: center;
 }
 .store-nav nav button {
-  font-size: 7px;
+  font-size: var(--text-small);
   padding: 3px 0;
   color: #646559;
   border-bottom: 1px solid transparent;
@@ -529,7 +529,7 @@ summary:focus-visible {
   align-items: center;
   gap: 6px;
   padding: 4px;
-  font-size: 8px;
+  font-size: var(--text-small);
 }
 .store-campaign {
   height: 278px;
@@ -550,7 +550,7 @@ summary:focus-visible {
   color: #262a20;
 }
 .store-eyebrow {
-  font-size: 6px;
+  font-size: var(--text-small);
   letter-spacing: 1px;
 }
 .store-campaign h3 {
@@ -561,7 +561,7 @@ summary:focus-visible {
   margin-top: 10px;
 }
 .store-campaign-copy p {
-  font-size: 7px;
+  font-size: var(--text-small);
   max-width: 150px;
   margin-top: 12px;
   color: #484936;
@@ -572,7 +572,7 @@ summary:focus-visible {
   gap: 15px;
   background: #343c2a;
   color: white;
-  font-size: 7px;
+  font-size: var(--text-small);
   padding: 10px 12px;
   margin-top: 14px;
 }
@@ -588,7 +588,7 @@ summary:focus-visible {
 }
 .store-product-category {
   font-family: var(--mono);
-  font-size: 5px;
+  font-size: var(--text-small);
   letter-spacing: 0.6px;
 }
 .store-product h4 {
@@ -597,14 +597,14 @@ summary:focus-visible {
   margin: 5px 0;
 }
 .store-material {
-  font-size: 6px;
+  font-size: var(--text-small);
   color: #606355;
 }
 .store-product-buy {
   display: flex;
   align-items: center;
   gap: 17px;
-  font-size: 9px;
+  font-size: var(--text-small);
 }
 .store-product-buy > span {
   font-weight: 600;
@@ -612,12 +612,12 @@ summary:focus-visible {
 .store-product-buy small {
   display: block;
   font-weight: 400;
-  font-size: 5px;
+  font-size: var(--text-small);
   color: #606355;
   margin-top: 3px;
 }
 .store-product-buy button {
-  font-size: 7px;
+  font-size: var(--text-small);
   display: flex;
   align-items: center;
   gap: 17px;
@@ -633,7 +633,7 @@ summary:focus-visible {
   align-items: center;
   justify-content: space-around;
   border-top: 1px solid #e5e1d7;
-  font-size: 5px;
+  font-size: var(--text-small);
   color: #606355;
   padding: 9px;
   letter-spacing: 0.2px;
@@ -651,7 +651,7 @@ summary:focus-visible {
   padding: 9px 13px;
   border-radius: 4px;
   box-shadow: 0 5px 20px #0001;
-  font-size: 8px;
+  font-size: var(--text-small);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -670,7 +670,7 @@ summary:focus-visible {
   display: flex;
   justify-content: center;
   gap: 20px;
-  font-size: 9px;
+  font-size: var(--text-small);
   padding: 12px;
   border-top: 1px solid #dddbd2;
 }
@@ -687,7 +687,7 @@ summary:focus-visible {
   box-shadow: 0 7px 28px #29271f12;
   border: var(--border);
   border-radius: 5px;
-  font-size: 10px;
+  font-size: var(--text-small);
   transform: rotate(2deg);
 }
 .floating-theme > span {
@@ -702,7 +702,7 @@ summary:focus-visible {
 .floating-theme small {
   display: block;
   font-family: var(--mono);
-  font-size: 6px;
+  font-size: var(--text-small);
   letter-spacing: 0.5px;
   color: var(--muted);
   margin-top: 3px;
@@ -794,7 +794,7 @@ summary:focus-visible {
   position: absolute;
   bottom: 69px;
   left: 126px;
-  font-size: 9px;
+  font-size: var(--text-small);
   line-height: 1.5;
   color: var(--muted);
   transform: rotate(-6deg);
@@ -818,7 +818,7 @@ summary:focus-visible {
 .demo-cursor > span {
   background: var(--accent);
   color: var(--bg);
-  font-size: 9px;
+  font-size: var(--text-small);
   border-radius: 3px;
   padding: 7px 12px;
   display: block;
@@ -837,7 +837,7 @@ summary:focus-visible {
   gap: 4px;
 }
 .phase-tabs > button {
-  font-size: 8px;
+  font-size: var(--text-small);
   display: flex;
   align-items: center;
   gap: 5px;
@@ -846,7 +846,7 @@ summary:focus-visible {
 }
 .phase-tabs > button > span:first-child {
   font-family: var(--mono);
-  font-size: 6px;
+  font-size: var(--text-small);
 }
 .phase-tabs > button.active {
   color: var(--accent);
@@ -858,7 +858,7 @@ summary:focus-visible {
 .concept-note {
   display: block;
   font-family: var(--mono);
-  font-size: 6px;
+  font-size: var(--text-small);
   color: var(--muted);
   letter-spacing: 1px;
   margin-top: 9px;
@@ -875,7 +875,7 @@ summary:focus-visible {
 }
 .craft-strip > .container > span {
   font-family: var(--mono);
-  font-size: 7px;
+  font-size: var(--text-small);
   letter-spacing: 1px;
   line-height: 1.8;
   color: var(--muted);
@@ -922,7 +922,7 @@ summary:focus-visible {
   line-height: 1.4;
 }
 .intro-section .section-label {
-  font-size: 8px;
+  font-size: var(--text-small);
   margin-bottom: 19px;
 }
 .intro-section > div > p {
@@ -940,7 +940,7 @@ summary:focus-visible {
   padding: 5px 8px;
   border: var(--border);
   font-family: var(--mono);
-  font-size: 6px;
+  font-size: var(--text-small);
   border-radius: 2px;
 }
 /* Accessible dialogs are native, focus-trapped and keyboard dismissible. */
@@ -1001,7 +1001,7 @@ summary:focus-visible {
   letter-spacing: -0.5px;
 }
 .cart-item p {
-  font-size: 10px;
+  font-size: var(--text-small);
   color: var(--muted);
   margin: 8px 0;
 }
@@ -1041,7 +1041,7 @@ summary:focus-visible {
   padding: 14px;
 }
 .demo-notice p {
-  font-size: 11px;
+  font-size: var(--text-small);
   color: var(--muted);
 }
 .cart-content .button {
@@ -1053,7 +1053,7 @@ summary:focus-visible {
 }
 /* Explicit line boxes keep miniature shop interfaces compact at every scale. */
 .store-screen {
-  font-size: 10px;
+  font-size: var(--text-small);
   line-height: 1.4;
 }
 .store-product-category,
