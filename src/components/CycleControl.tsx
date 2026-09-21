@@ -1,5 +1,4 @@
 "use client";
-import { Pause, Play } from "lucide-react";
 export default function CycleControl({
   label,
   paused,
@@ -19,15 +18,15 @@ export default function CycleControl({
   return (
     <button
       type="button"
-      className={`cycle-control ${running ? "is-running" : ""}`}
+      className="cycle-control"
+      data-running={running}
       onClick={toggle}
       disabled={reducedMotion}
       aria-label={name}
       aria-pressed={paused}
       title={name}
     >
-      <span className="cycle-ring" aria-hidden="true" />
-      {paused ? <Play size={12} /> : <Pause size={12} />}
+      {paused ? "Resume" : "Pause"}
     </button>
   );
 }

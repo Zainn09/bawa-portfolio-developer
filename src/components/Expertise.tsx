@@ -155,12 +155,8 @@ export function CustomTheme() {
             The storefront should be built around it.
           </p>
         </div>
-        <div
-          className="theme-workbench"
-          ref={themeCycle.ref}
-          {...themeCycle.interaction}
-        >
-          <div className="theme-editor">
+        <div className="theme-workbench" ref={themeCycle.ref}>
+          <div className="theme-editor" {...themeCycle.interaction}>
             <div className="editor-top">
               <Code2 size={16} />
               <span>THE BUILDING BLOCKS</span>
@@ -209,11 +205,7 @@ export function CustomTheme() {
             <Storefront compact highlight={themeParts[part].label} />
           </div>
         </div>
-        <div
-          className="under-surface"
-          ref={architectureCycle.ref}
-          {...architectureCycle.interaction}
-        >
+        <div className="under-surface">
           <div>
             <SectionLabel>THE STORE UNDER THE SURFACE</SectionLabel>
             <h3>
@@ -222,11 +214,12 @@ export function CustomTheme() {
               Connected underneath.
             </h3>
           </div>
-          <div className="architecture">
+          <div className="architecture" ref={architectureCycle.ref}>
             <div className="architecture-tabs" data-cycle-tabs>
               {layers.map((l, i) => (
                 <button
                   key={l.name}
+                  {...architectureCycle.interaction}
                   className={layer === i ? "active" : ""}
                   onClick={() => setLayer(i)}
                   aria-pressed={layer === i}
@@ -239,7 +232,10 @@ export function CustomTheme() {
                 </button>
               ))}
             </div>
-            <div className="architecture-description">
+            <div
+              className="architecture-description"
+              {...architectureCycle.interaction}
+            >
               <p aria-live={architectureCycle.running ? "off" : "polite"}>
                 {layers[layer].text}
               </p>

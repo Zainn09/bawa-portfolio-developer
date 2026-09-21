@@ -84,14 +84,14 @@ export function useAutoCycle(count: number, mobileOnly = false) {
     eligible,
     toggle: () => setPaused((value) => !value),
     interaction: {
-      onPointerEnter: (event: PointerEvent<HTMLDivElement>) => {
+      onPointerEnter: (event: PointerEvent<HTMLElement>) => {
         if (event.pointerType === "mouse") setHovered(true);
       },
       onPointerLeave: () => setHovered(false),
-      onFocusCapture: (event: FocusEvent<HTMLDivElement>) => {
+      onFocusCapture: (event: FocusEvent<HTMLElement>) => {
         if (event.target.matches(":focus-visible")) setFocused(true);
       },
-      onBlurCapture: (event: FocusEvent<HTMLDivElement>) => {
+      onBlurCapture: (event: FocusEvent<HTMLElement>) => {
         if (!event.currentTarget.contains(event.relatedTarget))
           setFocused(false);
       },

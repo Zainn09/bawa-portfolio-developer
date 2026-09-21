@@ -71,6 +71,7 @@ test("platforms rotate every two seconds, pause on hover, resume on exit and can
   page,
 }) => {
   await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
   await page.locator("#shopify").scrollIntoViewIfNeeded();
   await page.mouse.move(2, 2);
   await expect(page.locator(".shopify-core")).toHaveAttribute(
@@ -133,7 +134,10 @@ test("platform cycle advances to ecosystem tab and accordion height transitions 
     .locator(".header .brand")
     .evaluate((el) => (el as HTMLElement).focus({ preventScroll: true }));
   await page.mouse.move(2, 2);
-  await expect(page.locator(".rotation-progress")).toHaveClass(/running/);
+  await expect(page.locator("#shopify")).toHaveAttribute(
+    "data-rotating",
+    "true",
+  );
   await expect(
     page.getByRole("button", { name: "02 / Shopify ecosystem" }),
   ).toHaveAttribute("aria-pressed", "true", { timeout: 5000 });
@@ -216,6 +220,7 @@ test("reduced motion disables automatic selection and pinned choreography withou
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
   await page.locator("#shopify").scrollIntoViewIfNeeded();
   await page.mouse.move(2, 2);
   await page.waitForTimeout(2300);

@@ -1,12 +1,16 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type PointerEvent,
+  type FocusEvent,
+} from "react";
 import {
   ArrowUpRight,
   ArrowRight,
   ShoppingBag,
   Plus,
-  Pause,
-  Play,
   ChevronDown,
 } from "lucide-react";
 import { platforms } from "@/data/portfolio";
@@ -150,6 +154,18 @@ export default function Ecosystem() {
     setView(next);
     setSelected("Shopify");
   }
+  const blockInteraction = {
+    onPointerEnter: (event: PointerEvent<HTMLElement>) => {
+      if (event.pointerType === "mouse") setHovered(true);
+    },
+    onPointerLeave: () => setHovered(false),
+    onFocusCapture: (event: FocusEvent<HTMLElement>) => {
+      if (event.target.matches(":focus-visible")) setFocused(true);
+    },
+    onBlurCapture: (event: FocusEvent<HTMLElement>) => {
+      if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+    },
+  };
   const stateText = reducedMotion
     ? "REDUCED MOTION · MANUAL"
     : paused
@@ -165,17 +181,7 @@ export default function Ecosystem() {
       className="ecosystem-section"
       id="shopify"
       ref={sectionRef}
-      onPointerEnter={(event) => {
-        if (event.pointerType === "mouse") setHovered(true);
-      }}
-      onPointerLeave={() => setHovered(false)}
-      onFocusCapture={(event) => {
-        if (event.target.matches(":focus-visible")) setFocused(true);
-      }}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null))
-          setFocused(false);
-      }}
+      data-rotating={running}
     >
       <div className="container">
         <div className="section-heading">
@@ -196,6 +202,7 @@ export default function Ecosystem() {
         <div className="ecosystem-toolbar">
           <div
             className="ecosystem-view-tabs"
+            {...blockInteraction}
             aria-label="Commerce ecosystem views"
           >
             <button
@@ -215,6 +222,7 @@ export default function Ecosystem() {
         <div className="ecosystem-layout">
           <div
             className="ecosystem-details"
+            {...blockInteraction}
             aria-live={focused || paused ? "polite" : "off"}
           >
             <div className="ecosystem-story" key={`${view}-${selected}`}>
@@ -311,6 +319,7 @@ export default function Ecosystem() {
               ))}
             </svg>
             <button
+              {...blockInteraction}
               className={`shopify-core ${selected === "Shopify" ? "selected" : ""}`}
               aria-pressed={selected === "Shopify"}
               onMouseEnter={() => setSelected("Shopify")}
@@ -323,6 +332,7 @@ export default function Ecosystem() {
             {nodes.map((name, i) => (
               <button
                 key={name}
+                {...blockInteraction}
                 data-platform={name}
                 className={`platform-node node-${i} ${selected === name ? "selected" : ""}`}
                 aria-pressed={selected === name}
@@ -346,14 +356,9 @@ export default function Ecosystem() {
               </button>
             ))}
             <div className="rotation-controls orbit-rotation">
-              <span
-                className={`rotation-progress ${running ? "running" : ""}`}
-                key={`${view}-${selected}-${running}`}
-                aria-hidden="true"
-              />
               <span className="sr-only">{stateText}</span>
               <button
-                className="icon-button"
+                className="rotation-toggle"
                 title={paused ? "Resume rotation" : "Pause rotation"}
                 disabled={reducedMotion}
                 aria-label={
@@ -364,7 +369,7 @@ export default function Ecosystem() {
                 aria-pressed={paused}
                 onClick={() => setPaused((p) => !p)}
               >
-                {paused ? <Play size={13} /> : <Pause size={13} />}
+                {paused ? "Resume" : "Pause"}
               </button>
             </div>
             <div className="orbit-caption">

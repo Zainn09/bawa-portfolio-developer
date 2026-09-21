@@ -247,16 +247,6 @@ h3 {
   opacity: 0.5;
   cursor: default;
 }
-.rotation-progress {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #8c9b7766;
-  border-radius: 50%;
-  border-top-color: #eeaf8c;
-}
-.rotation-progress.running {
-  animation: rotation-turn 2s linear infinite;
-}
 .ecosystem-details {
   min-height: 492px;
   padding-top: 30px;
