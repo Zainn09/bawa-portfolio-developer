@@ -148,6 +148,8 @@ export default function Ecosystem() {
 
   function choose(name: string) {
     setSelected(name);
+    // A deliberate selection takes over from autoplay, including on touch.
+    setPaused(true);
     track("platform_interaction", { platform: name });
   }
   function changeView(next: "platforms" | "ecosystem") {
@@ -355,23 +357,9 @@ export default function Ecosystem() {
                 <Plus size={11} />
               </button>
             ))}
-            <div className="rotation-controls orbit-rotation">
-              <span className="sr-only">{stateText}</span>
-              <button
-                className="rotation-toggle"
-                title={paused ? "Resume rotation" : "Pause rotation"}
-                disabled={reducedMotion}
-                aria-label={
-                  paused
-                    ? "Resume automatic platform rotation"
-                    : "Pause automatic platform rotation"
-                }
-                aria-pressed={paused}
-                onClick={() => setPaused((p) => !p)}
-              >
-                {paused ? "Resume" : "Pause"}
-              </button>
-            </div>
+            <span className="sr-only ecosystem-rotation-status">
+              {stateText}
+            </span>
             <div className="orbit-caption">
               <span className="status-dot" /> EVERY CONNECTION. ONE COMMERCE
               EXPERIENCE.

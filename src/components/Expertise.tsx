@@ -109,7 +109,7 @@ export function CustomTheme() {
   const themeCycle = useAutoCycle(themeParts.length, true);
   const architectureCycle = useAutoCycle(5);
   const { active: part, setActive: setPart } = themeCycle;
-  const { active: layer, setActive: setLayer } = architectureCycle;
+  const { active: layer, selectManually: setLayer } = architectureCycle;
   const layers = [
     {
       name: "Storefront",
@@ -214,7 +214,11 @@ export function CustomTheme() {
               Connected underneath.
             </h3>
           </div>
-          <div className="architecture" ref={architectureCycle.ref}>
+          <div
+            className="architecture"
+            ref={architectureCycle.ref}
+            data-running={architectureCycle.running}
+          >
             <div className="architecture-tabs" data-cycle-tabs>
               {layers.map((l, i) => (
                 <button
@@ -239,7 +243,6 @@ export function CustomTheme() {
               <p aria-live={architectureCycle.running ? "off" : "polite"}>
                 {layers[layer].text}
               </p>
-              <CycleControl label="architecture icon" {...architectureCycle} />
             </div>
           </div>
         </div>

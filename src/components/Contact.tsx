@@ -100,7 +100,7 @@ export default function Contact() {
             <a href="#project-form" className="button button-dark">
               Start a project <ArrowUpRight size={17} />
             </a>
-            <a href="#work" className="text-link">
+            <a href="#work" className="text-link button-outline">
               View my work <ArrowUpRight size={16} />
             </a>
           </div>

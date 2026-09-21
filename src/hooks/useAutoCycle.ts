@@ -78,6 +78,10 @@ export function useAutoCycle(count: number, mobileOnly = false) {
     ref,
     active,
     setActive,
+    selectManually: (index: number) => {
+      setActive(index);
+      setPaused(true);
+    },
     paused,
     reducedMotion,
     running,

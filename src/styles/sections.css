@@ -1905,3 +1905,11 @@
 .project-dialog-copy > .button {
   margin-top: 14px;
 }
+
+/* Give both contact actions a defined edge; the secondary action stays outlined. */
+.contact-callout .button-dark {
+  border: 1px solid currentColor;
+}
+.contact-callout .button-outline {
+  border-color: currentColor;
+}

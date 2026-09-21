@@ -267,7 +267,7 @@
 .orbit-caption {
   top: calc(100% + 8px);
   bottom: auto;
-  right: 65px;
+  right: 0;
 }
 .orbit-scene .orbit-rotation {
   bottom: -42px;

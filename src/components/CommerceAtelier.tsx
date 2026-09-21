@@ -5,7 +5,6 @@ import {
   ArrowDown,
   Monitor,
   Smartphone,
-  RotateCcw,
   SlidersHorizontal,
   Check,
 } from "lucide-react";
@@ -16,7 +15,6 @@ import { SectionLabel } from "./shared";
 
 export default function CommerceAtelier() {
   const [direction, setDirection] = useState(0);
-  const [resetVersion, setResetVersion] = useState(0);
   const [device, setDevice] = useState("Desktop");
   const [layout, setLayout] = useState("Editorial");
   const concept = storeConcepts[direction];
@@ -116,16 +114,6 @@ export default function CommerceAtelier() {
               <p>{concept.description}</p>
             </div>
             <div className="atelier-reset">
-              <button
-                onClick={() => {
-                  setDirection(0);
-                  setResetVersion((version) => version + 1);
-                  setDevice("Desktop");
-                  setLayout("Editorial");
-                }}
-              >
-                <RotateCcw size={13} /> Reset the canvas
-              </button>
               <span>NO TEMPLATES. JUST POSSIBILITIES.</span>
             </div>
           </div>
@@ -156,7 +144,7 @@ export default function CommerceAtelier() {
             <div className="atelier-preview-stage">
               <div className="atelier-store-shell">
                 <Storefront
-                  key={`${concept.id}-${resetVersion}`}
+                  key={concept.id}
                   compact
                   concept={concept}
                   device={device}
