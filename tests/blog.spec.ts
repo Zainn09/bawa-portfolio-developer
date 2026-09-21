@@ -20,7 +20,8 @@ test("editorial inventory is exactly seven distinct articles per supplied store"
     ).toBeGreaterThan(150);
     expect(a.seoTitle).toBeTruthy();
     expect(a.seoDescription).toBeTruthy();
-    expect(a.sources.length).toBeGreaterThanOrEqual(2);
+    expect(a.sources).toHaveLength(1);
+    expect(a.sources[0].url).not.toContain("github.com");
     for (const m of [a.featuredImage, ...a.mobileImages])
       if (m.src) expect(m.src).toContain(`/blog/${a.project}/`);
     if (a.project === "vintage-art-garage")

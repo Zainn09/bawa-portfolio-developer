@@ -308,11 +308,17 @@ export default async function ArticlePage({ params }: Props) {
           {relatedArticles(a).map((r) => (
             <article key={r.slug}>
               <Link href={`/blogs/${r.slug}`}>
-                <span>
+                <BlogImage
+                  media={r.featuredImage}
+                  sizes="(max-width: 767px) 90vw, (max-width: 1600px) 28vw, 430px"
+                />
+                <span className="article-related-meta">
                   {r.category} / {r.readingMinutes} MIN READ
                 </span>
-                <h3>{r.title}</h3>
-                <ArrowUpRight size={22} />
+                <div className="article-related-title">
+                  <h3>{r.title}</h3>
+                  <ArrowUpRight size={22} aria-hidden="true" />
+                </div>
               </Link>
             </article>
           ))}

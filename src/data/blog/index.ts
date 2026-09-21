@@ -1,4 +1,4 @@
-import { blogProjects, sourceArchive } from "./catalog";
+import { blogProjects } from "./catalog";
 export { blogProjects, sourceArchive, dateLabel } from "./catalog";
 import prime from "./prime-baby-gear.json";
 import ollie from "./ollie-burwell.json";
@@ -123,10 +123,6 @@ export const articles: Article[] = input
       readingMinutes: Math.max(1, Math.ceil(words / 200)),
       sources: [
         { label: project.name + " — public website", url: project.url },
-        {
-          label: "Supplied project capture archive · 20 September 2026",
-          url: sourceArchive,
-        },
       ],
     };
   });
