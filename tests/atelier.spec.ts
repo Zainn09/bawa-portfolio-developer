@@ -67,7 +67,7 @@ for (const width of [320, 390, 820, 1440]) {
   });
 }
 
-test("reset restores the canvas, collection and empty demo bag", async ({
+test("preview changes preserve the explored collection and cart without a reset control", async ({
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
@@ -87,18 +87,20 @@ test("reset restores the canvas, collection and empty demo bag", async ({
   await atelier
     .getByRole("button", { name: "Product first", exact: true })
     .click();
-  await atelier.getByRole("button", { name: "Reset the canvas" }).click();
   await expect(
-    atelier.getByRole("button", { name: "Preview desktop storefront" }),
+    atelier.getByRole("button", { name: "Reset the canvas" }),
+  ).toHaveCount(0);
+  await expect(
+    atelier.getByRole("button", { name: "Preview mobile storefront" }),
   ).toHaveAttribute("aria-pressed", "true");
   await expect(
-    atelier.getByRole("button", { name: "Editorial", exact: true }),
+    atelier.getByRole("button", { name: "Product first", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
   await expect(atelier.locator(".store-campaign h3")).toContainText(
-    "A little less.",
+    "Made to settle in.",
   );
   await expect(
-    atelier.getByRole("button", { name: "Open demo cart, 0 items" }),
+    atelier.getByRole("button", { name: "Open demo cart, 1 items" }),
   ).toBeVisible();
 });
 

@@ -67,7 +67,7 @@ test("lead project stays pinned while adjacent project images continue scrolling
   ).toBe(true);
 });
 
-test("platforms rotate every two seconds, pause on hover, resume on exit and can be paused explicitly", async ({
+test("platforms rotate every two seconds, pause on hover, resume on exit and hand control to a manual selection", async ({
   page,
 }) => {
   await page.goto("/");
@@ -89,7 +89,7 @@ test("platforms rotate every two seconds, pause on hover, resume on exit and can
   ).toHaveCount(9);
   await expect(page.locator(".connection-active")).toHaveCount(1);
   await page.locator('[data-platform="BigCommerce"]').hover();
-  await expect(page.locator(".rotation-controls")).toContainText(
+  await expect(page.locator(".ecosystem-rotation-status")).toContainText(
     "PAUSED ON HOVER",
   );
   await page.waitForTimeout(2300);
@@ -98,26 +98,20 @@ test("platforms rotate every two seconds, pause on hover, resume on exit and can
   await expect(page.locator(".ecosystem-details h3")).toHaveText("WordPress", {
     timeout: 3500,
   });
-  await page
-    .getByRole("button", { name: "Pause automatic platform rotation" })
-    .click();
+  await page.locator('[data-platform="BigCommerce"]').click();
   await page
     .locator(".header .brand")
     .evaluate((el) => (el as HTMLElement).focus({ preventScroll: true }));
   await page.mouse.move(2, 2);
-  const title = await page.locator(".ecosystem-details h3").textContent();
   await page.waitForTimeout(2300);
-  await expect(page.locator(".ecosystem-details h3")).toHaveText(title!);
-  await page
-    .getByRole("button", { name: "Resume automatic platform rotation" })
-    .click();
-  await page
-    .locator(".header .brand")
-    .evaluate((el) => (el as HTMLElement).focus({ preventScroll: true }));
-  await page.mouse.move(2, 2);
-  await expect(page.locator(".ecosystem-details h3")).not.toHaveText(title!, {
-    timeout: 3500,
-  });
+  await expect(page.locator(".ecosystem-details h3")).toHaveText("BigCommerce");
+  await expect(page.locator("#shopify")).toHaveAttribute(
+    "data-rotating",
+    "false",
+  );
+  await expect(
+    page.getByRole("button", { name: /automatic platform rotation/ }),
+  ).toHaveCount(0);
 });
 
 test("platform cycle advances to ecosystem tab and accordion height transitions smoothly", async ({
@@ -126,7 +120,7 @@ test("platform cycle advances to ecosystem tab and accordion height transitions 
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
   await page.locator("#shopify").scrollIntoViewIfNeeded();
-  await page.locator('[data-platform="Custom Commerce"]').click();
+  await page.locator('[data-platform="Custom Commerce"]').hover();
   await expect(
     page.locator('[data-platform="Custom Commerce"]'),
   ).toHaveAttribute("aria-pressed", "true");
@@ -228,7 +222,7 @@ test("reduced motion disables automatic selection and pinned choreography withou
     "aria-pressed",
     "true",
   );
-  await expect(page.locator(".rotation-controls")).toContainText(
+  await expect(page.locator(".ecosystem-rotation-status")).toContainText(
     "REDUCED MOTION",
   );
   await page.locator('[data-platform="Magento"]').click();

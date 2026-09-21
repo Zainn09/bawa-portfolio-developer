@@ -1,5 +1,11 @@
 "use client";
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+} from "react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -25,36 +31,80 @@ export function Process() {
     height: 0,
   });
   const [reducedMotion, setReducedMotion] = useState(false);
+  const geometryRef = useRef(pin);
+  const pendingProgress = useRef<number | null>(null);
+
+  useLayoutEffect(() => {
+    geometryRef.current = pin;
+    // Keep the same place in the chapter when fonts or viewport dimensions change.
+    if (pendingProgress.current !== null && pin.enabled && ref.current) {
+      const start = ref.current.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: start - pin.top + pendingProgress.current * pin.stride,
+        behavior: "instant",
+      });
+    }
+    pendingProgress.current = null;
+  }, [pin]);
+
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     let frame = 0;
+    let disposed = false;
     const measure = () => {
+      if (disposed) return;
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const panel = pinRef.current;
-        if (!panel) return;
-        const top = window.innerWidth < 768 ? 80 : 88;
+        const section = ref.current;
+        if (!panel || !section) return;
+        const clearance = window.innerWidth < 768 ? 80 : 88;
         const stride = Math.max(210, Math.min(420, window.innerHeight * 0.38));
-        const panelHeight = panel.getBoundingClientRect().height;
-        setReducedMotion(media.matches);
-        setPin({
-          enabled:
-            !media.matches && panelHeight <= window.innerHeight - top - 12,
-          top,
+        const panelHeight = Math.ceil(panel.getBoundingClientRect().height);
+        // Tall panels scroll into view naturally, then stick at their bottom edge.
+        // Never disable the chapter just because a label wraps or a toolbar resizes.
+        const next = {
+          enabled: !media.matches,
+          top: Math.min(clearance, window.innerHeight - panelHeight - 12),
           stride,
           height: panelHeight + stride * process.length,
-        });
+        };
+        setReducedMotion(media.matches);
+        const previous = geometryRef.current;
+        if (
+          next.enabled === previous.enabled &&
+          next.top === previous.top &&
+          next.stride === previous.stride &&
+          next.height === previous.height
+        )
+          return;
+        const progress =
+          (previous.top - section.getBoundingClientRect().top) /
+          previous.stride;
+        if (
+          previous.enabled &&
+          next.enabled &&
+          progress >= 0 &&
+          progress < process.length
+        ) {
+          pendingProgress.current = progress;
+        }
+        setPin(next);
       });
     };
     const observer = new ResizeObserver(measure);
     if (pinRef.current) observer.observe(pinRef.current);
     window.addEventListener("resize", measure);
+    window.addEventListener("pageshow", measure);
     media.addEventListener("change", measure);
+    document.fonts.ready.then(measure);
     measure();
     return () => {
+      disposed = true;
       observer.disconnect();
       cancelAnimationFrame(frame);
       window.removeEventListener("resize", measure);
+      window.removeEventListener("pageshow", measure);
       media.removeEventListener("change", measure);
     };
   }, []);
@@ -163,27 +213,35 @@ export function Process() {
             <span className="process-big-number" aria-hidden="true">
               0{step + 1}
             </span>
-            <div>
-              <span className="mono accent">
-                {process[step].name.toUpperCase()}
-              </span>
-              <h3>{process[step].title}</h3>
-              <p>{process[step].text}</p>
-              {step < 8 ? (
-                <button
-                  className="text-link button-outline"
-                  onClick={() => {
-                    selectStep(step + 1);
-                  }}
+            <div className="process-copy-stack">
+              {process.map((stage, index) => (
+                <div
+                  key={stage.name}
+                  className="process-copy-panel"
+                  data-active={step === index}
+                  aria-hidden={step !== index}
+                  inert={step !== index}
                 >
-                  Next: {process[step + 1].name}
-                  <ArrowRight size={16} />
-                </button>
-              ) : (
-                <a className="text-link button-outline" href="#contact">
-                  Ready to build yours? <ArrowUpRight size={16} />
-                </a>
-              )}
+                  <span className="mono accent">
+                    {stage.name.toUpperCase()}
+                  </span>
+                  <h3>{stage.title}</h3>
+                  <p>{stage.text}</p>
+                  {index < process.length - 1 ? (
+                    <button
+                      className="text-link button-outline"
+                      onClick={() => selectStep(index + 1)}
+                    >
+                      Next: {process[index + 1].name}
+                      <ArrowRight size={16} />
+                    </button>
+                  ) : (
+                    <a className="text-link button-outline" href="#contact">
+                      Ready to build yours? <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
           <div className="process-store">

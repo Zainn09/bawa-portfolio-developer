@@ -24,10 +24,10 @@ test("five supplied projects have local brand imagery, honest details and workin
   }
   await expect(page.locator("#contact label")).not.toContainText(["optional"]);
   await expect(page.locator(".art-coordinate")).toHaveCount(0);
-  await expect(page.locator(".rotation-controls")).not.toContainText(
+  await expect(page.locator(".ecosystem-rotation-status")).not.toContainText(
     "EVERY 2 SECONDS",
   );
-  await expect(page.locator(".orbit-scene .rotation-controls")).toHaveCount(1);
+  await expect(page.locator(".orbit-scene .rotation-controls")).toHaveCount(0);
   expect(
     await page
       .locator("#contact-company")
@@ -123,11 +123,12 @@ test.describe("touchscreen cycles", () => {
     expect(active!.x + active!.width).toBeLessThanOrEqual(
       frame!.x + frame!.width + 1,
     );
-    await page
-      .getByRole("button", {
-        name: "Pause automatic architecture icon rotation",
-      })
-      .tap();
+    await buttons.nth(2).tap();
+    await expect(
+      page.getByRole("button", {
+        name: /automatic architecture icon rotation/,
+      }),
+    ).toHaveCount(0);
     await page.waitForTimeout(2200);
     await expect(buttons.nth(2)).toHaveAttribute("aria-pressed", "true");
   });

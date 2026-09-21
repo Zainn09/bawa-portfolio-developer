@@ -86,7 +86,7 @@ test("architecture pauses only on icon/content blocks and resumes over its headi
   await page.evaluate(() => document.fonts.ready);
   const section = page.locator(".under-surface");
   await section.scrollIntoViewIfNeeded();
-  const control = section.locator(".cycle-control");
+  const control = section.locator(".architecture");
   await section.locator("h3").hover();
   await expect(control).toHaveAttribute("data-running", "true");
   const before = await section
@@ -162,12 +162,13 @@ test("keyboard focus still pauses each rotating block without a visual spinner",
     (el as HTMLElement).focus({ preventScroll: true }),
   );
   await page.keyboard.press("Enter");
-  const control = page.locator(".architecture .cycle-control");
+  const control = page.locator(".architecture");
   await expect(control).toHaveAttribute("data-running", "false");
   await page.waitForTimeout(2200);
   await expect(layer).toHaveAttribute("aria-pressed", "true");
   await layer.evaluate((el) => (el as HTMLElement).blur());
-  await expect(control).toHaveAttribute("data-running", "true");
+  // Enter deliberately selects a layer and takes over from autoplay.
+  await expect(control).toHaveAttribute("data-running", "false");
   await page.setViewportSize({ width: 600, height: 1000 });
   const tab = page.locator(".editor-tabs button").nth(2);
   await tab.scrollIntoViewIfNeeded();

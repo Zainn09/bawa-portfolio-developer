@@ -340,3 +340,17 @@
 .hero .commerce-seal {
   bottom: 70px;
 }
+
+/* Reserve the tallest stage before pinning; changing steps never changes track geometry. */
+.process-copy-stack {
+  display: grid;
+  min-width: 0;
+}
+.process-copy-panel {
+  grid-area: 1 / 1;
+  min-width: 0;
+  visibility: hidden;
+}
+.process-copy-panel[data-active="true"] {
+  visibility: visible;
+}
