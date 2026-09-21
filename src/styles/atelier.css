@@ -31,7 +31,7 @@
 }
 .atelier-invitation p {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.6;
 }
 .atelier-invitation strong {
@@ -165,7 +165,7 @@
   letter-spacing: 0.5px;
 }
 .atelier-concept-note p {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   margin-top: 9px;
   line-height: 1.6;
@@ -498,7 +498,7 @@
   margin-top: 25px;
 }
 .atelier-bottom > p {
-  font-size: 12px;
+  font-size: 14px;
   color: var(--muted);
 }
 .atelier-bottom .text-link {
@@ -537,7 +537,7 @@
     font-size: 14px;
   }
   .atelier-concept-note p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .atelier-preview-stage {
     min-height: 515px;
@@ -555,7 +555,7 @@
     letter-spacing: -1.8px;
   }
   .atelier-invitation p {
-    font-size: 12px;
+    font-size: 14px;
   }
   .atelier-invitation > svg:last-child {
     display: none;
@@ -660,7 +660,7 @@
     gap: 12px;
   }
   .atelier-invitation p {
-    font-size: 13px;
+    font-size: 15px;
   }
   .atelier-invitation > svg:last-child {
     display: block;
@@ -750,7 +750,7 @@
     font-size: 6px;
   }
   .atelier-concept-note p {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.5;
     margin-top: 7px;
   }
@@ -880,7 +880,7 @@
     margin-top: 20px;
   }
   .atelier-bottom > p {
-    font-size: 12px;
+    font-size: 14px;
     max-width: 320px;
   }
   .atelier-bottom > .text-link {
