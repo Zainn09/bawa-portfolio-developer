@@ -141,8 +141,10 @@ test("keyboard focus still pauses each rotating block without a visual spinner",
   await page.evaluate(() => document.fonts.ready);
   await page.keyboard.press("Tab");
   const platform = page.locator('[data-platform="BigCommerce"]');
-  await platform.focus();
   await platform.scrollIntoViewIfNeeded();
+  await platform.evaluate((el) =>
+    (el as HTMLElement).focus({ preventScroll: true }),
+  );
   await expect(page.locator("#shopify")).toHaveAttribute(
     "data-rotating",
     "false",
@@ -155,8 +157,10 @@ test("keyboard focus still pauses each rotating block without a visual spinner",
     "true",
   );
   const layer = page.locator(".architecture-tabs button").nth(2);
-  await layer.focus();
   await layer.scrollIntoViewIfNeeded();
+  await layer.evaluate((el) =>
+    (el as HTMLElement).focus({ preventScroll: true }),
+  );
   await page.keyboard.press("Enter");
   const control = page.locator(".architecture .cycle-control");
   await expect(control).toHaveAttribute("data-running", "false");
@@ -166,8 +170,10 @@ test("keyboard focus still pauses each rotating block without a visual spinner",
   await expect(control).toHaveAttribute("data-running", "true");
   await page.setViewportSize({ width: 600, height: 1000 });
   const tab = page.locator(".editor-tabs button").nth(2);
-  await tab.focus();
   await tab.scrollIntoViewIfNeeded();
+  await tab.evaluate((el) =>
+    (el as HTMLElement).focus({ preventScroll: true }),
+  );
   await page.keyboard.press("Enter");
   const themeControl = page.locator(".theme-cycle-control .cycle-control");
   await expect(themeControl).toHaveAttribute("data-running", "false");

@@ -80,3 +80,72 @@ for (const viewport of [
     ).toBe(true);
   });
 }
+
+for (const width of [320, 390, 820, 1440]) {
+  test(`all live text has a readable small-text floor at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    for (const route of ["/", "/blogs", "/blogs/prime-baby-gear-navigation"]) {
+      await page.goto(route);
+      await page.evaluate(() => document.fonts.ready);
+      const tinyText = await page.evaluate(() =>
+        [...document.querySelectorAll("body *")]
+          .filter((el) => {
+            if (
+              !(el instanceof HTMLElement) ||
+              !el.getClientRects().length ||
+              el.closest('[aria-hidden="true"],svg')
+            )
+              return false;
+            const style = getComputedStyle(el);
+            return (
+              style.visibility !== "hidden" &&
+              [...el.childNodes].some(
+                (node) =>
+                  node.nodeType === Node.TEXT_NODE && node.textContent?.trim(),
+              ) &&
+              parseFloat(style.fontSize) < 12
+            );
+          })
+          .map((el) => ({
+            element: el.tagName,
+            className: el.className,
+            text: el.textContent?.trim().slice(0, 65),
+            size: getComputedStyle(el).fontSize,
+          })),
+      );
+      expect(tinyText, `${route} has text smaller than 12px`).toEqual([]);
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= innerWidth,
+        ),
+      ).toBe(true);
+    }
+  });
+}
+
+for (const width of [320, 390, 1440]) {
+  test(`enlarged annotations stay clear of blocks and signatures at ${width}px`, async ({
+    page,
+  }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto("/");
+    await page.evaluate(() => document.fonts.ready);
+    await page.mouse.move(1, 1);
+    await page.locator(".orbit-scene").scrollIntoViewIfNeeded();
+    const caption = (await page.locator(".orbit-caption").boundingBox())!;
+    for (const node of await page
+      .locator(".platform-node,.shopify-core")
+      .all()) {
+      const box = (await node.boundingBox())!;
+      expect(box.y + box.height).toBeLessThan(caption.y);
+    }
+    if (width < 768) {
+      await page.locator(".footer-back").scrollIntoViewIfNeeded();
+      const back = (await page.locator(".footer-back").boundingBox())!;
+      const wordmark = (await page.locator(".footer-wordmark").boundingBox())!;
+      expect(back.y + back.height).toBeLessThanOrEqual(wordmark.y);
+    }
+  });
+}

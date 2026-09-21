@@ -413,7 +413,7 @@
 .node-8 {
   top: 2%;
   left: 42%;
-  transform: scale(0.8) rotate(-5deg);
+  transform: rotate(-5deg);
   opacity: 0.75;
 }
 .orbit-caption {

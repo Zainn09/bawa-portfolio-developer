@@ -71,13 +71,7 @@
 .hero .hero-art-footer {
   position: relative;
   inset: auto;
-  margin-top: 74px;
-}
-.hero .phone-preview {
-  bottom: 130px;
-}
-.hero .responsive-note {
-  bottom: 154px;
+  margin-top: 26px;
 }
 
 /* Interactive demos use readable text too. Size by content, not fixed screenshots. */
@@ -182,15 +176,6 @@
     flex: 1 1 140px;
     line-height: 1.6;
   }
-  .process-pin .process-store .store-campaign {
-    min-height: 112px;
-  }
-  .process-pin .process-store .store-campaign-copy {
-    margin: 10px 6%;
-  }
-  .process-pin .process-store .store-highlight {
-    margin: 0 10px 10px;
-  }
   .device-frame:after {
     left: 0;
     width: 100%;
@@ -198,10 +183,6 @@
   .responsive-bottom {
     flex-wrap: wrap;
     gap: 12px 22px;
-  }
-  .footer-project-orbit > span {
-    max-width: 90px;
-    text-align: center;
   }
   .signature-footer-bottom {
     grid-template-columns: minmax(0, 1fr);
@@ -262,8 +243,6 @@
   .process-pin .process-store .store-browser .store-campaign-copy {
     margin-block: 6px;
   }
-}
-@media (max-width: 767px) and (max-height: 760px) {
   .process-pin .process-store .store-product {
     flex-wrap: nowrap;
   }
@@ -279,4 +258,85 @@
     gap: 5px;
     padding-inline: 7px;
   }
+}
+
+/* Larger annotations get their own space, clear of buttons and the footer signature. */
+.orbit-scene {
+  margin-bottom: 55px;
+}
+.orbit-caption {
+  top: calc(100% + 8px);
+  bottom: auto;
+  right: 65px;
+}
+.orbit-scene .orbit-rotation {
+  bottom: -42px;
+  right: 0;
+}
+.shopify-core > span {
+  font-family: var(--font);
+  letter-spacing: 0.3px;
+}
+.hero .phone-preview {
+  top: 145px;
+  right: 10px;
+  left: auto;
+  bottom: auto;
+  pointer-events: none;
+}
+.hero .responsive-note {
+  position: relative;
+  inset: auto;
+  display: inline-block;
+  margin: 30px 0 0 42px;
+  transform: none;
+}
+.hero .hero-art-footer {
+  margin-top: 26px;
+}
+@media (max-width: 767px) {
+  .hero .responsive-note {
+    display: none;
+  }
+  .footer-back {
+    position: static;
+  }
+  .footer-project-orbit {
+    width: 84px;
+    height: 84px;
+  }
+  .footer-edition {
+    flex-basis: 100%;
+  }
+}
+@media (max-width: 380px) {
+  .orbit-scene {
+    height: 580px;
+  }
+  .orbit-scene .node-2,
+  .orbit-scene .node-3 {
+    top: 28%;
+  }
+  .orbit-scene .node-4,
+  .orbit-scene .node-5 {
+    top: 68%;
+  }
+  .orbit-scene .node-6,
+  .orbit-scene .node-7 {
+    top: 79%;
+  }
+}
+
+/* Reserve wrapped code lines so autoplay never nudges the reading position. */
+@media (max-width: 767px) {
+  .theme-editor pre {
+    min-height: 8lh;
+  }
+  .theme-editor .code-file {
+    min-height: 2lh;
+  }
+}
+
+.hero .commerce-seal {
+  bottom: 70px;
 }
