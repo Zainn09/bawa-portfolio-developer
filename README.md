@@ -179,3 +179,11 @@ Edit the articles in `src/data/blog/*.json`. See [the editing guide](docs/BLOG-E
 The reading scale has been increased across portfolio descriptions, supporting copy, Atelier notes, project details, footer descriptions, and the journal. Standard descriptions are now 16px on larger layouts and 15px on narrower layouts; article prose is 21px on desktop and 20px on mobile (23px on very wide screens). Hero descriptions are also larger. Display headings, navigation sizing, and miniature demo-store typography are unchanged. The compact pinned process uses a smaller proportional increase to preserve its viewport fit.
 
 Validation for this typography update: production build and TypeScript passed; all 42 targeted typography, 320–2560px layout, mobile hero clearance, pinned-process, and light/dark accessibility checks passed. This was a targeted regression pass, not a rerun of every interaction test.
+
+### Article cards and block-level rotation refinements
+
+- Article sources now show only the corresponding public store link; the supplied capture ZIP is no longer linked from any of the 35 articles. Asset provenance remains documented internally.
+- Related articles use each article's existing featured screenshot, with the arrow beside its title at every viewport. Vintage retains its explicit missing-capture placeholder.
+- Ecosystem, architecture, and mobile theme cycling have no spinning progress indicators. Small text Pause/Resume controls remain available. Hover pauses only platform buttons/detail blocks, architecture buttons/description, or the theme editor—not section headings, surrounding empty space, or the sibling storefront preview. Keyboard focus, touch selection, reduced motion, and offscreen/hidden-document pauses are preserved.
+
+**Validation for this refinement:** production build and TypeScript passed; 32 targeted Playwright checks passed (21 journal regressions, five new article/hover/keyboard checks, and six existing rotation/touch/reduced-motion checks). These cover all 35 article sources, related imagery and inline arrows, 320–2560px journal layouts, and light/dark article accessibility. Desktop and mobile related-card screenshots were also inspected. This is not a new full-suite result.

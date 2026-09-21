@@ -89,9 +89,15 @@ npm test
 
 The blog tests cover counts, distinct content, original asset association, actual media dimensions, all 35 route responses, filtering, search, deep links, empty states, load more, 320–2560px layouts, two-column mobile galleries, keyboard-friendly navigation, image failure recovery, copy-link fallback, reduced motion, and light/dark axe checks.
 
-## Validation for this delivery
+## Validation for the original journal delivery
 
 - Production build and TypeScript checks passed; all 35 article routes were statically generated.
 - All 21 blog-specific tests passed, including every article route, 320–2560px layouts, genuine asset mapping/dimensions, image-failure recovery, and light/dark accessibility audits.
 - Dependency audit: zero vulnerabilities; no new packages were installed for the journal.
-- Full regression run: 74/75 passed. The pre-existing ecosystem rotation test intermittently exceeded its 3.5-second first-selection assertion; isolated repeats passed twice and timed out once. That unrelated runtime/test was not changed because the requested scope was blogs/articles only. No fully green 75-test run is claimed.
+- Full regression run: 74/75 passed. The ecosystem rotation test intermittently exceeded its 3.5-second first-selection assertion; isolated repeats passed twice and timed out once. That unrelated runtime/test was not changed because the requested scope was blogs/articles only. No fully green 75-test run is claimed.
+
+## Article-card follow-up
+
+Article sources retain the relevant public storefront URL but no longer expose the supplied GitHub capture archive. Keep capture provenance in `docs/BLOG-ASSETS.md` and the asset metadata, rather than adding that ZIP link back to article sources. Related cards automatically reuse each article's `featuredImage`, including honest placeholders when no capture exists; arrows stay beside their titles on desktop and mobile.
+
+The follow-up production build and TypeScript check passed. All 21 journal regression checks passed again, alongside new all-route source-removal and responsive related-card checks in `tests/article-rotation-refinements.spec.ts`.
