@@ -28,6 +28,17 @@ export function importArticle(a: Article): PostInput {
       },
       ...a.mobileImages
         .filter((m) => m.src)
+        .map((m) => ({ type: "image", attrs: { ...m, layout: "mobile" } })),
+    );
+  if (a.comparisonImages.some((m) => m.src))
+    content.push(
+      {
+        type: "heading",
+        attrs: { level: 2 },
+        content: [{ type: "text", text: "Documented comparison" }],
+      },
+      ...a.comparisonImages
+        .filter((m) => m.src)
         .map((m) => ({ type: "image", attrs: { ...m } })),
     );
   return {

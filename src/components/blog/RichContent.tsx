@@ -18,7 +18,32 @@ export function richHeadings(doc: RichDoc) {
 export default function RichContent({ document }: { document: RichDoc }) {
   let heading = 0;
   function render(n: RichNode, key: string): ReactNode {
-    const children = n.content?.map((c, i) => render(c, `${key}-${i}`));
+    const children: ReactNode[] = [];
+    for (let i = 0; i < (n.content?.length || 0); i++) {
+      const child = n.content![i];
+      if (
+        n.type === "doc" &&
+        child.type === "image" &&
+        child.attrs?.layout === "mobile"
+      ) {
+        const start = i,
+          gallery: ReactNode[] = [];
+        while (
+          i < n.content!.length &&
+          n.content![i].type === "image" &&
+          n.content![i].attrs?.layout === "mobile"
+        ) {
+          gallery.push(render(n.content![i], `${key}-${i}`));
+          i++;
+        }
+        i--;
+        children.push(
+          <div className="article-mobile-pair" key={`${key}-gallery-${start}`}>
+            {gallery}
+          </div>,
+        );
+      } else children.push(render(child, `${key}-${i}`));
+    }
     const align = ["left", "center", "right", "justify"].includes(
       String(n.attrs?.textAlign),
     )

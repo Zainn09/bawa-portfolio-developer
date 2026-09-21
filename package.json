@@ -8,7 +8,8 @@
     "start": "next start --hostname 0.0.0.0",
     "typecheck": "tsc --noEmit",
     "test": "node scripts/prepare-browser.mjs && playwright test",
-    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"tests/**/*.ts\" \"scripts/*.mjs\" *.ts *.json"
+    "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"tests/**/*.ts\" \"scripts/*.mjs\" *.ts *.json",
+    "test:cms": "node scripts/prepare-browser.mjs && playwright test -c playwright.cms.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",

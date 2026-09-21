@@ -1,3 +1,5 @@
+> **Dashboard available:** For admin-only rich-text editing and inline image uploads, follow [BLOG-DASHBOARD.md](BLOG-DASHBOARD.md). The file workflow below applies before database cutover; after cutover edit through `/admin`, not both sources.
+
 # The Commerce Journal — editing guide
 
 This update is scoped to blogs/articles. The existing hero, project gallery, store demos, expertise, contact form, and other portfolio content are unchanged. Integration points are a Blogs link in the existing navigation/footer, the journal preview before About, and article sitemap entries.

@@ -46,7 +46,9 @@ export async function DELETE(req: NextRequest) {
     return reply({ error: "Submit from this website." }, 403);
   if (cmsConfigured()) {
     const db = await sessionClient();
-    await db.auth.signOut();
+    const { error } = await db.auth.signOut();
+    if (error)
+      return reply({ error: "Could not sign out. Please try again." }, 503);
   }
   return reply({ ok: true });
 }

@@ -213,3 +213,11 @@ Homepage storefront previews no longer display mock domain/address text. The foo
 **Validation:** production build, TypeScript, and diff checks passed. All **82 targeted checks** passed (29 journal/date/footer checks plus 53 homepage/Atelier/typography/contact regressions), including all 35 routes, 320–2560px layouts, accessible full-size images, and light/dark accessibility. Footer screenshots were visually inspected at 320px and 1440px. This is targeted validation, not a new full-suite run.
 
 **Contact delivery:** the workspace has no configured delivery webhook or database. The form posts to `/api/contact`, which forwards only to a configured server-side `CONTACT_WEBHOOK_URL`; without it, submissions are not delivered or stored. No email/database integration was added by this visual update. See [contact delivery setup](docs/CONTACT-DELIVERY.md) for secure configuration and the information needed before adding database storage. Production environment settings have not been verified.
+
+## Admin-only journal dashboard
+
+`/admin` provides a Shopify-style article workspace with a Tiptap rich-text editor, inline image insertion, drafts/publishing/archiving, SEO fields, project/category/tags, source notes, preview, and guarded administration endpoints. **Supabase PostgreSQL + Auth + Storage** is the recommended backend.
+
+Follow **[docs/BLOG-DASHBOARD.md](docs/BLOG-DASHBOARD.md)** for project configuration, SQL migration, granting your account access, the safe 35-article import, and live verification. No Supabase credentials or administrator account are built in. The public site keeps its supplied articles until `BLOG_CONTENT_SOURCE=database` is explicitly configured and redeployed. Database setup does not change contact delivery.
+
+The requested `import { Analytics } from "@vercel/analytics/next"` is already used once in `SiteMetrics`, alongside Speed Insights. They mount on Vercel deployments, strip query/fragment data, and exclude administration pages.
