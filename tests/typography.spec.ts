@@ -81,7 +81,9 @@ for (const viewport of [
   });
 }
 
-for (const width of [320, 390, 820, 1440]) {
+for (const width of [
+  320, 360, 375, 390, 414, 768, 820, 1024, 1280, 1440, 1920, 2560,
+]) {
   test(`all live text has a readable small-text floor at ${width}px`, async ({
     page,
   }) => {
