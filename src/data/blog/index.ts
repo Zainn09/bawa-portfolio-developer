@@ -1,3 +1,4 @@
+import type { RichDoc } from "@/lib/cms/model";
 import { blogProjects } from "./catalog";
 export { blogProjects, sourceArchive, dateLabel } from "./catalog";
 import prime from "./prime-baby-gear.json";
@@ -57,6 +58,9 @@ export interface Article extends Omit<
   mobileImages: BlogMedia[];
   readingMinutes: number;
   sources: ArticleSource[];
+  richContent?: RichDoc;
+  sourceNotes?: string;
+  featured?: boolean;
 }
 export interface ArticleSummary {
   title: string;

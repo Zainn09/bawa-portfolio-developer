@@ -1,6 +1,8 @@
-import { articles } from "@/data/blog";
+import { getPublishedArticles } from "@/lib/cms/public";
+export const dynamic = "force-dynamic";
 import type { MetadataRoute } from "next";
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const articles = await getPublishedArticles();
   const url = process.env.NEXT_PUBLIC_SITE_URL;
   return url
     ? [

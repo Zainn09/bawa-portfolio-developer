@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { articles, summarize } from "@/data/blog";
+import { summarize } from "@/data/blog";
 import JournalIndex from "@/components/blog/JournalIndex";
+import { getPublishedArticles } from "@/lib/cms/public";
+export const dynamic = "force-dynamic";
 const site = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata: Metadata = {
   title: "The Commerce Journal — Shopify & Storefront Notes",
   description:
-    "35 focused articles across five Shopify stores. Read observations and practical guidance on UX, product information, SEO, performance, and store management.",
+    "Focused articles on Shopify storefronts and commerce. Read observations and practical guidance on UX, product information, SEO, performance, and store management.",
   ...(site ? { alternates: { canonical: "/blogs" } } : {}),
   openGraph: {
     title: "The Commerce Journal",
@@ -29,7 +31,8 @@ export const metadata: Metadata = {
       : {}),
   },
 };
-export default function BlogsPage() {
+export default async function BlogsPage() {
+  const articles = await getPublishedArticles();
   return (
     <main id="main" className="journal-page">
       <div className="container">

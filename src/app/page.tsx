@@ -18,6 +18,7 @@ import TrustBadges from "@/components/TrustBadges";
 import Footer from "@/components/Footer";
 import { SectionLabel } from "@/components/shared";
 import { profile } from "@/data/portfolio";
+export const dynamic = "force-dynamic";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 export default function Home() {
   const jsonLd = siteUrl

@@ -1,14 +1,34 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { articles, blogProjects } from "@/data/blog";
+import { blogProjects } from "@/data/blog";
 import BlogImage from "./BlogImage";
 
-export default function JournalPreview() {
-  const featured = [
+import { getPublishedArticles } from "@/lib/cms/public";
+export default async function JournalPreview() {
+  let articles;
+  try {
+    articles = await getPublishedArticles();
+  } catch {
+    return (
+      <section className="journal-preview container" id="blogs">
+        <h2>The commerce journal.</h2>
+        <p>
+          The journal is temporarily unavailable. Please check back shortly.
+        </p>
+      </section>
+    );
+  }
+  const curated = [
     articles.find((a) => a.slug === "prime-baby-gear-navigation"),
     articles.find((a) => a.slug === "ollie-burwell-styling-guide"),
     articles.find((a) => a.slug === "nokoluxe-outdoor-living-navigation"),
   ].filter((a) => a !== undefined);
+  const featured = articles.some((a) => a.richContent)
+    ? [
+        ...articles.filter((a) => a.featured),
+        ...articles.filter((a) => !a.featured),
+      ].slice(0, 3)
+    : curated;
   if (!articles.length)
     return (
       <section className="journal-preview container" id="blogs">
@@ -63,7 +83,8 @@ export default function JournalPreview() {
                 <div>
                   <div className="journal-meta">
                     <span>
-                      {blogProjects.find((p) => p.slug === a.project)?.name}
+                      {blogProjects.find((p) => p.slug === a.project)?.name ||
+                        a.category}
                     </span>
                     <span>{a.readingMinutes} MIN READ</span>
                   </div>

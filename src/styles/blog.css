@@ -1372,3 +1372,44 @@
     letter-spacing: -0.075em;
   }
 }
+
+.rich-article {
+  overflow-wrap: anywhere;
+}
+.rich-article > * + * {
+  margin-top: 24px;
+}
+.rich-article h2,
+.rich-article h3,
+.rich-article h4 {
+  margin-top: 44px;
+  scroll-margin-top: 110px;
+}
+.rich-article p,
+.rich-article li {
+  font-family: var(--font-description);
+  font-size: 20px;
+  line-height: 1.8;
+}
+.rich-article blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 12px 24px;
+  margin-inline: 0;
+  background: var(--surface);
+}
+.rich-article a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.rich-article pre {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  padding: 20px;
+  background: var(--surface);
+  font-size: 14px;
+}
+.rich-article hr {
+  border: 0;
+  border-top: var(--border);
+  margin-block: 32px;
+}

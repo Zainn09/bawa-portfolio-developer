@@ -1,4 +1,5 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -15,6 +16,8 @@ function cleanUrl(url: string) {
 }
 
 export default function SiteMetrics() {
+  const path = usePathname();
+  if (path.startsWith("/admin")) return null;
   return (
     <>
       <Analytics
