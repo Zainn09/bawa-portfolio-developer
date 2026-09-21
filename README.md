@@ -173,3 +173,9 @@ Retain client permission for portfolio usage and replace these with approved pro
 The blog-only expansion adds `/blogs`, 35 statically rendered `/blogs/[slug]` articles (seven per supplied store), and a homepage journal preview. It includes store/topic filtering, search, reading times, sources, related notes, genuine supplied screenshots, and responsive mobile-image pairs. Vintage Art Garage has clearly labeled placeholders and planning notes because its supplied archive has no accepted storefront captures. Existing portfolio sections and interactions are unchanged apart from the necessary Blogs navigation entry points.
 
 Edit the articles in `src/data/blog/*.json`. See [the editing guide](docs/BLOG-EDITING.md) for content fields, image replacement, publication status, SEO, and validation, and [asset provenance](docs/BLOG-ASSETS.md) for the supplied GitHub archive details.
+
+### Larger description text
+
+The reading scale has been increased across portfolio descriptions, supporting copy, Atelier notes, project details, footer descriptions, and the journal. Standard descriptions are now 16px on larger layouts and 15px on narrower layouts; article prose is 21px on desktop and 20px on mobile (23px on very wide screens). Hero descriptions are also larger. Display headings, navigation sizing, and miniature demo-store typography are unchanged. The compact pinned process uses a smaller proportional increase to preserve its viewport fit.
+
+Validation for this typography update: production build and TypeScript passed; all 42 targeted typography, 320–2560px layout, mobile hero clearance, pinned-process, and light/dark accessibility checks passed. This was a targeted regression pass, not a rerun of every interaction test.
