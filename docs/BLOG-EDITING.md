@@ -25,7 +25,7 @@ Each record includes `title`, `slug`, `project`, `category`, `tags`, `excerpt`, 
 - `sections` is an ordered list of headings with paragraph arrays. Plain text is escaped by React; arbitrary HTML is not evaluated.
 - Use `published` to expose an article; use `draft` to remove it from the archive, static route list, related articles, and sitemap. Unknown unpublished slugs return 404.
 - Keep slugs stable after publishing, or add an explicit redirect when renaming one.
-- Dates use `YYYY-MM-DD`. The initial publication date is September 21, 2026; the imported screenshot capture date is September 20, 2026. These are different concepts.
+- Dates use `YYYY-MM-DD`. At the owner’s request, the 35 articles have distinct, randomly assigned editorial publication dates between July 22 and September 22, 2026. These are saved in the JSON, not regenerated during rendering or builds, and are not an independently verified publication history. `updatedAt` is September 22, 2026, so the current edition and September 20 screenshots remain distinct from those earlier editorial dates.
 - Set optional `updatedAt` after a substantive editorial update. It changes the displayed update date and metadata.
 - Reading time is derived from the article’s text, not manually invented.
 - Categories and search are derived from published records. Changing a category updates the archive filter automatically.
@@ -101,3 +101,7 @@ The blog tests cover counts, distinct content, original asset association, actua
 Article sources retain the relevant public storefront URL but no longer expose the supplied GitHub capture archive. Keep capture provenance in `docs/BLOG-ASSETS.md` and the asset metadata, rather than adding that ZIP link back to article sources. Related cards automatically reuse each article's `featuredImage`, including honest placeholders when no capture exists; arrows stay beside their titles on desktop and mobile.
 
 The follow-up production build and TypeScript check passed. All 21 journal regression checks passed again, alongside new all-route source-removal and responsive related-card checks in `tests/article-rotation-refinements.spec.ts`.
+
+## Captions and date presentation
+
+Article images retain their descriptive captions and accessible full-size links, but no longer display “Captured … · Open image to inspect” prompts. Capture dates remain in `assets.json` for provenance. Publication and modification dates continue to feed the article page, Open Graph metadata, conditional structured data, and sitemap from the same editable records.
