@@ -119,8 +119,13 @@ test("platform cycle advances to ecosystem tab and accordion height transitions 
 }) => {
   await page.goto("/");
   await page.evaluate(() => document.fonts.ready);
+  // Keyboard exploration selects a node without taking over autoplay as a click does.
+  // Focus before asserting avoids a hover racing the sticky-header transition.
+  await page.keyboard.press("Tab");
   await page.locator("#shopify").scrollIntoViewIfNeeded();
-  await page.locator('[data-platform="Custom Commerce"]').hover();
+  await page
+    .locator('[data-platform="Custom Commerce"]')
+    .evaluate((el) => (el as HTMLElement).focus({ preventScroll: true }));
   await expect(
     page.locator('[data-platform="Custom Commerce"]'),
   ).toHaveAttribute("aria-pressed", "true");
