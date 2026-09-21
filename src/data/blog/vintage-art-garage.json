@@ -32,10 +32,11 @@
     ],
     "takeaway": "An unavailable state should explain the situation without pretending the normal storefront is accessible.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-05",
     "status": "published",
     "seoTitle": "A temporary closure is still a customer experience",
-    "seoDescription": "Vintage Art Garage’s public closure notice offers a narrow but useful starting point for thinking about a store’s unavailable state."
+    "seoDescription": "Vintage Art Garage’s public closure notice offers a narrow but useful starting point for thinking about a store’s unavailable state.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "vintage-art-garage-archival-product-data",
@@ -71,10 +72,11 @@
     ],
     "takeaway": "The vehicle, the historical advertisement, and the product for sale should never be silently treated as the same record.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-27",
     "status": "published",
     "seoTitle": "The product data a vintage print deserves",
-    "seoDescription": "For automotive art, the subject, the original advertisement, and the item being sold are different pieces of information."
+    "seoDescription": "For automotive art, the subject, the original advertisement, and the item being sold are different pieces of information.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "vintage-art-garage-authentic-capture-plan",
@@ -109,10 +111,11 @@
     ],
     "takeaway": "Use an image to support a claim—not to make an unsupported claim look convincing.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-19",
     "status": "published",
     "seoTitle": "A screenshot is evidence, not decoration",
-    "seoDescription": "Why Vintage Art Garage’s article visuals remain placeholders—and how an honest future capture set should be prepared."
+    "seoDescription": "Why Vintage Art Garage’s article visuals remain placeholders—and how an honest future capture set should be prepared.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "vintage-art-garage-frame-option-model",
@@ -148,10 +151,11 @@
     ],
     "takeaway": "Model the actual sellable offer first. Design the option controls around that model.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-12",
     "status": "published",
     "seoTitle": "Frame choices need a product model",
-    "seoDescription": "A planning note for framed automotive art: make the relationship between the print, frame, and selected offer explicit."
+    "seoDescription": "A planning note for framed automotive art: make the relationship between the print, frame, and selected offer explicit.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "vintage-art-garage-art-photography",
@@ -187,10 +191,11 @@
     ],
     "takeaway": "A room view sells the possibility. A faithful product view explains the purchase.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-21",
     "status": "published",
     "seoTitle": "Show the artwork and the object",
-    "seoDescription": "A proposed image brief for vintage automotive prints: separate visual appeal from the practical evidence a buyer needs."
+    "seoDescription": "A proposed image brief for vintage automotive prints: separate visual appeal from the practical evidence a buyer needs.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "vintage-art-garage-searchable-archive",
@@ -226,10 +231,11 @@
     ],
     "takeaway": "Historical specificity is valuable only when the underlying record supports it.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-28",
     "status": "published",
     "seoTitle": "Searchable does not mean stuffed with keywords",
-    "seoDescription": "Vintage automotive art offers specific search language—but model names, dates, and historical descriptions still need evidence."
+    "seoDescription": "Vintage automotive art offers specific search language—but model names, dates, and historical descriptions still need evidence.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "vintage-art-garage-reopening-review",
@@ -265,9 +271,10 @@
     ],
     "takeaway": "Reopening is a content, operational, and development review—not just a change to one access setting.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-31",
     "status": "published",
     "seoTitle": "Before the storefront opens again",
-    "seoDescription": "A practical reopening review for a temporarily unavailable store, without pretending that an inaccessible checkout has been tested."
+    "seoDescription": "A practical reopening review for a temporarily unavailable store, without pretending that an inaccessible checkout has been tested.",
+    "updatedAt": "2026-09-22"
   }
 ]

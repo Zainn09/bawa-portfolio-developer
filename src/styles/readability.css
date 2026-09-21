@@ -216,10 +216,6 @@
 .signature-footer-top {
   flex-wrap: wrap;
 }
-.footer-project-orbit > span {
-  max-width: 95px;
-  text-align: center;
-}
 @media (max-width: 767px) {
   .process-pin .process-store .store-browser .store-campaign {
     min-height: 112px;
@@ -300,10 +296,6 @@
   }
   .footer-back {
     position: static;
-  }
-  .footer-project-orbit {
-    width: 84px;
-    height: 84px;
   }
   .footer-edition {
     flex-basis: 100%;

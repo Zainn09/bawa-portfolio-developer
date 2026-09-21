@@ -32,10 +32,11 @@
     ],
     "takeaway": "Product type answers “what do I need?” Brand answers “whose version do I want?” Give both questions a clear route.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-30",
     "status": "published",
     "seoTitle": "Two ways into a baby-gear catalogue",
-    "seoDescription": "Brand-led and product-led shopping serve different questions. Prime Baby Gear offers a useful starting point for thinking about both."
+    "seoDescription": "Brand-led and product-led shopping serve different questions. Prime Baby Gear offers a useful starting point for thinking about both.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "prime-baby-gear-travel-system-details",
@@ -70,10 +71,11 @@
     ],
     "takeaway": "An attractive bundle image can start the conversation. An accurate included-items list finishes the explanation.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-15",
     "status": "published",
     "seoTitle": "A travel system is not a single item",
-    "seoDescription": "A useful travel-system page explains the bundle before asking a customer to compare colours, prices, or accessories."
+    "seoDescription": "A useful travel-system page explains the bundle before asking a customer to compare colours, prices, or accessories.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "prime-baby-gear-mobile-navigation",
@@ -108,10 +110,11 @@
     ],
     "takeaway": "A navigation drawer is complete when both entering and leaving it feel predictable.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-05",
     "status": "published",
     "seoTitle": "The mobile menu has a job to finish",
-    "seoDescription": "Reading Prime Baby Gear’s mobile captures as a sequence: open navigation, choose a direction, and return to the store without losing context."
+    "seoDescription": "Reading Prime Baby Gear’s mobile captures as a sequence: open navigation, choose a direction, and return to the store without losing context.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "prime-baby-gear-product-data",
@@ -146,10 +149,11 @@
     ],
     "takeaway": "Agree what each field means before deciding how the theme should display it.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-13",
     "status": "published",
     "seoTitle": "The product record behind the pushchair",
-    "seoDescription": "A baby-gear catalogue needs consistent product information long before it needs a more elaborate product template."
+    "seoDescription": "A baby-gear catalogue needs consistent product information long before it needs a more elaborate product template.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "prime-baby-gear-collection-seo",
@@ -184,10 +188,11 @@
     ],
     "takeaway": "A collection introduction should tell the reader why these products belong together.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-16",
     "status": "published",
     "seoTitle": "Collection SEO starts with the collection",
-    "seoDescription": "Product groups and brand ranges should answer different search intentions without repeating the same page under new headings."
+    "seoDescription": "Product groups and brand ranges should answer different search intentions without repeating the same page under new headings.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "prime-baby-gear-image-performance",
@@ -222,10 +227,11 @@
     ],
     "takeaway": "Loading priority should follow the customer’s first task, not the file’s position in an export folder.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-01",
     "status": "published",
     "seoTitle": "Keep the hero useful, not heavy",
-    "seoDescription": "The Prime Baby Gear hero illustrates an image-led first impression. Here is how I would set its loading priorities without inventing a performance score."
+    "seoDescription": "The Prime Baby Gear hero illustrates an image-led first impression. Here is how I would set its loading priorities without inventing a performance score.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "prime-baby-gear-reassurance-content",
@@ -260,9 +266,10 @@
     ],
     "takeaway": "A reassurance label is the beginning of an explanation, not a substitute for one.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-18",
     "status": "published",
     "seoTitle": "Reassurance needs an explanation",
-    "seoDescription": "Warranty, delivery, and support messages are most useful when customers can find the details behind them."
+    "seoDescription": "Warranty, delivery, and support messages are most useful when customers can find the details behind them.",
+    "updatedAt": "2026-09-22"
   }
 ]

@@ -31,12 +31,17 @@ export default function Footer() {
             </h2>
           </div>
           <a
-            className="footer-project-orbit"
+            className="footer-project-link"
             href="#contact"
             aria-label="Start a project with Ahmad Abdullah"
           >
-            <ArrowUpRight size={38} strokeWidth={1.2} />
-            <span>START A PROJECT</span>
+            <span className="footer-project-copy">
+              <strong>Start a project</strong>
+              <span>Tell me what you’re thinking.</span>
+            </span>
+            <span className="footer-project-arrow" aria-hidden="true">
+              <ArrowUpRight size={24} strokeWidth={1.5} />
+            </span>
           </a>
         </div>
         <div className="footer-directory">

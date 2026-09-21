@@ -32,10 +32,11 @@
     ],
     "takeaway": "A broad catalogue becomes manageable when each route narrows the decision in a meaningful way.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-08",
     "status": "published",
     "seoTitle": "One outdoor store, several very different decisions",
-    "seoDescription": "Furniture, poolside pieces, fire tables, cooking, and wellness need more than a single undifferentiated product grid."
+    "seoDescription": "Furniture, poolside pieces, fire tables, cooking, and wellness need more than a single undifferentiated product grid.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "nokoluxe-chair-variant-information",
@@ -70,10 +71,11 @@
     ],
     "takeaway": "An option is not selected clearly until its name, state, and product information agree.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-15",
     "status": "published",
     "seoTitle": "A colour name is part of the product interface",
-    "seoDescription": "Outdoor-chair choices can become difficult to compare when colour, finish, and material information are treated as decoration."
+    "seoDescription": "Outdoor-chair choices can become difficult to compare when colour, finish, and material information are treated as decoration.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "nokoluxe-large-item-purchase-information",
@@ -108,10 +110,11 @@
     ],
     "takeaway": "For a considered purchase, accurate constraints can be more useful than another persuasive sentence.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-24",
     "status": "published",
     "seoTitle": "The questions beside a large purchase",
-    "seoDescription": "For outdoor furniture, delivery and dimensions are part of the buying decision—not just footer information."
+    "seoDescription": "For outdoor furniture, delivery and dimensions are part of the buying decision—not just footer information.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "nokoluxe-responsive-outdoor-imagery",
@@ -146,10 +149,11 @@
     ],
     "takeaway": "Atmosphere introduces the collection. A closer view explains what the customer is buying.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-22",
     "status": "published",
     "seoTitle": "Show the room without losing the furniture",
-    "seoDescription": "Nokoluxe’s outdoor compositions illustrate the tension between selling an atmosphere and showing the item clearly on a phone."
+    "seoDescription": "Nokoluxe’s outdoor compositions illustrate the tension between selling an atmosphere and showing the item clearly on a phone.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "nokoluxe-fire-table-content",
@@ -184,10 +188,11 @@
     ],
     "takeaway": "Reuse the visual system. Verify the information model for each product category.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-20",
     "status": "published",
     "seoTitle": "A fire-table collection needs its own information model",
-    "seoDescription": "Category-specific questions deserve category-specific content. Fire tables should not inherit a furniture template without a review."
+    "seoDescription": "Category-specific questions deserve category-specific content. Fire tables should not inherit a furniture template without a review.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "nokoluxe-brand-and-category-seo",
@@ -222,10 +227,11 @@
     ],
     "takeaway": "Two pages can share products without sharing the same reason to exist.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-04",
     "status": "published",
     "seoTitle": "Brand ranges and categories should not say the same thing",
-    "seoDescription": "A LuxCraft range and an outdoor-furniture category can serve different intentions while sharing products."
+    "seoDescription": "A LuxCraft range and an outdoor-furniture category can serve different intentions while sharing products.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "nokoluxe-catalogue-performance",
@@ -260,9 +266,10 @@
     ],
     "takeaway": "Optimize the first useful shopping task, then account for the cost of everything that follows.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-27",
     "status": "published",
     "seoTitle": "A large catalogue needs a loading budget",
-    "seoDescription": "Outdoor-living imagery is valuable, but a collection page should not ask every image and integration to arrive at once."
+    "seoDescription": "Outdoor-living imagery is valuable, but a collection page should not ask every image and integration to arrive at once.",
+    "updatedAt": "2026-09-22"
   }
 ]

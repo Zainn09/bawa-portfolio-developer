@@ -32,10 +32,11 @@
     ],
     "takeaway": "Editorial content works hardest when it answers a product question and offers a way back to the product.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-07",
     "status": "published",
     "seoTitle": "When the styling guide becomes part of the product",
-    "seoDescription": "Ollie Burwell connects sarongs with ways to wear them. That makes product education part of the shopping experience, not an afterthought."
+    "seoDescription": "Ollie Burwell connects sarongs with ways to wear them. That makes product education part of the shopping experience, not an afterthought.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "ollie-burwell-collection-architecture",
@@ -70,10 +71,11 @@
     ],
     "takeaway": "Stable categories help people find. Editorial edits help people discover.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-26",
     "status": "published",
     "seoTitle": "Material, occasion, or garment? Choose a clear route",
-    "seoDescription": "Silk, voile, kaftans, and seasonal edits do not describe the same kind of choice. A collection system needs to make those differences legible."
+    "seoDescription": "Silk, voile, kaftans, and seasonal edits do not describe the same kind of choice. A collection system needs to make those differences legible.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "ollie-burwell-mobile-image-direction",
@@ -108,10 +110,11 @@
     ],
     "takeaway": "Responsive imagery should preserve meaning, not merely occupy the available rectangle.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-02",
     "status": "published",
     "seoTitle": "A fashion photograph needs a mobile composition",
-    "seoDescription": "The same resort-wear image can tell a different story after cropping. Responsive art direction should protect the garment, not just fill the frame."
+    "seoDescription": "The same resort-wear image can tell a different story after cropping. Responsive art direction should protect the garment, not just fill the frame.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "ollie-burwell-hand-batik-content",
@@ -146,10 +149,11 @@
     ],
     "takeaway": "The craft story creates context. Product-specific facts make that context useful.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-23",
     "status": "published",
     "seoTitle": "Describe the craft without losing the product",
-    "seoDescription": "Hand-batik storytelling can be specific and useful when it stays connected to the item a customer is considering."
+    "seoDescription": "Hand-batik storytelling can be specific and useful when it stays connected to the item a customer is considering.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "ollie-burwell-seasonal-merchandising",
@@ -184,10 +188,11 @@
     ],
     "takeaway": "Every campaign page needs both a publishing plan and a retirement plan.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-25",
     "status": "published",
     "seoTitle": "A seasonal edit should not become an expired aisle",
-    "seoDescription": "New arrivals and resort-wear edits need a maintenance plan that outlasts the campaign banner."
+    "seoDescription": "New arrivals and resort-wear edits need a maintenance plan that outlasts the campaign banner.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "ollie-burwell-product-template",
@@ -222,10 +227,11 @@
     ],
     "takeaway": "A reusable section is only as good as the less-than-perfect content it can accommodate.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-28",
     "status": "published",
     "seoTitle": "Let the product template do the quiet work",
-    "seoDescription": "A repeatable fashion detail page should support drape, styling, materials, and buying choices without letting every product become a one-off layout."
+    "seoDescription": "A repeatable fashion detail page should support drape, styling, materials, and buying choices without letting every product become a one-off layout.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "ollie-burwell-editorial-seo",
@@ -260,9 +266,10 @@
     ],
     "takeaway": "Let the guide answer “how?” and the collection answer “which one?”",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-29",
     "status": "published",
     "seoTitle": "Give the styling story a searchable structure",
-    "seoDescription": "A how-to-wear guide and a collection page answer different questions. Connect them without making them compete for the same job."
+    "seoDescription": "A how-to-wear guide and a collection page answer different questions. Connect them without making them compete for the same job.",
+    "updatedAt": "2026-09-22"
   }
 ]

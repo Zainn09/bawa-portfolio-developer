@@ -57,9 +57,6 @@ export default function Storefront({
           <i />
           <i />
         </div>
-        <span>
-          <LockKeyhole size={8} /> {concept?.domain || "formandfield.demo"}
-        </span>
         <ArrowUpRight size={10} />
       </div>
       <div className="store-screen">

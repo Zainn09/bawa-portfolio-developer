@@ -106,14 +106,6 @@ export default function BlogImage({
                 ? "The source capture could not be loaded."
                 : "Approved project imagery pending. No screenshot is implied."}
           </span>
-          {present && media.capturedAt && (
-            <span>
-              Captured {media.capturedAt} ·{" "}
-              <span className="journal-image-hint">
-                Open image to inspect ↗
-              </span>
-            </span>
-          )}
         </figcaption>
       )}
     </figure>

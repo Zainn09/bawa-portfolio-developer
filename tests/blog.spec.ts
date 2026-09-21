@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { articles, blogProjects } from "../src/data/blog";
+import { articles, blogProjects, dateLabel } from "../src/data/blog";
 import { readFileSync } from "node:fs";
 import sharp from "sharp";
 
@@ -59,7 +59,10 @@ test("all 35 article routes render full text, dates, sources and preview-safe me
     expect(html).toContain('name="description"');
     expect(html).toContain('property="og:type" content="article"');
     expect(html).toContain("noindex");
-    expect(html).toContain("21 September 2026");
+    expect(html).toContain(dateLabel(a.publishedAt));
+    expect(html).toMatch(new RegExp(`datetime="${a.publishedAt}"`, "i"));
+    expect(html).not.toContain("Open image to inspect");
+    expect(html).not.toContain("Captured 2026-09-20");
     expect(html).toContain("article-sources");
     expect(html).toContain("article-body");
     expect(html).not.toContain("application/ld+json");

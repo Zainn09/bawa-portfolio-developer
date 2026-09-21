@@ -767,34 +767,6 @@ h3 {
 .footer-invitation h2 > span {
   color: #b7c0a3;
 }
-.footer-project-orbit {
-  width: 133px;
-  height: 133px;
-  border: 1px solid #b5bd9e5e;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  color: #e7a382;
-  transition:
-    background 0.3s,
-    color 0.3s,
-    transform 0.4s,
-    border-color 0.3s;
-  flex-shrink: 0;
-}
-.footer-project-orbit > span {
-  font: var(--text-small) var(--mono);
-  letter-spacing: 0.7px;
-}
-.footer-project-orbit:hover {
-  background: #e4a17a;
-  color: #22271f;
-  transform: rotate(-8deg);
-  border-color: #e4a17a;
-}
 .footer-directory {
   display: grid;
   grid-template-columns: 1.7fr 0.75fr 0.95fr 0.4fr;
@@ -902,10 +874,6 @@ h3 {
   .footer-invitation {
     margin: 50px 0 40px;
   }
-  .footer-project-orbit {
-    width: 110px;
-    height: 110px;
-  }
   .signature-footer-bottom > span {
     font-size: var(--text-small);
   }
@@ -942,19 +910,6 @@ h3 {
     font-size: clamp(29px, 6.5vw, 44px);
     letter-spacing: -1.3px;
     line-height: 1.16;
-  }
-  .footer-project-orbit {
-    width: 68px;
-    height: 68px;
-    gap: 5px;
-  }
-  .footer-project-orbit > svg {
-    width: 25px;
-    height: 25px;
-  }
-  .footer-project-orbit > span {
-    font-size: var(--text-small);
-    letter-spacing: 0.3px;
   }
   .footer-directory {
     grid-template-columns: 1fr 1fr;

@@ -32,10 +32,11 @@
     ],
     "takeaway": "A good next step answers the visitor’s current question, not just the store’s preferred outcome.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-25",
     "status": "published",
     "seoTitle": "Sometimes the next step is not “add to cart”",
-    "seoDescription": "Paw by Four puts education beside products. That changes what a useful shopping journey can look like."
+    "seoDescription": "Paw by Four puts education beside products. That changes what a useful shopping journey can look like.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "paw-by-four-digital-and-physical-products",
@@ -70,10 +71,11 @@
     ],
     "takeaway": "The format of the product is part of the product information—not a detail to reveal after purchase.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-09-22",
     "status": "published",
     "seoTitle": "One store, two fulfilment expectations",
-    "seoDescription": "Digital guides and physical enrichment products need clear distinctions before the customer reaches the buying decision."
+    "seoDescription": "Digital guides and physical enrichment products need clear distinctions before the customer reaches the buying decision.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "paw-by-four-responsible-product-language",
@@ -108,10 +110,11 @@
     ],
     "takeaway": "Empathy belongs in the tone. Evidence and limits belong in the claims.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-07-26",
     "status": "published",
     "seoTitle": "Write calmly when the customer is worried",
-    "seoDescription": "A canine-anxiety storefront needs precise product language and clear boundaries around what its content can promise."
+    "seoDescription": "A canine-anxiety storefront needs precise product language and clear boundaries around what its content can promise.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "paw-by-four-lick-mat-product-page",
@@ -146,10 +149,11 @@
     ],
     "takeaway": "A product story is stronger when the customer can also understand the product as a physical thing.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-16",
     "status": "published",
     "seoTitle": "Explain the object before the benefit",
-    "seoDescription": "A lick-mat product page still needs the practical information that helps a customer understand the physical item."
+    "seoDescription": "A lick-mat product page still needs the practical information that helps a customer understand the physical item.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "paw-by-four-resource-linking",
@@ -187,7 +191,8 @@
     "publishedAt": "2026-09-21",
     "status": "published",
     "seoTitle": "Build a resource library, not a pile of articles",
-    "seoDescription": "Educational pages become more useful when their relationships are clear and their links reflect the reader’s next question."
+    "seoDescription": "Educational pages become more useful when their relationships are clear and their links reflect the reader’s next question.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "paw-by-four-mobile-choice",
@@ -222,10 +227,11 @@
     ],
     "takeaway": "A secondary action can be a different kind of help, not simply a weaker sales button.",
     "mobileGallery": true,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-18",
     "status": "published",
     "seoTitle": "Two homepage actions, two kinds of readiness",
-    "seoDescription": "A route to products and a route to understanding can coexist on mobile without competing for every pixel."
+    "seoDescription": "A route to products and a route to understanding can coexist on mobile without competing for every pixel.",
+    "updatedAt": "2026-09-22"
   },
   {
     "slug": "paw-by-four-content-maintenance",
@@ -260,9 +266,10 @@
     ],
     "takeaway": "Publishing is a moment. Content ownership is an ongoing responsibility.",
     "mobileGallery": false,
-    "publishedAt": "2026-09-21",
+    "publishedAt": "2026-08-29",
     "status": "published",
     "seoTitle": "The resource needs an owner after it is published",
-    "seoDescription": "Product information and educational content change on different schedules. A mixed store needs a review process for both."
+    "seoDescription": "Product information and educational content change on different schedules. A mixed store needs a review process for both.",
+    "updatedAt": "2026-09-22"
   }
 ]

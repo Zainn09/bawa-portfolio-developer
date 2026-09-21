@@ -5,7 +5,6 @@ export interface StoreConcept {
   industry: string;
   mood: string;
   description: string;
-  domain: string;
   announcement: string;
   image: string;
   smallImage: string;
@@ -29,7 +28,6 @@ export const storeConcepts: StoreConcept[] = [
     mood: "Quiet / tactile / considered",
     description:
       "Room to breathe. Natural textures. A slower, more intentional way to shop.",
-    domain: "formandfield.demo",
     announcement: "Considered objects. Everyday living.",
     image: "/images/hero-store-placeholder.webp",
     smallImage: "/images/hero-store-small.webp",
@@ -52,7 +50,6 @@ export const storeConcepts: StoreConcept[] = [
     mood: "Sculptural / intimate / timeless",
     description:
       "The product becomes the story. An intimate, editorial approach to everyday objects.",
-    domain: "objectsofgold.demo",
     announcement: "Small objects. A lasting impression.",
     image: "/images/projects/project-01-placeholder.webp",
     smallImage: "/images/projects/project-01-small.webp",
@@ -76,7 +73,6 @@ export const storeConcepts: StoreConcept[] = [
     mood: "Botanical / grounded / expressive",
     description:
       "Ingredient-led storytelling, earthy contrast, and small rituals that feel personal.",
-    domain: "rootedrituals.demo",
     announcement: "A return to the essentials.",
     image: "/images/projects/project-02-placeholder.webp",
     smallImage: "/images/projects/project-02-small.webp",
