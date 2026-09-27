@@ -181,3 +181,24 @@ test("local preview does not load Vercel telemetry", async ({ page }) => {
   await expect(page.locator('script[src*="/_vercel/"]')).toHaveCount(0);
   expect(telemetry).toEqual([]);
 });
+
+test("local preview does not load Google Analytics telemetry", async ({
+  page,
+}) => {
+  const telemetry: string[] = [];
+  page.on("request", (r) => {
+    if (
+      r.url().includes("googletagmanager.com") ||
+      r.url().includes("google-analytics.com") ||
+      r.url().includes("googleadservices.com")
+    ) {
+      telemetry.push(r.url());
+    }
+  });
+  await page.goto("/");
+  await page.evaluate(() => document.fonts.ready);
+  await expect(page.locator('script[src*="googletagmanager.com"]')).toHaveCount(
+    0,
+  );
+  expect(telemetry).toEqual([]);
+});

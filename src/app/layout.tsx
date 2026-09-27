@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SiteMetrics from "@/components/SiteMetrics";
 import { profile } from "@/data/portfolio";
 import "@/styles/variables.css";
@@ -13,6 +14,11 @@ import "@/styles/mobile.css";
 import "@/styles/blog.css";
 import "@/styles/readability.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+// GA4 runs on the production deployment; local previews stay telemetry-free.
+// ENABLE_ANALYTICS=1 is the escape hatch for non-Vercel production hosts.
+const analyticsEnabled =
+  process.env.VERCEL === "1" || process.env.ENABLE_ANALYTICS === "1";
+const gaMeasurementId = process.env.GA_MEASUREMENT_ID || "G-JZZR2B3JTH";
 export const metadata: Metadata = {
   ...(siteUrl
     ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } }
@@ -83,6 +89,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        {analyticsEnabled && <GoogleAnalytics id={gaMeasurementId} />}
         {process.env.VERCEL === "1" && <SiteMetrics />}
       </body>
     </html>
