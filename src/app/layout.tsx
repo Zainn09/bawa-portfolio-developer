@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import GoogleAdSense from "@/components/GoogleAdSense";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SiteMetrics from "@/components/SiteMetrics";
 import { profile } from "@/data/portfolio";
@@ -15,8 +14,11 @@ import "@/styles/mobile.css";
 import "@/styles/blog.css";
 import "@/styles/readability.css";
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-// GA4 runs on the production deployment; local previews stay telemetry-free.
-// ENABLE_ANALYTICS=1 is the escape hatch for non-Vercel production hosts.
+// GA4 + AdSense run on the production deployment; local previews stay
+// telemetry-free. ENABLE_ANALYTICS=1 is the escape hatch for non-Vercel
+// production hosts. The tags are plain <script> elements in the raw HTML
+// head (not next/script) so third-party verification scanners see the exact
+// tags Google's instructions specify.
 const analyticsEnabled =
   process.env.VERCEL === "1" || process.env.ENABLE_ANALYTICS === "1";
 const gaMeasurementId = process.env.GA_MEASUREMENT_ID || "G-JZZR2B3JTH";
@@ -86,18 +88,35 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}})()`,
           }}
         />
+        {analyticsEnabled && (
+          <>
+            {/* Google tag (gtag.js) — GA4. Admin routes skip the config
+                command, so they never start a tracking session. */}
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());if(!location.pathname.startsWith('/admin')){gtag('config','${gaMeasurementId}');}`,
+              }}
+            />
+            {/* AdSense base loader — preloads the client only; no ad units
+                are rendered until approved placements are added. */}
+            <script
+              async
+              crossOrigin="anonymous"
+              src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adSenseClientId}`}
+            />
+          </>
+        )}
       </head>
       <body>
         <a className="skip-link" href="#main">
           Skip to content
         </a>
         {children}
-        {analyticsEnabled && (
-          <>
-            <GoogleAnalytics id={gaMeasurementId} />
-            <GoogleAdSense client={adSenseClientId} />
-          </>
-        )}
+        {analyticsEnabled && <GoogleAnalytics />}
         {process.env.VERCEL === "1" && <SiteMetrics />}
       </body>
     </html>
