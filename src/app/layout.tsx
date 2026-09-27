@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import GoogleAdSense from "@/components/GoogleAdSense";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SiteMetrics from "@/components/SiteMetrics";
 import { profile } from "@/data/portfolio";
@@ -19,6 +20,8 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const analyticsEnabled =
   process.env.VERCEL === "1" || process.env.ENABLE_ANALYTICS === "1";
 const gaMeasurementId = process.env.GA_MEASUREMENT_ID || "G-JZZR2B3JTH";
+const adSenseClientId =
+  process.env.GOOGLE_ADSENSE_CLIENT_ID || "ca-pub-4078729434854717";
 export const metadata: Metadata = {
   ...(siteUrl
     ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } }
@@ -89,7 +92,12 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
-        {analyticsEnabled && <GoogleAnalytics id={gaMeasurementId} />}
+        {analyticsEnabled && (
+          <>
+            <GoogleAnalytics id={gaMeasurementId} />
+            <GoogleAdSense client={adSenseClientId} />
+          </>
+        )}
         {process.env.VERCEL === "1" && <SiteMetrics />}
       </body>
     </html>

@@ -182,7 +182,7 @@ test("local preview does not load Vercel telemetry", async ({ page }) => {
   expect(telemetry).toEqual([]);
 });
 
-test("local preview does not load Google Analytics telemetry", async ({
+test("local preview does not load Google Analytics or AdSense telemetry", async ({
   page,
 }) => {
   const telemetry: string[] = [];
@@ -190,7 +190,8 @@ test("local preview does not load Google Analytics telemetry", async ({
     if (
       r.url().includes("googletagmanager.com") ||
       r.url().includes("google-analytics.com") ||
-      r.url().includes("googleadservices.com")
+      r.url().includes("googleadservices.com") ||
+      r.url().includes("googlesyndication.com")
     ) {
       telemetry.push(r.url());
     }
@@ -200,5 +201,8 @@ test("local preview does not load Google Analytics telemetry", async ({
   await expect(page.locator('script[src*="googletagmanager.com"]')).toHaveCount(
     0,
   );
+  await expect(
+    page.locator('script[src*="pagead2.googlesyndication.com"]'),
+  ).toHaveCount(0);
   expect(telemetry).toEqual([]);
 });
