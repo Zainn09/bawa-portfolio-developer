@@ -94,6 +94,14 @@ export default function RootLayout({
           name="google-site-verification"
           content="sFCobwdgJ47jkotq4vkO_mTo13ORcuoajMbTo7Y_O_A"
         />
+        {siteUrl && (
+          <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={`${profile.name} — Journal`}
+            href={`${siteUrl.replace(/\/$/, "")}/feed.xml`}
+          />
+        )}
         {analyticsEnabled && (
           <>
             {/* Google tag (gtag.js) — GA4. Admin routes skip the config

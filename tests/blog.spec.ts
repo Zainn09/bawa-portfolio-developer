@@ -48,6 +48,22 @@ test("all imported screenshots and responsive variants decode with truthful dime
     }
 });
 
+test("sitemap and RSS feed follow the site-URL convention in previews", async ({
+  page,
+}) => {
+  const sitemap = await page.request.get("/sitemap.xml");
+  expect(sitemap.status()).toBe(200);
+  const sitemapBody = await sitemap.text();
+  expect(sitemapBody).toContain("<urlset");
+  // Without NEXT_PUBLIC_SITE_URL the preview exposes no indexable URLs.
+  expect(sitemapBody).not.toContain("<loc>");
+  const feed = await page.request.get("/feed.xml");
+  expect(feed.status()).toBe(404);
+  await page.goto("/");
+  await expect(page.locator('footer a[href="/sitemap.xml"]')).toHaveCount(0);
+  await expect(page.locator('footer a[href="/feed.xml"]')).toHaveCount(0);
+});
+
 test("all 35 article routes render full text, dates, sources and preview-safe metadata", async ({
   request,
 }) => {

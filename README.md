@@ -78,7 +78,7 @@ The rate limiter is intentionally small and in-memory (five attempts per ten min
 
 - Unique title and description; social metadata and an SVG favicon.
 - Previews are `noindex, nofollow` and `robots.txt` disallows indexing until `NEXT_PUBLIC_SITE_URL` is supplied.
-- A real site URL enables canonical/social image URLs, a sitemap, and WebSite schema.
+- A real site URL enables canonical/social image URLs, the sitemap (`/sitemap.xml`), the RSS feed (`/feed.xml`, RSS 2.0 of published journal articles), the `<link rel="alternate">` feed discovery tag, and the Sitemap/RSS links in the footer. Previews without a site URL expose an empty sitemap, a 404 feed, and no footer links — no invented URLs.
 - Person schema stays absent while the name is `[YOUR NAME]`; after supplying a real name and real URL, it is populated from the profile data. No invented structured data.
 - Vercel Web Analytics and Speed Insights load only on Vercel deployments (`VERCEL=1`). Local previews do not request telemetry. Query strings and URL fragments are stripped before sending. No external font requests.
 - The Google Analytics 4 tag (`G-JZZR2B3JTH`, via gtag.js) and the AdSense base loader (`ca-pub-4078729434854717`, via adsbygoogle.js) load on the same production deployments — `VERCEL=1`, or `ENABLE_ANALYTICS=1` on other hosts — and are written as plain `<script>` tags in the raw HTML `<head>`, exactly as Google's own instructions specify, so third-party verification scanners find them. GA4 tracks client-side navigations; its `gtag('config', …)` command is skipped on `/admin` so no tracking session starts there. The AdSense loader only preloads the client; no ad units are rendered until approved placements are added. Local previews make no Google tag or AdSense requests.

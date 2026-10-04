@@ -63,6 +63,22 @@ export default function Footer() {
                 </a>
               ),
             )}
+            {process.env.NEXT_PUBLIC_SITE_URL && (
+              <>
+                <a
+                  href="/sitemap.xml"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Sitemap
+                  <ArrowUpRight size={12} />
+                </a>
+                <a href="/feed.xml" target="_blank" rel="noopener noreferrer">
+                  RSS feed
+                  <ArrowUpRight size={12} />
+                </a>
+              </>
+            )}
           </nav>
           <nav aria-label="Personal navigation">
             <span className="footer-column-label">THE HUMAN SIDE</span>

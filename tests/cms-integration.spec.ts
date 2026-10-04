@@ -140,6 +140,15 @@ test("write, format, insert an image between paragraphs, preview, publish, reope
   await expect(page).toHaveTitle(/Product pages with purpose/);
   const sitemap = await page.request.get("/sitemap.xml");
   expect(await sitemap.text()).toContain("a-considered-product-page");
+  const feed = await page.request.get("/feed.xml");
+  expect(feed.status()).toBe(200);
+  expect(feed.headers()["content-type"]).toContain("application/rss+xml");
+  const feedBody = await feed.text();
+  expect(feedBody).toContain('<rss version="2.0"');
+  expect(feedBody).toContain("A considered product page");
+  expect(feedBody).toContain(
+    "http://localhost:3001/blogs/a-considered-product-page",
+  );
   await page.goto(url);
   await page
     .getByRole("combobox", { name: "Status", exact: true })
@@ -156,6 +165,9 @@ test("write, format, insert an image between paragraphs, preview, publish, reope
   ).toBe(404);
   expect(await (await page.request.get("/sitemap.xml")).text()).not.toContain(
     "a-considered-product-page",
+  );
+  expect(await (await page.request.get("/feed.xml")).text()).not.toContain(
+    "A considered product page",
   );
 });
 test("import is retry safe, dates survive, and stale saves and changed published URLs are refused", async ({
