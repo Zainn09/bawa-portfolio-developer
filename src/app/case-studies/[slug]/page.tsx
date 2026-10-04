@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CaseStudyPage from "@/components/CaseStudyPage";
 import { caseStudyBySlug, caseStudySlugs } from "@/data/case-studies";
+import { siteUrl as site } from "@/lib/site";
 
 export const dynamicParams = false;
 type Props = { params: Promise<{ slug: string }> };
-const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 
 export function generateStaticParams() {
   return caseStudySlugs.map((slug) => ({ slug }));

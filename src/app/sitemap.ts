@@ -2,13 +2,12 @@ import { getPublishedArticles } from "@/lib/cms/public";
 import { servicePages } from "@/data/services";
 import { caseStudySlugs } from "@/data/case-studies";
 import { resourceSlugs } from "@/data/resources";
+import { siteUrl } from "@/lib/site";
 export const dynamic = "force-dynamic";
 import type { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = await getPublishedArticles();
-  const url = process.env.NEXT_PUBLIC_SITE_URL;
-  if (!url) return [];
-  const base = url.replace(/\/$/, "");
+  const base = siteUrl;
   return [
     {
       url: base,

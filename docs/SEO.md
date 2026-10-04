@@ -8,46 +8,45 @@ here, because none can be performed from this repository.
 
 ## Production URL and environment
 
-The site is served from:
+The site's canonical URL is a single constant in `src/lib/site.ts`:
 
 ```
 https://ahmad-adbullah-prod.vercel.app
 ```
 
-Everything indexable is gated behind one environment variable:
+Because that domain is known and fixed, it is the **default** `siteUrl`, so
+the sitemap, RSS feed, canonicals, robots, and structured data work in
+**every** build — including local and preview. `NEXT_PUBLIC_SITE_URL`
+overrides it; set that variable whenever the site moves to a new domain
+(e.g. a custom domain) and redeploy, so all absolute URLs follow.
 
-```
-NEXT_PUBLIC_SITE_URL=https://ahmad-adbullah-prod.vercel.app
-```
+| Behavior                                       | Default build (no env)                                                                                                              | `NEXT_PUBLIC_SITE_URL` set                         |
+| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| `robots` meta                                  | `index, follow` on every page                                                                                                       | `index, follow` on every page                      |
+| `<link rel="canonical">`                       | absolute canonical on every page (default domain)                                                                                   | absolute canonical on every page (override domain) |
+| JSON-LD (Person, WebSite, Service, Article, …) | rendered with absolute `@id` / `url`                                                                                                | rendered with absolute `@id` / `url`               |
+| `robots.txt`                                   | `Allow: /`, disallows `/api/` and `/admin/`, points `Sitemap:` at the absolute URL                                                  | same, using the override domain                    |
+| `sitemap.xml`                                  | home, `/blogs`, all 11 service pages, `/case-studies` + 5 studies, `/resources` + 8 guides, all published articles (default domain) | same, using the override domain                    |
+| `feed.xml`                                     | RSS 2.0 of all published journal articles (default domain)                                                                          | same, using the override domain                    |
+| Open Graph / Twitter `url` + `images`          | absolute                                                                                                                            | absolute                                           |
 
-| Behavior                                       | `NEXT_PUBLIC_SITE_URL` unset (preview / local) | set (production build)                                                                                             |
-| ---------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `robots` meta                                  | `noindex, nofollow` on every page              | `index, follow`                                                                                                    |
-| `<link rel="canonical">`                       | not rendered                                   | absolute canonical on every page                                                                                   |
-| JSON-LD (Person, WebSite, Service, Article, …) | not rendered                                   | rendered with absolute `@id` / `url`                                                                               |
-| `robots.txt`                                   | `Disallow: /`, no `Sitemap:`                   | `Allow: /`, disallows `/api/` and `/admin/`, points `Sitemap:` at the absolute URL                                 |
-| `sitemap.xml`                                  | empty (no invented domain)                     | home, `/blogs`, all 11 service pages, `/case-studies` + 5 studies, `/resources` + 8 guides, all published articles |
-| Open Graph / Twitter `url` + `images`          | omitted                                        | absolute                                                                                                           |
-
-`NEXT_PUBLIC_*` values are inlined at build time, so the production build
-(Vercel, which has the variable set) bakes in indexable, canonicalized
-output, while a local build without the variable stays deliberately
-unindexable. This keeps the live preview from publishing an accidental
-indexable mirror of the production domain.
+The `NEXT_PUBLIC_*` override is inlined at build time, so changing it
+requires a redeploy. The default keeps the live preview and the production
+deployment consistent, with one canonical host throughout.
 
 ## Audit: what was already correct (left unchanged)
 
-- `src/app/robots.ts` — already conditional on the site URL; correct allow/
-  disallow for `/api/` and `/admin/`.
-- `src/app/sitemap.ts` — already URL-gated and article-aware; extended (not
-  rewritten) to include the new service and case-study routes.
-- `src/app/layout.tsx` — noindex/OG gating, Google Search Console
-  verification, RSS alternate, and `poweredByHeader: false` were already in
-  place.
+- `src/app/robots.ts` — correct allow for `/` and disallow for `/api/` and
+  `/admin/`, plus a `Sitemap:` reference.
+- `src/app/sitemap.ts` — URL-driven and article-aware; extended (not
+  rewritten) to include the new service, case-study, and resource routes.
+- `src/app/layout.tsx` — Google Search Console verification, RSS alternate,
+  and `poweredByHeader: false` were already in place.
 - `src/app/blogs/[slug]/page.tsx` — full article metadata, Article +
   BreadcrumbList schema, single H1, related articles, and priority images
   were already correct; a related-services block was added (below).
-- `src/app/feed.xml/route.ts` — RSS feed intact.
+- `src/app/feed.xml/route.ts` — RSS 2.0 feed of the published articles,
+  intact.
 - Self-hosted, dimensioned, lazy-loaded WebP imagery and the two local font
   families — no new heavy assets introduced.
 
@@ -55,9 +54,12 @@ indexable mirror of the production domain.
 
 ### Crawling / indexing / canonicals
 
-- New pages carry an absolute `rel=canonical`, `index, follow` robots, and
-  absolute Open Graph URLs when `NEXT_PUBLIC_SITE_URL` is set; otherwise they
-  are `noindex, nofollow` with no canonical and no schema.
+- The site's canonical URL is now a single constant (`src/lib/site.ts`,
+  defaulting to the production domain, overridable by
+  `NEXT_PUBLIC_SITE_URL`). Every page carries an absolute `rel=canonical`,
+  `index, follow` robots, absolute Open Graph URLs, and absolute JSON-LD
+  `@id`/`url` in **every** build, so the sitemap, feed, and robots are
+  correct out of the box.
 - Unknown top-level service slugs and unknown case-study slugs return a real
   HTTP **404** and a custom not-found page (previously the framework default).
 
@@ -157,10 +159,12 @@ These require Google's console or DNS and cannot be completed from the repo:
 1. Verify the site in **Google Search Console** (the meta verification tag is
    already in the HTML head).
 2. Submit `https://ahmad-adbullah-prod.vercel.app/sitemap.xml` after a
-   production deploy with `NEXT_PUBLIC_SITE_URL` set.
+   production deploy — the sitemap and feed are already live, since the
+   production domain is the site's default URL.
 3. Use URL Inspection to request indexing of key pages and monitor the
    Queries, Pages, and Core Web Vitals reports.
 4. If a custom domain is connected later, set `NEXT_PUBLIC_SITE_URL` to that
-   domain and add the canonical-domain redirects (www/non-www, http→https)
-   via the domain provider or Vercel's rewrite/redirect rules so exactly one
+   domain and redeploy (so the sitemap, feed, canonicals, and schema follow
+   it), and add the canonical-domain redirects (www/non-www, http→https) via
+   the domain provider or Vercel's rewrite/redirect rules so exactly one
    canonical host is served.

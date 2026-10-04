@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
 import { projects } from "@/data/portfolio";
+import { siteUrl as site } from "@/lib/site";
 
-const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 export const metadata: Metadata = {
   title: "Case Studies — Shopify Development & QA | Ahmad Abdullah",
   description:

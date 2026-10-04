@@ -304,7 +304,7 @@ test("contact endpoint applies rate limiting", async ({ request }) => {
     ).status(),
   ).toBe(429);
 });
-test("preview SEO does not invent identity or an indexable domain", async ({
+test("SEO metadata targets the production domain", async ({
   page,
   request,
 }) => {
@@ -312,13 +312,19 @@ test("preview SEO does not invent identity or an indexable domain", async ({
   await expect(page).toHaveTitle(/Shopify Developer/);
   await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
     "content",
-    "noindex, nofollow",
+    "index, follow",
+  );
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+    "href",
+    "https://ahmad-adbullah-prod.vercel.app",
   );
   expect(await page.locator('script[type="application/ld+json"]').count()).toBe(
-    0,
+    1,
   );
-  expect(await (await request.get("/robots.txt")).text()).toContain(
-    "Disallow: /",
+  const robots = await (await request.get("/robots.txt")).text();
+  expect(robots).toContain("Allow: /");
+  expect(robots).toContain(
+    "Sitemap: https://ahmad-adbullah-prod.vercel.app/sitemap.xml",
   );
 });
 for (const theme of ["light", "dark"] as const) {

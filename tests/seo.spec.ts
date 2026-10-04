@@ -42,14 +42,18 @@ test.describe("service pages", () => {
       await expect(page.locator(".service-cta a")).toContainText(
         "Start a conversation",
       );
-      // Preview mode (no NEXT_PUBLIC_SITE_URL): not indexable, no canonical.
-      await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
-      await expect(
-        page.locator('meta[name="robots"][content*="noindex"]'),
-      ).toHaveCount(1);
+      // Production canonical, indexable robots, and schema in every build.
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        "href",
+        `https://ahmad-adbullah-prod.vercel.app/${slug}`,
+      );
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+        "content",
+        "index, follow",
+      );
       await expect(
         page.locator('script[type="application/ld+json"]'),
-      ).toHaveCount(0);
+      ).toHaveCount(1);
     });
   }
 
@@ -76,7 +80,10 @@ test.describe("case studies", () => {
         page.locator(`a[href="/case-studies/${slug}"]`),
       ).toBeVisible();
     }
-    await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      "https://ahmad-adbullah-prod.vercel.app/case-studies",
+    );
   });
 
   for (const slug of caseStudySlugs) {
@@ -225,7 +232,10 @@ test.describe("guides and checklists (resources)", () => {
     for (const slug of slugs) {
       await expect(page.locator(`a[href="/resources/${slug}"]`)).toBeVisible();
     }
-    await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+      "href",
+      "https://ahmad-adbullah-prod.vercel.app/resources",
+    );
   });
 
   for (const slug of slugs) {
@@ -251,14 +261,18 @@ test.describe("guides and checklists (resources)", () => {
         const target = await page.request.get(href!);
         expect(target.status()).toBe(200);
       }
-      // Preview mode: not indexable, no canonical, no schema.
-      await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
-      await expect(
-        page.locator('meta[name="robots"][content*="noindex"]'),
-      ).toHaveCount(1);
+      // Production canonical, indexable robots, and schema in every build.
+      await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
+        "href",
+        `https://ahmad-adbullah-prod.vercel.app/resources/${slug}`,
+      );
+      await expect(page.locator('meta[name="robots"]')).toHaveAttribute(
+        "content",
+        "index, follow",
+      );
       await expect(
         page.locator('script[type="application/ld+json"]'),
-      ).toHaveCount(0);
+      ).toHaveCount(1);
     });
   }
 
@@ -283,16 +297,28 @@ test.describe("guides and checklists (resources)", () => {
   });
 });
 
-test("robots and sitemap stay preview-safe", async ({ request }) => {
+test("robots.txt and sitemap.xml publish the production domain", async ({
+  request,
+}) => {
   const robots = await request.get("/robots.txt");
   expect(robots.status()).toBe(200);
-  // Preview (no NEXT_PUBLIC_SITE_URL): everything stays out of the
-  // index and no sitemap URL is invented.
   const robotsBody = await robots.text();
-  expect(robotsBody).toContain("Disallow: /");
-  expect(robotsBody).not.toContain("Sitemap:");
+  expect(robotsBody).toContain("Allow: /");
+  expect(robotsBody).toContain(
+    "Sitemap: https://ahmad-adbullah-prod.vercel.app/sitemap.xml",
+  );
   const sitemap = await request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
   const sitemapBody = await sitemap.text();
-  expect(sitemapBody).not.toContain("https://");
+  expect(sitemapBody).toContain(
+    "https://ahmad-adbullah-prod.vercel.app/shopify-development",
+  );
+  expect(sitemapBody).toContain(
+    "https://ahmad-adbullah-prod.vercel.app/case-studies/prime-baby-gear",
+  );
+  expect(sitemapBody).toContain(
+    "https://ahmad-adbullah-prod.vercel.app/resources",
+  );
+  const urlCount = (sitemapBody.match(/<url>/g) || []).length;
+  expect(urlCount).toBeGreaterThanOrEqual(60);
 });

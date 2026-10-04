@@ -6,13 +6,13 @@ import { blogProjects, dateLabel } from "@/data/blog";
 import { profile } from "@/data/portfolio";
 import BlogImage from "@/components/blog/BlogImage";
 import ArticleTools from "@/components/blog/ArticleTools";
+import { siteUrl as site } from "@/lib/site";
 
 import { getPublishedArticles, publishedArticle } from "@/lib/cms/public";
 import { relatedServiceSlugs, serviceLinkLabel } from "@/lib/serviceLinks";
 import RichContent, { richHeadings } from "@/components/blog/RichContent";
 export const dynamic = "force-dynamic";
 type Props = { params: Promise<{ slug: string }> };
-const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await publishedArticle(slug);

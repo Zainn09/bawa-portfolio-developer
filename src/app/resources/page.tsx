@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { resources } from "@/data/resources";
+import { siteUrl as site } from "@/lib/site";
 
-const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 export const metadata: Metadata = {
   title: "Shopify Guides & Checklists | Ahmad Abdullah",
   description:

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SiteMetrics from "@/components/SiteMetrics";
 import { profile } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 import "@/styles/variables.css";
 import "@/styles/globals.css";
 import "@/styles/sections.css";
@@ -13,7 +14,6 @@ import "@/styles/showroom.css";
 import "@/styles/mobile.css";
 import "@/styles/blog.css";
 import "@/styles/readability.css";
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 // GA4 + AdSense run on the production deployment; local previews stay
 // telemetry-free. ENABLE_ANALYTICS=1 is the escape hatch for non-Vercel
 // production hosts. The tags are plain <script> elements in the raw HTML
@@ -25,9 +25,8 @@ const gaMeasurementId = process.env.GA_MEASUREMENT_ID || "G-JZZR2B3JTH";
 const adSenseClientId =
   process.env.GOOGLE_ADSENSE_CLIENT_ID || "ca-pub-4078729434854717";
 export const metadata: Metadata = {
-  ...(siteUrl
-    ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } }
-    : {}),
+  metadataBase: new URL(siteUrl),
+  alternates: { canonical: "/" },
   title: `Shopify Developer — Themes, Store QA & Plus | ${profile.name}`,
   description:
     "Shopify & Shopify Plus theme development, store builds, and QA — Liquid, checkout, performance, and accessibility testing, from first section to launch.",
@@ -36,27 +35,23 @@ export const metadata: Metadata = {
     description:
       "Custom Shopify and Shopify Plus themes, store development, and quality assurance — from the first section to the final test.",
     type: "website",
-    ...(siteUrl
-      ? {
-          images: [
-            {
-              url: "/images/hero-store-placeholder.webp",
-              width: 1400,
-              height: 933,
-              alt: "A considered Shopify storefront concept",
-            },
-          ],
-        }
-      : {}),
+    images: [
+      {
+        url: "/images/hero-store-placeholder.webp",
+        width: 1400,
+        height: 933,
+        alt: "A considered Shopify storefront concept",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Commerce, Crafted — Shopify Developer",
     description:
       "Custom Shopify and Shopify Plus themes, store development, and quality assurance.",
-    ...(siteUrl ? { images: ["/images/hero-store-placeholder.webp"] } : {}),
+    images: ["/images/hero-store-placeholder.webp"],
   },
-  robots: { index: !!siteUrl, follow: !!siteUrl },
+  robots: { index: true, follow: true },
 };
 export const viewport: Viewport = {
   width: "device-width",
@@ -94,14 +89,12 @@ export default function RootLayout({
           name="google-site-verification"
           content="sFCobwdgJ47jkotq4vkO_mTo13ORcuoajMbTo7Y_O_A"
         />
-        {siteUrl && (
-          <link
-            rel="alternate"
-            type="application/rss+xml"
-            title={`${profile.name} — Journal`}
-            href={`${siteUrl.replace(/\/$/, "")}/feed.xml`}
-          />
-        )}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title={`${profile.name} — Journal`}
+          href={`${siteUrl}/feed.xml`}
+        />
         {analyticsEnabled && (
           <>
             {/* Google tag (gtag.js) — GA4. Admin routes skip the config

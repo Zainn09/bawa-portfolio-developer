@@ -1,6 +1,7 @@
 import "server-only";
 import { getPublishedArticles } from "@/lib/cms/public";
 import { profile } from "@/data/portfolio";
+import { siteUrl } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 
@@ -14,19 +15,11 @@ function esc(value: string): string {
 }
 
 /**
- * RSS 2.0 feed of published journal articles at /feed.xml. Available on the
- * public deployment (where NEXT_PUBLIC_SITE_URL provides absolute URLs);
- * previews without a site URL return 404 rather than a feed full of
- * relative links.
+ * RSS 2.0 feed of published journal articles at /feed.xml, using the
+ * canonical site URL (see src/lib/site.ts) for absolute links.
  */
 export async function GET() {
-  const url = process.env.NEXT_PUBLIC_SITE_URL;
-  if (!url) {
-    return new Response("The RSS feed is available on the public site.", {
-      status: 404,
-    });
-  }
-  const base = url.replace(/\/$/, "");
+  const base = siteUrl;
   const articles = await getPublishedArticles();
   const items = articles
     .map((a) => {

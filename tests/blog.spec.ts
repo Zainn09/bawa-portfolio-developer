@@ -48,23 +48,22 @@ test("all imported screenshots and responsive variants decode with truthful dime
     }
 });
 
-test("sitemap and RSS feed follow the site-URL convention in previews", async ({
-  page,
-}) => {
+test("sitemap and RSS feed publish the production domain", async ({ page }) => {
   const sitemap = await page.request.get("/sitemap.xml");
   expect(sitemap.status()).toBe(200);
   const sitemapBody = await sitemap.text();
   expect(sitemapBody).toContain("<urlset");
-  // Without NEXT_PUBLIC_SITE_URL the preview exposes no indexable URLs.
-  expect(sitemapBody).not.toContain("<loc>");
+  expect(sitemapBody).toContain("https://ahmad-adbullah-prod.vercel.app/blogs");
   const feed = await page.request.get("/feed.xml");
-  expect(feed.status()).toBe(404);
+  expect(feed.status()).toBe(200);
+  const feedBody = await feed.text();
+  expect(feedBody).toContain("https://ahmad-adbullah-prod.vercel.app/blogs/");
   await page.goto("/");
-  await expect(page.locator('footer a[href="/sitemap.xml"]')).toHaveCount(0);
-  await expect(page.locator('footer a[href="/feed.xml"]')).toHaveCount(0);
+  await expect(page.locator('footer a[href="/sitemap.xml"]')).toHaveCount(1);
+  await expect(page.locator('footer a[href="/feed.xml"]')).toHaveCount(1);
 });
 
-test("all 35 article routes render full text, dates, sources and preview-safe metadata", async ({
+test("all 35 article routes render full text, dates, sources and production metadata", async ({
   request,
 }) => {
   for (const a of articles) {
@@ -74,14 +73,17 @@ test("all 35 article routes render full text, dates, sources and preview-safe me
     expect(html).toContain(a.title.replaceAll("&", "&amp;"));
     expect(html).toContain('name="description"');
     expect(html).toContain('property="og:type" content="article"');
-    expect(html).toContain("noindex");
+    expect(html).toContain('name="robots" content="index, follow"');
+    expect(html).toContain(
+      `https://ahmad-adbullah-prod.vercel.app/blogs/${a.slug}`,
+    );
     expect(html).toContain(dateLabel(a.publishedAt));
     expect(html).toMatch(new RegExp(`datetime="${a.publishedAt}"`, "i"));
     expect(html).not.toContain("Open image to inspect");
     expect(html).not.toContain("Captured 2026-09-20");
     expect(html).toContain("article-sources");
     expect(html).toContain("article-body");
-    expect(html).not.toContain("application/ld+json");
+    expect(html).toContain("application/ld+json");
   }
   expect((await request.get("/blogs/not-a-real-article")).status()).toBe(404);
 });

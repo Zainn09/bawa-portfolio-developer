@@ -4,8 +4,8 @@ import { ArrowUpRight } from "lucide-react";
 import { summarize } from "@/data/blog";
 import JournalIndex from "@/components/blog/JournalIndex";
 import { getPublishedArticles } from "@/lib/cms/public";
+import { siteUrl as site } from "@/lib/site";
 export const dynamic = "force-dynamic";
-const site = process.env.NEXT_PUBLIC_SITE_URL;
 export const metadata: Metadata = {
   title: "The Commerce Journal — Shopify & Storefront Notes",
   description:
