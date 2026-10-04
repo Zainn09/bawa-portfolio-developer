@@ -76,6 +76,7 @@ The rate limiter is intentionally small and in-memory (five attempts per ten min
 
 ## SEO and privacy
 
+- Dedicated, statically prerendered service pages (`/shopify-development` hub plus ten specific services) and `/case-studies` for the five real supplied stores, with clean internal linking from the nav, footer, homepage, articles, and project modals. See [docs/SEO.md](docs/SEO.md) for the full audit, the canonical/indexing behavior, the structured-data map, and the Search Console steps that remain for the owner.
 - Unique title and description; social metadata and an SVG favicon.
 - Previews are `noindex, nofollow` and `robots.txt` disallows indexing until `NEXT_PUBLIC_SITE_URL` is supplied.
 - A real site URL enables canonical/social image URLs, the sitemap (`/sitemap.xml`), the RSS feed (`/feed.xml`, RSS 2.0 of published journal articles), the `<link rel="alternate">` feed discovery tag, and the Sitemap/RSS links in the footer. Previews without a site URL expose an empty sitemap, a 404 feed, and no footer links — no invented URLs.
@@ -112,7 +113,7 @@ npm audit
 
 `npm test` uses an npm-bundled Chromium and its shared libraries so it also works in the network-constrained Linux preview sandbox. It reuses port 3000 if available, otherwise starts the built app. Build first. The suite expects preview defaults (no published domain or live webhook); run against a non-production test instance.
 
-The automated suite covers twelve widths: **320, 360, 375, 390, 414, 768, 820, 1024, 1280, 1440, 1920, and 2560px**, browser errors, image loading, horizontal overflow, navigation, interactive demos, modal keyboard dismissal/focus restoration, persistence, reduced motion, client/server form validation, rate limiting, and light/dark WCAG 2 A/AA + 2.1 AA axe checks. Delivery success UI is tested with a explicitly simulated network response, not claimed as a tested live email integration.
+The automated suite covers twelve widths: **320, 360, 375, 390, 414, 768, 820, 1024, 1280, 1440, 1920, and 2560px**, browser errors, image loading, horizontal overflow, navigation, interactive demos, modal keyboard dismissal/focus restoration, persistence, reduced motion, client/server form validation, rate limiting, and light/dark WCAG 2 A/AA + 2.1 AA axe checks. `tests/seo.spec.ts` adds crawl/indexing checks: 200s and unique titles for all service and case-study routes, single-H1 assertions, internal-linking coverage, custom 404s, 320px overflow, an axe audit on a service page, and preview-safe robots/sitemap output. Delivery success UI is tested with a explicitly simulated network response, not claimed as a tested live email integration.
 
 Axe and browser automation do not replace real-device, assistive-technology, or field-performance testing. There are no invented Lighthouse scores or Core Web Vitals claims. Measure again on the actual deployment with final assets and integrations.
 

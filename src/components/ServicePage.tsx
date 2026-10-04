@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { profile, projects } from "@/data/portfolio";
-import { serviceBySlug, type ServicePageData } from "@/data/services";
+import {
+  serviceBySlug,
+  servicePages,
+  type ServicePageData,
+} from "@/data/services";
 
 const upper: Record<string, string> = { qa: "QA" };
 function schemaName(slug: string): string {
@@ -23,9 +27,9 @@ export default function ServicePage({ data, slug, site }: Props) {
   const caseStudies = data.relatedCaseStudies
     .map((cs) => projects.find((p) => p.slug === cs))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
-  const related = data.relatedServices
-    .map((rs) => serviceBySlug[rs])
-    .filter(Boolean);
+  const related = isHub
+    ? servicePages
+    : data.relatedServices.map((rs) => serviceBySlug[rs]).filter(Boolean);
 
   const jsonLd = site
     ? {
@@ -207,7 +211,9 @@ export default function ServicePage({ data, slug, site }: Props) {
           className="service-related container"
           aria-label="Related services"
         >
-          <span className="journal-kicker">RELATED SERVICES</span>
+          <span className="journal-kicker">
+            {isHub ? "ALL SERVICES" : "RELATED SERVICES"}
+          </span>
           <div className="service-related-list">
             {related.map((r) => (
               <Link key={r.slug} href={`/${r.slug}`}>

@@ -8,6 +8,7 @@ import BlogImage from "@/components/blog/BlogImage";
 import ArticleTools from "@/components/blog/ArticleTools";
 
 import { getPublishedArticles, publishedArticle } from "@/lib/cms/public";
+import { relatedServiceSlugs, serviceLinkLabel } from "@/lib/serviceLinks";
 import RichContent, { richHeadings } from "@/components/blog/RichContent";
 export const dynamic = "force-dynamic";
 type Props = { params: Promise<{ slug: string }> };
@@ -70,6 +71,9 @@ export default async function ArticlePage({ params }: Props) {
   const related = (await getPublishedArticles())
     .filter((p) => p.slug !== a.slug && p.project === a.project)
     .slice(0, 3);
+  const serviceSlugs = relatedServiceSlugs(
+    [a.title, a.category, a.tags.join(" "), a.excerpt].join(" "),
+  );
   const vintage = a.project === "vintage-art-garage";
   const jsonLd = site
     ? {
@@ -349,6 +353,21 @@ export default async function ArticlePage({ params }: Props) {
           ))}
         </div>
       </section>
+      {serviceSlugs.length > 0 && (
+        <section
+          className="service-related container article-services"
+          aria-label="Related services"
+        >
+          <span className="journal-kicker">RELATED SERVICES</span>
+          <div className="service-related-list">
+            {serviceSlugs.map((slug) => (
+              <Link key={slug} href={`/${slug}`}>
+                {serviceLinkLabel(slug)} <ArrowUpRight size={14} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </main>
   );
 }

@@ -3,21 +3,22 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { caseStudies } from "@/data/case-studies";
 import { projects } from "@/data/portfolio";
 
+const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 export const metadata: Metadata = {
   title: "Case Studies — Shopify Development & QA | Ahmad Abdullah",
   description:
     "Real Shopify stores — Prime Baby Gear, Ollie Burwell, Nokoluxe, Vintage Art Garage, and Paw by Four — documented through the journal with captured storefront evidence, without invented metrics.",
-  alternates: { canonical: "/case-studies" },
+  ...(site ? { alternates: { canonical: "/case-studies" } } : {}),
   openGraph: {
     type: "website",
     title: "Case Studies — Shopify Development & QA",
     description:
       "Real Shopify stores, documented through the journal with captured storefront evidence.",
+    ...(site ? { url: "/case-studies" } : {}),
   },
-  robots: { index: Boolean(process.env.NEXT_PUBLIC_SITE_URL), follow: true },
+  robots: { index: Boolean(site), follow: true },
 };
 
-const site = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
 const jsonLd = site
   ? {
       "@context": "https://schema.org",

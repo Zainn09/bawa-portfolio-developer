@@ -183,7 +183,7 @@ const latestProjects = [
     domain: "pawbyfour.com",
     description:
       "A canine care store combining educational resources, digital guides, and enrichment products for owners of anxious dogs.",
-    imageAlt: "Woman kissing a dachshund in Paw by Four’s homepage photography",
+    imageAlt: "Woman kissing a dachshund in Paw by Four brand photography",
   },
 ];
 export const projects: Project[] = latestProjects.map((project) => ({
