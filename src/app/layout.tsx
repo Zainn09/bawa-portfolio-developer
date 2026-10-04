@@ -88,6 +88,12 @@ export default function RootLayout({
             __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=t||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}catch(e){}})()`,
           }}
         />
+        {/* Search Console verification (URL-prefix property). Static marker:
+            loaded on every page so Google's verifier can always find it. */}
+        <meta
+          name="google-site-verification"
+          content="sFCobwdgJ47jkotq4vkO_mTo13ORcuoajMbTo7Y_O_A"
+        />
         {analyticsEnabled && (
           <>
             {/* Google tag (gtag.js) — GA4. Admin routes skip the config
