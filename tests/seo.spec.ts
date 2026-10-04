@@ -205,6 +205,84 @@ test("service page accessibility audit", async ({ page }) => {
   expect(results.violations).toEqual([]);
 });
 
+test.describe("guides and checklists (resources)", () => {
+  const slugs = [
+    "shopify-theme-development-guide",
+    "shopify-store-launch-checklist",
+    "shopify-qa-checklist",
+    "shopify-checkout-testing-guide",
+    "shopify-plus-testing-guide",
+    "shopify-mobile-testing-guide",
+    "shopify-performance-checklist",
+    "common-shopify-store-issues",
+  ];
+  const titles: string[] = [];
+
+  test("/resources lists every guide and checklist", async ({ page }) => {
+    const response = await page.goto("/resources");
+    expect(response?.status()).toBe(200);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+    for (const slug of slugs) {
+      await expect(page.locator(`a[href="/resources/${slug}"]`)).toBeVisible();
+    }
+    await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+  });
+
+  for (const slug of slugs) {
+    test(`resource ${slug} links services and journal entries`, async ({
+      page,
+    }) => {
+      const response = await page.goto(`/resources/${slug}`);
+      expect(response?.status()).toBe(200);
+      await expect(page.getByRole("heading", { level: 1 })).toHaveCount(1);
+      const title = await page.title();
+      expect(titles.filter((t) => t === title)).toHaveLength(0);
+      titles.push(title);
+      // Connects back to the services it describes.
+      const serviceLinks = page.locator(
+        ".resource-service-links a[href^='/shopify']",
+      );
+      expect(await serviceLinks.count()).toBeGreaterThanOrEqual(1);
+      // Journal entries are real and resolvable.
+      const articleLinks = page.locator(".case-article-list a");
+      expect(await articleLinks.count()).toBeGreaterThanOrEqual(1);
+      for (let i = 0; i < (await articleLinks.count()); i++) {
+        const href = await articleLinks.nth(i).getAttribute("href");
+        const target = await page.request.get(href!);
+        expect(target.status()).toBe(200);
+      }
+      // Preview mode: not indexable, no canonical, no schema.
+      await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+      await expect(
+        page.locator('meta[name="robots"][content*="noindex"]'),
+      ).toHaveCount(1);
+      await expect(
+        page.locator('script[type="application/ld+json"]'),
+      ).toHaveCount(0);
+    });
+  }
+
+  test("unknown resource slugs return the custom 404", async ({ page }) => {
+    const response = await page.goto("/resources/not-a-real-guide");
+    expect(response?.status()).toBe(404);
+    await expect(page.locator(".not-found")).toBeVisible();
+  });
+
+  test("service pages surface practical resources", async ({ page }) => {
+    await page.goto("/shopify-development");
+    const resourceLinks = page.locator('a[href^="/resources/"]');
+    expect(await resourceLinks.count()).toBeGreaterThanOrEqual(1);
+    const href = await resourceLinks.first().getAttribute("href");
+    const target = await page.request.get(href!);
+    expect(target.status()).toBe(200);
+  });
+
+  test("footer exposes the guides section", async ({ page }) => {
+    await page.goto("/");
+    await expect(page.locator('footer a[href="/resources"]')).toHaveCount(1);
+  });
+});
+
 test("robots and sitemap stay preview-safe", async ({ request }) => {
   const robots = await request.get("/robots.txt");
   expect(robots.status()).toBe(200);

@@ -20,14 +20,14 @@ Everything indexable is gated behind one environment variable:
 NEXT_PUBLIC_SITE_URL=https://ahmad-adbullah-prod.vercel.app
 ```
 
-| Behavior | `NEXT_PUBLIC_SITE_URL` unset (preview / local) | set (production build) |
-| --- | --- | --- |
-| `robots` meta | `noindex, nofollow` on every page | `index, follow` |
-| `<link rel="canonical">` | not rendered | absolute canonical on every page |
-| JSON-LD (Person, WebSite, Service, Article, …) | not rendered | rendered with absolute `@id` / `url` |
-| `robots.txt` | `Disallow: /`, no `Sitemap:` | `Allow: /`, disallows `/api/` and `/admin/`, points `Sitemap:` at the absolute URL |
-| `sitemap.xml` | empty (no invented domain) | home, `/blogs`, all 11 service pages, `/case-studies` + 5 studies, all published articles |
-| Open Graph / Twitter `url` + `images` | omitted | absolute |
+| Behavior                                       | `NEXT_PUBLIC_SITE_URL` unset (preview / local) | set (production build)                                                                                             |
+| ---------------------------------------------- | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `robots` meta                                  | `noindex, nofollow` on every page              | `index, follow`                                                                                                    |
+| `<link rel="canonical">`                       | not rendered                                   | absolute canonical on every page                                                                                   |
+| JSON-LD (Person, WebSite, Service, Article, …) | not rendered                                   | rendered with absolute `@id` / `url`                                                                               |
+| `robots.txt`                                   | `Disallow: /`, no `Sitemap:`                   | `Allow: /`, disallows `/api/` and `/admin/`, points `Sitemap:` at the absolute URL                                 |
+| `sitemap.xml`                                  | empty (no invented domain)                     | home, `/blogs`, all 11 service pages, `/case-studies` + 5 studies, `/resources` + 8 guides, all published articles |
+| Open Graph / Twitter `url` + `images`          | omitted                                        | absolute                                                                                                           |
 
 `NEXT_PUBLIC_*` values are inlined at build time, so the production build
 (Vercel, which has the variable set) bakes in indexable, canonicalized
@@ -54,6 +54,7 @@ indexable mirror of the production domain.
 ## What changed
 
 ### Crawling / indexing / canonicals
+
 - New pages carry an absolute `rel=canonical`, `index, follow` robots, and
   absolute Open Graph URLs when `NEXT_PUBLIC_SITE_URL` is set; otherwise they
   are `noindex, nofollow` with no canonical and no schema.
@@ -61,6 +62,7 @@ indexable mirror of the production domain.
   HTTP **404** and a custom not-found page (previously the framework default).
 
 ### Site architecture and internal linking
+
 - Top-level service pages at clean, lowercase, descriptive URLs:
   `/shopify-development` (hub), `/shopify-theme-development`,
   `/shopify-store-development`, `/shopify-qa-testing`, `/shopify-plus`,
@@ -84,7 +86,28 @@ indexable mirror of the production domain.
   keyword mapping (`src/lib/serviceLinks.ts`) — theme, checkout, mobile,
   performance, accessibility, regression, store, Plus, maintenance, QA.
 
+### Content expansion: guides and checklists
+
+Eight practical resources under `/resources` (index + `/resources/{slug}`),
+chosen for genuine usefulness rather than keyword volume:
+
+- `/resources/shopify-theme-development-guide`
+- `/resources/shopify-store-launch-checklist`
+- `/resources/shopify-qa-checklist`
+- `/resources/shopify-checkout-testing-guide`
+- `/resources/shopify-plus-testing-guide`
+- `/resources/shopify-mobile-testing-guide`
+- `/resources/shopify-performance-checklist`
+- `/resources/common-shopify-store-issues`
+
+Each is a substantial, actionable guide or checklist (Article + FAQPage +
+BreadcrumbList schema) that links to the service pages it describes, real
+journal entries, and the relevant case studies. Service pages surface the
+resources relevant to them, and the footer links the section. The guidance
+describes real development and QA practice — no invented results.
+
 ### Case studies (honest by design)
+
 Case-study content is derived only from the five real, supplied projects and
 their published journal entries. Roles, processes, and screenshots are
 described as standard practice and captured public-store evidence. No sales
@@ -93,6 +116,7 @@ invented. The `vintage-art-garage` study explicitly states the store is
 temporarily closed.
 
 ### Structured data (only where it matches visible content)
+
 - Homepage: `WebSite`, `Person`, `ProfessionalService`.
 - Service pages: `Service`, `FAQPage` (real Q&A shown on the page),
   `BreadcrumbList`.
@@ -114,13 +138,14 @@ preserved rather than regressed.
 
 ## Tests
 
-- `tests/seo.spec.ts` — 26 assertions covering: every service page renders
+- `tests/seo.spec.ts` — 38 assertions covering: every service page renders
   with one H1 and a unique title, the hub links all services, the
   case-studies index lists the five stores, each study links seven resolvable
-  journal entries, unknown routes 404, homepage hierarchy links, article →
-  service links, the work modal links to a case study, 320px overflow
-  checks, an axe accessibility audit on a service page, and preview-safe
-  robots/sitemap.
+  journal entries, every resource page links its services and real journal
+  entries, the guides index lists all eight, unknown routes 404, homepage
+  hierarchy links, article → service links, service → resource links, the
+  work modal links to a case study, 320px overflow checks, an axe
+  accessibility audit on a service page, and preview-safe robots/sitemap.
 - The existing suite (navigation, responsive widths, a11y, form, CMS) still
   passes; the one homepage H1 assertion was updated to the new, more
   descriptive H1.

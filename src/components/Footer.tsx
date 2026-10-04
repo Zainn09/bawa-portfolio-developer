@@ -71,6 +71,10 @@ export default function Footer() {
               Case studies
               <ArrowUpRight size={12} />
             </a>
+            <a href="/resources">
+              Guides
+              <ArrowUpRight size={12} />
+            </a>
             {process.env.NEXT_PUBLIC_SITE_URL && (
               <>
                 <a

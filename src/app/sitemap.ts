@@ -1,6 +1,7 @@
 import { getPublishedArticles } from "@/lib/cms/public";
 import { servicePages } from "@/data/services";
 import { caseStudySlugs } from "@/data/case-studies";
+import { resourceSlugs } from "@/data/resources";
 export const dynamic = "force-dynamic";
 import type { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -31,6 +32,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     ...caseStudySlugs.map((slug) => ({
       url: `${base}/case-studies/${slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    {
+      url: `${base}/resources`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    ...resourceSlugs.map((slug) => ({
+      url: `${base}/resources/${slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
     })),

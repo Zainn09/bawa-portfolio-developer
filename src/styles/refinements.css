@@ -1627,3 +1627,68 @@ h3 {
   background: var(--ink);
   color: var(--bg) !important;
 }
+
+/* ===== Guides & checklists (resources) ===== */
+.resource-index {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 56px 0 70px;
+}
+.resource-index > a {
+  display: block;
+  padding: 24px;
+  border: var(--border);
+  border-radius: var(--radius);
+  transition:
+    background var(--duration),
+    transform var(--duration);
+}
+.resource-index > a:hover {
+  background: var(--paper);
+  transform: translateY(-2px);
+}
+.resource-index-kicker {
+  font-family: var(--mono);
+  font-size: var(--text-small);
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+.resource-index h2 {
+  font-size: 19px;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
+  margin: 10px 0 8px;
+}
+.resource-index p {
+  font-size: var(--text-secondary);
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.resource-checklist {
+  list-style: none;
+  padding-left: 0;
+}
+.resource-checklist li {
+  position: relative;
+  padding-left: 26px;
+}
+.resource-checklist li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 7px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--muted);
+  border-radius: 1px;
+}
+.resource-service-links {
+  margin-top: 20px;
+}
+@media (max-width: 1023px) {
+  .resource-index {
+    grid-template-columns: 1fr;
+  }
+}

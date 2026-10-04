@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { profile, projects } from "@/data/portfolio";
+import { resourcesForService } from "@/data/resources";
 import {
   serviceBySlug,
   servicePages,
@@ -30,6 +31,7 @@ export default function ServicePage({ data, slug, site }: Props) {
   const related = isHub
     ? servicePages
     : data.relatedServices.map((rs) => serviceBySlug[rs]).filter(Boolean);
+  const pageResources = resourcesForService(slug);
 
   const jsonLd = site
     ? {
@@ -218,6 +220,21 @@ export default function ServicePage({ data, slug, site }: Props) {
             {related.map((r) => (
               <Link key={r.slug} href={`/${r.slug}`}>
                 {schemaName(r.slug)} <ArrowUpRight size={14} />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+      {pageResources.length > 0 && (
+        <section
+          className="service-related container"
+          aria-label="Practical resources"
+        >
+          <span className="journal-kicker">PRACTICAL RESOURCES</span>
+          <div className="service-related-list">
+            {pageResources.map((r) => (
+              <Link key={r.slug} href={`/resources/${r.slug}`}>
+                {r.label} <ArrowUpRight size={14} />
               </Link>
             ))}
           </div>
