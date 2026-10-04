@@ -5,6 +5,10 @@ import BrandMark from "./BrandMark";
 import { profile } from "@/data/portfolio";
 import { track } from "@/lib/analytics";
 const links = ["Work", "Expertise", "Shopify", "Process", "About", "Blogs"];
+const routeLinks = [
+  { label: "Services", href: "/shopify-development" },
+  { label: "Case studies", href: "/case-studies" },
+];
 export default function Navigation({ homeBase = "" }: { homeBase?: string }) {
   const headerRef = useRef<HTMLElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
@@ -80,6 +84,16 @@ export default function Navigation({ homeBase = "" }: { homeBase?: string }) {
               {link}
             </a>
           ))}
+          {routeLinks.map((link) => (
+            <a
+              key={link.label}
+              className="nav-link-new"
+              href={link.href}
+              onClick={() => track("navigation", { section: link.label })}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
         <div className="nav-actions">
           <a className="nav-cta" href={`${homeBase}#contact`}>
@@ -110,13 +124,16 @@ export default function Navigation({ homeBase = "" }: { homeBase?: string }) {
           id="mobile-nav"
           aria-label="Mobile navigation"
         >
-          {[...links, "Contact"].map((link) => (
-            <a
-              key={link}
-              href={`${homeBase}#${link.toLowerCase()}`}
-              onClick={() => setMenu(false)}
-            >
-              {link}
+          {[
+            ...links.map((link) => ({
+              label: link,
+              href: `${homeBase}#${link.toLowerCase()}`,
+            })),
+            ...routeLinks,
+            { label: "Contact", href: `${homeBase}#contact` },
+          ].map((link) => (
+            <a key={link.label} href={link.href} onClick={() => setMenu(false)}>
+              {link.label}
               <ArrowUpRight size={18} />
             </a>
           ))}

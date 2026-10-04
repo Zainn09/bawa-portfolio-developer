@@ -943,6 +943,18 @@ summary:focus-visible {
   font-size: var(--text-small);
   border-radius: 2px;
 }
+.intro-services-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 21px;
+  font-size: var(--text-small);
+  color: var(--ink);
+  transition: color 0.2s;
+}
+.intro-services-link:hover {
+  color: var(--accent);
+}
 /* Accessible dialogs are native, focus-trapped and keyboard dismissible. */
 .modal {
   padding: 0;

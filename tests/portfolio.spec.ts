@@ -12,9 +12,9 @@ for (const width of widths) {
     await page.setViewportSize({ width, height: 1000 });
     await page.goto("/");
     await page.evaluate(() => document.fonts.ready);
-    await expect(page.getByRole("heading", { level: 1 })).toContainText(
-      "Commerce",
-    );
+    const h1 = page.getByRole("heading", { level: 1 });
+    await expect(h1).toHaveCount(1);
+    await expect(h1).toContainText("development,");
     expect(
       await page.evaluate(
         () => document.documentElement.scrollWidth <= innerWidth,

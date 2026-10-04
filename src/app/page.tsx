@@ -1,3 +1,4 @@
+import { ArrowUpRight } from "lucide-react";
 import JournalPreview from "@/components/blog/JournalPreview";
 import MotionEnhancements from "@/components/MotionEnhancements";
 import Navigation from "@/components/Navigation";
@@ -42,6 +43,21 @@ export default function Home() {
                   ...(profile.socials.length
                     ? { sameAs: profile.socials.map((s) => s.url) }
                     : {}),
+                },
+                {
+                  "@type": "ProfessionalService",
+                  "@id": `${siteUrl}/#service`,
+                  name: `${profile.name} — Shopify Development`,
+                  url: `${siteUrl}/shopify-development`,
+                  description:
+                    "Custom Shopify and Shopify Plus theme development, store development, and quality assurance — from the first section to the final test.",
+                  serviceType: [
+                    "Shopify theme development",
+                    "Shopify store development",
+                    "Shopify QA and testing",
+                    "Shopify store maintenance",
+                  ],
+                  areaServed: "Online",
                 },
               ]
             : []),
@@ -92,6 +108,9 @@ export default function Home() {
                 <span key={t}>{t}</span>
               ))}
             </div>
+            <a className="intro-services-link" href="/shopify-development">
+              All Shopify development services <ArrowUpRight size={15} />
+            </a>
           </div>
         </section>
         <TrustBadges />

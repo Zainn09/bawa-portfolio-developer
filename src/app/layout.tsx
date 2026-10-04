@@ -28,13 +28,13 @@ export const metadata: Metadata = {
   ...(siteUrl
     ? { metadataBase: new URL(siteUrl), alternates: { canonical: "/" } }
     : {}),
-  title: `Shopify Developer — Commerce, Crafted | ${profile.name}`,
+  title: `Shopify Developer — Themes, Store QA & Plus | ${profile.name}`,
   description:
-    "Custom Shopify and Shopify Plus storefronts built around your brand. Design, theme development, product data, SEO, CRO, performance, and ongoing store management.",
+    "Shopify & Shopify Plus theme development, store builds, and QA — Liquid, checkout, performance, and accessibility testing, from first section to launch.",
   openGraph: {
     title: "Not just stores. Commerce experiences.",
     description:
-      "A personal showroom for considered Shopify development. From the first idea to the everyday details.",
+      "Custom Shopify and Shopify Plus themes, store development, and quality assurance — from the first section to the final test.",
     type: "website",
     ...(siteUrl
       ? {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Commerce, Crafted — Shopify Developer",
     description:
-      "Design. Development. Data. Discovery. A complete commerce experience.",
+      "Custom Shopify and Shopify Plus themes, store development, and quality assurance.",
     ...(siteUrl ? { images: ["/images/hero-store-placeholder.webp"] } : {}),
   },
   robots: { index: !!siteUrl, follow: !!siteUrl },

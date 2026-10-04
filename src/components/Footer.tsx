@@ -63,6 +63,14 @@ export default function Footer() {
                 </a>
               ),
             )}
+            <a href="/shopify-development">
+              Services
+              <ArrowUpRight size={12} />
+            </a>
+            <a href="/case-studies">
+              Case studies
+              <ArrowUpRight size={12} />
+            </a>
             {process.env.NEXT_PUBLIC_SITE_URL && (
               <>
                 <a

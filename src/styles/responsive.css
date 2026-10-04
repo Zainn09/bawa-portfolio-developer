@@ -133,6 +133,10 @@
     gap: 22px;
     margin-left: 0;
   }
+  /* Route links join the desktop nav only where it has room. */
+  .nav-link-new {
+    display: none;
+  }
   .nav-container {
     height: 79px;
   }

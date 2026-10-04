@@ -20,25 +20,26 @@ export default function Hero() {
       <section className="hero container" id="home">
         <div className="hero-copy">
           <div className="eyebrow">
-            <span className="status-dot" /> INDEPENDENT THINKING. COMPLETE
-            COMMERCE.
+            <span className="status-dot" /> NOT JUST STORES. COMMERCE
+            EXPERIENCES.
           </div>
           <h1>
-            Not just stores.
+            Shopify
             <br />
-            Commerce
+            development,
             <br />
-            <span>experiences.</span>
+            <span>design &amp; QA.</span>
             <span className="heading-star">✳</span>
           </h1>
           <p className="hero-description">
-            I build Shopify stores that look great,
-            <br className="desktop-br" /> work beautifully, and mean business.
+            Custom Shopify and Shopify Plus themes,
+            <br className="desktop-br" /> store development, and the testing
+            that makes a launch dependable.
           </p>
           <p className="hero-support">
-            From the first idea to the everyday details.
+            From the first section to the launch checklist.
             <br />
-            Design, development, SEO, CRO, and everything in between.
+            Themes, store builds, QA, SEO, and the details in between.
           </p>
           <div className="hero-actions">
             <a
@@ -62,7 +63,7 @@ export default function Hero() {
             <i />
             <span>SHOPIFY PLUS</span>
             <i />
-            <span>CUSTOM THEMES</span>
+            <span>THEMES &amp; QA</span>
           </div>
           <div className="hero-authorship">
             <BrandMark size={30} />

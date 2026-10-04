@@ -208,6 +208,15 @@ export default function Work() {
               >
                 Build something like this <ArrowRight size={17} />
               </a>
+              {!selected.concept && (
+                <a
+                  className="project-external-link"
+                  href={`/case-studies/${selected.slug}`}
+                  onClick={() => setSelected(null)}
+                >
+                  Read the case study →
+                </a>
+              )}
               {selected.externalUrl && (
                 <a
                   className="project-external-link"
