@@ -34,7 +34,7 @@ export default function PostList({
   async function importPosts() {
     if (
       !confirm(
-        "Import the 35 supplied articles? Existing slugs will be left untouched.",
+        "Import the 45 journal articles? Existing slugs will be left untouched.",
       )
     )
       return;
@@ -161,7 +161,7 @@ export default function PostList({
             <p>
               {posts.length
                 ? "Try another search or status."
-                : "Create an article, or import the 35 supplied notes to edit your existing journal."}
+                : "Create an article, or import the 45 journal notes to edit your existing journal."}
             </p>
           </div>
         )}

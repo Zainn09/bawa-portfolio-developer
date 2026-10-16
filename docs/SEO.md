@@ -108,6 +108,23 @@ journal entries, and the relevant case studies. Service pages surface the
 resources relevant to them, and the footer links the section. The guidance
 describes real development and QA practice — no invented results.
 
+### Shopify Guides journal category (16 October 2026)
+
+Ten original technical guides were published under a sixth journal category, `Shopify Guides` (project `shopify-guides`), targeting informational queries that the service pages intentionally do not compete with:
+
+- `/blogs/shopify-theme-development-best-practices` — _Shopify theme development_ (renamed from the strategy slug `shopify-theme-development-guide`, which string-collides with the shipped resource `/resources/shopify-theme-development-guide`)
+- `/blogs/shopify-wcag-remediation`
+- `/blogs/custom-shopify-theme-vs-premium`
+- `/blogs/shopify-core-web-vitals`
+- `/blogs/shopify-keyboard-navigation-accessibility`
+- `/blogs/when-to-build-custom-shopify-theme`
+- `/blogs/shopify-theme-speed-optimization`
+- `/blogs/shopify-theme-architecture`
+- `/blogs/shopify-accessibility-testing-workflow` — renamed from the strategy slug `shopify-accessibility-testing`, which matches the shipped service page `/shopify-accessibility-testing` (different path and intent, but kept distinct per the owner's collision rule)
+- `/blogs/shopify-theme-maintenance`
+
+Each guide carries one primary query, its own meta description, an "Original technical guide" scope note and sources note (no capture-date claims — the hero images are original editorial images, not screenshots), and 2–3 explicit cross-links to the most relevant store notes; the `prime-baby-gear-image-performance` and `prime-baby-gear-mobile-navigation` notes in turn link to the performance and accessibility guides. Service links are added by the existing deterministic mapping, so no duplicate same-intent pages were created and no new service pages were added. The journal inventory is now 45 articles (35 baseline + 10 guides); the sitemap and feed publish all of them.
+
 ### Case studies (honest by design)
 
 Case-study content is derived only from the five real, supplied projects and

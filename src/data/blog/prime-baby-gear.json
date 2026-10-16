@@ -4,7 +4,11 @@
     "title": "Two ways into a baby-gear catalogue",
     "project": "prime-baby-gear",
     "category": "Shopify UX",
-    "tags": ["Shopify UX", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "Shopify UX",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "Brand-led and product-led shopping serve different questions. Prime Baby Gear offers a useful starting point for thinking about both.",
     "featuredImage": "desktop-home-hero",
     "intro": "One parent arrives knowing the manufacturer. Another only knows they need a pushchair. A navigation system that assumes both people start with a brand name makes one of them work unnecessarily hard.",
@@ -43,7 +47,11 @@
     "title": "A travel system is not a single item",
     "project": "prime-baby-gear",
     "category": "Product Experience",
-    "tags": ["Product Experience", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "Product Experience",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "A useful travel-system page explains the bundle before asking a customer to compare colours, prices, or accessories.",
     "featuredImage": "desktop-travel-system-detail",
     "intro": "Travel systems are easy to photograph as one coordinated set. That same photograph can make it difficult to tell which parts are actually included. A polished product page has to resolve that ambiguity, not rely on the picture to do it.",
@@ -82,7 +90,11 @@
     "title": "The mobile menu has a job to finish",
     "project": "prime-baby-gear",
     "category": "Responsive Design",
-    "tags": ["Responsive Design", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "Responsive Design",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "Reading Prime Baby Gear’s mobile captures as a sequence: open navigation, choose a direction, and return to the store without losing context.",
     "featuredImage": "desktop-collection-listing",
     "intro": "A mobile menu is not just a smaller set of desktop links. It temporarily replaces the shopper’s view of the store. Its job is to offer a direction, then get out of the way cleanly.",
@@ -114,14 +126,22 @@
     "status": "published",
     "seoTitle": "The mobile menu has a job to finish",
     "seoDescription": "Reading Prime Baby Gear’s mobile captures as a sequence: open navigation, choose a direction, and return to the store without losing context.",
-    "updatedAt": "2026-09-22"
+    "updatedAt": "2026-09-22",
+    "relatedArticles": [
+      "shopify-keyboard-navigation-accessibility",
+      "shopify-accessibility-testing-workflow"
+    ]
   },
   {
     "slug": "prime-baby-gear-product-data",
     "title": "The product record behind the pushchair",
     "project": "prime-baby-gear",
     "category": "Store Management",
-    "tags": ["Store Management", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "Store Management",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "A baby-gear catalogue needs consistent product information long before it needs a more elaborate product template.",
     "featuredImage": "desktop-babymore-brand-range",
     "intro": "The most expensive content mistake is often a small inconsistency repeated across a large catalogue. A different range name, an unclear bundle label, or an outdated image can make two versions of the same product look unrelated.",
@@ -160,7 +180,11 @@
     "title": "Collection SEO starts with the collection",
     "project": "prime-baby-gear",
     "category": "SEO",
-    "tags": ["SEO", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "SEO",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "Product groups and brand ranges should answer different search intentions without repeating the same page under new headings.",
     "featuredImage": "desktop-baby-jogger-range",
     "intro": "A collection page should earn its place in the store before it earns a search-engine title. If it does not help a shopper choose, another paragraph of keywords is unlikely to make it more useful.",
@@ -199,7 +223,11 @@
     "title": "Keep the hero useful, not heavy",
     "project": "prime-baby-gear",
     "category": "Performance",
-    "tags": ["Performance", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "Performance",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "The Prime Baby Gear hero illustrates an image-led first impression. Here is how I would set its loading priorities without inventing a performance score.",
     "featuredImage": "desktop-home-hero",
     "intro": "The first image on a store has two responsibilities: establish the product context and arrive without holding the rest of the page hostage. Neither responsibility is satisfied by simply exporting the largest file available.",
@@ -231,14 +259,22 @@
     "status": "published",
     "seoTitle": "Keep the hero useful, not heavy",
     "seoDescription": "The Prime Baby Gear hero illustrates an image-led first impression. Here is how I would set its loading priorities without inventing a performance score.",
-    "updatedAt": "2026-09-22"
+    "updatedAt": "2026-09-22",
+    "relatedArticles": [
+      "shopify-core-web-vitals",
+      "shopify-theme-speed-optimization"
+    ]
   },
   {
     "slug": "prime-baby-gear-reassurance-content",
     "title": "Reassurance needs an explanation",
     "project": "prime-baby-gear",
     "category": "E-commerce Content",
-    "tags": ["E-commerce Content", "Shopify", "Prime Baby Gear"],
+    "tags": [
+      "E-commerce Content",
+      "Shopify",
+      "Prime Baby Gear"
+    ],
     "excerpt": "Warranty, delivery, and support messages are most useful when customers can find the details behind them.",
     "featuredImage": "desktop-secondary-experience",
     "intro": "A compact reassurance strip can make a storefront feel more approachable. It can also introduce questions: which products are covered, when does a delivery promise apply, and how can the customer actually reach support?",

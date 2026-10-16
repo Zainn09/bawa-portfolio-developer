@@ -757,6 +757,29 @@
   letter-spacing: -0.7px;
   margin-top: 17px;
 }
+.article-code {
+  margin: 26px 0 10px;
+  border: var(--border);
+  background: var(--surface);
+  overflow: hidden;
+}
+.article-code figcaption {
+  font: var(--text-small) var(--mono);
+  color: var(--accent);
+  letter-spacing: 1px;
+  padding: 12px 18px;
+  border-bottom: var(--border);
+}
+.article-code pre {
+  margin: 0;
+  padding: 18px 20px;
+  overflow-x: auto;
+}
+.article-code code {
+  font: 13px/1.6 var(--mono);
+  color: var(--ink);
+  white-space: pre;
+}
 .article-mobile-section > div:first-child > p {
   font-size: 18px;
   line-height: 1.6;

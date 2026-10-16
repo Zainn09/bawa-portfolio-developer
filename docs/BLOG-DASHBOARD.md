@@ -41,11 +41,12 @@ The recommended backend is **Supabase PostgreSQL + Auth + Storage**. It provides
    ```
 
    Redeploy/rebuild after changing environment settings; the `NEXT_PUBLIC_` values are build-time client configuration too. The publishable key is intentionally public, while RLS authorizes every data operation. **Never put a service-role key into any `NEXT_PUBLIC_` variable.** `.env.local` is ignored by Git.
-6. Open `/admin`, sign in, and choose **Import supplied articles**. It imports all 35 existing notes with their original slugs, fixed editorial dates, sources, and approved imagery. Repeating it skips existing slugs and never overwrites edits. Import before creating a new article with one of the supplied slugs.
+
+6. Open `/admin`, sign in, and choose **Import supplied articles**. It imports all 45 journal notes — the 35 supplied per-store notes plus the 10 original Shopify guides — with their original slugs, fixed editorial dates, sources, and approved imagery. Repeating it skips existing slugs and never overwrites edits. Import before creating a new article with one of the supplied slugs.
 7. Review the records and test a draft. While setup mode is active, dashboard saves change the database only; the public site continues to show the original files. Public “View article” links are not a database preview in this mode—use the editor's **Preview** button.
 8. Set `BLOG_CONTENT_SOURCE=database`, redeploy, and perform the live checks below. The journal index, article routes, homepage previews, SEO metadata, related articles, and sitemap now read published database content. Newly published URLs need no rebuild. Drafts and archived records are absent from all public queries, including for a signed-in administrator.
 
-**Important:** once database publishing is enabled, empty results or database failures never fall back to the old files. That would accidentally republish withdrawn content. A database outage shows an honest unavailable state. Switching back to `files` is an explicit rollback that exposes the original 35 articles again, regardless of subsequent draft/archive decisions; do not use it as an automatic fallback.
+**Important:** once database publishing is enabled, empty results or database failures never fall back to the old files. That would accidentally republish withdrawn content. A database outage shows an honest unavailable state. Switching back to `files` is an explicit rollback that exposes the original 45 journal articles again, regardless of subsequent draft/archive decisions; do not use it as an automatic fallback.
 
 ## Writing workflow
 
@@ -82,7 +83,7 @@ Removing an image from an article does not delete its Storage object. Failed/aba
 2. Using Supabase's publishable/anonymous client directly, confirm drafts/archives are unreadable, anonymous writes fail, a normal user cannot insert/update articles or add `blog_admins` membership, and only admins can upload to their UUID folder. These checks verify **real RLS**, not just the Next UI.
 3. Save a draft containing formatted paragraphs and a real uploaded inline image. Reload and verify database persistence, alt text, caption, image order, and dimensions. Verify the draft URL is 404.
 4. Publish, confirm the article/card/metadata/sitemap in a logged-out browser, then archive and confirm it disappears everywhere. Test a published URL rename is rejected and concurrent stale saves produce a conflict.
-5. Verify imported count 35 and seven records per supplied store, dates, sources, desktop/mobile captures, and the honest Vintage planning notes. Import again and confirm zero overwrites.
+5. Verify imported count 45 — seven records per supplied store plus ten Shopify guides — and check dates, sources, desktop/mobile captures, the honest Vintage planning notes, and the guides' original editorial imagery (no capture provenance). Import again and confirm zero overwrites.
 6. Check logout, session expiry/refresh, owner-managed password reset, image failures, storage quotas, and deployment limits. Set up database backups and a separate Storage backup process; database backups alone do not back up object files.
 7. Contact form delivery remains a separate webhook integration. Supabase setup does **not** enable contact storage or email delivery. See `CONTACT-DELIVERY.md`.
 

@@ -174,7 +174,7 @@ Retain client permission for portfolio usage and replace these with approved pro
 
 ## Commerce Journal / Blogs
 
-The blog-only expansion adds `/blogs`, 35 statically rendered `/blogs/[slug]` articles (seven per supplied store), and a homepage journal preview. It includes store/topic filtering, search, reading times, sources, related notes, genuine supplied screenshots, and responsive mobile-image pairs. Vintage Art Garage has clearly labeled placeholders and planning notes because its supplied archive has no accepted storefront captures. Existing portfolio sections and interactions are unchanged apart from the necessary Blogs navigation entry points.
+The blog-only expansion adds `/blogs`, 45 statically rendered `/blogs/[slug]` articles (seven per supplied store, plus ten original Shopify guides under a sixth `Shopify Guides` journal category), and a homepage journal preview. It includes store/topic filtering, search, reading times, sources, related notes, genuine supplied screenshots, and responsive mobile-image pairs. Vintage Art Garage has clearly labeled placeholders and planning notes because its supplied archive has no accepted storefront captures. Existing portfolio sections and interactions are unchanged apart from the necessary Blogs navigation entry points.
 
 Edit the articles in `src/data/blog/*.json`. See [the editing guide](docs/BLOG-EDITING.md) for content fields, image replacement, publication status, SEO, and validation, and [asset provenance](docs/BLOG-ASSETS.md) for the supplied GitHub archive details.
 
@@ -222,6 +222,6 @@ Homepage storefront previews no longer display mock domain/address text. The foo
 
 `/admin` provides a Shopify-style article workspace with a Tiptap rich-text editor, inline image insertion, drafts/publishing/archiving, SEO fields, project/category/tags, source notes, preview, and guarded administration endpoints. **Supabase PostgreSQL + Auth + Storage** is the recommended backend.
 
-Follow **[docs/BLOG-DASHBOARD.md](docs/BLOG-DASHBOARD.md)** for project configuration, SQL migration, granting your account access, the safe 35-article import, and live verification. No Supabase credentials or administrator account are built in. The public site keeps its supplied articles until `BLOG_CONTENT_SOURCE=database` is explicitly configured and redeployed. Database setup does not change contact delivery.
+Follow **[docs/BLOG-DASHBOARD.md](docs/BLOG-DASHBOARD.md)** for project configuration, SQL migration, granting your account access, the safe 45-article import, and live verification. No Supabase credentials or administrator account are built in. The public site keeps its supplied articles until `BLOG_CONTENT_SOURCE=database` is explicitly configured and redeployed. Database setup does not change contact delivery.
 
 The requested `import { Analytics } from "@vercel/analytics/next"` is already used once in `SiteMetrics`, alongside Speed Insights. They mount on Vercel deployments, strip query/fragment data, and exclude administration pages.

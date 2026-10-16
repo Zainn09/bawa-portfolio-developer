@@ -4,14 +4,16 @@ import { articles, blogProjects, dateLabel } from "../src/data/blog";
 import { readFileSync } from "node:fs";
 import sharp from "sharp";
 
-test("editorial inventory is exactly seven distinct articles per supplied store", async () => {
-  expect(articles).toHaveLength(35);
-  expect(new Set(articles.map((a) => a.slug)).size).toBe(35);
-  expect(new Set(articles.map((a) => a.title)).size).toBe(35);
+test("editorial inventory: seven per supplied store plus ten original Shopify guides", async () => {
+  expect(articles).toHaveLength(45);
+  expect(new Set(articles.map((a) => a.slug)).size).toBe(45);
+  expect(new Set(articles.map((a) => a.title)).size).toBe(45);
   for (const p of blogProjects)
-    expect(articles.filter((a) => a.project === p.slug)).toHaveLength(7);
+    expect(articles.filter((a) => a.project === p.slug)).toHaveLength(
+      p.slug === "shopify-guides" ? 10 : 7,
+    );
   for (const a of articles) {
-    expect(a.sections).toHaveLength(3);
+    expect(a.sections).toHaveLength(a.project === "shopify-guides" ? 6 : 3);
     expect(
       a.sections
         .flatMap((s) => s.paragraphs)
@@ -31,7 +33,7 @@ test("editorial inventory is exactly seven distinct articles per supplied store"
 
 test("all imported screenshots and responsive variants decode with truthful dimensions", async () => {
   const assets = JSON.parse(readFileSync("src/data/blog/assets.json", "utf8"));
-  for (const group of Object.values(assets) as any[])
+  for (const [project, group] of Object.entries(assets) as any[])
     for (const m of Object.values(group) as any[]) {
       const image = await sharp(`public${m.src}`).metadata();
       expect(image.width).toBe(m.width);
@@ -44,7 +46,14 @@ test("all imported screenshots and responsive variants decode with truthful dime
         expect((await sharp(`public${m.avifSrc}`).metadata()).format).toBe(
           "heif",
         );
-      expect(m.sourcePath).toContain("Sprint-11");
+      if (project === "shopify-guides") {
+        // Original editorial images, not imported captures: no Sprint-11
+        // provenance and no capture date are asserted or recorded.
+        expect(m.sourcePath).toBeUndefined();
+        expect(m.capturedAt).toBeUndefined();
+      } else {
+        expect(m.sourcePath).toContain("Sprint-11");
+      }
     }
 });
 
@@ -63,7 +72,7 @@ test("sitemap and RSS feed publish the production domain", async ({ page }) => {
   await expect(page.locator('footer a[href="/feed.xml"]')).toHaveCount(1);
 });
 
-test("all 35 article routes render full text, dates, sources and production metadata", async ({
+test("all 45 article routes render full text, dates, sources and production metadata", async ({
   request,
 }) => {
   for (const a of articles) {
@@ -93,7 +102,7 @@ test("journal filters, search, query links, empty states and load more work", as
 }) => {
   await page.goto("/blogs");
   await expect(page.locator(".journal-results-line")).toContainText(
-    "35 articles",
+    "45 articles",
   );
   await expect(page.locator(".journal-card")).toHaveCount(8);
   for (const p of blogProjects) {
@@ -101,9 +110,23 @@ test("journal filters, search, query links, empty states and load more work", as
       .locator(".journal-store-filters")
       .getByRole("button", { name: new RegExp(p.name) })
       .click();
-    await expect(page.locator(".journal-card")).toHaveCount(7);
+    // The journal pages at eight cards per click; a ten-article filter
+    // shows eight until "More from the journal" is used.
+    await expect(page.locator(".journal-card")).toHaveCount(
+      p.slug === "shopify-guides" ? 8 : 7,
+    );
     await expect(page.locator(".journal-results-line")).toContainText(p.name);
   }
+  await page
+    .locator(".journal-store-filters")
+    .getByRole("button", { name: "Shopify Guides" })
+    .click();
+  await expect(page.locator(".journal-card")).toHaveCount(8);
+  await page.getByRole("button", { name: "More from the journal" }).click();
+  await expect(page.locator(".journal-card")).toHaveCount(10);
+  await expect(page.locator(".journal-results-line")).toContainText(
+    "10 articles",
+  );
   await page.getByRole("button", { name: "Reset filters" }).click();
   await page.getByRole("searchbox", { name: "Search articles" }).fill("silk");
   await expect(page.locator(".journal-card").first()).toBeVisible();
@@ -123,7 +146,7 @@ test("journal filters, search, query links, empty states and load more work", as
     await page.getByRole("button", { name: "More from the journal" }).count()
   )
     await page.getByRole("button", { name: "More from the journal" }).click();
-  await expect(page.locator(".journal-card")).toHaveCount(35);
+  await expect(page.locator(".journal-card")).toHaveCount(45);
   await page.goto("/blogs?project=ollie-burwell&category=SEO");
   await expect(page.locator(".journal-card")).toHaveCount(1);
   await page.reload();

@@ -466,5 +466,77 @@
       "sourcePath": "QA-PORTFOLIO-ASSETS/Sprint-11/99-paw-by-four/images/99_paw_by_four_mobile_project_specific_section_001.jpg",
       "capturedAt": "2026-09-20"
     }
+  },
+  "shopify-guides": {
+    "shopify-theme-development-best-practices-hero": {
+      "src": "/images/blog/shopify-guides/shopify-theme-development-best-practices-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A developer seated at a wooden desk, both hands on a keyboard, reviewing work in natural window light.",
+      "caption": "Original editorial image for the Shopify theme development guide."
+    },
+    "shopify-wcag-remediation-hero": {
+      "src": "/images/blog/shopify-guides/shopify-wcag-remediation-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A laptop showing an apparel storefront beside a notebook with a handwritten accessibility audit checklist, a mug, and a pen on a wooden desk.",
+      "caption": "Original editorial image for the WCAG remediation checklist."
+    },
+    "custom-shopify-theme-vs-premium-hero": {
+      "src": "/images/blog/shopify-guides/custom-shopify-theme-vs-premium-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A smartphone showing a furniture storefront next to a leather notebook and pen on a wooden desk by a window.",
+      "caption": "Original editorial image for the custom-versus-premium theme decision guide."
+    },
+    "shopify-core-web-vitals-hero": {
+      "src": "/images/blog/shopify-guides/shopify-core-web-vitals-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A developer workstation with a laptop, mechanical keyboard, coffee mug, plant, and a notebook with handwritten notes.",
+      "caption": "Original editorial image for the Core Web Vitals optimization guide."
+    },
+    "shopify-keyboard-navigation-accessibility-hero": {
+      "src": "/images/blog/shopify-guides/shopify-keyboard-navigation-accessibility-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A close-up of a hand typing on a compact mechanical keyboard beside a laptop and a ceramic cup on a wooden desk.",
+      "caption": "Original editorial image for the keyboard navigation and screen reader fixes guide."
+    },
+    "when-to-build-custom-shopify-theme-hero": {
+      "src": "/images/blog/shopify-guides/when-to-build-custom-shopify-theme-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A design session with fabric swatches, a color palette sheet, and a tablet showing a furniture product page on a wooden table.",
+      "caption": "Original editorial image for the custom theme decision guide."
+    },
+    "shopify-theme-speed-optimization-hero": {
+      "src": "/images/blog/shopify-guides/shopify-theme-speed-optimization-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A desk with a monitor arm, cables, a dark coffee mug, a mouse, and a keyboard, with a plant by the window.",
+      "caption": "Original editorial image for the theme speed optimization guide."
+    },
+    "shopify-theme-architecture-hero": {
+      "src": "/images/blog/shopify-guides/shopify-theme-architecture-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A hand sketching a wireframe in a spiral notebook beside a laptop raised on a wooden stand, with a mechanical keyboard and plant nearby.",
+      "caption": "Original editorial image for the theme architecture guide."
+    },
+    "shopify-accessibility-testing-workflow-hero": {
+      "src": "/images/blog/shopify-guides/shopify-accessibility-testing-workflow-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A laptop showing a product grid beside a notebook reading WCAG 2.1 AA with aria-label checks, and a hand typing, with a potted plant nearby.",
+      "caption": "Original editorial image for the accessibility testing workflow guide."
+    },
+    "shopify-theme-maintenance-hero": {
+      "src": "/images/blog/shopify-guides/shopify-theme-maintenance-hero.jpg",
+      "width": 1536,
+      "height": 592,
+      "alt": "A laptop showing a dark code editor beside a spiral notebook with a handwritten release checklist, a coffee mug, and a hand on the trackpad.",
+      "caption": "Original editorial image for the theme maintenance guide."
+    }
   }
 }

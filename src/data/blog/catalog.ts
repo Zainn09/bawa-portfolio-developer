@@ -1,4 +1,20 @@
-export const blogProjects = [
+import { siteUrl } from "@/lib/site";
+
+export interface BlogProject {
+  slug: string;
+  name: string;
+  url: string;
+  focus: string;
+  sourceLabel?: string;
+}
+export const blogProjects: BlogProject[] = [
+  {
+    slug: "shopify-guides",
+    name: "Shopify Guides",
+    url: siteUrl,
+    focus: "Theme & storefront practice",
+    sourceLabel: "Commerce Journal — Ahmad Abdullah",
+  },
   {
     slug: "prime-baby-gear",
     name: "Prime Baby Gear",

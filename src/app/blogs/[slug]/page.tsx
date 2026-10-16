@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, ArrowRight } from "lucide-react";
-import { blogProjects, dateLabel } from "@/data/blog";
+import { blogProjects, dateLabel, relatedArticles } from "@/data/blog";
 import { profile } from "@/data/portfolio";
 import BlogImage from "@/components/blog/BlogImage";
 import ArticleTools from "@/components/blog/ArticleTools";
 import { siteUrl as site } from "@/lib/site";
 
-import { getPublishedArticles, publishedArticle } from "@/lib/cms/public";
+import { publishedArticle } from "@/lib/cms/public";
 import { relatedServiceSlugs, serviceLinkLabel } from "@/lib/serviceLinks";
 import RichContent, { richHeadings } from "@/components/blog/RichContent";
 export const dynamic = "force-dynamic";
@@ -68,13 +68,12 @@ export default async function ArticlePage({ params }: Props) {
     slug: "",
     url: "",
   };
-  const related = (await getPublishedArticles())
-    .filter((p) => p.slug !== a.slug && p.project === a.project)
-    .slice(0, 3);
+  const related = relatedArticles(a);
   const serviceSlugs = relatedServiceSlugs(
     [a.title, a.category, a.tags.join(" "), a.excerpt].join(" "),
   );
   const vintage = a.project === "vintage-art-garage";
+  const guide = a.project === "shopify-guides";
   const jsonLd = site
     ? {
         "@context": "https://schema.org",
@@ -138,9 +137,11 @@ export default async function ArticlePage({ params }: Props) {
             <span>
               {vintage
                 ? "PLANNING NOTE"
-                : a.project
-                  ? "STOREFRONT NOTE"
-                  : "EDITORIAL NOTE"}
+                : guide
+                  ? "TECHNICAL GUIDE"
+                  : a.project
+                    ? "STOREFRONT NOTE"
+                    : "EDITORIAL NOTE"}
             </span>
           </div>
           <h1>{a.title}</h1>
@@ -193,7 +194,7 @@ export default async function ArticlePage({ params }: Props) {
               className="article-store-index"
               href={`/blogs?project=${a.project}`}
             >
-              More on {project.name}
+              {guide ? "More Shopify guides" : `More on ${project.name}`}
               <ArrowUpRight size={16} />
             </Link>
           </aside>
@@ -206,12 +207,16 @@ export default async function ArticlePage({ params }: Props) {
                   <span>
                     {vintage
                       ? "A CLEAR SOURCE BOUNDARY"
-                      : "OBSERVATION + PRACTICE"}
+                      : guide
+                        ? "ORIGINAL TECHNICAL GUIDE"
+                        : "OBSERVATION + PRACTICE"}
                   </span>
                   <p>
                     {vintage
                       ? "The supplied repository contains no accepted storefront captures for Vintage Art Garage. This is a planning note based on the documented business category and closure, not an account of unseen pages or completed work."
-                      : "Based on supplied storefront captures and public content. Recommendations are distinguished from observations; implementation ownership and commercial results are not inferred."}
+                      : guide
+                        ? "Original practice writing by Ahmad Abdullah. Code examples are illustrative, recommendations are separated from verified observations, and no client measurements or commercial results are claimed."
+                        : "Based on supplied storefront captures and public content. Recommendations are distinguished from observations; implementation ownership and commercial results are not inferred."}
                   </p>
                 </div>
                 <p className="article-intro">{a.intro}</p>
@@ -221,6 +226,16 @@ export default async function ArticlePage({ params }: Props) {
                     {s.paragraphs.map((p) => (
                       <p key={p}>{p}</p>
                     ))}
+                    {s.code && (
+                      <figure className="article-code">
+                        {s.codeCaption && (
+                          <figcaption>{s.codeCaption}</figcaption>
+                        )}
+                        <pre>
+                          <code>{s.code}</code>
+                        </pre>
+                      </figure>
+                    )}
                     {a.inlineImages[i] && (
                       <BlogImage
                         media={a.inlineImages[i]}
@@ -294,6 +309,13 @@ export default async function ArticlePage({ params }: Props) {
               </ul>
               {a.richContent ? (
                 a.sourceNotes && <p>{a.sourceNotes}</p>
+              ) : guide ? (
+                <p>
+                  Original technical guide written for this journal. Code
+                  examples are illustrative; recommendations are separated from
+                  verified observations, and no client measurements, rankings,
+                  or conversion results are claimed.
+                </p>
               ) : (
                 <p>
                   Source captures are dated 20 September 2026. A screenshot
@@ -328,7 +350,11 @@ export default async function ArticlePage({ params }: Props) {
       >
         <div>
           <span className="journal-kicker">KEEP EXPLORING</span>
-          <h2 id="related-title">Another angle on {project.name}.</h2>
+          <h2 id="related-title">
+            {guide
+              ? "More from the Shopify guides."
+              : `Another angle on ${project.name}.`}
+          </h2>
           <Link href={`/blogs?project=${a.project}`}>
             More articles <ArrowUpRight size={16} />
           </Link>

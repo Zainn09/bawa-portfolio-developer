@@ -6,6 +6,7 @@ import ollie from "./ollie-burwell.json";
 import noko from "./nokoluxe.json";
 import vintage from "./vintage-art-garage.json";
 import paw from "./paw-by-four.json";
+import guides from "./guides.json";
 import assetData from "./assets.json";
 
 export interface BlogMedia {
@@ -37,7 +38,13 @@ export interface ArticleInput {
   excerpt: string;
   intro: string;
   featuredImage: string;
-  sections: { heading: string; paragraphs: string[] }[];
+  sections: {
+    heading: string;
+    paragraphs: string[];
+    code?: string;
+    codeCaption?: string;
+  }[];
+  relatedArticles?: string[];
   takeaway: string;
   mobileGallery: boolean;
   publishedAt: string;
@@ -88,7 +95,14 @@ export function getBlogMedia(
     }
   );
 }
-const input: ArticleInput[] = [...prime, ...ollie, ...noko, ...vintage, ...paw];
+const input: ArticleInput[] = [
+  ...prime,
+  ...ollie,
+  ...noko,
+  ...vintage,
+  ...paw,
+  ...guides,
+];
 export const articles: Article[] = input
   .filter((a) => a.status === "published")
   .map((a) => {
@@ -126,7 +140,10 @@ export const articles: Article[] = input
         : [],
       readingMinutes: Math.max(1, Math.ceil(words / 200)),
       sources: [
-        { label: project.name + " — public website", url: project.url },
+        {
+          label: project.sourceLabel || project.name + " — public website",
+          url: project.url,
+        },
       ],
     };
   });
@@ -158,7 +175,14 @@ export function articleBySlug(slug: string) {
   return articles.find((article) => article.slug === slug);
 }
 export function relatedArticles(article: Article) {
-  return articles
-    .filter((a) => a.project === article.project && a.slug !== article.slug)
-    .slice(0, 3);
+  const explicit = (article.relatedArticles || [])
+    .map((slug) => articles.find((a) => a.slug === slug))
+    .filter((a): a is Article => !!a && a.slug !== article.slug);
+  const sameProject = articles.filter(
+    (a) =>
+      a.project === article.project &&
+      a.slug !== article.slug &&
+      !explicit.some((e) => e.slug === a.slug),
+  );
+  return [...explicit, ...sameProject].slice(0, 3);
 }

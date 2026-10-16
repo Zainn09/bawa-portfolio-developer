@@ -27,12 +27,12 @@ Each record includes `title`, `slug`, `project`, `category`, `tags`, `excerpt`, 
 - `sections` is an ordered list of headings with paragraph arrays. Plain text is escaped by React; arbitrary HTML is not evaluated.
 - Use `published` to expose an article; use `draft` to remove it from the archive, static route list, related articles, and sitemap. Unknown unpublished slugs return 404.
 - Keep slugs stable after publishing, or add an explicit redirect when renaming one.
-- Dates use `YYYY-MM-DD`. At the owner’s request, the 35 articles have distinct, randomly assigned editorial publication dates between July 22 and September 22, 2026. These are saved in the JSON, not regenerated during rendering or builds, and are not an independently verified publication history. `updatedAt` is September 22, 2026, so the current edition and September 20 screenshots remain distinct from those earlier editorial dates.
+- Dates use `YYYY-MM-DD`. At the owner’s request, the 35 supplied articles have distinct, randomly assigned editorial publication dates between July 22 and September 22, 2026. The ten original Shopify guides carry their real publication date, 2026-10-16 (no backdating), and their original editorial images carry no capture provenance. These are saved in the JSON, not regenerated during rendering or builds, and are not an independently verified publication history. `updatedAt` is September 22, 2026, so the current edition and September 20 screenshots remain distinct from those earlier editorial dates.
 - Set optional `updatedAt` after a substantive editorial update. It changes the displayed update date and metadata.
 - Reading time is derived from the article’s text, not manually invented.
 - Categories and search are derived from published records. Changing a category updates the archive filter automatically.
 
-The initial requirement is exactly 35 articles, seven per supplied store. Inventory tests enforce that delivery baseline. If you intentionally change the publication count later, update those expectations as part of the editorial change.
+The initial requirement was exactly 35 articles, seven per supplied store, and the journal now carries 45: that 35-article baseline plus ten original Shopify guides under the `shopify-guides` project (published 2026-10-16). Inventory tests encode the current 45-article state (seven per supplied store, six sections and a code block where used for guides). If you intentionally change the publication count later, update those expectations as part of the editorial change.
 
 ## Image replacement
 

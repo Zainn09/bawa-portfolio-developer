@@ -1,17 +1,30 @@
 import { test, expect } from "@playwright/test";
 import { articles } from "../src/data/blog";
 
-test("article publication dates are fixed, varied, and span the requested two-month window", () => {
-  const dates = articles.map((article) => article.publishedAt).sort();
-  expect(dates).toHaveLength(35);
-  expect(new Set(dates).size).toBe(35);
-  expect(dates[0]).toBe("2026-07-22");
-  expect(dates.at(-1)).toBe("2026-09-22");
-  for (const article of articles) {
+test("publication dates are fixed: the 22 Jul–22 Sep 2026 baseline window plus same-day original guides", () => {
+  const baseline = articles.filter((a) => a.project !== "shopify-guides");
+  const guides = articles.filter((a) => a.project === "shopify-guides");
+  expect(articles).toHaveLength(45);
+  expect(baseline).toHaveLength(35);
+  expect(guides).toHaveLength(10);
+  const baseDates = baseline.map((a) => a.publishedAt).sort();
+  expect(baseDates).toHaveLength(35);
+  expect(new Set(baseDates).size).toBe(35);
+  expect(baseDates[0]).toBe("2026-07-22");
+  expect(baseDates.at(-1)).toBe("2026-09-22");
+  for (const article of baseline) {
     expect(article.updatedAt).toBe("2026-09-22");
     expect(article.updatedAt! >= article.publishedAt).toBe(true);
     if (article.featuredImage.src)
       expect(article.featuredImage.capturedAt).toBe("2026-09-20");
+  }
+  for (const guide of guides) {
+    // Original guides published on their real date; no backdating and no
+    // fabricated capture provenance on the original editorial images.
+    expect(guide.publishedAt).toBe("2026-10-16");
+    expect(guide.updatedAt).toBe("2026-10-16");
+    expect(guide.featuredImage.src).toContain("/blog/shopify-guides/");
+    expect(guide.featuredImage.capturedAt).toBeUndefined();
   }
 });
 

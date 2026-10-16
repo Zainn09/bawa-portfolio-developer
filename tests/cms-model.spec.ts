@@ -12,8 +12,8 @@ import {
   type PostRow,
 } from "../src/lib/cms/model";
 
-test("all 35 baseline articles import with valid rich content, dates, sources, and genuine media", () => {
-  expect(articles).toHaveLength(35);
+test("all 45 journal articles (35 baseline + 10 original guides) import with valid rich content, dates, sources, and genuine media", () => {
+  expect(articles).toHaveLength(45);
   for (const article of articles) {
     const input = importArticle(article);
     const parsed = postSchema.safeParse(input);

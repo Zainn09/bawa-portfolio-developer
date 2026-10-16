@@ -24,7 +24,10 @@ export async function GET() {
   const items = articles
     .map((a) => {
       const pubDate = new Date(`${a.publishedAt}T12:00:00Z`).toUTCString();
-      const categories = [a.project, ...a.tags.slice(0, 3)]
+      const categories = [
+        a.project === "shopify-guides" ? "Shopify Guides" : a.project,
+        ...a.tags.slice(0, 3),
+      ]
         .map((c) => `      <category>${esc(c)}</category>`)
         .join("\n");
       return `    <item>

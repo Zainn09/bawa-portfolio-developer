@@ -1,0 +1,628 @@
+[
+  {
+    "slug": "shopify-theme-development-best-practices",
+    "title": "Shopify Theme Development: Architecture, Liquid and Best Practices",
+    "project": "shopify-guides",
+    "category": "Theme Development",
+    "tags": ["Theme Development", "Liquid", "Shopify"],
+    "excerpt": "A working mental model for Shopify themes: where Liquid belongs, where it doesn't, and the habits that keep a theme maintainable for its second and third year.",
+    "featuredImage": "shopify-theme-development-best-practices-hero",
+    "intro": "Most theme problems are not Liquid problems. They are architecture problems that become Liquid problems: logic that leaked into a section, a snippet that secretly belongs to one store, a settings schema no merchant can read. This guide builds the working model first, then the habits that keep a theme maintainable after the launch excitement has faded.",
+    "sections": [
+      {
+        "heading": "The layers of a Shopify theme",
+        "paragraphs": [
+          "A Shopify theme is a stack of layers with different owners. Templates decide which sections a page uses and in what order. Sections are self-contained blocks with their own settings. Snippets hold shared markup or formatting. Assets are the CSS, JavaScript, and images. Configuration files define the theme's options and locales.",
+          "The owner matters more than the file. Templates are edited by merchants and developers alike. Sections are the unit merchants expect to customize. Assets are where page weight lives. When you can say which layer owns a decision, most architectural arguments end before they start."
+        ]
+      },
+      {
+        "heading": "Where Liquid belongs",
+        "paragraphs": [
+          "Liquid is a presentation language. It shapes data for display: loops, conditionals, filters, localized strings. It is not where business logic belongs. Pricing rules, inventory logic, and data transformations belong in your products, apps, or backend — not scattered across five sections that each re-derive the same rule.",
+          "A useful test: if a Liquid change could change what a customer is charged or what stock is reported, it is in the wrong layer. Presentational logic — choosing which field to show, formatting a date, toggling a layout — is where Liquid should work."
+        ],
+        "code": "{% comment %}\n  product-card: renders one product tile.\n  Settings stay merchant-controlled; logic stays presentational.\n{% endcomment %}\n<div class=\"product-card\">\n  <a class=\"product-card__link\" href=\"{{ product.url }}\">\n    <img\n      src=\"{{ product.featured_image | image_url: width: 800 }}\"\n      alt=\"{{ product.featured_image.alt | escape }}\"\n      width=\"800\"\n      loading=\"lazy\"\n    >\n  </a>\n  <h3 class=\"product-card__title\">{{ product.title }}</h3>\n  <p class=\"product-card__price\">{{ product.price | money }}</p>\n</div>",
+        "codeCaption": "Illustrative example — a presentational product card section."
+      },
+      {
+        "heading": "Sections as the unit of reuse",
+        "paragraphs": [
+          "A section should be portable: copy it into another store's theme and it should work with only settings changes, not code edits. If a section needs a special snippet, a hardcoded collection handle, or a specific app installed, it is not portable — it is a page that happens to be shaped like a section.",
+          "Portability pays out at two moments. When a merchant asks to move a block to a different template, you rearrange sections instead of rewriting markup. When a second store needs the same pattern, you transfer a section instead of re-deriving it."
+        ]
+      },
+      {
+        "heading": "Structure that survives a review",
+        "paragraphs": [
+          "Reviewable themes share a few boring habits. Names say what a file does: a section named after the block it renders, a snippet named after the markup it shares. Files stay under a size where a reviewer can hold them in their head. And there is no hidden coupling — if two sections depend on each other, the dependency is documented or it gets removed.",
+          "The structure diagram you would draw for a theme is simple: templates at the top, sections in the middle, snippets and assets at the bottom, with arrows pointing only downward. When you can draw it and it is true, the theme is maintainable."
+        ]
+      },
+      {
+        "heading": "Assets and the page weight budget",
+        "paragraphs": [
+          "Every theme ships a CSS and JavaScript budget. Critical styles for above-the-fold content should load with the page; the rest can be deferred. JavaScript should be split so that a product page does not pay for cart-only code.",
+          "The budget is enforced at review, not at launch: new assets are added with a reason, and any change to a shared stylesheet is checked against the pages that render it. Page weight is a design constraint, and themes that ignore it eventually show it in every performance test."
+        ]
+      },
+      {
+        "heading": "A working review checklist",
+        "paragraphs": [
+          "For any non-trivial theme change, the checklist is short. Is the change in the right layer — template, section, snippet, or asset? Is every new setting labeled and described well enough that a merchant can set it without asking? Did you test the section on at least two templates, at desktop and mobile widths? Does the change alter page weight, and if so, by how much?",
+          "Run the checklist on the small changes too. The failures that accumulate in a theme are almost never dramatic; they are forty small decisions that each skipped one line of the list."
+        ]
+      }
+    ],
+    "takeaway": "Keep Liquid presentational, keep settings merchant-controlled, and keep every section portable. A theme that does those three things survives its first major feature request; a theme that doesn't gets rewritten.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Shopify Theme Development: Architecture, Liquid and Best Practices",
+    "seoDescription": "A practical guide to Shopify theme development: Liquid boundaries, reusable sections, and a code-review checklist that keeps themes maintainable.",
+    "relatedArticles": ["prime-baby-gear-navigation", "shopify-theme-architecture", "prime-baby-gear-image-performance"]
+  },
+  {
+    "slug": "shopify-wcag-remediation",
+    "title": "Shopify WCAG Remediation: A Practical Accessibility Checklist",
+    "project": "shopify-guides",
+    "category": "Accessibility",
+    "tags": ["Accessibility", "WCAG", "Shopify"],
+    "excerpt": "A field checklist for WCAG work on a Shopify store: how to run the pass, what to log in the issue register, and the honest line between improved and conformed.",
+    "featuredImage": "shopify-wcag-remediation-hero",
+    "intro": "Accessibility work on a live store fails in two predictable ways. It runs without a record, so nothing is verifiable later. Or it ends with a conformance claim that the evidence does not support. This checklist is the middle path: a structured pass, a register you can hand to a reviewer, and language about conformance that stays honest.",
+    "sections": [
+      {
+        "heading": "What a remediation pass actually is",
+        "paragraphs": [
+          "Remediation sits between an audit and verification. An audit finds issues. Remediation fixes the ones you can fix in the theme. Verification retests and records the result. Skipping any of the three steps produces the two common failure modes: fixes with no record, or a record with no fixes.",
+          "The single most important distinction to keep straight: an improved store is not a conformed store. Improving focus order and adding missing alt text is real, reportable progress. Claiming WCAG conformance is a different claim, and it requires a documented verification pass against the specific level you are claiming."
+        ]
+      },
+      {
+        "heading": "The working register",
+        "paragraphs": [
+          "Every issue gets one row in a register with five columns: severity, component, reproduction steps, fix, and retest status. Severity is the practical impact, not a guess — a keyboard user locked out of the menu is a different severity from a decorative image missing alt text. Reproduction steps must be specific enough that someone who was not there can reproduce the issue: the page, the input method, and what happened.",
+          "The register is a working document, not a report. Rows move from open to fixed to retested, and the retest column records what was checked, not just that something was checked. When a merchant asks what was done, the register answers it."
+        ]
+      },
+      {
+        "heading": "The recurring failure families",
+        "paragraphs": [
+          "Most storefront issues cluster into a few families, and the pass should check each family deliberately rather than wandering. Focus: does the tab order follow the visual order, and does focus land somewhere sensible when a menu, drawer, or dialog opens? Images: is every meaningful image described, and every decorative one ignored by assistive technology? Contrast: do text and control colors hold up at small sizes, not just in the design file?",
+          "Forms are their own family: labels that are real labels, errors that identify the field and the problem, and required fields that say so before submission. Keyboard-only paths deserve a dedicated walk of the menu, search, product options, and cart — because the defects there are the ones that lock people out entirely."
+        ]
+      },
+      {
+        "heading": "Theme-level versus app-level",
+        "paragraphs": [
+          "Some issues are owned by the theme, and some are owned by an app that injects its own markup. A missing label on a product option the theme renders is a theme fix. A missing label inside a third-party review widget is a coordination item: you report it, the app vendor owns the fix, and the register records that state honestly.",
+          "This boundary matters for honesty. A remediation summary that lists app-owned issues as fixed is wrong, and the merchant will find out at the next app update. The register column for fix should say what was done, by whom, or that it is pending with a named owner."
+        ]
+      },
+      {
+        "heading": "Verifying the fix",
+        "paragraphs": [
+          "Verification is a second pass, not a second look. For each fixed row: retest the exact reproduction steps, by keyboard, and with a screen reader where the issue affected one. Record the result and the date. If the fix regressed something else — a focus trap that now traps too much — that regression gets its own row.",
+          "The verification pass is also where the honest summary gets written. 'Focus order corrected in the main menu and retested by keyboard on 16 October' is a claim someone can check. 'Accessibility issues fixed' is not."
+        ]
+      },
+      {
+        "heading": "What to tell the merchant",
+        "paragraphs": [
+          "The merchant-facing summary should mirror the register's honesty. State what was audited, what was fixed, what is pending with whom, and what the evidence shows. If the work supports an improvement statement, say that. If it does not yet support a conformance claim at a specific WCAG level, say that too — and say what a verification pass against that level would look like.",
+          "Merchants can tell when the language tracks the evidence. It is the reason they trust the next estimate."
+        ]
+      }
+    ],
+    "takeaway": "Log every issue with severity, reproduction, fix, and retest status. An improved store is easy to show; a conformed store is something you can only claim after a documented verification pass.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Shopify WCAG Remediation: A Practical Accessibility Checklist",
+    "seoDescription": "A practical WCAG remediation checklist for Shopify stores: issue registers, fix families, verification passes, and honest conformance language.",
+    "relatedArticles": ["prime-baby-gear-mobile-navigation", "shopify-keyboard-navigation-accessibility"]
+  },
+  {
+    "slug": "custom-shopify-theme-vs-premium",
+    "title": "Custom Shopify Theme Development vs. Premium Themes",
+    "project": "shopify-guides",
+    "category": "Custom Themes",
+    "tags": ["Custom Themes", "Shopify", "Decision-making"],
+    "excerpt": "A decision matrix for choosing between a premium theme and a custom build — without assuming custom is inherently faster, more profitable, or better.",
+    "featuredImage": "custom-shopify-theme-vs-premium-hero",
+    "intro": "The premium-versus-custom question is usually asked in the wrong direction. People ask whether custom is better. The useful question is whether the requirements can be met without forking someone else's theme — and what that costs over the next two years, not just at launch. This guide builds the decision matrix and removes the assumptions that distort both sides.",
+    "sections": [
+      {
+        "heading": "The question the matrix answers",
+        "paragraphs": [
+          "The decision hinges on four things: feature fit (can the required experience be expressed with the theme's sections?), data fit (does the product and collection model match what the store sells?), upgrade path (how much of the change set survives the theme's next release?), and ongoing ownership (who maintains it, and at what cost?).",
+          "Score each factor against the actual requirements, not the idealized version of the store. A store that needs three unusual product display patterns and standard everything else is a different decision from a store whose entire brand experience is built on those patterns."
+        ]
+      },
+      {
+        "heading": "Where premium themes win",
+        "paragraphs": [
+          "Premium themes are the right default for most launches, and the reasons are concrete. They ship with a maintained set of sections, a known performance envelope, and an upgrade path: when the vendor releases an update, the store moves forward with the platform's changes. The team can learn a known codebase instead of onboarding onto one that only one person has ever read.",
+          "Speed to launch is real, and so is the maintenance discount. A theme someone else updates is a theme that keeps receiving accessibility fixes and platform-compatibility work whether or not the store's budget includes it this quarter."
+        ]
+      },
+      {
+        "heading": "Where custom becomes the cheaper option",
+        "paragraphs": [
+          "Custom stops being a premium and starts being the economy option when the alternative is permanent forking. If the required experience means editing a theme's core sections so deeply that every vendor update becomes a merge conflict, the store has effectively built a custom theme on a rented foundation — and pays for the rent in every release.",
+          "The data model is the other trigger. When the product structure itself cannot express the offer — bundles with component-level options, products that are really services, a catalogue that is two businesses — no amount of section customization reaches it, and the cost of the workaround compounds on every product entry."
+        ]
+      },
+      {
+        "heading": "The decision matrix",
+        "paragraphs": [
+          "Run the five criteria in order. Feature fit: can every required view be built from sections without deep edits? Data fit: does the model hold the catalogue without distortion? Upgrade path: how much of the change set survives updates? Maintenance: who owns the code, and what does a routine change cost? Launch timeline: does the schedule survive the honest estimate?",
+          "The matrix is not a scoring game. A single failed criterion on feature fit or data fit usually decides the question by itself; the remaining four criteria decide how much custom is needed once the decision is made — a full theme, a section library, or a handful of app integrations."
+        ]
+      },
+      {
+        "heading": "What custom should not be assumed",
+        "paragraphs": [
+          "Two assumptions distort this decision and deserve to be named. First: custom is not inherently faster. It is usually slower to launch, and the question is whether the slowness buys something the requirements need. Second: custom is not inherently more profitable. It buys fit — the ability to express a specific experience and a specific data model. Whether that fit converts better is a business question the code does not answer.",
+          "A good estimate states both costs: what custom costs at launch, and what it costs to keep. A quote that only shows the first number is incomplete in the direction that hurts the store later."
+        ]
+      },
+      {
+        "heading": "A fair way to compare the two",
+        "paragraphs": [
+          "Compare the options against the same written scope: the required views, the data model, the launch date, and the support level for year two. Ask the premium option to price the customization work it would take to reach the scope. Ask the custom option to price the maintenance it will own after launch. The options are only comparable once both are quoted for the same job, including the follow-through.",
+          "When the two numbers are honest, the decision usually resolves itself — and when they do not, the gap is where the requirements are still vague, which is useful to know before either build starts."
+        ]
+      }
+    ],
+    "takeaway": "Choose by fit, not by default. A premium theme is the right answer for most launches; custom is the right answer when the required experience or data model cannot be reached without forking the theme.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Custom Shopify Theme Development vs. Premium Themes",
+    "seoDescription": "A decision matrix for choosing between custom Shopify theme development and premium themes — with the assumptions to question in both directions.",
+    "relatedArticles": ["shopify-theme-development-best-practices", "when-to-build-custom-shopify-theme"]
+  },
+  {
+    "slug": "shopify-core-web-vitals",
+    "title": "Shopify Core Web Vitals: A Developer's Optimization Guide",
+    "project": "shopify-guides",
+    "category": "Performance",
+    "tags": ["Performance", "Core Web Vitals", "Shopify"],
+    "excerpt": "LCP, INP, and CLS explained for theme developers: what field data and lab data each measure, and where the theme-level fixes actually land.",
+    "featuredImage": "shopify-core-web-vitals-hero",
+    "intro": "Core Web Vitals are the most-misread numbers in storefront performance work. They are a triage instrument, not a score to optimize, and the first step is knowing which of the two datasets you are looking at. This guide covers what LCP, INP, and CLS measure, when field and lab data disagree, and the honest boundary of what a theme developer can fix.",
+    "sections": [
+      {
+        "heading": "Field versus lab",
+        "paragraphs": [
+          "Lab data comes from a controlled test run: a specific device profile, a specific connection, one page, one moment. Field data comes from real users' real browsers, aggregated over a period and spread across devices, networks, and times of day. They are measuring different things, and they will disagree — usually, the lab looks better than the field.",
+          "The working rule: field data tells you which metric is hurting real users; lab data tells you why. If field LCP is bad, use lab runs on the worst pages to find the specific cause. Optimizing a lab number that field data does not show as a problem is polishing the wrong surface."
+        ]
+      },
+      {
+        "heading": "LCP: the first real job",
+        "paragraphs": [
+          "Largest Contentful Paint marks the moment the main content lands — usually the hero image or a heading. The theme-level causes are a small list: an LCP image without explicit dimensions or with a slow source, a render-blocking stylesheet, a webfont that swaps late, and a hero that depends on JavaScript to appear.",
+          "The theme fixes are correspondingly concrete. Give the LCP image its intrinsic dimensions and the right source size. Load the styles the first paint needs with the page and defer the rest. Use font-display strategies that do not blank the text. These are the changes a theme owns, and they are where a theme developer has the most leverage on the metric."
+        ]
+      },
+      {
+        "heading": "INP: interactivity that feels instant",
+        "paragraphs": [
+          "Interaction to Next Paint measures how fast the page responds to input: tapping a menu, opening a drawer, adding an option. The theme-level cause is long tasks — a script that blocks the main thread long enough that the next frame waits. On Shopify stores, the usual suspects are the theme's own JavaScript and the scripts that injected apps add.",
+          "The fixes are deferral and consolidation: split the theme's JavaScript so pages load only what they use, defer app scripts that do not affect first paint, and move event work off the critical path. Where a long task belongs to an app's script, the honest answer is coordination, not a theme change — and the diagnosis should say so."
+        ]
+      },
+      {
+        "heading": "CLS: keeping layout promises",
+        "paragraphs": [
+          "Cumulative Layout Shift measures how much the page moves under the user after they start reading and reaching. The theme-level causes are the classic four: images and embeds without reserved space, fonts that swap and reflow, injected content that pushes the page down, and late-loading ads or announcement bars.",
+          "Each has a direct fix: intrinsic dimensions on every image and media element, a font strategy that reserves the fallback metrics, reserved space for anything that loads after first paint, and a layout that does not depend on content arriving late. CLS is the metric where the theme's markup discipline shows up most directly."
+        ]
+      },
+      {
+        "heading": "Where a theme developer can actually act",
+        "paragraphs": [
+          "The honest boundary matters for scoping. The theme owns markup, assets, and render-blocking behavior. The theme does not own the storefront's hosting, the CDN, the platform's request handling, or the scripts an app injects. A performance plan that lists server-side work as theme work will be delivered late, and one that ignores the app layer will miss the long tasks the user actually feels.",
+          "A useful first deliverable is a one-page map: for each metric, which layer owns the current cause. The theme's share of that map is the scope of the theme work, and everything else is coordination with clear ownership."
+        ]
+      },
+      {
+        "heading": "A diagnostic that doesn't invent numbers",
+        "paragraphs": [
+          "The diagnostic pass is a process, not a number. Pull the field data for the pages that matter — home, collection, product, cart. Identify the metric and the page where field data is worst. Run lab tests on that page and read the waterfalls: what loaded first, what blocked, what moved. Record the cause and the layer that owns it. Only then write the fix list, and only then set a target.",
+          "Reporting the result the same way — the same page, the same dataset, before and after — is what makes the work verifiable. A performance claim without its method is just a claim."
+        ]
+      }
+    ],
+    "takeaway": "Treat the three metrics as a triage, not a score. Find which one hurts real users in field data, fix the theme-level causes the theme owns, and report the change with the same method you used to measure the problem.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Shopify Core Web Vitals: A Developer's Optimization Guide",
+    "seoDescription": "How Shopify theme developers should approach Core Web Vitals: field versus lab data, LCP, INP, CLS, and the theme-level fixes that actually land.",
+    "relatedArticles": ["prime-baby-gear-image-performance", "shopify-theme-speed-optimization"]
+  },
+  {
+    "slug": "shopify-keyboard-navigation-accessibility",
+    "title": "How to Fix Keyboard Navigation and Screen Reader Issues in Shopify",
+    "project": "shopify-guides",
+    "category": "Accessibility",
+    "tags": ["Accessibility", "Keyboard Navigation", "Shopify"],
+    "excerpt": "Concrete keyboard and screen reader fixes for Shopify storefronts: focus order, focus trapping, live regions, and the code behind each fix.",
+    "featuredImage": "shopify-keyboard-navigation-accessibility-hero",
+    "intro": "Keyboard and screen reader defects on a storefront follow a small number of patterns: focus lands in the wrong place, focus gets trapped or lost, controls that look operable are not, and state changes that a sighted user sees are never announced. This guide walks the test sequences that find them and the theme-level code that fixes them. Where an example is illustrative rather than a confirmed defect on a specific store, it is labeled as such.",
+    "sections": [
+      {
+        "heading": "The keyboard test that finds most issues",
+        "paragraphs": [
+          "The base pass is four walks, by keyboard only, on every page type: home, collection, product, and cart. Walk the tab order from the top and note where focus lands at each stop. Open the main menu, and check that focus moves into it, that Escape returns it to the trigger, and that the rest of the page is not tabbable while it is open. Repeat with the search drawer, the product options, and the cart.",
+          "The defects surface as a short list: focus order that contradicts the visual layout, a menu that swallows focus, a close control that cannot be reached, an option picker that works by mouse only, and a cart update that a sighted user sees and nobody else does. Each of these has a specific fix in the theme."
+        ]
+      },
+      {
+        "heading": "Focus order is a design decision",
+        "paragraphs": [
+          "The most common root cause is DOM order that disagrees with visual order. A footer that appears before the content in the markup but after it on screen gives keyboard users a different journey than everyone else. The fix is structural — reorder the DOM — not a tab-index hack. Positive tabindex values should be treated as a smell in review; they are almost always a sign the markup is in the wrong order.",
+          "The second half of the fix is visibility. A focus indicator that is thin, low-contrast, or hidden behind a hover rule makes the keyboard journey navigable only by feel. The theme should ship an explicit, high-contrast focus style that applies to every interactive element, and the reduced-motion and hover rules should not remove it."
+        ],
+        "code": ":focus-visible {\n  outline: 2px solid currentColor;\n  outline-offset: 2px;\n}\n\n@media (prefers-reduced-motion: reduce) {\n  /* keep the focus indicator; never remove it for motion */\n}",
+        "codeCaption": "Illustrative example — a focus style that survives hover rules and motion preferences."
+      },
+      {
+        "heading": "Menus and drawers need focus management",
+        "paragraphs": [
+          "An open menu is a separate destination, and the theme must manage the journey to it and back. When the menu opens, focus moves to the first meaningful control inside it. While it is open, Tab cycles within it — the page behind is not reachable. Escape closes it, and focus returns to the trigger, not to the top of the page. A drawer that traps focus but forgets to return it has fixed one defect and created another.",
+          "The same contract applies to dialogs: product option pickers, filter panels, anything that opens as a layer. The pattern is identical — move in, trap, return out — and it belongs in one shared behavior the theme's sections reuse, not in each section's own copy of the logic."
+        ]
+      },
+      {
+        "heading": "Screen reader context",
+        "paragraphs": [
+          "The screen reader pass checks three things the keyboard pass cannot. Landmarks: can a user jump from the header to the products to the footer by region, and are the regions labeled? Labels: does every control announce itself as what it is — a button that says 'Open menu', not a div that says 'menu'? And live regions: when the cart count changes, does a screen reader user hear it, or does the number silently update where nobody is listening?",
+          "The distinction that keeps this work honest: a landmark structure and a labeled control are markup the theme owns. An announcement that never happens is a missing aria-live region, which the theme also owns. A product description that is wrong is a content problem, not a theme problem — and the register should say which is which."
+        ]
+      },
+      {
+        "heading": "Common fixes, with the code",
+        "paragraphs": [
+          "The fixes cluster into a handful of patterns. A missing label is a real label or an aria-label where the accessible name is not visible text. A control that does not respond to Enter or Space is either the wrong element — a clickable div where a button belongs — or a missing key handler. A cart update that is silent is a live region that announces the change in plain language."
+        ],
+        "code": "<button\nclass=\"cart-summary__toggle\"\naria-expanded=\"false\"\naria-controls=\"cart-drawer\"\n>\n  Cart <span class=\"cart-count\" aria-hidden=\"true\">2</span>\n</button>\n\n<div\n  class=\"visually-hidden\"\n  role=\"status\"\n  aria-live=\"polite\"\n>\n  <!-- \"2 items in cart\" on update -->\n</div>",
+        "codeCaption": "Illustrative example — a labeled toggle and a polite live region for cart changes."
+      },
+      {
+        "heading": "What to document as fixed",
+        "paragraphs": [
+          "Each fix gets the same record: the page, the input method, what was broken, the change, and the retest. 'Focus now returns to the menu trigger on Escape, retested by keyboard' is a complete line. 'Fixed menu issues' is not, and it is the difference between a theme that stays accessible and one that silently regresses at the next release."
+        ]
+      }
+    ],
+    "takeaway": "Keyboard support is not a feature toggle. Fix the DOM order first, then manage focus at every open and close, then verify with real keyboard and screen reader sequences before calling anything fixed.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "How to Fix Keyboard Navigation and Screen Reader Issues in Shopify",
+    "seoDescription": "Concrete keyboard and screen reader fixes for Shopify themes: focus order, focus trapping, live regions, and the code behind each fix.",
+    "relatedArticles": ["prime-baby-gear-mobile-navigation", "shopify-wcag-remediation"]
+  },
+  {
+    "slug": "when-to-build-custom-shopify-theme",
+    "title": "When Does Your Shopify Store Need a Custom Theme?",
+    "project": "shopify-guides",
+    "category": "Custom Themes",
+    "tags": ["Custom Themes", "Shopify", "Decision-making"],
+    "excerpt": "A limit on the theme, a limit on the data, or a limit on the apps? Naming which system is actually constraining the store decides whether a custom theme is needed at all.",
+    "featuredImage": "when-to-build-custom-shopify-theme-hero",
+    "intro": "'Our theme can't do that' is the most common reason stores are sent toward a custom build, and it is often the wrong diagnosis. The constraint is usually in the data model or in an app, and the cure is different and cheaper. This guide separates the three kinds of limits a store actually hits, using the storefront categories documented in this journal as the reference set — without implying any of those stores received a custom build.",
+    "sections": [
+      {
+        "heading": "Three kinds of limit",
+        "paragraphs": [
+          "A theme limit is a limit on presentation: the sections a theme offers cannot express the view the store needs. A data model limit is a limit on what Shopify's products, variants, and collections can represent: the offer does not fit the shape of the data. An app limit is a limit on a third-party feature: the capability exists, but the installed app does not do the version the store needs.",
+          "Each limit has its own cure. Theme limits are cured by sections — sometimes a handful of new ones, sometimes a full theme. Data model limits are cured by changing how the catalogue is structured, or by accepting a platform constraint. App limits are cured by choosing a different app or by building the feature into the theme. Diagnosing which limit is present is the whole job."
+        ]
+      },
+      {
+        "heading": "What five storefront categories look like",
+        "paragraphs": [
+          "The categories documented in this journal show how far apart the same platform can look: a baby gear catalogue organized around product type and brand, a resort-wear store whose story is styling and material, an outdoor living store selling large, high-consideration items, a pet education business selling physical products alongside guides, and a vintage art business working around a temporary closure.",
+          "What is useful about the set is what it does not show: none of them is a case where 'the theme' is the bottleneck in the way stores assume. The differences between them live in catalogue structure, in how information is organized, and in which features the store actually needs — not in who built the theme. The categories are reference points for naming requirements, not examples of custom work."
+        ]
+      },
+      {
+        "heading": "Signals that point to custom",
+        "paragraphs": [
+          "Custom becomes the right answer when the required experience cannot be expressed by composing sections — not when composing sections would take effort, but when the view is structurally different from what any section can render. A second signal is the data model: when the catalogue needs a shape the platform's product structure does not offer, the theme is downstream of a problem it cannot fix.",
+          "A third signal is the brand system itself. A store whose identity depends on interaction patterns, motion, and typography that sit outside a theme's conventions may need a build that owns its own presentation layer — with the honest understanding that it now owns the maintenance that comes with it."
+        ]
+      },
+      {
+        "heading": "Signals that point away",
+        "paragraphs": [
+          "The counter-signals are just as important. A launch date that cannot absorb a custom build's timeline. A catalogue that is standard products in standard collections. A store whose differentiating factor is content and photography rather than interface. And a requirement that is phrased as 'our current theme can't do it' when the current theme is a free or lightly configured one — the limit may be the theme's section library, not the platform.",
+          "In each of these cases the cheaper, faster, and usually more maintainable answer is a well-configured premium theme with a small number of added sections — and the estimate for that answer should be written down before the custom option is priced."
+        ]
+      },
+      {
+        "heading": "The data model question",
+        "paragraphs": [
+          "When in doubt, interrogate the data before the design. Can the offer be expressed as products, variants, and collections without distortion? A bundle whose components each need their own options is a data question. A frame option that changes both price and image is a variant question. A collection that is really a two-stage decision is a merchandising question that a navigation structure can solve.",
+          "If the data fits, the problem is presentation, and presentation is the cheapest layer to solve. If the data does not fit, no theme — custom or premium — will make the store comfortable, because the discomfort will reappear in the admin screen every time a product is entered."
+        ]
+      },
+      {
+        "heading": "Deciding without overbuilding",
+        "paragraphs": [
+          "The decision rule that holds up in practice: start from the cheapest layer that can carry the requirement. Configure first. Add sections second. Build a full theme last, and only when the first two layers demonstrably cannot. Each escalation should be triggered by a named requirement that the lower layer failed, not by a general feeling that the store deserves more.",
+          "Stores that follow this order tend to end up with less code, a shorter launch, and a theme their team can maintain — which is the definition of the right amount of custom."
+        ]
+      }
+    ],
+    "takeaway": "Ask which system is actually limiting you. If a section or an app can carry the requirement, the theme is not the problem; if the data model or the required interaction cannot be reached, that is what custom buys.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "When Does Your Shopify Store Need a Custom Theme?",
+    "seoDescription": "How to tell whether your Shopify store needs a custom theme: theme limits, data model limits, app limits — and the signals that point each way.",
+    "relatedArticles": ["custom-shopify-theme-vs-premium", "prime-baby-gear-travel-system-details"]
+  },
+  {
+    "slug": "shopify-theme-speed-optimization",
+    "title": "Shopify Theme Speed Optimization: Images, JavaScript and Apps",
+    "project": "shopify-guides",
+    "category": "Performance",
+    "tags": ["Performance", "Shopify", "Optimization"],
+    "excerpt": "A symptom-to-fix troubleshooting path for slow Shopify themes: what to check first, which tools to trust, and why there is no universal fix.",
+    "featuredImage": "shopify-theme-speed-optimization-hero",
+    "intro": "Slow Shopify stores are usually slow in one specific way: the page loads slowly, the interactions lag, or the layout shifts — and each symptom has a different first check, a different tool, and a different fix. This guide is organized as the troubleshooting tree a developer actually follows, with the retest step that makes each fix verifiable. There is no universal fix, and this guide will not pretend there is one.",
+    "sections": [
+      {
+        "heading": "Start with the symptom, not the tool",
+        "paragraphs": [
+          "The first question is which of the three symptoms the user is experiencing. A page that takes a long time to show its content is a loading problem. A page that loads but stutters when you tap or scroll is an interactivity problem. A page that moves while the user reads or reaches is a layout problem. Two of the three are visible to the user before any tool is opened.",
+          "Naming the symptom selects the branch of the tree. Running every tool on a layout-shift problem and calling the result a speed audit is how performance work produces long reports and no fixes."
+        ]
+      },
+      {
+        "heading": "The troubleshooting tree",
+        "paragraphs": [
+          "Each branch follows the same shape: symptom, likely cause, the tool that confirms it, the fix, and the retest. For slow loading: the cause is usually image weight or render-blocking assets, the tool is the network waterfall, the fix is image sizes and deferral, the retest is the same page on the same connection. For laggy interaction: the cause is usually long JavaScript tasks, the tool is the performance trace, the fix is deferral and splitting, the retest is the same interaction measured again.",
+          "For layout shift: the cause is usually missing dimensions or late content, the tool is the shift visualization, the fix is reserved space and intrinsic sizes, the retest is a scroll-through with the shift overlay on. The tree is short because the causes are short; what varies is the discipline of finishing each branch with a retest."
+        ]
+      },
+      {
+        "heading": "Images: usually the first win",
+        "paragraphs": [
+          "Image weight is the most common loading cause on storefronts, and the fixes are mechanical. Serve each image at the size the layout actually uses, not the original upload. Use the platform's image filters to generate those sizes. Give every image intrinsic dimensions so the layout does not wait on the file. Lazy-load below the fold and load the hero eagerly.",
+          "The retest is a network waterfall of the same page before and after, with the image bytes counted. This branch is where the honest before-and-after numbers come from, because the measurement is direct and the cause is owned entirely by the theme."
+        ]
+      },
+      {
+        "heading": "JavaScript: what the theme actually ships",
+        "paragraphs": [
+          "The second branch separates the theme's own JavaScript from everything else. The theme's scripts should be split by page — a product page should not execute cart-only code — and anything that does not affect first paint should be deferred. The theme's code should also be small enough to read; a large bundle is a maintenance problem that shows up as a performance problem first.",
+          "The honest note belongs here: removing apps is not a universal fix. Apps are how stores get features, and the fix for an app's long task is usually coordination — a different configuration, a different app, or deferral of its script — not removal for its own sake. The tree says measure first, and the measurement names the owner."
+        ]
+      },
+      {
+        "heading": "Apps: the shared surface",
+        "paragraphs": [
+          "Every installed app is a potential source of scripts, styles, and injected markup, and the theme shares the page with all of them. The diagnosis step is to identify, per script, which app owns it — most platforms expose this in the network panel — and to measure its cost before recommending anything about it.",
+          "The recommendation follows the measurement: configure, defer, replace, or remove. Each is a different act with a different owner, and the store should see the measurement that triggered it. 'The store was fast after we removed the app' with no before data is a story; with the waterfall, it is a result."
+        ]
+      },
+      {
+        "heading": "Retest like you meant it",
+        "paragraphs": [
+          "Every fix ends the same way: the same page, the same device profile, the same connection, measured before and after, with the method written down. The retest is what separates optimization from cleanup — and what a merchant can ask for when the work is done.",
+          "The report is one page: the symptom, the cause with its evidence, the fix, and the before-and-after numbers for the same measurement. When the numbers do not move as expected, the report says so and names the next layer to check. That is the whole discipline."
+        ]
+      }
+    ],
+    "takeaway": "Follow the symptom to the cause, fix the layer that owns it, and retest the same page before and after. 'Remove the apps' is a last resort, not a starting point.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Shopify Theme Speed Optimization: Images, JavaScript and Apps",
+    "seoDescription": "A symptom-to-fix troubleshooting guide for slow Shopify themes: images, JavaScript, and app scripts, with retest steps for every branch.",
+    "relatedArticles": ["prime-baby-gear-image-performance", "shopify-core-web-vitals"]
+  },
+  {
+    "slug": "shopify-theme-architecture",
+    "title": "Shopify Theme Architecture: Building Reusable Sections That Scale",
+    "project": "shopify-guides",
+    "category": "Theme Architecture",
+    "tags": ["Theme Architecture", "Liquid", "Shopify"],
+    "excerpt": "How sections, snippets, and templates should relate in a Shopify theme — and how to make the choices that matter for the merchant who edits it, not just the developer who wrote it.",
+    "featuredImage": "shopify-theme-architecture-hero",
+    "intro": "Two themes can have identical Liquid and behave completely differently: one a merchant can edit with confidence, the other a minefield where every change needs a developer. The difference is architecture — how sections, snippets, and templates are divided, and what the settings schemas promise. This guide builds the model from the units up, and makes the choices on the merchant's behalf, because the merchant is who the theme is actually for.",
+    "sections": [
+      {
+        "heading": "The three units: section, snippet, template",
+        "paragraphs": [
+          "A section is a self-contained block of the page with its own settings. A snippet is shared markup or formatting that multiple sections use. A template composes sections into a page and controls their order. The rule that keeps the three honest: sections talk to the platform, snippets talk to other sections, and templates talk to sections. When a section reaches into a snippet that belongs to another section, or a template hardcodes content that should be a section's setting, the architecture has leaked.",
+          "The test for a clean split is simple. Move a section to another template: it should work. Delete a snippet: exactly the sections that use it should break. Reorder a template: the page should reflect the order with no code change. When all three tests pass, the units are doing their jobs."
+        ]
+      },
+      {
+        "heading": "Settings schemas that merchants can use",
+        "paragraphs": [
+          "The settings schema is the contract between the developer and the merchant. Every setting needs a label a merchant understands, a description of what the setting does, and a type that prevents nonsense: a product picker where a product is wanted, a range with real bounds where a number is wanted. A schema that uses developer vocabulary — 'columns', 'padding', 'breakpoint' — is a schema the merchant will not touch, and a schema the merchant does not touch is a theme the developer must maintain forever.",
+          "The discipline is to write the schema the way you would write documentation for someone who will use it daily. That person is the merchant, not the next developer."
+        ],
+        "code": "{% schema %}\n{\n  \"name\": \"Featured product\",\n  \"settings\": [\n    {\n      \"type\": \"product\",\n      \"id\": \"product\",\n      \"label\": \"Product\"\n    },\n    {\n      \"type\": \"range\",\n      \"id\": \"columns\",\n      \"min\": 2,\n      \"max\": 4,\n      \"step\": 1,\n      \"default\": 3,\n      \"label\": \"Columns on desktop\"\n    }\n  ]\n}\n{% endschema %}",
+        "codeCaption": "Illustrative example — a schema a merchant can set without a developer."
+      },
+      {
+        "heading": "When to split a section",
+        "paragraphs": [
+          "The split decision is a portability test, not a code-size test. A section should be split when the inner block could plausibly appear in a different context with different settings: a product card inside a featured row and inside a collection grid, a testimonial block on the home page and on a product page. Splitting there makes the block reusable and keeps each section's schema short.",
+          "The anti-test is just as important. Do not split a section because it is long, and do not split it into pieces that only ever appear together. A section that must be accompanied by two siblings is three sections pretending to be one, and the merchant sees three settings panels where one would do."
+        ]
+      },
+      {
+        "heading": "Snippets: the boring parts",
+        "paragraphs": [
+          "Snippets earn their existence by being shared: the product card's markup, the price formatting, the pagination, the star rating. A snippet is the right home for anything two or more sections need identically, and nothing else. Single-use markup belongs in its section; the moment a second section needs it, it graduates to a snippet.",
+          "The failure mode is the utility snippet — a grab bag of small markups named by what they are not. When a snippet is the third thing a developer opens to understand a section, the split was wrong in the first place, and the rename or merge is cheaper now than at the next feature request."
+        ]
+      },
+      {
+        "heading": "Templates as composition",
+        "paragraphs": [
+          "A template should read like a table of contents: the list of sections, in order, each with its per-template settings. If a template contains markup of its own, that markup is a section that has not been promoted. If a template's settings duplicate a section's settings, one of the two is lying.",
+          "Composition is what makes a theme scale. Adding a page type is adding a template. Changing a page is reordering sections. Neither requires the developer to be in the room — which is the point of the architecture."
+        ]
+      },
+      {
+        "heading": "Choosing for the editor",
+        "paragraphs": [
+          "Every architectural choice should be argued from the editor's chair, not the code reviewer's. A merchant who edits the home page weekly needs sections whose settings predict their effect, a section order that matches the visual order, and names that match what is on screen. Code purity — smaller files, fewer conditionals — serves the developer's comfort, and it should lose to the merchant's clarity when the two conflict.",
+          "The document that proves the architecture works is not a diagram. It is the merchant making a real change without calling the developer — and the theme still behaving correctly the next time a release happens."
+        ]
+      }
+    ],
+    "takeaway": "Design the theme around what the merchant edits daily. A section that survives moving between stores, and a schema the merchant can read without a developer, is doing its job.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Shopify Theme Architecture: Building Reusable Sections That Scale",
+    "seoDescription": "How sections, snippets, and templates should work together in a Shopify theme, designed around what the merchant edits — not just the developer.",
+    "relatedArticles": ["shopify-theme-development-best-practices", "shopify-theme-maintenance"]
+  },
+  {
+    "slug": "shopify-accessibility-testing-workflow",
+    "title": "Shopify Accessibility Testing: A Repeatable QA Workflow",
+    "project": "shopify-guides",
+    "category": "Accessibility",
+    "tags": ["Accessibility", "QA", "Shopify"],
+    "excerpt": "A repeatable accessibility test workflow for Shopify themes: the test matrix to run, the evidence to keep, and the parts that automation will never find.",
+    "featuredImage": "shopify-accessibility-testing-workflow-hero",
+    "intro": "One-off accessibility audits have a half-life: the store is fixed once, and the next release quietly undoes half of it. The fix is not a better audit — it is a workflow that runs the same matrix on every release, keeps evidence a reviewer could act on, and knows exactly what the automated checks will and will not find. This guide is that workflow.",
+    "sections": [
+      {
+        "heading": "Why one-off audits don't hold",
+        "paragraphs": [
+          "Accessibility defects are structural, which means they regress structurally. A focus trap removed during a refactor, a live region dropped in a template change, an image pipeline that drops alt text on re-upload — each is a normal code change with an accessibility consequence nobody tested, because the last test was months ago and nobody wrote it down.",
+          "The workflow answer is that accessibility testing is a release activity, on the same cadence as functional QA, with the same expectations: defined cases, executed passes, recorded evidence, and a gate before publish."
+        ]
+      },
+      {
+        "heading": "The test matrix",
+        "paragraphs": [
+          "Every case in the matrix has five columns: the case, the input method, the expected behavior, the evidence, and the retest status. A case is specific — 'open the main menu, press Escape' — not 'menu works'. The input method names what is being tested: keyboard, screen reader, or both. The expected behavior is observable: 'focus returns to the menu trigger'. The evidence is a screenshot or a short recording with the exact steps written next to it.",
+          "The matrix is small enough to run in an afternoon and specific enough that a reviewer can verify a row without trusting the person who ran it. That is the property that makes the workflow honest: the evidence, not the assertion, is the record."
+        ]
+      },
+      {
+        "heading": "The four passes",
+        "paragraphs": [
+          "Pass one is automated: the accessibility checks that tools can run against the theme's pages. Pass two is keyboard: the full tab-order walks of every page type, every open and close of a menu or drawer, by keyboard only. Pass three is screen reader: the same journeys with a screen reader announcing, checking that landmarks, labels, and live regions behave. Pass four is regression: the rows that were fixed in previous releases, retested on the current build.",
+          "Each pass catches what the others miss. The automated pass finds the mechanical violations. The keyboard pass finds focus problems a tool cannot see. The screen reader pass finds what is announced and what is not. The regression pass is the one that keeps the store honest over time."
+        ]
+      },
+      {
+        "heading": "Automated checks and their limits",
+        "paragraphs": [
+          "Automated checks are the floor: missing labels, missing alt text, contrast failures, landmark problems. Shopify's platform tooling — including the Lighthouse-based CI action available for themes — makes this pass cheap to run on every change, and a CI gate that blocks a build on new violations is the correct use of it.",
+          "The limit is equally real: no automated check verifies that focus actually moves where it should, that Escape actually returns it, or that a screen reader user hears the cart update. The automated pass tells you the theme has no known violations; it does not tell you the theme is usable. The keyboard and screen reader passes exist for exactly the gap between those two statements."
+        ]
+      },
+      {
+        "heading": "Evidence that survives review",
+        "paragraphs": [
+          "The evidence standard is simple and unforgiving: for every pass, a screenshot or recording of the exact state, the exact input sequence, and the build identifier. A recording of the keyboard pass should show each Tab press. A screen reader recording should show the announcement text. When a merchant or a reviewer asks for proof, the answer is a file, not a memory.",
+          "The same standard applies to failures: a defect is recorded with its evidence the moment it is found, and the fix is not marked complete until the retest evidence exists. The register from the remediation workflow and the matrix from this workflow are the same document in two phases."
+        ]
+      },
+      {
+        "heading": "Running it on every release",
+        "paragraphs": [
+          "The cadence is the release cadence: automated pass in CI on every change; keyboard and screen reader passes on every staged release before it is published; regression pass on every release that touches the components on the fixed-rows list. The time cost is an afternoon per release, and it is the cost of a store that does not silently lose accessibility a quarter after the audit.",
+          "The maintenance discipline — change logs, test environments, rollback plans — is what makes the cadence sustainable. A theme that is tested like a product is maintained like one, and the two workflows share the same checklist."
+        ]
+      }
+    ],
+    "takeaway": "Accessibility testing is a workflow, not a tool. Run the same matrix on every release, keep evidence you could hand to a reviewer, and treat automated checks as the floor, not the finish line.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "Shopify Accessibility Testing: A Repeatable QA Workflow",
+    "seoDescription": "A repeatable accessibility QA workflow for Shopify themes: test matrix, keyboard and screen reader passes, evidence standards, and release cadence.",
+    "relatedArticles": ["shopify-wcag-remediation", "shopify-keyboard-navigation-accessibility", "prime-baby-gear-mobile-navigation"]
+  },
+  {
+    "slug": "shopify-theme-maintenance",
+    "title": "How to Maintain a Shopify Theme Without Breaking Storefront Features",
+    "project": "shopify-guides",
+    "category": "Maintenance",
+    "tags": ["Maintenance", "Shopify", "Theme Development"],
+    "excerpt": "A release discipline for Shopify themes: change logs, test environments, rollback plans, and the test that decides when a change is a fix, a refactor, or a rebuild.",
+    "featuredImage": "shopify-theme-maintenance-hero",
+    "intro": "Themes do not break from one bad change; they break from a hundred small ones, each reasonable in isolation and none tested against the whole. The difference between a theme that stays stable for years and one that needs a rewrite is not talent — it is release discipline: a scope statement for every change, a test pass in an environment where it can fail, a rollback that works, and a change log someone reads. This guide is the discipline, as a checklist.",
+    "sections": [
+      {
+        "heading": "What breaks themes in practice",
+        "paragraphs": [
+          "The failure patterns are a short list. An app update renders new markup that the theme's styles do not expect. A merchant edits a section in a way the code did not anticipate. A platform release changes default behavior. A small change to a shared snippet lands on every page that uses it. A fix for one page's problem quietly reorders focus on another.",
+          "Each of these is invisible in the code review — the change is correct, it is just not complete, because nobody tested it against the surface it actually touches. The discipline that follows is organized around closing that gap: every change declares its surface, and the test pass covers it."
+        ]
+      },
+      {
+        "heading": "The release checklist",
+        "paragraphs": [
+          "Every theme change, no matter how small, carries four items. Scope: one sentence saying what changes and, just as importantly, what does not. Change log entry: the same sentence plus the reason, dated. Test pass: the page types and interactions the change touches, run in a test environment. Rollback plan: what to do if the change misbehaves in production, written before publish, not after.",
+          "The checklist is short on purpose. It is the difference between a change that is verified and a change that is hoped for, and it takes minutes — which is precisely why it gets skipped, and why the skipping is what breaks themes."
+        ]
+      },
+      {
+        "heading": "Test environments: the cheapest insurance",
+        "paragraphs": [
+          "The test environment is a development store or a staged theme where the change can fail without the customer seeing it. The smoke pass on it is the storefront's load-bearing paths: the main menu at every breakpoint, a product page with its options, the cart from empty to populated, and the checkout entry. The pass is the same every time, which is what makes it a pass instead of a wander.",
+          "The environment should also carry the realistic data the production edge cases live in: long product titles, products with zero images, collections with hundreds of items. The bugs that survive to production are almost always the ones the test data never had."
+        ]
+      },
+      {
+        "heading": "Rollback that works",
+        "paragraphs": [
+          "A rollback plan is only a plan if it has been true-tested: know which version of each changed file you are returning to, know what the merchant has edited that must not be lost, and know how long the rollback actually takes. The two failure modes are the rollback that erases the merchant's section edits, and the rollback that no one has tried, so it takes three times longer under pressure than it should.",
+          "The working pattern is to treat the live theme as a deployed artifact: changes go to a staged theme, the smoke pass runs there, and publish is a deliberate act with a known previous state. Publishing directly from the live theme is how rollbacks stop being possible."
+        ]
+      },
+      {
+        "heading": "Fix versus refactor versus rebuild",
+        "paragraphs": [
+          "The three are different commitments and should be labeled as such. A fix changes behavior to correct a defect, and nothing else — a fix that restructures a section is a refactor wearing a fix's label, and it should be reviewed as the larger change it is. A refactor changes structure with no behavior change, and it earns its place only when the structure is actively blocking fixes. A rebuild is a new theme, and it is justified by a stated limit the current theme cannot work around — not by accumulated discomfort.",
+          "Labeling the change correctly keeps the review honest: a fix gets a defect review, a refactor gets a structure review, a rebuild gets a decision review with the decision matrix from the custom-theme guides. Each has its own evidence, and mixing them is how refactors smuggle themselves into release day."
+        ]
+      },
+      {
+        "heading": "The change log is a product",
+        "paragraphs": [
+          "The merchant-facing change log is not ceremony. It is the record that lets the merchant trust a publish, the context that makes the next developer's job easier, and the evidence that the theme is maintained rather than merely present. Two lines per change — what changed, and why — dated, is the whole standard.",
+          "A year of two-line entries is a theme with a history. A year of silent changes is a theme with a mystery, and the mystery is what eventually gets the store into a rebuild it was trying to avoid."
+        ]
+      }
+    ],
+    "takeaway": "Treat every theme change like a release: state the scope, test it where it can fail, know how to undo it, and write down what changed. That discipline is what keeps a storefront stable across a year of edits.",
+    "mobileGallery": false,
+    "publishedAt": "2026-10-16",
+    "updatedAt": "2026-10-16",
+    "status": "published",
+    "seoTitle": "How to Maintain a Shopify Theme Without Breaking Storefront Features",
+    "seoDescription": "A release discipline for Shopify theme maintenance: change logs, test environments, rollback plans, and the fix-versus-refactor-versus-rebuild test.",
+    "relatedArticles": ["shopify-theme-development-best-practices", "shopify-theme-speed-optimization"]
+  }
+]
