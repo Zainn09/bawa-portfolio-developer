@@ -13,7 +13,7 @@ test("editorial inventory: seven per supplied store plus ten original Shopify gu
       p.slug === "shopify-guides" ? 10 : 7,
     );
   for (const a of articles) {
-    expect(a.sections).toHaveLength(a.project === "shopify-guides" ? 6 : 3);
+    expect(a.sections).toHaveLength(a.project === "shopify-guides" ? 8 : 3);
     expect(
       a.sections
         .flatMap((s) => s.paragraphs)
@@ -174,6 +174,8 @@ for (const width of [
       "/blogs",
       "/blogs/prime-baby-gear-navigation",
       "/blogs/vintage-art-garage-authentic-capture-plan",
+      // The longest guide: full-length articles must not overflow either.
+      "/blogs/shopify-theme-development-best-practices",
     ]) {
       await page.goto(route);
       await page.evaluate(() => document.fonts.ready);
