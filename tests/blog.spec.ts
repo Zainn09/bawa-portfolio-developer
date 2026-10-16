@@ -105,6 +105,13 @@ test("journal filters, search, query links, empty states and load more work", as
     "45 articles",
   );
   await expect(page.locator(".journal-card")).toHaveCount(8);
+  // Newly added articles always lead the journal, in date sequence.
+  const newest = [...articles].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt),
+  )[0];
+  await expect(page.locator(".journal-card h2").first()).toHaveText(
+    newest.title,
+  );
   for (const p of blogProjects) {
     await page
       .locator(".journal-store-filters")

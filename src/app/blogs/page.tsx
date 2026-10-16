@@ -32,7 +32,9 @@ export const metadata: Metadata = {
   },
 };
 export default async function BlogsPage() {
-  const articles = await getPublishedArticles();
+  const articles = [...(await getPublishedArticles())].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt),
+  );
   return (
     <main id="main" className="journal-page">
       <div className="container">

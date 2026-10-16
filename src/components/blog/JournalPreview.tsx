@@ -18,17 +18,15 @@ export default async function JournalPreview() {
       </section>
     );
   }
-  const curated = [
-    articles.find((a) => a.slug === "prime-baby-gear-navigation"),
-    articles.find((a) => a.slug === "ollie-burwell-styling-guide"),
-    articles.find((a) => a.slug === "nokoluxe-outdoor-living-navigation"),
-  ].filter((a) => a !== undefined);
+  const latest = [...articles]
+    .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+    .slice(0, 3);
   const featured = articles.some((a) => a.richContent)
     ? [
         ...articles.filter((a) => a.featured),
         ...articles.filter((a) => !a.featured),
       ].slice(0, 3)
-    : curated;
+    : latest;
   if (!articles.length)
     return (
       <section className="journal-preview container" id="blogs">

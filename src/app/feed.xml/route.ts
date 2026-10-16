@@ -20,7 +20,9 @@ function esc(value: string): string {
  */
 export async function GET() {
   const base = siteUrl;
-  const articles = await getPublishedArticles();
+  const articles = [...(await getPublishedArticles())].sort((a, b) =>
+    b.publishedAt.localeCompare(a.publishedAt),
+  );
   const items = articles
     .map((a) => {
       const pubDate = new Date(`${a.publishedAt}T12:00:00Z`).toUTCString();
