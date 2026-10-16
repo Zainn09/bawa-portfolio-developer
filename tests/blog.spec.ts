@@ -72,6 +72,37 @@ test("sitemap and RSS feed publish the production domain", async ({ page }) => {
   await expect(page.locator('footer a[href="/feed.xml"]')).toHaveCount(1);
 });
 
+test("every Shopify guide carries internal links and authoritative external references", async ({
+  request,
+}) => {
+  for (const a of articles) {
+    if (a.project !== "shopify-guides") continue;
+    const res = await request.get(`/blogs/${a.slug}`);
+    expect(res.status()).toBe(200);
+    const html = await res.text();
+    // Internal links stay in-app; external references open in a new tab.
+    expect(html).toContain('class="hl-link"');
+    expect(html).toContain('class="hl-link ext"');
+    expect(html).toContain('rel="noopener noreferrer"');
+    expect(html).toContain('target="_blank"');
+  }
+});
+
+test("the two prime-baby-gear notes link the new performance and accessibility guides", async ({
+  request,
+}) => {
+  const perf = await (
+    await request.get("/blogs/prime-baby-gear-image-performance")
+  ).text();
+  expect(perf).toContain("/blogs/shopify-core-web-vitals");
+  expect(perf).toContain("/blogs/shopify-theme-speed-optimization");
+  const nav = await (
+    await request.get("/blogs/prime-baby-gear-mobile-navigation")
+  ).text();
+  expect(nav).toContain("/blogs/shopify-keyboard-navigation-accessibility");
+  expect(nav).toContain("/blogs/shopify-accessibility-testing-workflow");
+});
+
 test("all 45 article routes render full text, dates, sources and production metadata", async ({
   request,
 }) => {

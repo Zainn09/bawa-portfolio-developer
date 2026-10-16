@@ -15,17 +15,60 @@ import RichContent, { richHeadings } from "@/components/blog/RichContent";
 export const dynamic = "force-dynamic";
 type Props = { params: Promise<{ slug: string }> };
 /** Inline journal markup: *terms* are marked with the site's accent marker. */
-function inlineMarkup(text: string): ReactNode[] {
+function markedText(text: string, keyOffset: number): ReactNode[] {
   const nodes: ReactNode[] = [];
   text.split(/(\*[^*]+\*)/g).forEach((part, i) => {
     if (part.length > 2 && part.startsWith("*") && part.endsWith("*"))
       nodes.push(
-        <mark key={i} className="hl">
+        <mark key={`${keyOffset}-${i}`} className="hl">
           {part.slice(1, -1)}
         </mark>,
       );
     else if (part) nodes.push(part);
   });
+  return nodes;
+}
+/**
+ * Inline journal markup: *terms* are marked with the site's accent marker,
+ * and [label](url) becomes a link — internal paths stay in-app, external
+ * references open in a new tab.
+ */
+function inlineMarkup(text: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  const linkRe = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let key = 0;
+  let m: RegExpExecArray | null;
+  while ((m = linkRe.exec(text))) {
+    if (m.index > last)
+      nodes.push(...markedText(text.slice(last, m.index), key++));
+    const label = m[1];
+    const href = m[2];
+    if (href.startsWith("/") || /^https?:\/\//.test(href)) {
+      const external = !href.startsWith("/");
+      nodes.push(
+        external ? (
+          <a
+            key={key++}
+            className="hl-link ext"
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {label} <span aria-hidden="true">↗</span>
+          </a>
+        ) : (
+          <a key={key++} className="hl-link" href={href}>
+            {label}
+          </a>
+        ),
+      );
+    } else {
+      nodes.push(label);
+    }
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) nodes.push(...markedText(text.slice(last), key));
   return nodes;
 }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
