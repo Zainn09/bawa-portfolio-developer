@@ -11,7 +11,7 @@
     ],
     "excerpt": "A working mental model for Shopify themes: where Liquid belongs, where it doesn't, and the habits that keep a theme maintainable for its second and third year.",
     "featuredImage": "shopify-theme-development-best-practices-hero",
-    "intro": "Most theme problems are not Liquid problems. They are architecture problems that become Liquid problems: logic that leaked into a section, a snippet that secretly belongs to one store, a settings schema no merchant can read. This guide builds the working model first, then the habits that keep a theme maintainable after the launch excitement has faded.",
+    "intro": "I make one decision before I write a line of theme code: who is going to edit this after me. Almost always that person is not a developer — it is a merchant, a marketing team, or a developer two years from now who was never part of the build. Most of the theme problems I see come from skipping that first decision. This guide is the model I use to make it: where Liquid belongs, where it doesn't, and the habits that let a theme survive its second year.",
     "sections": [
       {
         "heading": "The layers of a Shopify theme",
@@ -83,7 +83,7 @@
     ],
     "excerpt": "A field checklist for WCAG work on a Shopify store: how to run the pass, what to log in the issue register, and the honest line between improved and conformed.",
     "featuredImage": "shopify-wcag-remediation-hero",
-    "intro": "Accessibility work on a live store fails in two predictable ways. It runs without a record, so nothing is verifiable later. Or it ends with a conformance claim that the evidence does not support. This checklist is the middle path: a structured pass, a register you can hand to a reviewer, and language about conformance that stays honest.",
+    "intro": "The most awkward sentence in accessibility work is the one where a store has genuinely improved but cannot yet claim conformance — and I have come to like it, because it forces precision. I run remediation passes with a register, not a to-do list, because the register is the only thing that survives contact with the next app update. This checklist is how I run those passes: what I log, how I verify the fix, and the exact line between improved and conformed that I do not cross on either side.",
     "sections": [
       {
         "heading": "What a remediation pass actually is",
@@ -152,7 +152,7 @@
     ],
     "excerpt": "A decision matrix for choosing between a premium theme and a custom build — without assuming custom is inherently faster, more profitable, or better.",
     "featuredImage": "custom-shopify-theme-vs-premium-hero",
-    "intro": "The premium-versus-custom question is usually asked in the wrong direction. People ask whether custom is better. The useful question is whether the requirements can be met without forking someone else's theme — and what that costs over the next two years, not just at launch. This guide builds the decision matrix and removes the assumptions that distort both sides.",
+    "intro": "I get asked this question before almost every project, and I have learned to answer it before the client does: usually with a premium theme, occasionally with a build. The mistake I see most often is answering the wrong question — is custom better? — when the real question is whether the requirements can be met without permanently forking someone else's theme. This decision matrix is the one I work through before a theme choice becomes a spending decision.",
     "sections": [
       {
         "heading": "The question the matrix answers",
@@ -221,7 +221,7 @@
     ],
     "excerpt": "LCP, INP, and CLS explained for theme developers: what field data and lab data each measure, and where the theme-level fixes actually land.",
     "featuredImage": "shopify-core-web-vitals-hero",
-    "intro": "Core Web Vitals are the most-misread numbers in storefront performance work. They are a triage instrument, not a score to optimize, and the first step is knowing which of the two datasets you are looking at. This guide covers what LCP, INP, and CLS measure, when field and lab data disagree, and the honest boundary of what a theme developer can fix.",
+    "intro": "The first time I watched a client start negotiating against a Lighthouse score, I knew I had to change how I present this work. Core Web Vitals are a triage instrument, not a grade, and I have stopped treating them as anything else. This is how I now work through LCP, INP, and CLS on a real store: which dataset answers which question, which causes the theme actually owns, and what a diagnosis looks like when it invents no numbers at all.",
     "sections": [
       {
         "heading": "Field versus lab",
@@ -290,7 +290,7 @@
     ],
     "excerpt": "Concrete keyboard and screen reader fixes for Shopify storefronts: focus order, focus trapping, live regions, and the code behind each fix.",
     "featuredImage": "shopify-keyboard-navigation-accessibility-hero",
-    "intro": "Keyboard and screen reader defects on a storefront follow a small number of patterns: focus lands in the wrong place, focus gets trapped or lost, controls that look operable are not, and state changes that a sighted user sees are never announced. This guide walks the test sequences that find them and the theme-level code that fixes them. Where an example is illustrative rather than a confirmed defect on a specific store, it is labeled as such.",
+    "intro": "I test every theme I ship with the mouse out of reach, and I have never regretted that rule — the keyboard finds the defects a visual review walks past, and the screen reader finds the ones the keyboard cannot see. The good news is that the defects cluster into a short list of patterns, and every pattern has a fix that lives in the theme. This guide is those patterns, the test walks that find them, and the code that fixes them.",
     "sections": [
       {
         "heading": "The keyboard test that finds most issues",
@@ -361,7 +361,7 @@
     ],
     "excerpt": "A limit on the theme, a limit on the data, or a limit on the apps? Naming which system is actually constraining the store decides whether a custom theme is needed at all.",
     "featuredImage": "when-to-build-custom-shopify-theme-hero",
-    "intro": "'Our theme can't do that' is the most common reason stores are sent toward a custom build, and it is often the wrong diagnosis. The constraint is usually in the data model or in an app, and the cure is different and cheaper. This guide separates the three kinds of limits a store actually hits, using the storefront categories documented in this journal as the reference set — without implying any of those stores received a custom build.",
+    "intro": "The most expensive phrase in a storefront project is 'our theme can't do that,' because it usually points at the wrong system and sends a store toward a custom build it does not need. I now ask which layer is actually constrained — the theme, the data model, or an app — before I would price a build, and the answer changes everything. This guide is that diagnostic, worked against the storefront categories documented in this journal.",
     "sections": [
       {
         "heading": "Three kinds of limit",
@@ -430,7 +430,7 @@
     ],
     "excerpt": "A symptom-to-fix troubleshooting path for slow Shopify themes: what to check first, which tools to trust, and why there is no universal fix.",
     "featuredImage": "shopify-theme-speed-optimization-hero",
-    "intro": "Slow Shopify stores are usually slow in one specific way: the page loads slowly, the interactions lag, or the layout shifts — and each symptom has a different first check, a different tool, and a different fix. This guide is organized as the troubleshooting tree a developer actually follows, with the retest step that makes each fix verifiable. There is no universal fix, and this guide will not pretend there is one.",
+    "intro": "I have optimized enough slow stores to know that 'make it faster' is three different jobs wearing one phrase, and the wrong first check wastes a day. I start from the symptom the user is actually experiencing, follow it to the layer that owns it, and retest the same page before and after every fix. This is the troubleshooting tree I follow, and the reason I can stand behind the before-and-after numbers I hand over.",
     "sections": [
       {
         "heading": "Start with the symptom, not the tool",
@@ -499,7 +499,7 @@
     ],
     "excerpt": "How sections, snippets, and templates should relate in a Shopify theme — and how to make the choices that matter for the merchant who edits it, not just the developer who wrote it.",
     "featuredImage": "shopify-theme-architecture-hero",
-    "intro": "Two themes can have identical Liquid and behave completely differently: one a merchant can edit with confidence, the other a minefield where every change needs a developer. The difference is architecture — how sections, snippets, and templates are divided, and what the settings schemas promise. This guide builds the model from the units up, and makes the choices on the merchant's behalf, because the merchant is who the theme is actually for.",
+    "intro": "Two themes can use the same platform and the same Liquid and still be completely different experiences for the person editing them — one a merchant touches confidently, one that calls a developer for every change. The difference is not skill, it is division: which block is a section, which markup is a snippet, which page is a template, and what the settings promise. This is how I draw those lines — for the editor, because the editor is who the theme is actually for.",
     "sections": [
       {
         "heading": "The three units: section, snippet, template",
@@ -570,7 +570,7 @@
     ],
     "excerpt": "A repeatable accessibility test workflow for Shopify themes: the test matrix to run, the evidence to keep, and the parts that automation will never find.",
     "featuredImage": "shopify-accessibility-testing-workflow-hero",
-    "intro": "One-off accessibility audits have a half-life: the store is fixed once, and the next release quietly undoes half of it. The fix is not a better audit — it is a workflow that runs the same matrix on every release, keeps evidence a reviewer could act on, and knows exactly what the automated checks will and will not find. This guide is that workflow.",
+    "intro": "I have seen too many stores get audited once, fixed once, and quietly undo half of it by the next release to trust a one-off accessibility pass. So I stopped doing one-off passes: I run a fixed matrix on every release, keep evidence a reviewer could act on, and treat automated checks for what they are — a floor, not a finish line. This workflow is that system, and it is the same system I stand behind when a client asks how they know the store is still accessible.",
     "sections": [
       {
         "heading": "Why one-off audits don't hold",
@@ -640,7 +640,7 @@
     ],
     "excerpt": "A release discipline for Shopify themes: change logs, test environments, rollback plans, and the test that decides when a change is a fix, a refactor, or a rebuild.",
     "featuredImage": "shopify-theme-maintenance-hero",
-    "intro": "Themes do not break from one bad change; they break from a hundred small ones, each reasonable in isolation and none tested against the whole. The difference between a theme that stays stable for years and one that needs a rewrite is not talent — it is release discipline: a scope statement for every change, a test pass in an environment where it can fail, a rollback that works, and a change log someone reads. This guide is the discipline, as a checklist.",
+    "intro": "A theme does not break from one bad change; I have watched it break from a hundred small ones, each reasonable in isolation and none of them tested against the whole store. The themes that stay stable for years are not luckier — they are treated like releases: scope stated, tested where they can fail, undoable, written down. This is the release discipline I bring to maintenance, and the checklist that makes it boring, which is exactly the point.",
     "sections": [
       {
         "heading": "What breaks themes in practice",
