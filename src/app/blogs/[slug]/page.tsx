@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, ArrowRight } from "lucide-react";
@@ -13,6 +14,20 @@ import { relatedServiceSlugs, serviceLinkLabel } from "@/lib/serviceLinks";
 import RichContent, { richHeadings } from "@/components/blog/RichContent";
 export const dynamic = "force-dynamic";
 type Props = { params: Promise<{ slug: string }> };
+/** Inline journal markup: *terms* are marked with the site's accent marker. */
+function inlineMarkup(text: string): ReactNode[] {
+  const nodes: ReactNode[] = [];
+  text.split(/(\*[^*]+\*)/g).forEach((part, i) => {
+    if (part.length > 2 && part.startsWith("*") && part.endsWith("*"))
+      nodes.push(
+        <mark key={i} className="hl">
+          {part.slice(1, -1)}
+        </mark>,
+      );
+    else if (part) nodes.push(part);
+  });
+  return nodes;
+}
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const a = await publishedArticle(slug);
@@ -219,12 +234,12 @@ export default async function ArticlePage({ params }: Props) {
                         : "Based on supplied storefront captures and public content. Recommendations are distinguished from observations; implementation ownership and commercial results are not inferred."}
                   </p>
                 </div>
-                <p className="article-intro">{a.intro}</p>
+                <p className="article-intro">{inlineMarkup(a.intro)}</p>
                 {a.sections.map((s, i) => (
                   <section key={s.heading} id={`section-${i}`}>
                     <h2>{s.heading}</h2>
                     {s.paragraphs.map((p) => (
-                      <p key={p}>{p}</p>
+                      <p key={p}>{inlineMarkup(p)}</p>
                     ))}
                     {s.code && (
                       <figure className="article-code">

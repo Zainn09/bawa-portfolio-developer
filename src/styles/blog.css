@@ -757,6 +757,12 @@
   letter-spacing: -0.7px;
   margin-top: 17px;
 }
+.article-prose mark.hl {
+  background: linear-gradient(transparent 58%, var(--accent-wash) 58%);
+  box-shadow: inset 0 -2px 0 var(--accent);
+  padding: 0 2px;
+  color: var(--ink);
+}
 .article-code {
   margin: 26px 0 10px;
   border: var(--border);
