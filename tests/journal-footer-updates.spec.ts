@@ -18,11 +18,18 @@ test("publication dates are fixed: the 22 Jul–22 Sep 2026 baseline window plus
     if (article.featuredImage.src)
       expect(article.featuredImage.capturedAt).toBe("2026-09-20");
   }
+  // Original guides carry owner-requested editorial dates scattered across
+  // the previous fifteen days; the original editorial images still carry no
+  // capture provenance.
+  const guideDates = guides
+    .map((g) => g.publishedAt)
+    .sort((x, y) => x.localeCompare(y));
+  expect(new Set(guideDates).size).toBe(10);
+  expect(guideDates[0] >= "2026-10-02").toBe(true);
+  expect(guideDates.at(-1)! <= "2026-10-16").toBe(true);
   for (const guide of guides) {
-    // Original guides published on their real date; no backdating and no
-    // fabricated capture provenance on the original editorial images.
-    expect(guide.publishedAt).toBe("2026-10-16");
     expect(guide.updatedAt).toBe("2026-10-16");
+    expect(guide.updatedAt! >= guide.publishedAt).toBe(true);
     expect(guide.featuredImage.src).toContain("/blog/shopify-guides/");
     expect(guide.featuredImage.capturedAt).toBeUndefined();
   }

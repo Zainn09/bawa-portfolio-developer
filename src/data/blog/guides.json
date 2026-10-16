@@ -4,7 +4,11 @@
     "title": "Shopify Theme Development: Architecture, Liquid and Best Practices",
     "project": "shopify-guides",
     "category": "Theme Development",
-    "tags": ["Theme Development", "Liquid", "Shopify"],
+    "tags": [
+      "Theme Development",
+      "Liquid",
+      "Shopify"
+    ],
     "excerpt": "A working mental model for Shopify themes: where Liquid belongs, where it doesn't, and the habits that keep a theme maintainable for its second and third year.",
     "featuredImage": "shopify-theme-development-best-practices-hero",
     "intro": "Most theme problems are not Liquid problems. They are architecture problems that become Liquid problems: logic that leaked into a section, a snippet that secretly belongs to one store, a settings schema no merchant can read. This guide builds the working model first, then the habits that keep a theme maintainable after the launch excitement has faded.",
@@ -61,14 +65,22 @@
     "status": "published",
     "seoTitle": "Shopify Theme Development: Architecture, Liquid and Best Practices",
     "seoDescription": "A practical guide to Shopify theme development: Liquid boundaries, reusable sections, and a code-review checklist that keeps themes maintainable.",
-    "relatedArticles": ["prime-baby-gear-navigation", "shopify-theme-architecture", "prime-baby-gear-image-performance"]
+    "relatedArticles": [
+      "prime-baby-gear-navigation",
+      "shopify-theme-architecture",
+      "prime-baby-gear-image-performance"
+    ]
   },
   {
     "slug": "shopify-wcag-remediation",
     "title": "Shopify WCAG Remediation: A Practical Accessibility Checklist",
     "project": "shopify-guides",
     "category": "Accessibility",
-    "tags": ["Accessibility", "WCAG", "Shopify"],
+    "tags": [
+      "Accessibility",
+      "WCAG",
+      "Shopify"
+    ],
     "excerpt": "A field checklist for WCAG work on a Shopify store: how to run the pass, what to log in the issue register, and the honest line between improved and conformed.",
     "featuredImage": "shopify-wcag-remediation-hero",
     "intro": "Accessibility work on a live store fails in two predictable ways. It runs without a record, so nothing is verifiable later. Or it ends with a conformance claim that the evidence does not support. This checklist is the middle path: a structured pass, a register you can hand to a reviewer, and language about conformance that stays honest.",
@@ -118,19 +130,26 @@
     ],
     "takeaway": "Log every issue with severity, reproduction, fix, and retest status. An improved store is easy to show; a conformed store is something you can only claim after a documented verification pass.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-09",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "Shopify WCAG Remediation: A Practical Accessibility Checklist",
     "seoDescription": "A practical WCAG remediation checklist for Shopify stores: issue registers, fix families, verification passes, and honest conformance language.",
-    "relatedArticles": ["prime-baby-gear-mobile-navigation", "shopify-keyboard-navigation-accessibility"]
+    "relatedArticles": [
+      "prime-baby-gear-mobile-navigation",
+      "shopify-keyboard-navigation-accessibility"
+    ]
   },
   {
     "slug": "custom-shopify-theme-vs-premium",
     "title": "Custom Shopify Theme Development vs. Premium Themes",
     "project": "shopify-guides",
     "category": "Custom Themes",
-    "tags": ["Custom Themes", "Shopify", "Decision-making"],
+    "tags": [
+      "Custom Themes",
+      "Shopify",
+      "Decision-making"
+    ],
     "excerpt": "A decision matrix for choosing between a premium theme and a custom build — without assuming custom is inherently faster, more profitable, or better.",
     "featuredImage": "custom-shopify-theme-vs-premium-hero",
     "intro": "The premium-versus-custom question is usually asked in the wrong direction. People ask whether custom is better. The useful question is whether the requirements can be met without forking someone else's theme — and what that costs over the next two years, not just at launch. This guide builds the decision matrix and removes the assumptions that distort both sides.",
@@ -180,19 +199,26 @@
     ],
     "takeaway": "Choose by fit, not by default. A premium theme is the right answer for most launches; custom is the right answer when the required experience or data model cannot be reached without forking the theme.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-05",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "Custom Shopify Theme Development vs. Premium Themes",
     "seoDescription": "A decision matrix for choosing between custom Shopify theme development and premium themes — with the assumptions to question in both directions.",
-    "relatedArticles": ["shopify-theme-development-best-practices", "when-to-build-custom-shopify-theme"]
+    "relatedArticles": [
+      "shopify-theme-development-best-practices",
+      "when-to-build-custom-shopify-theme"
+    ]
   },
   {
     "slug": "shopify-core-web-vitals",
     "title": "Shopify Core Web Vitals: A Developer's Optimization Guide",
     "project": "shopify-guides",
     "category": "Performance",
-    "tags": ["Performance", "Core Web Vitals", "Shopify"],
+    "tags": [
+      "Performance",
+      "Core Web Vitals",
+      "Shopify"
+    ],
     "excerpt": "LCP, INP, and CLS explained for theme developers: what field data and lab data each measure, and where the theme-level fixes actually land.",
     "featuredImage": "shopify-core-web-vitals-hero",
     "intro": "Core Web Vitals are the most-misread numbers in storefront performance work. They are a triage instrument, not a score to optimize, and the first step is knowing which of the two datasets you are looking at. This guide covers what LCP, INP, and CLS measure, when field and lab data disagree, and the honest boundary of what a theme developer can fix.",
@@ -242,19 +268,26 @@
     ],
     "takeaway": "Treat the three metrics as a triage, not a score. Find which one hurts real users in field data, fix the theme-level causes the theme owns, and report the change with the same method you used to measure the problem.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-14",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "Shopify Core Web Vitals: A Developer's Optimization Guide",
     "seoDescription": "How Shopify theme developers should approach Core Web Vitals: field versus lab data, LCP, INP, CLS, and the theme-level fixes that actually land.",
-    "relatedArticles": ["prime-baby-gear-image-performance", "shopify-theme-speed-optimization"]
+    "relatedArticles": [
+      "prime-baby-gear-image-performance",
+      "shopify-theme-speed-optimization"
+    ]
   },
   {
     "slug": "shopify-keyboard-navigation-accessibility",
     "title": "How to Fix Keyboard Navigation and Screen Reader Issues in Shopify",
     "project": "shopify-guides",
     "category": "Accessibility",
-    "tags": ["Accessibility", "Keyboard Navigation", "Shopify"],
+    "tags": [
+      "Accessibility",
+      "Keyboard Navigation",
+      "Shopify"
+    ],
     "excerpt": "Concrete keyboard and screen reader fixes for Shopify storefronts: focus order, focus trapping, live regions, and the code behind each fix.",
     "featuredImage": "shopify-keyboard-navigation-accessibility-hero",
     "intro": "Keyboard and screen reader defects on a storefront follow a small number of patterns: focus lands in the wrong place, focus gets trapped or lost, controls that look operable are not, and state changes that a sighted user sees are never announced. This guide walks the test sequences that find them and the theme-level code that fixes them. Where an example is illustrative rather than a confirmed defect on a specific store, it is labeled as such.",
@@ -306,19 +339,26 @@
     ],
     "takeaway": "Keyboard support is not a feature toggle. Fix the DOM order first, then manage focus at every open and close, then verify with real keyboard and screen reader sequences before calling anything fixed.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-13",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "How to Fix Keyboard Navigation and Screen Reader Issues in Shopify",
     "seoDescription": "Concrete keyboard and screen reader fixes for Shopify themes: focus order, focus trapping, live regions, and the code behind each fix.",
-    "relatedArticles": ["prime-baby-gear-mobile-navigation", "shopify-wcag-remediation"]
+    "relatedArticles": [
+      "prime-baby-gear-mobile-navigation",
+      "shopify-wcag-remediation"
+    ]
   },
   {
     "slug": "when-to-build-custom-shopify-theme",
     "title": "When Does Your Shopify Store Need a Custom Theme?",
     "project": "shopify-guides",
     "category": "Custom Themes",
-    "tags": ["Custom Themes", "Shopify", "Decision-making"],
+    "tags": [
+      "Custom Themes",
+      "Shopify",
+      "Decision-making"
+    ],
     "excerpt": "A limit on the theme, a limit on the data, or a limit on the apps? Naming which system is actually constraining the store decides whether a custom theme is needed at all.",
     "featuredImage": "when-to-build-custom-shopify-theme-hero",
     "intro": "'Our theme can't do that' is the most common reason stores are sent toward a custom build, and it is often the wrong diagnosis. The constraint is usually in the data model or in an app, and the cure is different and cheaper. This guide separates the three kinds of limits a store actually hits, using the storefront categories documented in this journal as the reference set — without implying any of those stores received a custom build.",
@@ -368,19 +408,26 @@
     ],
     "takeaway": "Ask which system is actually limiting you. If a section or an app can carry the requirement, the theme is not the problem; if the data model or the required interaction cannot be reached, that is what custom buys.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-06",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "When Does Your Shopify Store Need a Custom Theme?",
     "seoDescription": "How to tell whether your Shopify store needs a custom theme: theme limits, data model limits, app limits — and the signals that point each way.",
-    "relatedArticles": ["custom-shopify-theme-vs-premium", "prime-baby-gear-travel-system-details"]
+    "relatedArticles": [
+      "custom-shopify-theme-vs-premium",
+      "prime-baby-gear-travel-system-details"
+    ]
   },
   {
     "slug": "shopify-theme-speed-optimization",
     "title": "Shopify Theme Speed Optimization: Images, JavaScript and Apps",
     "project": "shopify-guides",
     "category": "Performance",
-    "tags": ["Performance", "Shopify", "Optimization"],
+    "tags": [
+      "Performance",
+      "Shopify",
+      "Optimization"
+    ],
     "excerpt": "A symptom-to-fix troubleshooting path for slow Shopify themes: what to check first, which tools to trust, and why there is no universal fix.",
     "featuredImage": "shopify-theme-speed-optimization-hero",
     "intro": "Slow Shopify stores are usually slow in one specific way: the page loads slowly, the interactions lag, or the layout shifts — and each symptom has a different first check, a different tool, and a different fix. This guide is organized as the troubleshooting tree a developer actually follows, with the retest step that makes each fix verifiable. There is no universal fix, and this guide will not pretend there is one.",
@@ -430,19 +477,26 @@
     ],
     "takeaway": "Follow the symptom to the cause, fix the layer that owns it, and retest the same page before and after. 'Remove the apps' is a last resort, not a starting point.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-11",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "Shopify Theme Speed Optimization: Images, JavaScript and Apps",
     "seoDescription": "A symptom-to-fix troubleshooting guide for slow Shopify themes: images, JavaScript, and app scripts, with retest steps for every branch.",
-    "relatedArticles": ["prime-baby-gear-image-performance", "shopify-core-web-vitals"]
+    "relatedArticles": [
+      "prime-baby-gear-image-performance",
+      "shopify-core-web-vitals"
+    ]
   },
   {
     "slug": "shopify-theme-architecture",
     "title": "Shopify Theme Architecture: Building Reusable Sections That Scale",
     "project": "shopify-guides",
     "category": "Theme Architecture",
-    "tags": ["Theme Architecture", "Liquid", "Shopify"],
+    "tags": [
+      "Theme Architecture",
+      "Liquid",
+      "Shopify"
+    ],
     "excerpt": "How sections, snippets, and templates should relate in a Shopify theme — and how to make the choices that matter for the merchant who edits it, not just the developer who wrote it.",
     "featuredImage": "shopify-theme-architecture-hero",
     "intro": "Two themes can have identical Liquid and behave completely differently: one a merchant can edit with confidence, the other a minefield where every change needs a developer. The difference is architecture — how sections, snippets, and templates are divided, and what the settings schemas promise. This guide builds the model from the units up, and makes the choices on the merchant's behalf, because the merchant is who the theme is actually for.",
@@ -494,19 +548,26 @@
     ],
     "takeaway": "Design the theme around what the merchant edits daily. A section that survives moving between stores, and a schema the merchant can read without a developer, is doing its job.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-03",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "Shopify Theme Architecture: Building Reusable Sections That Scale",
     "seoDescription": "How sections, snippets, and templates should work together in a Shopify theme, designed around what the merchant edits — not just the developer.",
-    "relatedArticles": ["shopify-theme-development-best-practices", "shopify-theme-maintenance"]
+    "relatedArticles": [
+      "shopify-theme-development-best-practices",
+      "shopify-theme-maintenance"
+    ]
   },
   {
     "slug": "shopify-accessibility-testing-workflow",
     "title": "Shopify Accessibility Testing: A Repeatable QA Workflow",
     "project": "shopify-guides",
     "category": "Accessibility",
-    "tags": ["Accessibility", "QA", "Shopify"],
+    "tags": [
+      "Accessibility",
+      "QA",
+      "Shopify"
+    ],
     "excerpt": "A repeatable accessibility test workflow for Shopify themes: the test matrix to run, the evidence to keep, and the parts that automation will never find.",
     "featuredImage": "shopify-accessibility-testing-workflow-hero",
     "intro": "One-off accessibility audits have a half-life: the store is fixed once, and the next release quietly undoes half of it. The fix is not a better audit — it is a workflow that runs the same matrix on every release, keeps evidence a reviewer could act on, and knows exactly what the automated checks will and will not find. This guide is that workflow.",
@@ -556,19 +617,27 @@
     ],
     "takeaway": "Accessibility testing is a workflow, not a tool. Run the same matrix on every release, keep evidence you could hand to a reviewer, and treat automated checks as the floor, not the finish line.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-02",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "Shopify Accessibility Testing: A Repeatable QA Workflow",
     "seoDescription": "A repeatable accessibility QA workflow for Shopify themes: test matrix, keyboard and screen reader passes, evidence standards, and release cadence.",
-    "relatedArticles": ["shopify-wcag-remediation", "shopify-keyboard-navigation-accessibility", "prime-baby-gear-mobile-navigation"]
+    "relatedArticles": [
+      "shopify-wcag-remediation",
+      "shopify-keyboard-navigation-accessibility",
+      "prime-baby-gear-mobile-navigation"
+    ]
   },
   {
     "slug": "shopify-theme-maintenance",
     "title": "How to Maintain a Shopify Theme Without Breaking Storefront Features",
     "project": "shopify-guides",
     "category": "Maintenance",
-    "tags": ["Maintenance", "Shopify", "Theme Development"],
+    "tags": [
+      "Maintenance",
+      "Shopify",
+      "Theme Development"
+    ],
     "excerpt": "A release discipline for Shopify themes: change logs, test environments, rollback plans, and the test that decides when a change is a fix, a refactor, or a rebuild.",
     "featuredImage": "shopify-theme-maintenance-hero",
     "intro": "Themes do not break from one bad change; they break from a hundred small ones, each reasonable in isolation and none tested against the whole. The difference between a theme that stays stable for years and one that needs a rewrite is not talent — it is release discipline: a scope statement for every change, a test pass in an environment where it can fail, a rollback that works, and a change log someone reads. This guide is the discipline, as a checklist.",
@@ -618,11 +687,14 @@
     ],
     "takeaway": "Treat every theme change like a release: state the scope, test it where it can fail, know how to undo it, and write down what changed. That discipline is what keeps a storefront stable across a year of edits.",
     "mobileGallery": false,
-    "publishedAt": "2026-10-16",
+    "publishedAt": "2026-10-08",
     "updatedAt": "2026-10-16",
     "status": "published",
     "seoTitle": "How to Maintain a Shopify Theme Without Breaking Storefront Features",
     "seoDescription": "A release discipline for Shopify theme maintenance: change logs, test environments, rollback plans, and the fix-versus-refactor-versus-rebuild test.",
-    "relatedArticles": ["shopify-theme-development-best-practices", "shopify-theme-speed-optimization"]
+    "relatedArticles": [
+      "shopify-theme-development-best-practices",
+      "shopify-theme-speed-optimization"
+    ]
   }
 ]

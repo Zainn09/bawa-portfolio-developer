@@ -110,7 +110,7 @@ describes real development and QA practice — no invented results.
 
 ### Shopify Guides journal category (16 October 2026)
 
-Ten original technical guides were published under a sixth journal category, `Shopify Guides` (project `shopify-guides`), targeting informational queries that the service pages intentionally do not compete with:
+Ten original technical guides were published under a sixth journal category, `Shopify Guides` (project `shopify-guides`), with distinct editorial dates across 2–16 October 2026, targeting informational queries that the service pages intentionally do not compete with:
 
 - `/blogs/shopify-theme-development-best-practices` — _Shopify theme development_ (renamed from the strategy slug `shopify-theme-development-guide`, which string-collides with the shipped resource `/resources/shopify-theme-development-guide`)
 - `/blogs/shopify-wcag-remediation`
