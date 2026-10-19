@@ -12,8 +12,8 @@ import {
   type PostRow,
 } from "../src/lib/cms/model";
 
-test("all 45 journal articles (35 baseline + 10 original guides) import with valid rich content, dates, sources, and genuine media", () => {
-  expect(articles).toHaveLength(45);
+test("all 55 journal articles (35 baseline + 20 original guides) import with valid rich content, dates, sources, and genuine media", () => {
+  expect(articles).toHaveLength(55);
   for (const article of articles) {
     const input = importArticle(article);
     const parsed = postSchema.safeParse(input);
@@ -21,10 +21,13 @@ test("all 45 journal articles (35 baseline + 10 original guides) import with val
       parsed.success,
       `${article.slug}: ${!parsed.success ? JSON.stringify(parsed.error.issues) : ""}`,
     ).toBe(true);
-    expect(JSON.stringify(input.content)).toContain(article.intro);
+    // The intro and takeaway live inside the rich content as text nodes, so
+    // compare them in the same escaped form JSON.stringify produces.
+    const contentStr = JSON.stringify(input.content);
+    expect(contentStr).toContain(JSON.stringify(article.intro).slice(1, -1));
     expect(input.publishedAt).toBe(article.publishedAt);
     expect(input.sources).toEqual(article.sources);
-    expect(JSON.stringify(input.content)).toContain(article.takeaway);
+    expect(contentStr).toContain(JSON.stringify(article.takeaway).slice(1, -1));
   }
 });
 test("unsafe links and unapproved image origins are rejected", () => {

@@ -1,12 +1,29 @@
 import { test, expect } from "@playwright/test";
 import { articles } from "../src/data/blog";
 
-test("publication dates are fixed: the 22 Jul–22 Sep 2026 baseline window plus same-day original guides", () => {
+const batchOneSlugs = [
+  "shopify-theme-development-best-practices",
+  "shopify-wcag-remediation",
+  "custom-shopify-theme-vs-premium",
+  "shopify-core-web-vitals",
+  "shopify-keyboard-navigation-accessibility",
+  "when-to-build-custom-shopify-theme",
+  "shopify-theme-speed-optimization",
+  "shopify-theme-architecture",
+  "shopify-accessibility-testing-workflow",
+  "shopify-theme-maintenance",
+];
+
+test("publication dates are fixed: the 22 Jul–22 Sep 2026 baseline plus two owner-dated guide batches", () => {
   const baseline = articles.filter((a) => a.project !== "shopify-guides");
   const guides = articles.filter((a) => a.project === "shopify-guides");
-  expect(articles).toHaveLength(45);
+  const batchOne = guides.filter((g) => batchOneSlugs.includes(g.slug));
+  const batchTwo = guides.filter((g) => !batchOneSlugs.includes(g.slug));
+  expect(articles).toHaveLength(55);
   expect(baseline).toHaveLength(35);
-  expect(guides).toHaveLength(10);
+  expect(guides).toHaveLength(20);
+  expect(batchOne).toHaveLength(10);
+  expect(batchTwo).toHaveLength(10);
   const baseDates = baseline.map((a) => a.publishedAt).sort();
   expect(baseDates).toHaveLength(35);
   expect(new Set(baseDates).size).toBe(35);
@@ -18,20 +35,44 @@ test("publication dates are fixed: the 22 Jul–22 Sep 2026 baseline window plus
     if (article.featuredImage.src)
       expect(article.featuredImage.capturedAt).toBe("2026-09-20");
   }
-  // Original guides carry owner-requested editorial dates scattered across
-  // the previous fifteen days; the original editorial images still carry no
-  // capture provenance.
-  const guideDates = guides
+  // Batch one: the original guides, owner-requested editorial dates across
+  // the first fifteen-day window, original editorial heroes, no capture
+  // provenance.
+  const b1 = batchOne
     .map((g) => g.publishedAt)
     .sort((x, y) => x.localeCompare(y));
-  expect(new Set(guideDates).size).toBe(10);
-  expect(guideDates[0] >= "2026-10-02").toBe(true);
-  expect(guideDates.at(-1)! <= "2026-10-16").toBe(true);
-  for (const guide of guides) {
-    expect(guide.updatedAt).toBe("2026-10-16");
-    expect(guide.updatedAt! >= guide.publishedAt).toBe(true);
-    expect(guide.featuredImage.src).toContain("/blog/shopify-guides/");
-    expect(guide.featuredImage.capturedAt).toBeUndefined();
+  expect(new Set(b1).size).toBe(10);
+  expect(b1[0] >= "2026-10-02").toBe(true);
+  expect(b1.at(-1)! <= "2026-10-16").toBe(true);
+  for (const g of batchOne) {
+    expect(g.updatedAt).toBe("2026-10-16");
+    expect(g.updatedAt! >= g.publishedAt).toBe(true);
+    expect(g.featuredImage.src).toContain("/blog/shopify-guides/");
+    expect(g.featuredImage.capturedAt).toBeUndefined();
+  }
+  // Batch two: the problem-led technical guides, owner-requested editorial
+  // dates across the following fifteen-day window. Heroes are either
+  // documented storefront captures (captioned as such) or honest
+  // approved-imagery-pending placeholders — never AI images, and never
+  // carrying capture provenance.
+  const b2 = batchTwo
+    .map((g) => g.publishedAt)
+    .sort((x, y) => x.localeCompare(y));
+  expect(new Set(b2).size).toBe(10);
+  expect(b2[0] >= "2026-10-05").toBe(true);
+  expect(b2.at(-1)! <= "2026-10-19").toBe(true);
+  for (const g of batchTwo) {
+    expect(g.updatedAt).toBe("2026-10-19");
+    expect(g.updatedAt! >= g.publishedAt).toBe(true);
+    expect(g.featuredImage.capturedAt).toBeUndefined();
+    if (g.featuredImage.src) {
+      expect(
+        /\/blog\/(prime-baby-gear|ollie-burwell|nokoluxe|paw-by-four)\//.test(
+          g.featuredImage.src,
+        ),
+      ).toBe(true);
+      expect(g.featuredImage.alt).toContain("documented storefront");
+    }
   }
 });
 

@@ -4,13 +4,13 @@ import { articles, blogProjects, dateLabel } from "../src/data/blog";
 import { readFileSync } from "node:fs";
 import sharp from "sharp";
 
-test("editorial inventory: seven per supplied store plus ten original Shopify guides", async () => {
-  expect(articles).toHaveLength(45);
-  expect(new Set(articles.map((a) => a.slug)).size).toBe(45);
-  expect(new Set(articles.map((a) => a.title)).size).toBe(45);
+test("editorial inventory: seven per supplied store plus twenty original Shopify guides", async () => {
+  expect(articles).toHaveLength(55);
+  expect(new Set(articles.map((a) => a.slug)).size).toBe(55);
+  expect(new Set(articles.map((a) => a.title)).size).toBe(55);
   for (const p of blogProjects)
     expect(articles.filter((a) => a.project === p.slug)).toHaveLength(
-      p.slug === "shopify-guides" ? 10 : 7,
+      p.slug === "shopify-guides" ? 20 : 7,
     );
   for (const a of articles) {
     expect(a.sections).toHaveLength(a.project === "shopify-guides" ? 8 : 3);
@@ -24,8 +24,19 @@ test("editorial inventory: seven per supplied store plus ten original Shopify gu
     expect(a.seoDescription).toBeTruthy();
     expect(a.sources).toHaveLength(1);
     expect(a.sources[0].url).not.toContain("github.com");
-    for (const m of [a.featuredImage, ...a.mobileImages])
-      if (m.src) expect(m.src).toContain(`/blog/${a.project}/`);
+    for (const m of [a.featuredImage, ...a.mobileImages]) {
+      if (!m.src) continue;
+      // The second guide batch reuses documented storefront captures
+      // (clearly captioned as such) where they genuinely illustrate an
+      // article; every other image lives in its own project folder.
+      const inOwnFolder = m.src.includes(`/blog/${a.project}/`);
+      const documentedCapture =
+        a.project === "shopify-guides" &&
+        /\/blog\/(prime-baby-gear|ollie-burwell|nokoluxe|paw-by-four)\//.test(
+          m.src,
+        );
+      expect(inOwnFolder || documentedCapture).toBe(true);
+    }
     if (a.project === "vintage-art-garage")
       expect(a.featuredImage.src).toBeUndefined();
   }
@@ -35,6 +46,9 @@ test("all imported screenshots and responsive variants decode with truthful dime
   const assets = JSON.parse(readFileSync("src/data/blog/assets.json", "utf8"));
   for (const [project, group] of Object.entries(assets) as any[])
     for (const m of Object.values(group) as any[]) {
+      // Pending-capture entries declare intended geometry only; there is
+      // no file to decode until the real image is supplied.
+      if (!m.src) continue;
       const image = await sharp(`public${m.src}`).metadata();
       expect(image.width).toBe(m.width);
       expect(image.height).toBe(m.height);
@@ -103,7 +117,95 @@ test("the two prime-baby-gear notes link the new performance and accessibility g
   expect(nav).toContain("/blogs/shopify-accessibility-testing-workflow");
 });
 
-test("all 45 article routes render full text, dates, sources and production metadata", async ({
+const batchTwo = articles.filter(
+  (a) =>
+    a.project === "shopify-guides" &&
+    a.slug.startsWith("shopify-") &&
+    ![
+      "shopify-theme-development-best-practices",
+      "shopify-wcag-remediation",
+      "custom-shopify-theme-vs-premium",
+      "shopify-core-web-vitals",
+      "shopify-keyboard-navigation-accessibility",
+      "when-to-build-custom-shopify-theme",
+      "shopify-theme-speed-optimization",
+      "shopify-theme-architecture",
+      "shopify-accessibility-testing-workflow",
+      "shopify-theme-maintenance",
+    ].includes(a.slug),
+);
+
+test("the second guide batch renders documentation cards, samples and honest media", async ({
+  request,
+}) => {
+  expect(batchTwo).toHaveLength(10);
+  for (const a of batchTwo) {
+    const res = await request.get(`/blogs/${a.slug}`);
+    expect(res.status()).toBe(200);
+    const html = await res.text();
+    // Every guide carries official-documentation reference cards, each an
+    // external, new-tab, noopener link.
+    expect(html).toContain("OFFICIAL DOCUMENTATION");
+    expect(html).toContain("docref-card");
+    // No capture date is ever shown for this batch, and any featured image
+    // that is present is a documented storefront capture or an honest
+    // pending-imagery placeholder — never an AI image or a fake screenshot.
+    expect(html).not.toContain("Captured");
+    expect(html).not.toContain("Captured 2026-09-20");
+    if (!a.featuredImage.src) {
+      expect(html).toContain("Approved imagery pending");
+    }
+  }
+});
+
+test("the second guide batch cross-links per the linking plan and reaches the services page", async ({
+  request,
+}) => {
+  const htmlFor = async (slug: string) =>
+    (await request.get(`/blogs/${slug}`)).text();
+  // The strategy's cross-link graph: each arrow is an in-app link.
+  const links: [string, string[]][] = [
+    [
+      "shopify-ai-search-product-discovery",
+      ["shopify-product-data-management", "shopify-collection-filters-guide"],
+    ],
+    [
+      "shopify-product-variant-issues",
+      [
+        "shopify-product-data-management",
+        "shopify-product-schema-errors",
+        "shopify-google-merchant-center-errors",
+      ],
+    ],
+    [
+      "shopify-migration-seo-checklist",
+      ["shopify-pages-not-indexed-google", "shopify-product-schema-errors"],
+    ],
+    [
+      "shopify-markets-international-seo",
+      ["shopify-pages-not-indexed-google", "shopify-migration-seo-checklist"],
+    ],
+    [
+      "shopify-pages-not-indexed-google",
+      ["shopify-migration-seo-checklist", "shopify-product-schema-errors"],
+    ],
+    [
+      "shopify-b2b-storefront-guide",
+      ["shopify-product-variant-issues", "shopify-product-data-management"],
+    ],
+  ];
+  for (const [from, targets] of links) {
+    const html = await htmlFor(from);
+    for (const t of targets) expect(html).toContain(`/blogs/${t}`);
+  }
+  // Every guide in the batch leads to the Shopify development service.
+  for (const a of batchTwo) {
+    const html = await htmlFor(a.slug);
+    expect(html).toContain('href="/shopify-development"');
+  }
+});
+
+test("all 55 article routes render full text, dates, sources and production metadata", async ({
   request,
 }) => {
   for (const a of articles) {
@@ -133,7 +235,7 @@ test("journal filters, search, query links, empty states and load more work", as
 }) => {
   await page.goto("/blogs");
   await expect(page.locator(".journal-results-line")).toContainText(
-    "45 articles",
+    "55 articles",
   );
   await expect(page.locator(".journal-card")).toHaveCount(8);
   // Newly added articles always lead the journal, in date sequence.
@@ -159,11 +261,14 @@ test("journal filters, search, query links, empty states and load more work", as
     .locator(".journal-store-filters")
     .getByRole("button", { name: "Shopify Guides" })
     .click();
+  // Twenty guides page at eight: 8, then 16, then all 20.
   await expect(page.locator(".journal-card")).toHaveCount(8);
   await page.getByRole("button", { name: "More from the journal" }).click();
-  await expect(page.locator(".journal-card")).toHaveCount(10);
+  await expect(page.locator(".journal-card")).toHaveCount(16);
+  await page.getByRole("button", { name: "More from the journal" }).click();
+  await expect(page.locator(".journal-card")).toHaveCount(20);
   await expect(page.locator(".journal-results-line")).toContainText(
-    "10 articles",
+    "20 articles",
   );
   await page.getByRole("button", { name: "Reset filters" }).click();
   await page.getByRole("searchbox", { name: "Search articles" }).fill("silk");
@@ -184,7 +289,7 @@ test("journal filters, search, query links, empty states and load more work", as
     await page.getByRole("button", { name: "More from the journal" }).count()
   )
     await page.getByRole("button", { name: "More from the journal" }).click();
-  await expect(page.locator(".journal-card")).toHaveCount(45);
+  await expect(page.locator(".journal-card")).toHaveCount(55);
   await page.goto("/blogs?project=ollie-burwell&category=SEO");
   await expect(page.locator(".journal-card")).toHaveCount(1);
   await page.reload();
@@ -205,8 +310,10 @@ for (const width of [
       "/blogs",
       "/blogs/prime-baby-gear-navigation",
       "/blogs/vintage-art-garage-authentic-capture-plan",
-      // The longest guide: full-length articles must not overflow either.
+      // The two longest guides: full-length articles must not overflow
+      // either.
       "/blogs/shopify-theme-development-best-practices",
+      "/blogs/shopify-collection-filters-guide",
     ]) {
       await page.goto(route);
       await page.evaluate(() => document.fonts.ready);
