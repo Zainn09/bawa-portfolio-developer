@@ -32,7 +32,7 @@ Each record includes `title`, `slug`, `project`, `category`, `tags`, `excerpt`, 
 - Reading time is derived from the article’s text, not manually invented.
 - Categories and search are derived from published records. Changing a category updates the archive filter automatically.
 
-The initial requirement was exactly 35 articles, seven per supplied store, and the journal now carries 45: that 35-article baseline plus ten original Shopify guides under the `shopify-guides` project (published 2026-10-16). Inventory tests encode the current 45-article state (seven per supplied store, six sections and a code block where used for guides). If you intentionally change the publication count later, update those expectations as part of the editorial change.
+The initial requirement was exactly 35 articles, seven per supplied store, and the journal now carries 55: that 35-article baseline plus twenty original Shopify guides under the `shopify-guides` project — a first batch of ten (published 2026-10-16) and a second, problem-led batch of ten (published 5–19 October 2026). Inventory tests encode the current 55-article state (seven per supplied store, eight sections per guide plus a code block and/or documentation-reference card where used). If you intentionally change the publication count later, update those expectations as part of the editorial change.
 
 ## Image replacement
 
@@ -107,3 +107,30 @@ The follow-up production build and TypeScript check passed. All 21 journal regre
 ## Captions and date presentation
 
 Article images retain their descriptive captions and accessible full-size links, but no longer display “Captured … · Open image to inspect” prompts. Capture dates remain in `assets.json` for provenance. Publication and modification dates continue to feed the article page, Open Graph metadata, conditional structured data, and sitemap from the same editable records.
+
+## The second guide batch (problem-led technical guides)
+
+A second set of ten original guides was added under the same `shopify-guides` project, each targeting a distinct problem-led search intent and written to an 8–10 minute reading time:
+
+| Slug | Intent | Published |
+| --- | --- | --- |
+| `shopify-ai-search-product-discovery` | AI product discovery | 2026-10-19 |
+| `shopify-collection-filters-guide` | filters, facets, mobile drawers | 2026-10-17 |
+| `shopify-product-variant-issues` | variant selection, large catalogues | 2026-10-15 |
+| `shopify-pages-not-indexed-google` | crawl, index, quality stages | 2026-10-13 |
+| `shopify-product-data-management` | titles, attributes, metafields, bulk | 2026-10-12 |
+| `shopify-product-schema-errors` | structured data, price/availability | 2026-10-11 |
+| `shopify-google-merchant-center-errors` | feeds, mismatches, diagnostics | 2026-10-09 |
+| `shopify-migration-seo-checklist` | URL inventory, redirects, launch checks | 2026-10-08 |
+| `shopify-markets-international-seo` | hreflang, canonicals, market URLs | 2026-10-06 |
+| `shopify-b2b-storefront-guide` | company accounts, pricing, buyer UX | 2026-10-05 |
+
+**Dates.** The dates are owner-requested editorial dates, scattered across 5–19 October 2026 (`updatedAt` 2026-10-19). They follow the same owner-directed dating pattern as the first batch, not the date the copy was written.
+
+**Structure and linking.** Each guide has a personalized 3–5 line opening, eight sections, accent highlighter marks, descriptive internal links (sibling guides per the linking plan, the documented storefront notes, the matching service pages, and resource checklists), authoritative external references, and an official-documentation reference-card section (a new `docRefs` section field, rendered by the article page). The not-indexed guide embeds this journal's own live `robots.txt`, canonical tags, and sitemap excerpt as real, verifiable evidence.
+
+**Slug correction.** The upstream strategy referenced `/blogs/prime-baby-gear-product-record`; the live slug for that store note is `prime-baby-gear-product-data`. All internal links use the correct live slug.
+
+**Visuals (approved approach).** This batch uses no AI-generated imagery. Where a visual genuinely illustrates the article, a documented storefront capture is reused and clearly captioned as such (product detail, collection listing, brand range, mobile detail — sourced from the five documented stores, provenance in `docs/BLOG-ASSETS.md`). Where the required visual is a tool screenshot this work has no right to fabricate (Search Console, Merchant Center, Shopify Admin, B2B workflow, URL-redirect interface), the article carries an honest “approved imagery pending” placeholder with a descriptive alt, ready for a real, redacted capture to be dropped in. The asset-decode and inventory tests encode this: batch-two heroes must be a documented storefront capture or a pending placeholder, never an AI image, and never carrying capture provenance.
+
+**Checks.** `npm run typecheck`, `npm run build`, and the full Playwright suite pass with the batch published; the sitemap carries 83 URLs and the journal renders 55 articles with the newest leading.
