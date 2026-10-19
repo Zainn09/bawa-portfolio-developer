@@ -7,6 +7,7 @@ import noko from "./nokoluxe.json";
 import vintage from "./vintage-art-garage.json";
 import paw from "./paw-by-four.json";
 import guides from "./guides.json";
+import technical from "./technical-guides.json";
 import assetData from "./assets.json";
 
 export interface BlogMedia {
@@ -59,7 +60,8 @@ export interface ArticleInput {
   seoTitle: string;
   seoDescription: string;
   updatedAt?: string;
-  inlineImages?: string[];
+  /** Section-aligned; null marks a section with no inline image. */
+  inlineImages?: (string | null)[];
   comparisonImages?: string[];
 }
 export interface Article extends Omit<
@@ -67,7 +69,7 @@ export interface Article extends Omit<
   "featuredImage" | "inlineImages" | "comparisonImages"
 > {
   featuredImage: BlogMedia;
-  inlineImages: BlogMedia[];
+  inlineImages: (BlogMedia | null)[];
   comparisonImages: BlogMedia[];
   mobileImages: BlogMedia[];
   readingMinutes: number;
@@ -109,6 +111,7 @@ const input: ArticleInput[] = [
   ...vintage,
   ...paw,
   ...guides,
+  ...technical,
 ];
 export const articles: Article[] = input
   .filter((a) => a.status === "published")
@@ -132,7 +135,7 @@ export const articles: Article[] = input
       ...a,
       featuredImage: getBlogMedia(a.project, a.featuredImage),
       inlineImages: (a.inlineImages || []).map((key) =>
-        getBlogMedia(a.project, key),
+        key ? getBlogMedia(a.project, key) : null,
       ),
       comparisonImages: (a.comparisonImages || []).map((key) =>
         getBlogMedia(a.project, key),

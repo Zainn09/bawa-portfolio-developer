@@ -537,6 +537,97 @@
       "height": 592,
       "alt": "A laptop showing a dark code editor beside a spiral notebook with a handwritten release checklist, a coffee mug, and a hand on the trackpad.",
       "caption": "Original editorial image for the theme maintenance guide."
+    },
+    "capture-pbg-product-detail": {
+      "src": "/images/blog/prime-baby-gear/desktop-travel-system-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear (documented storefront): desktop product detail view",
+      "caption": "Prime Baby Gear — desktop product detail (documented storefront capture).",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-travel-system-detail-720.webp",
+      "smallWidth": 720
+    },
+    "capture-pbg-product-detail-mobile": {
+      "src": "/images/blog/prime-baby-gear/mobile-travel-system-detail.webp",
+      "width": 390,
+      "height": 844,
+      "alt": "Prime Baby Gear (documented storefront): mobile product detail view",
+      "caption": "Prime Baby Gear — mobile product detail (documented storefront capture)."
+    },
+    "capture-pbg-collection-listing": {
+      "src": "/images/blog/prime-baby-gear/desktop-collection-listing.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear (documented storefront): desktop collection listing",
+      "caption": "Prime Baby Gear — desktop collection listing (documented storefront capture).",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-collection-listing-720.webp",
+      "smallWidth": 720
+    },
+    "capture-pbg-brand-range": {
+      "src": "/images/blog/prime-baby-gear/desktop-babymore-brand-range.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Prime Baby Gear (documented storefront): Babymore brand range listing",
+      "caption": "Prime Baby Gear — Babymore brand range listing (documented storefront capture).",
+      "smallSrc": "/images/blog/prime-baby-gear/desktop-babymore-brand-range-720.webp",
+      "smallWidth": 720
+    },
+    "capture-ollie-sarong-detail": {
+      "src": "/images/blog/ollie-burwell/desktop-silk-sarong-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell (documented storefront): desktop product detail view",
+      "caption": "Ollie Burwell — desktop product detail (documented storefront capture).",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-silk-sarong-detail-720.webp",
+      "smallWidth": 720
+    },
+    "capture-ollie-collection-listing": {
+      "src": "/images/blog/ollie-burwell/desktop-collection-listing.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Ollie Burwell (documented storefront): desktop collection listing",
+      "caption": "Ollie Burwell — desktop collection listing (documented storefront capture).",
+      "smallSrc": "/images/blog/ollie-burwell/desktop-collection-listing-720.webp",
+      "smallWidth": 720
+    },
+    "capture-noko-chair-detail": {
+      "src": "/images/blog/nokoluxe/desktop-adirondack-chair-detail.webp",
+      "width": 1440,
+      "height": 900,
+      "alt": "Nokoluxe Living (documented storefront): desktop product detail view",
+      "caption": "Nokoluxe Living — desktop product detail (documented storefront capture).",
+      "smallSrc": "/images/blog/nokoluxe/desktop-adirondack-chair-detail-720.webp",
+      "smallWidth": 720
+    },
+    "pending-migration-inventory": {
+      "width": 1536,
+      "height": 592,
+      "alt": "Old-to-new URL inventory and redirect plan — working capture pending",
+      "caption": "A redacted URL-mapping capture will be placed here when available. No screenshot is implied."
+    },
+    "pending-markets-selector": {
+      "width": 1536,
+      "height": 592,
+      "alt": "Market language and currency selector — test-store capture pending",
+      "caption": "A test-store capture of the market selector will be placed here when available. No screenshot is implied."
+    },
+    "pending-search-console-inspection": {
+      "width": 1536,
+      "height": 592,
+      "alt": "Google Search Console URL Inspection result — working capture pending",
+      "caption": "This article describes the URL Inspection workflow; a redacted working capture will be placed here when available. No screenshot is implied."
+    },
+    "pending-merchant-center-diagnostics": {
+      "width": 1536,
+      "height": 592,
+      "alt": "Google Merchant Center diagnostics screen — working capture pending",
+      "caption": "A redacted Merchant Center diagnostics capture will be placed here when available. No screenshot is implied."
+    },
+    "pending-b2b-company-account": {
+      "width": 1536,
+      "height": 592,
+      "alt": "B2B company account and buyer workflow — test-store capture pending",
+      "caption": "An authorized B2B workflow capture will be placed here when available. No screenshot is implied."
     }
   }
 }
