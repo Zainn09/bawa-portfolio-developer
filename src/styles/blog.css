@@ -799,6 +799,58 @@
   color: var(--ink);
   white-space: pre;
 }
+/* Official documentation reference cards: the claims in a section, pointed
+   at the primary source a reader can verify against. */
+.article-docrefs {
+  margin: 26px 0 10px;
+  border: var(--border);
+  background: var(--surface);
+  padding: 18px 20px 20px;
+}
+.article-docrefs > .journal-kicker {
+  display: block;
+  font: var(--text-small)/1.6 var(--mono);
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+.docref-card {
+  display: block;
+  border-left: 2px solid var(--accent);
+  background: var(--bg);
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  transition: background 0.15s ease;
+}
+.docref-card:last-child {
+  margin-bottom: 0;
+}
+.docref-card:hover {
+  background: var(--accent-wash);
+}
+.docref-card strong {
+  display: block;
+  font: 600 15px/1.4 var(--font);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.docref-host {
+  font: var(--text-small)/1.6 var(--mono);
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+.docref-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin: 8px 0 10px;
+}
+.docref-card > span:last-child {
+  font: var(--text-small)/1.6 var(--mono);
+  color: var(--accent);
+  letter-spacing: 0.4px;
+}
 .article-mobile-section > div:first-child > p {
   font-size: 18px;
   line-height: 1.6;

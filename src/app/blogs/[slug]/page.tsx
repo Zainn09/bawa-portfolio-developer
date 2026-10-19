@@ -28,6 +28,14 @@ function markedText(text: string, keyOffset: number): ReactNode[] {
   });
   return nodes;
 }
+/** Bare hostname for a documentation reference card. */
+function hostOf(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 /**
  * Inline journal markup: *terms* are marked with the site's accent marker,
  * and [label](url) becomes a link — internal paths stay in-app, external
@@ -293,6 +301,27 @@ export default async function ArticlePage({ params }: Props) {
                           <code>{s.code}</code>
                         </pre>
                       </figure>
+                    )}
+                    {s.docRefs && s.docRefs.length > 0 && (
+                      <div className="article-docrefs">
+                        <span className="journal-kicker">
+                          OFFICIAL DOCUMENTATION
+                        </span>
+                        {s.docRefs.map((d) => (
+                          <a
+                            key={d.url}
+                            className="docref-card"
+                            href={d.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <strong>{d.title}</strong>
+                            <span className="docref-host">{hostOf(d.url)}</span>
+                            <p>{d.note}</p>
+                            <span aria-hidden="true">Read the reference ↗</span>
+                          </a>
+                        ))}
+                      </div>
                     )}
                     {a.inlineImages[i] && (
                       <BlogImage

@@ -29,6 +29,12 @@ export interface ArticleSource {
   label: string;
   url: string;
 }
+/** A pointer to official documentation that backs a technical claim. */
+export interface DocRef {
+  title: string;
+  url: string;
+  note: string;
+}
 export interface ArticleInput {
   title: string;
   slug: string;
@@ -43,6 +49,7 @@ export interface ArticleInput {
     paragraphs: string[];
     code?: string;
     codeCaption?: string;
+    docRefs?: DocRef[];
   }[];
   relatedArticles?: string[];
   takeaway: string;
